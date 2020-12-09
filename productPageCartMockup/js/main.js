@@ -161,4 +161,4 @@ function displayCart() {
 }
 
 onLoadCartNumbers();
-displayCart();
+displayCart(); 
