@@ -37,8 +37,20 @@ $(function() {
         .attr("alt", product.name + " perfume bottle")
         .on("click", function() {
             
-                bag.push(product);
+            let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, product.quantity);
 
+            if (addedItem.quantity == 0){
+                
+                addedItem.quantity++
+                bag.push(addedItem);
+
+             } 
+             //else {
+            //     addedItem.quantity++
+            // }
+
+            //bag.push(addedItem);
+            
             localStorage.setItem("products", JSON.stringify(bag));
             renderShoppingBag();
         })
@@ -52,11 +64,12 @@ function getFromLocalStorage() {
         let lsList = JSON.parse(productFromLS);
         
         $.each(lsList, (i, product) => {
-
-            let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, product.quantity);
+            
+            
              
-            bag.push(addedItem);
+           // bag.push(addedItem);
         });
+
     renderShoppingBag();
 };
 
@@ -67,7 +80,7 @@ function renderShoppingBag() {
         $.each(bag, (i, product) => {
 
             $("<p>")
-            .html(product.name + ", " + product.price + "kr")
+            .html(product.name + ", " + product.price + "kr " + product.quantity + "pc")
             .appendTo("#shoppingBag");
         });
     };     
