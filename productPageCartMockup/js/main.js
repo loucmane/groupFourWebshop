@@ -10,7 +10,7 @@ class Product {
         this.description = description;
     }
 }
-
+//change these objects to better match grade criteria. These are just so I can test functionality. Like everythings else in this document.
 let products = [ 
     {
         name: "Bergamot",
@@ -38,8 +38,18 @@ let products = [
     }
 ];
 
+
+
+//for loop for the cart buttons from 0 to carts.length... so as many buttons as there are. in this case 4. 
+// its gonna start at [0] and finish at [3]. 
+//add an eventlistener that checks for clicks on the button and execute the function that does something.
+// what do we want to connect the buttons to?
+//
 for (let i=0; i < carts.length; i++) {
     carts[i].addEventListener('click', () => {
+
+        //console.log('X item(s) has been added to cart') type functionality is what we want.
+        //console.log(Total cost is : x SEK) type functionality is what we want.
         cartNumbers(products[i]);
         totalCost(products[i])
     })
@@ -51,21 +61,27 @@ for (let i=0; i < carts.length; i++) {
 //function to check if there is any items in the cart from a previous session
 
 function onLoadCartNumbers() {
+    //checks localstorage to see if there are any items in the cart.
     let productNumbers = localStorage.getItem('cartNumbers');
 
     if( productNumbers ) {
+        //if there are, change the targeted selectors textContent to be the number 
         document.querySelector('.cart span').textContent = productNumbers;
     }
 }
 
 
-
+//this function is gonna check how many items we have in our cart.
+//here we use localStorage key and values to remember how many items we have
+//localStorage can only hold strings.
 function cartNumbers(product) {
-    
+    //Variable that Checks localStorage if there are any items in the cart.
     let productNumbers = localStorage.getItem('cartNumbers'); 
-    
+    //these console logs are to show what we get from localStorage, remove them.
+    console.log(typeof productNumbers);
+    //parses the string from localStorage and turns it back to a number.
     productNumbers = parseInt(productNumbers); 
-    
+    console.log(typeof productNumbers); //what the parseInt() did.
     if( productNumbers ) {
         localStorage.setItem('cartNumbers', productNumbers + 1); // 
         document.querySelector('.cart span').textContent = productNumbers + 1;
