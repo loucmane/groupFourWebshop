@@ -10,3 +10,7 @@ html {
 
 body {
   box-sizing: border-box; }
+
+.productImage {
+  width: 100px;
+  height: 100px; }
