@@ -1,5 +1,3 @@
-// Class and constructor for every object (product) //
-
 class Product {
     constructor(image, name, price, description, id, quantity) {
         this.image = image;
@@ -11,11 +9,7 @@ class Product {
     }
 }
 
-// Using variable to write same description for all of them //
-
-let description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias natus perferendis inventore debitis, facere amet incidunt asperiores optio. At est quia maxime. Doloribus autem sit aliquam perspiciatis repellendus nisi.";
-
-// Creating all our objects and deciding their properties //
+let description = "Lorem ipsum";
 
 let product1 = new Product("../IMG/perfume-bottle-bergamot.jpg", "Bergamot", 850, description, 1, 0);
 let product2 = new Product("../IMG/perfume-bottle-iris.jpg", "Iris", 850, description, 2, 0);
@@ -23,78 +17,79 @@ let product3 = new Product("../IMG/perfume-bottle-saffron.jpg", "Saffron", 850, 
 let product4 = new Product("../IMG/perfume-bottle-sandalwood.jpg", "Sandalwood", 850, description, 4, 0);
 let product5 = new Product("../IMG/perfume-bottle-ginger.jpg", "Ginger", 850, description, 5, 0);
 
-// Creating an array of the objects //
-
 let myProducts = [product1, product2, product3, product4, product5];
 
-$(function() {
 
-    // Running loop of that array //
-
-    $.each(myProducts, (i, product) => {
-
-        console.log(product);
-
-        // Creating html displaying the result //
-
-        let divTag = $("<div>").appendTo($("#productsContainer"));
-        let productImage = $("<img>").appendTo(divTag).addClass("productImage")
-            .attr("src", product.image).attr("alt", product.name + " perfume bottle");
-
-        let productName = $("<h4>").appendTo(divTag).html(product.name);
-        let productPrice = $("<h5>").appendTo(divTag).html(product.price + " kr");
-        let productDescription = $("<p>").appendTo(divTag).html(product.description);
+let bag = [];
 
 
-        // Adding a click function for every product image //
+// Save shopping bag in LS
+function saveBag() {
+    localStorage.setItem("products", JSON.stringify(bag));
+}
 
-        productImage.on("click", function() {
-
-            // Creating new object of the product clicked on //
-
-            let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, product.quantity);
-
-            // Creating a new array for the items added to shopping bag //
-
-            let bag = [];
-
-            // Add the new object to the shopping bag array //
-
-            bag.push(addedItem);
-
-            // Add the shopping bag items to local storage //
-
-            localStorage.setItem("products", JSON.stringify(bag));
-
-
-            // Get the shopping bag items from local storage and convert them to array again //
-
-            let productFromLS = localStorage.getItem("products");
-            let lsList = JSON.parse(productFromLS);
+// Get shopping bag from LS
+function getBag() {
+    bag = JSON.parse(localStorage.getItem("products"));
+}
 
 
 
-            // Run loop of that array //
+$(function() { // Window onload
 
-            $.each(lsList, (i, product) => {
-                console.log(lsList);
+    if (localStorage.getItem("products") != null) { //Only get bag from LS if it has content
+        getBag();
+    }
 
-                // Create html displaying the result //
+    createBagHTML();
 
-                let shoppingBag = $("#shoppingBag");
+    $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
 
-                $("<p>").appendTo(shoppingBag).html(product.name + ", " + product.price + "kr");
-            });
+        let divTag = $("<div>")
+            .appendTo($("#productsContainer"));
+
+        $("<img>")
+            .appendTo(divTag)
+            .addClass("productImage")
+            .attr("src", product.image)
+            .attr("alt", product.name + " perfume bottle")
+            .attr("id", product.id)
+            .on("click", { product: product }, function() {
+
+                for (let addedItem in bag) { // Looping bag, if clicked object id is found in bag -> increase quantity
+                    if (bag[addedItem].id === product.id) {
+                        bag[addedItem].quantity++;
+                        saveBag();
+                        getBag();
+                        createBagHTML();
+                        return; // Stops loop
+                    }
+                }
+
+                // Otherwise -> push the new object
+                let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, 1);
+                bag.push(addedItem);
+                saveBag();
+                getBag();
+                createBagHTML();
 
 
-        });
-
-
-
+            })
     });
+});
 
 
 
+function createBagHTML() {
 
 
-})
+    $(".bagItems").html("");
+
+    $.each(bag, (i, product) => {
+
+        $("<p>")
+            .addClass("bagItems")
+            .html(product.name + ", " + product.price + "kr, " + "pcs: " + product.quantity)
+            .appendTo("#shoppingBag");
+    });
+}
