@@ -10,3 +10,14 @@ html {
 
 body {
   box-sizing: border-box; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 375px;
+  height: 500px;
+  bottom: 0;
+  background-color: #FFF5D3; }
