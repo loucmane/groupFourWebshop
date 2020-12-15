@@ -23,11 +23,12 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: space-evenly;
   position: absolute;
+  bottom: 0;
   width: 37.5rem;
   height: 50rem;
-  bottom: 0;
-  background-color: #FFF5D3;
+  background-color: #FFF8E2;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   font-size: 2.4rem;
@@ -35,4 +36,18 @@ footer {
   text-align: center; }
   footer li {
     text-align: center;
-    list-style: none; }
+    list-style: none;
+    margin: 2rem; }
+  footer a {
+    text-decoration: none;
+    color: #000000; }
+    footer a:visited {
+      opacity: 0.5; }
+  footer .socialmediaicons {
+    font-size: 5rem; }
+  footer p {
+    margin: 2rem;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344; }

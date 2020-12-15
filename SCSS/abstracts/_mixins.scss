@@ -5,35 +5,35 @@
     flex-direction: $direction;
 }
 
-@mixin fontHeading() { //
+@mixin fontHeading() {
     font-family: $ff-roboto;
     font-weight: $fw-light;
     font-size: $fs-heading;
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontTitle() { //
+@mixin fontTitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-title;
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontSubtitle() { //
+@mixin fontSubtitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-subtitle;
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontBody() { //
+@mixin fontBody() {
     font-family: $ff-roboto;
     font-weight: $fw-light;
     font-size: $fs-body;
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontLogotype() { //
+@mixin fontLogotype() {
     font-family: $ff-roboto;
     font-weight: $fw-bold;
     letter-spacing: 0.5rem;
@@ -41,10 +41,11 @@
     color: $primary-txt; //color variable set elsewher
 }
 
+@mixin fontPreset($type) {
+    @include body{
 
-
-
-
+    }
+}
 
 // vi skriver include fontPresets där vi måste definera 3 parametrar varje gång
 
