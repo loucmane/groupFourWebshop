@@ -48,17 +48,27 @@ $(function() { // Window onload
         let divTag = $("<div>")
             .appendTo($("#productsContainer"));
 
-        $("<img>")
-            .appendTo(divTag)
+        $("<img>").appendTo(divTag)
             .addClass("productImage")
             .attr("src", product.image)
             .attr("alt", product.name + " perfume bottle")
-            .attr("id", product.id)
+            .attr("id", product.id);
+        // .on("click", { product: product }, function(){ LINK TO PRODUCT DESCRIPTION PAGE });
+
+        $("<h4>").appendTo(divTag)
+            .html(product.name);
+
+        $("<h5>").appendTo(divTag)
+            .html(product.price + "kr");
+
+        $("<button>").appendTo(divTag)
+            .attr("type", "button")
+            .html("Add to bag")
             .on("click", { product: product }, function() {
 
-                for (let addedItem in bag) { // Looping bag, if clicked object id is found in bag -> increase quantity
-                    if (bag[addedItem].id === product.id) {
-                        bag[addedItem].quantity++;
+                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> increase quantity
+                    if (bag[clickedItem].id === product.id) {
+                        bag[clickedItem].quantity++;
                         saveBag();
                         getBag();
                         createBagHTML();
@@ -73,8 +83,8 @@ $(function() { // Window onload
                 getBag();
                 createBagHTML();
 
+            });
 
-            })
     });
 });
 
@@ -82,14 +92,67 @@ $(function() { // Window onload
 
 function createBagHTML() {
 
-
-    $(".bagItems").html("");
+    $("#shoppingBag").html("");
 
     $.each(bag, (i, product) => {
 
-        $("<p>")
-            .addClass("bagItems")
-            .html(product.name + ", " + product.price + "kr, " + "pcs: " + product.quantity)
-            .appendTo("#shoppingBag");
-    });
+        $("<img>").appendTo("#shoppingBag")
+            .attr("src", product.image)
+            .attr("alt", product.name + " perfume bottle");
+
+        // DELETE FROM SHOPPING BAG //
+        $("<button>").appendTo("#shoppingBag")
+            .attr("type", "button")
+            .html("x")
+            .on("click", { product: product }, function() {
+
+                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> splice that product from array
+
+                    if (bag[clickedItem].id === product.id) {
+                        bag.splice(clickedItem, 1);
+                        saveBag();
+                        getBag();
+                        createBagHTML();
+                    }
+                }
+            });
+
+        $("<p>").appendTo("#shoppingBag")
+            .html(product.name + ", " + product.price + "kr, " + "pcs: " + product.quantity);
+
+        // INCREASE QUANTITY IN SHOPPING BAG //
+        $("<button>").appendTo("#shoppingBag")
+            .attr("type", "button")
+            .html("+")
+            .on("click", { product: product }, function() {
+                for (let i = 0; i < bag.length; index++) {
+                    product.quantity++;
+                    saveBag();
+                    getBag();
+                    createBagHTML();
+                    return; // Stops loop
+                }
+            });
+
+        // DECREASE QUANTITY IN SHOPPING BAG //
+        $("<button>").appendTo("#shoppingBag")
+            .attr("type", "button")
+            .html("-")
+            .on("click", { product: product }, function() {
+
+                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
+
+                    if (bag[clickedItem].id === product.id) {
+                        bag[clickedItem].quantity--;
+                        if (bag[clickedItem].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                            bag.splice(clickedItem, 1);
+                        }
+                        saveBag();
+                        getBag();
+                        createBagHTML();
+
+                    }
+                }
+            });
+    })
 }

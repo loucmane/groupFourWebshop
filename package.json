@@ -1,7 +1,7 @@
 {
-  "name": "groupFourWebshop",
+  "name": "groupfourwebshop",
   "version": "1.0.0",
-  "description": "",
+  "description": "## BEST PRACTISE Always Use *CamelCase*",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
     "node-sass": "^5.0.0"
   },
   "dependencies": {
-    "gulp-csso": "^4.0.1"
+    "gulp-csso": "^4.0.1",
+    "sass": "^1.30.0"
   }
 }
