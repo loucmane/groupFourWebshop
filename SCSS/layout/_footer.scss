@@ -1,7 +1,7 @@
 footer {
     @include flexCenter(column);
     position: absolute;
-    width: 37.5rem; 
+    width: 37.5rem;
     height: 50rem;
     bottom: 0;
     background-color: $primary-alt;
