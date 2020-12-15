@@ -1,0 +1,5 @@
+body {
+    @include fontBody();
+    
+    -webkit-text-size-adjust: 100%; //fix for iOS
+  }

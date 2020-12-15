@@ -1,9 +1,20 @@
 footer {
     @include flexCenter(column);
     position: absolute;
-    width: 375px;
-    height: 500px;
+    width: 37.5rem; 
+    height: 50rem;
     bottom: 0;
     background-color: $primary-alt;
-    
+    @include fontTitle();
+    text-align: center;
+
+    li {
+        text-align: center;
+        list-style: none;
     }
+}
+
+
+
+
+
