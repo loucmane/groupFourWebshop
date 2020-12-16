@@ -46,7 +46,8 @@ $(function() { // Window onload
     $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
 
         let divTag = $("<div>")
-            .appendTo($("#productsContainer"));
+            .appendTo($("#productsContainer"))
+            .addClass("eachProduct");
 
         $("<img>").appendTo(divTag)
             .addClass("productImage")
@@ -55,34 +56,34 @@ $(function() { // Window onload
             .attr("id", product.id);
         // .on("click", { product: product }, function(){ LINK TO PRODUCT DESCRIPTION PAGE });
 
-        $("<h4>").appendTo(divTag)
+        $("<p>").appendTo(divTag)
             .html(product.name);
 
-        $("<h5>").appendTo(divTag)
-            .html(product.price + "kr");
+        $("<p>").appendTo(divTag)
+            .html(product.price + " sek");
 
         $("<button>").appendTo(divTag)
             .attr("type", "button")
             .html("Add to bag")
             .on("click", { product: product }, function() {
 
-                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> increase quantity
-                    if (bag[clickedItem].id === product.id) {
-                        bag[clickedItem].quantity++;
-                        saveBag();
-                        getBag();
-                        createBagHTML();
-                        return; // Stops loop
+                let foundProduct = false;
+
+                for (let i = 0; i < bag.length; i++) {
+                    if (bag[i].id === product.id) {
+                        foundProduct = true;
+                        bag[i].quantity++;
                     }
                 }
 
-                // Otherwise -> push the new object
-                let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, 1);
-                bag.push(addedItem);
+                if (foundProduct === false) {
+                    let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, 1);
+                    bag.push(addedItem);
+                }
+
                 saveBag();
                 getBag();
                 createBagHTML();
-
             });
 
     });
@@ -106,10 +107,9 @@ function createBagHTML() {
             .html("x")
             .on("click", { product: product }, function() {
 
-                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> splice that product from array
-
-                    if (bag[clickedItem].id === product.id) {
-                        bag.splice(clickedItem, 1);
+                for (let i = 0; i < bag.length; i++) {
+                    if (bag[i].id === product.id) {
+                        bag.splice([i], 1);
                         saveBag();
                         getBag();
                         createBagHTML();
@@ -118,19 +118,23 @@ function createBagHTML() {
             });
 
         $("<p>").appendTo("#shoppingBag")
-            .html(product.name + ", " + product.price + "kr, " + "pcs: " + product.quantity);
+            .html(product.name + ", " + product.price + " sek, " + "pcs: " + product.quantity);
+
+
 
         // INCREASE QUANTITY IN SHOPPING BAG //
         $("<button>").appendTo("#shoppingBag")
             .attr("type", "button")
             .html("+")
             .on("click", { product: product }, function() {
-                for (let i = 0; i < bag.length; index++) {
-                    product.quantity++;
-                    saveBag();
-                    getBag();
-                    createBagHTML();
-                    return; // Stops loop
+                for (let i = 0; i < bag.length; i++) {
+                    if (bag[i].id === product.id) {
+                        product.quantity++;
+                        saveBag();
+                        getBag();
+                        createBagHTML();
+                    }
+
                 }
             });
 
@@ -140,12 +144,12 @@ function createBagHTML() {
             .html("-")
             .on("click", { product: product }, function() {
 
-                for (let clickedItem in bag) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
+                for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
 
-                    if (bag[clickedItem].id === product.id) {
-                        bag[clickedItem].quantity--;
-                        if (bag[clickedItem].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
-                            bag.splice(clickedItem, 1);
+                    if (bag[i].id === product.id) {
+                        bag[i].quantity--;
+                        if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                            bag.splice([i], 1);
                         }
                         saveBag();
                         getBag();
@@ -154,5 +158,23 @@ function createBagHTML() {
                     }
                 }
             });
+
     })
+
+
+
+    $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " sek");
+
+
+}
+
+// CALCULATE TOTAL //
+function calculateTotal() {
+    let total = 0;
+    for (let i = 0; i < bag.length; i++) {
+        total = total + (bag[i].quantity * bag[i].price);
+
+    }
+    return total;
+
 }
