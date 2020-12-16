@@ -1,75 +1,43 @@
-// footer {
-//     @include flexCenter(column);
-//     justify-content: space-evenly;
-//     position: absolute;
-//     bottom: 0;
-//     width: 37.5rem;
-//     height: 50rem;
-//     background-color: $primary-alt;
-//     @include fontTitle();
-//     text-align: center;
-
-//     li {
-//         text-align: center;
-//         list-style: none;
-//         margin: 2rem;    
-//     }
-
-//     a {
-//         text-decoration: none;
-//         color: $black;
-
-//         &:visited {
-//             opacity: 0.5;
-//         }
-//     }
-    
-//     .socialmediaicons {
-//         font-size: 5rem;
-//     }
-
-//     p {
-//         margin: 2rem;
-//         @include fontBody();
-//     }
-// }
-
-.hamburgerButton { 
+.navbar {
+    @include flexCenter(row);
     position: absolute;
-    /* always keep ham on top of everything */
-    z-index: 1000;
-    top: 2rem;
-    left: 2rem;
-    width: 5rem;
-    height: 5rem;
-    border: none;
-    cursor: pointer;
-    /* show the menu image */
-    background-image: url("https://ljc-dev.github.io/testing0/ham.svg");
-    background-size: 100%;
-  }
+    top: 0;
+    background-color: $primary-alt;
+    @include fontTitle();
+    width: 100vw;
+    height: 8rem;
 
-  .showClose {
-    background-image: url("https://ljc-dev.github.io/testing0/ham-close.svg");
-  }
+    li {
+        text-align: center;
+        list-style: none;
+        margin: 2rem;
+    }
 
-  .navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  color: white;
-  /* hide the menu above the screen by default */
-  transform: translateY(-100%);
-  /* transition adds a little animation when sliding in and out the menu */
-  transition: transform 0.2s ease;
+    a {
+        text-decoration: none;
+        color: $black;
+
+        &:visited {
+            opacity: 0.5;
+        }
+    }
 }
 
-.showNav {
-    /* show the menu */
-    transform: translateY(0);
-  }
+.hamburgerButton {
+  z-index: 1000;
+  font-size: 5rem;
+
+}
+
+.myUl {
+@include flexCenter(column);
+position: absolute;
+top: 0;
+height: 100vh;
+width: 100vw;
+background-color: $primary-alt;
+
+}
+
+
   

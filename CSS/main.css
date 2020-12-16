@@ -11,40 +11,44 @@ html {
 body {
   box-sizing: border-box; }
 
-.hamburgerButton {
-  position: absolute;
-  /* always keep ham on top of everything */
-  z-index: 1000;
-  top: 2rem;
-  left: 2rem;
-  width: 5rem;
-  height: 5rem;
-  border: none;
-  cursor: pointer;
-  /* show the menu image */
-  background-image: url("https://ljc-dev.github.io/testing0/ham.svg");
-  background-size: 100%; }
-
-.showClose {
-  background-image: url("https://ljc-dev.github.io/testing0/ham-close.svg"); }
-
 .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: absolute;
   top: 0;
-  left: 0;
-  background: black;
+  background-color: #FFF8E2;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: #443344;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  color: white;
-  /* hide the menu above the screen by default */
-  transform: translateY(-100%);
-  /* transition adds a little animation when sliding in and out the menu */
-  transition: transform 0.2s ease; }
+  height: 8rem; }
+  .navbar li {
+    text-align: center;
+    list-style: none;
+    margin: 2rem; }
+  .navbar a {
+    text-decoration: none;
+    color: #000000; }
+    .navbar a:visited {
+      opacity: 0.5; }
 
-.showNav {
-  /* show the menu */
-  transform: translateY(0); }
+.hamburgerButton {
+  z-index: 1000;
+  font-size: 5rem; }
+
+.myUl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #FFF8E2; }
 
 .productImage {
   width: 100px;
