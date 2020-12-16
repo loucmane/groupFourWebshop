@@ -1,0 +1,48 @@
+footer {
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 37.5rem;
+    height: 50rem;
+    background-color: $primary-alt;
+    @include fontTitle();
+    text-align: center;
+
+    li {
+        text-align: center;
+        list-style: none;
+        margin: 2rem;    
+    }
+
+    a {
+        text-decoration: none;
+        color: $black;
+
+        &:visited {
+            opacity: 0.5;
+        }
+    }
+    
+    .socialmediaicons {
+        font-size: 5rem;
+    }
+
+    p {
+        margin: 2rem;
+        @include fontBody();
+    }
+}
+
+//FOOTER mobile
+//1 skapa nödvändig html
+//2 tänk på mobilläge först
+//3 mixins, variabler
+//4 skapa partial för footer i scss
+// 5 display flex på container. 
+//5.5 justify-content, align-items och flex-direction på container.
+//6 absolute positioned to the bottom, bottom: 0?
+//7 place divs where you want them.
+
+
+
