@@ -1,7 +1,7 @@
 window.onload = function () {
 
   $( ".hamburgerButton" ).click(function() {
-    $( ".myUl " ).toggle();
+    $( " .myUl " ).slideToggle()
     console.log(("klick"));
   });
 
