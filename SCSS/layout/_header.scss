@@ -1,22 +1,24 @@
 .navbar {
-  display: flex;
-  background-color: $primary-alt;
-  @include fontTitle();
-  width: 100%;
-  height: 8rem;
-  @media screen and(min-width: 480px){
-    height: 15rem;
-  }
-
-  .hamburgerButton {
-    z-index: 1000;
-    font-size: 5rem;
-    position: absolute;
-    top: 1rem;
-    left: 2rem;
-    @media screen and(min-width: 480px){
-      display: none;
+    display: flex;
+    background-color: $primary-alt;
+    @include fontTitle();
+    width: 100%;
+    height: 8rem;
+    @media screen and(min-width: 480px) {
+        height: 15rem;
     }
+
+    .hamburgerButton {
+        z-index: 1000;
+        font-size: 5rem;
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        @media screen and(min-width: 480px) {
+            display: none;
+        }
+    }
+
   }
 
   .shoppingCartButton {
@@ -29,11 +31,13 @@
       top: 4rem;
       right: 8rem;
       font-size: 7rem;
+
     }
-  }
 }
 
 .myUl {
+
+
   display: none;
   z-index: 900;
   flex-direction: column;
@@ -43,29 +47,23 @@
   width: 100vw;
   background-color: $primary-alt;
 
+
     a {
-    text-decoration: none;
-    color: $black;
-
-      &:visited {
-          opacity: 0.2;
-      }
+        text-decoration: none;
+        color: $black;
+        &:visited {
+            opacity: 0.2;
+        }
     }
-
     li {
-      text-align: center;
-      list-style: none;
-      margin: 2rem;
+        text-align: center;
+        list-style: none;
+        margin: 2rem;
     }
-
     @media screen and(min-width: 480px) {
-      height: 100%;
-      width: 80%;
-      flex-direction: row;
-      justify-content: space-around;
+        height: 100%;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around;
     }
-
 }
-
-
-  
