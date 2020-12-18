@@ -95,17 +95,18 @@ footer {
     @media screen and (min-width: 480px) {
       .navbar .hamburgerButton {
         display: none; } }
-  .navbar .shoppingCartButton {
-    z-index: 800;
-    font-size: 5rem;
-    position: absolute;
-    top: 1rem;
-    right: 2rem; }
-    @media screen and (min-width: 480px) {
-      .navbar .shoppingCartButton {
-        top: 4rem;
-        right: 8rem;
-        font-size: 7rem; } }
+
+.shoppingCartButton {
+  z-index: 800;
+  font-size: 5rem;
+  position: absolute;
+  top: 1rem;
+  right: 2rem; }
+  @media screen and (min-width: 480px) {
+    .shoppingCartButton {
+      top: 4rem;
+      right: 8rem;
+      font-size: 7rem; } }
 
 .myUl {
   display: none;
@@ -127,6 +128,7 @@ footer {
     margin: 2rem; }
   @media screen and (min-width: 480px) {
     .myUl {
+      display: flex;
       height: 100%;
       width: 80%;
       flex-direction: row;
