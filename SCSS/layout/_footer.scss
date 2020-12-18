@@ -1,8 +1,6 @@
 footer {
     @include flexCenter(column);
     justify-content: space-evenly;
-    position: absolute;
-    bottom: 0;
     width: 100vw;
     height: 50rem;
     background-color: $primary-alt;

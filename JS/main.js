@@ -1,12 +1,11 @@
-window.onload = function () {
+$(function() {
 
   $( ".hamburgerButton" ).click(function() {
-    $( " .myUl " ).slideToggle();
-    $( ".myUl" ).css({
-      display: "flex"
-    })
-    console.log(("klick"));
+      $( " .myUl " ).slideToggle();
+      $( ".myUl" ).css({
+          display: "flex"
+      })
+      console.log(("klick"));
+      });
   });
-
-}
 
