@@ -11,5 +11,71 @@ html {
 body {
   box-sizing: border-box; }
 
-#shoppingBag {
-  border: 2px solid black; }
+body {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: #443344;
+  margin: none;
+  padding: none; }
+  body #shoppingBag img {
+    width: 100px; }
+  body main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    body main h2 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 2.4rem;
+      color: #443344;
+      font-weight: 700;
+      color: #000000;
+      text-align: center;
+      margin: 5%; }
+    body main hr {
+      width: 80%;
+      border: 1px solid #000000; }
+    body main #productsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 5%; }
+      body main #productsContainer .eachProduct {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        body main #productsContainer .eachProduct .productImage {
+          width: 50%; }
+        body main #productsContainer .eachProduct div {
+          width: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start; }
+          body main #productsContainer .eachProduct div p {
+            color: #000000;
+            font-size: 1.4rem;
+            margin: 2%; }
+        body main #productsContainer .eachProduct button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: #443344;
+          background-color: #000000;
+          color: #FFFFFF;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.2rem;
+          height: 30px;
+          width: 70%;
+          margin: 10%; }
+
+@media screen and (min-width: 481px) {
+  .productImage {
+    width: 30%; }
+  button {
+    font-size: 1.4rem;
+    width: 50%; } }

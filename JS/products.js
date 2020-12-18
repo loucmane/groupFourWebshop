@@ -56,11 +56,13 @@ $(function() { // Window onload
             .attr("id", product.id);
         // .on("click", { product: product }, function(){ LINK TO PRODUCT DESCRIPTION PAGE });
 
-        $("<p>").appendTo(divTag)
+        let textLeft = $("<div>").appendTo(divTag);
+
+        $("<p>").appendTo(textLeft)
             .html(product.name);
 
-        $("<p>").appendTo(divTag)
-            .html(product.price + " sek");
+        $("<p>").appendTo(textLeft)
+            .html(product.price + " SEK");
 
         $("<button>").appendTo(divTag)
             .attr("type", "button")
@@ -118,7 +120,7 @@ function createBagHTML() {
             });
 
         $("<p>").appendTo("#shoppingBag")
-            .html(product.name + ", " + product.price + " sek, " + "pcs: " + product.quantity);
+            .html(product.name + ", " + product.price + " SEK, " + "pcs: " + product.quantity);
 
 
 
@@ -163,7 +165,7 @@ function createBagHTML() {
 
 
 
-    $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " sek");
+    $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " SEK");
 
 
 }
