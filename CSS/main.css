@@ -18,6 +18,120 @@ body {
   color: #443344;
   -webkit-text-size-adjust: 100%; }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50rem;
+  background-color: #FFF8E2;
+  text-align: center; }
+  footer li {
+    text-align: center;
+    list-style: none;
+    margin: 2rem;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #443344; }
+  footer a {
+    text-decoration: none;
+    color: #000000; }
+    footer a:visited {
+      opacity: 0.5; }
+  footer .socialmediaicons {
+    font-size: 5rem; }
+  footer p {
+    margin: 2rem;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344; }
+  @media screen and (min-width: 481px) {
+    footer ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; }
+      footer ul li {
+        margin: 6rem; }
+    footer .icon {
+      margin: 3rem;
+      font-size: 7rem; }
+    footer .companyinfo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row-reverse; }
+      footer .companyinfo p {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 400;
+        font-size: 2.4rem;
+        color: #443344;
+        margin: 4rem; } }
+
+.navbar {
+  display: flex;
+  background-color: #FFF8E2;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: #443344;
+  width: 100%;
+  height: 8rem; }
+  @media screen and (min-width: 480px) {
+    .navbar {
+      height: 15rem; } }
+  .navbar .hamburgerButton {
+    z-index: 1000;
+    font-size: 5rem;
+    position: absolute;
+    top: 1rem;
+    left: 2rem; }
+    @media screen and (min-width: 480px) {
+      .navbar .hamburgerButton {
+        display: none; } }
+  .navbar .shoppingCartButton {
+    z-index: 1000;
+    font-size: 5rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem; }
+    @media screen and (min-width: 480px) {
+      .navbar .shoppingCartButton {
+        top: 4rem;
+        right: 8rem;
+        font-size: 7rem; } }
+
+.myUl {
+  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #FFF8E2; }
+  .myUl a {
+    text-decoration: none;
+    color: #000000; }
+    .myUl a:visited {
+      opacity: 0.2; }
+  .myUl li {
+    text-align: center;
+    list-style: none;
+    margin: 2rem; }
+  @media screen and (min-width: 480px) {
+    .myUl {
+      height: 100%;
+      width: 80%;
+      flex-direction: row;
+      justify-content: space-around; } }
+
 body {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
