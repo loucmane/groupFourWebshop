@@ -1,29 +1,30 @@
 {
-  "name": "groupfourwebshop",
-  "version": "1.0.0",
-  "description": "## BEST PRACTISE Always Use *CamelCase*",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/loucmane/groupFourWebshop.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/loucmane/groupFourWebshop/issues"
-  },
-  "homepage": "https://github.com/loucmane/groupFourWebshop#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0",
-    "node-sass": "^5.0.0"
-  },
-  "dependencies": {
-    "gulp-csso": "^4.0.1",
-    "sass": "^1.30.0"
-  }
+    "name": "groupfourwebshop",
+    "version": "1.0.0",
+    "description": "## BEST PRACTISE Always Use *CamelCase*",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/loucmane/groupFourWebshop.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/loucmane/groupFourWebshop/issues"
+    },
+    "homepage": "https://github.com/loucmane/groupFourWebshop#readme",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.1.0",
+        "node-sass": "^5.0.0"
+    },
+    "dependencies": {
+        "gulp-csso": "^4.0.1",
+        "sass": "^1.30.0",
+        "gulp-rename": "^2.0.0"
+    }
 }

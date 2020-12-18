@@ -124,6 +124,7 @@ function createBagHTML() {
 
 
 
+
         // INCREASE QUANTITY IN SHOPPING BAG //
         $("<button>").appendTo("#shoppingBag")
             .attr("type", "button")

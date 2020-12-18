@@ -1,4 +1,9 @@
 window.onload = function () {
 
-    alert('ello');
+  $( ".hamburgerButton" ).click(function() {
+    $( " .myUl " ).slideToggle()
+    console.log(("klick"));
+  });
+
 }
+
