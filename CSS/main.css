@@ -96,7 +96,7 @@ footer {
       .navbar .hamburgerButton {
         display: none; } }
   .navbar .shoppingCartButton {
-    z-index: 1000;
+    z-index: 800;
     font-size: 5rem;
     position: absolute;
     top: 1rem;
@@ -108,11 +108,11 @@ footer {
         font-size: 7rem; } }
 
 .myUl {
-  display: inline;
-  display: flex;
+  display: none;
+  z-index: 900;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100vh;
   width: 100vw;
   background-color: #FFF8E2; }
