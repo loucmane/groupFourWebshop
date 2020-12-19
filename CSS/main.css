@@ -24,8 +24,6 @@ footer {
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
-  position: absolute;
-  bottom: 0;
   width: 100vw;
   height: 50rem;
   background-color: #FFF8E2;
