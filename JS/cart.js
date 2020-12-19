@@ -1,3 +1,5 @@
+let bag = [];
+
 $(function() {
 
     $( ".hamburgerButton" ).click(function() {
@@ -7,8 +9,6 @@ $(function() {
         })
         console.log(("klick"));
         });
-
-let bag = [];
 
 renderCart();
 
@@ -72,6 +72,53 @@ function renderCart() {
         .html(product.name)
         .appendTo(productContainer)
 
+         // DELETE FROM SHOPPING BAG //
+         $("<button>").appendTo(productContainer)
+         .attr("type", "button")
+         .html("x")
+         .on("click", function() {
+     
+             for (let i = 0; i < bag.length; i++) {
+                 if (bag[i].id === product.id) {
+                     bag.splice([i], 1);
+                     saveBag();
+                     renderCart();
+                 }
+             }
+         });
+     
+         $("<button>").appendTo(productContainer)
+             .attr("type", "button")
+             .html("+")
+             .on("click", function() {
+                 for (let i = 0; i < bag.length; i++) {
+                     if (bag[i].id === product.id) {
+                         product.quantity++;
+                         saveBag();
+                         renderCart();
+                     }
+                 }
+             });
+     
+         // DECREASE QUANTITY IN SHOPPING BAG //
+         $("<button>").appendTo(productContainer)
+             .attr("type", "button")
+             .html("-")
+             .on("click", function() {
+     
+             for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
+     
+                 if (bag[i].id === product.id) {
+                     bag[i].quantity--;
+                     if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                         bag.splice([i], 1);
+                     }
+                     saveBag();
+                     renderCart();
+                 }
+             }
+         });
+
         $("<td>")
         .html(product.price)
         .appendTo(tableRow)
@@ -82,7 +129,7 @@ function renderCart() {
 
         $("<td>")
         .html(product.price * product.quantity)
-        .appendTo(tableRow)      
+        .appendTo(tableRow)    
 
     });
 
@@ -104,62 +151,8 @@ function renderCart() {
     .html("CHECKOUT")
     .appendTo(".tableContainer")
 
-    renderQuantityButtons();
+    //renderQuantityButtons();
 
-}
-
-function renderQuantityButtons() {
-    $.each(bag, (i, product) => {
-
-        // DELETE FROM SHOPPING BAG //
-        $("<button>").appendTo(".productContainer")
-        .attr("type", "button")
-        .html("x")
-        .on("click", function() {
-    
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
-                    bag.splice([i], 1);
-                    saveBag();
-                    renderCart();
-                }
-            }
-        });
-    
-        $("<button>").appendTo(".productContainer")
-            .attr("type", "button")
-            .html("+")
-            .on("click", function() {
-                for (let i = 0; i < bag.length; i++) {
-                    if (bag[i].id === product.id) {
-                        product.quantity++;
-                        saveBag();
-                        renderCart();
-                    }
-    
-                }
-            });
-    
-        // DECREASE QUANTITY IN SHOPPING BAG //
-        $("<button>").appendTo(".productContainer")
-            .attr("type", "button")
-            .html("-")
-            .on("click", function() {
-    
-            for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
-    
-                if (bag[i].id === product.id) {
-                    bag[i].quantity--;
-                    if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
-                        bag.splice([i], 1);
-                    }
-                    saveBag();
-                    renderCart();
-    
-                }
-            }
-        });
-    });
 }
 
 // CALCULATE TOTAL //
