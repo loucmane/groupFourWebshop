@@ -200,3 +200,6 @@ body {
   button {
     font-size: 1.4rem;
     width: 50%; } }
+
+.tableContainer {
+  width: 100%; }
