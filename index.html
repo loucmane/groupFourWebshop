@@ -18,16 +18,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="CSS/main.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
     <header>
       <nav class="navbar">
-
         <span class="hamburgerButton"><i class="fas fa-bars"></i></span>
-        <span class="shoppingCartButton"><i class="fas fa-shopping-cart"></i></span>
-        
+        <span class="shoppingCartButton cart--text">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart--number" data-cart-number>
+  
+          </span>
+        </span> 
+
         <ul class="myUl">
           <li><a class="menuLink" href="/index.html">Home</a></li>
           <li><a class="menuLink" href="/HTML/products.html">Fragrances</a></li>
@@ -35,7 +44,7 @@
           <li><a class="menuLink" href="/HTML/contact.html">Contact</a></li>
         </ul>
       </nav>
-    </header> 
+    </header>
 
     <main></main>
 
@@ -47,18 +56,17 @@
         <a href="HTML/contact.html"><li>Contact</li></a>
       </ul>
 
-    <div class="socialmediaicons">
+      <div class="socialmediaicons">
         <span class="icon"><i class="fab fa-facebook-square"></i></span>
         <span class="icon"><i class="fab fa-instagram"></i></span>
         <span class="icon"><i class="fab fa-twitter-square"></i></span>
-    </div>
+      </div>
 
-    <div class="companyinfo">
+      <div class="companyinfo">
         <p>info@company.com</p>
         <p>+01 (2) 345 67 89</p>
         <p>© 2020 COMPANY NAME</p>
-    </div>
-
+      </div>
     </footer>
   </body>
 </html>

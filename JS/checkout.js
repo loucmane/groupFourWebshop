@@ -18,5 +18,7 @@ $(function() {
         return itemsInCart;
       };
 
-    document.querySelector('.shoppingCartButton i').textContent = cartNumbers();
-});
+      document.querySelector(
+        '[data-cart-number]'
+      ).textContent = cartNumbers();
+    });
