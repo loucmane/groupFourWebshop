@@ -2,33 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-  <script src="../JS/checkout.js"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../CSS/main.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <script src="../JS/checkout.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-  
-      <span class="hamburgerButton"><i class="fas fa-bars"></i></span>
-      <span class="shoppingCartButton"><i class="fas fa-shopping-cart"></i></span>
-      
-      <ul class="myUl">
-        <li><a class="menuLink" href="../index.html">Home</a></li>
-        <li><a class="menuLink" href="products.html">Fragrances</a></li>
-        <li><a class="menuLink" href="about.html">About Us</a></li>
-        <li><a class="menuLink" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header> 
+    <header>
+        <nav class="navbar">
+
+            <span class="hamburgerButton"><i class="fas fa-bars"></i></span>
+            <span class="shoppingCartButton"><i class="fas fa-shopping-cart"></i></span>
+
+            <ul class="myUl">
+                <li><a class="menuLink" href="../index.html">Home</a></li>
+                <li><a class="menuLink" href="products.html">Fragrances</a></li>
+                <li><a class="menuLink" href="about.html">About Us</a></li>
+                <li><a class="menuLink" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
 
@@ -102,11 +103,11 @@
             <form>
                 <input type="radio" id="shipping" name="shipping" value="shipping">
                 <label for="shipping">Shipping</label>
-                <p>59 SEK</p>
+                <p>Postnord 59 SEK</p>
             </form>
             <button>&lt; Return to information</button>
 
-            <button class="continueButton">Continue to payment</button>
+            <button class="continueButton" id="btnToPayment">Continue to payment</button>
 
             <div class="policyLinks">
                 <hr>
@@ -159,7 +160,7 @@
             </form>
             <button>&lt; Return to Shipping</button>
 
-            <button class="orderButton">Review Order</button>
+            <button class="orderButton" id="btnReviewOrder">Review Order</button>
             <p>You won't be charged yet!</p>
 
         </section>
@@ -208,24 +209,32 @@
 
 
     <footer>
-      <ul>
-        <a href="../index.html"> <li>Home</li> </a>
-        <a href="products.html"> <li>Fragrances</li> </a>
-        <a href="about.html"><li>About us</li></a>
-        <a href="contact.html"><li>Contact</li></a>
-      </ul>
+        <ul>
+            <a href="../index.html">
+                <li>Home</li>
+            </a>
+            <a href="products.html">
+                <li>Fragrances</li>
+            </a>
+            <a href="about.html">
+                <li>About us</li>
+            </a>
+            <a href="contact.html">
+                <li>Contact</li>
+            </a>
+        </ul>
 
-    <div class="socialmediaicons">
-        <span class="icon"><i class="fab fa-facebook-square"></i></span>
-        <span class="icon"><i class="fab fa-instagram"></i></span>
-        <span class="icon"><i class="fab fa-twitter-square"></i></span>
-    </div>
+        <div class="socialmediaicons">
+            <span class="icon"><i class="fab fa-facebook-square"></i></span>
+            <span class="icon"><i class="fab fa-instagram"></i></span>
+            <span class="icon"><i class="fab fa-twitter-square"></i></span>
+        </div>
 
-    <div class="companyinfo">
-        <p>info@company.com</p>
-        <p>+01 (2) 345 67 89</p>
-        <p>© 2020 COMPANY NAME</p>
-    </div>
+        <div class="companyinfo">
+            <p>info@company.com</p>
+            <p>+01 (2) 345 67 89</p>
+            <p>© 2020 COMPANY NAME</p>
+        </div>
 
     </footer>
 </body>
