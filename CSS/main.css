@@ -212,7 +212,142 @@ body {
               height: 35px;
               margin: 5%; } }
 
+header {
+  text-align: center; }
+  header h1 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    font-size: 4rem;
+    color: #443344;
+    margin: 5rem; }
+  header h4 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #443344; }
+    @media screen and (min-width: 410px) {
+      header h4 {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 3.2rem;
+        color: #443344;
+        margin: 2rem; } }
+  header .headerBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 3rem;
+    color: white;
+    background-color: black; }
+
+table {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media screen and (min-width: 410px) {
+    table {
+      margin: 0 10rem 0 10rem; } }
+  table th {
+    width: 25%; }
+
 .tableContainer {
-  width: 100%; }
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 2rem;
+  text-align: center; }
   .tableContainer img {
     width: 10rem; }
+
+.productContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: 15rem;
+  margin-right: 0; }
+  @media screen and (min-width: 410px) {
+    .productContainer {
+      margin-left: 10rem; } }
+  .productContainer .productSpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .productContainer .productSpan button {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: #443344;
+      border: 1px solid black;
+      padding: .5rem;
+      margin: .5rem;
+      border-radius: .5rem;
+      background-color: white;
+      cursor: pointer; }
+      .productContainer .productSpan button:hover {
+        background-color: black;
+        color: white; }
+
+.qtyBtn {
+  color: white;
+  border: none;
+  background-color: black;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer; }
+
+.tableSum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .tableSum p {
+    margin: 1rem; }
+    .tableSum p:last-of-type {
+      border-bottom: 1px solid black;
+      padding-bottom: 1rem; }
+      @media screen and (min-width: 400px) {
+        .tableSum p:last-of-type {
+          border: none; } }
+  .tableSum button:first-of-type {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    transition: .3s ease-in-out;
+    cursor: pointer; }
+  .tableSum button:last-of-type {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344;
+    border: 1px solid black;
+    background-color: white;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    cursor: pointer; }
+    .tableSum button:last-of-type:hover {
+      background-color: black;
+      color: white; }
+  @media screen and (min-width: 410px) {
+    .tableSum {
+      align-items: flex-end;
+      margin: 5rem 10rem 5rem 10rem;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: #443344; } }

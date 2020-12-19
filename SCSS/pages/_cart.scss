@@ -1,7 +1,142 @@
-.tableContainer{
-    width:100%;
+header {
+    text-align: center;
 
+    h1 {
+        @include fontLogotype();
+        margin: 5rem;
+    }
+
+    h4 {
+        @include fontTitle();
+
+        @media screen and(min-width:410px){
+            @include fontHeading();
+            margin: 2rem;
+        }
+    }
+
+    .headerBanner {
+        @include flexCenter(row);
+        width: 100vw;
+        height: 3rem;
+        color: white;
+        background-color: black;
+    }
+}
+
+table {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    @media screen and(min-width:410px){
+        margin: 0 10rem 0 10rem;
+    }
+
+    th {
+        width:25%;
+    }
+}
+
+.tableContainer {
+    display:flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 2rem;
+    text-align: center;
+    
     img {
         width:10rem;
+    }
+}
+
+.productContainer {
+    @include flexCenter(row);
+    text-align: center;
+    width: 15rem;
+    margin-right: 0;
+
+    @media screen and(min-width:410px){
+        margin-left: 10rem;
+    }
+
+    .productSpan {
+        @include flexCenter(column);
+
+        button {
+            @include fontBody(); 
+            border: 1px solid black;
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: .5rem;
+            background-color: white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+}
+
+.qtyBtn {
+    color: white;
+    border: none;
+    background-color: black;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.tableSum {
+    @include flexCenter(column);
+    
+    p {
+        margin: 1rem;
+
+        &:last-of-type {
+            border-bottom: 1px solid black;
+            padding-bottom: 1rem;
+
+            @media screen and(min-width:400px){
+                border:none;
+            }
+        }
+    }    
+
+    button:first-of-type {
+        @include fontBody(); 
+        border:none;
+        color: white;
+        background-color: black;
+        padding: 2rem;
+        margin: 1rem;
+        border-radius: .5rem;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+    }
+
+    button:last-of-type {
+        @include fontBody(); 
+        border: 1px solid black;
+        background-color: white;
+        padding: .5rem;
+        margin: .5rem;
+        border-radius: .5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+
+    @media screen and(min-width:410px){  
+        align-items: flex-end;
+        margin: 5rem 10rem 5rem 10rem;
+        @include fontSubtitle();
     }
 }
