@@ -37,6 +37,10 @@ function getBag() {
 
 $(function() { // Window onload
 
+    $( ".shoppingCartButton").click(function(){
+        window.location.href = "../HTML/cart.html";
+    });
+
     $( ".hamburgerButton" ).click(function() {
         $( " .myUl " ).slideToggle();
         $( ".myUl" ).css({

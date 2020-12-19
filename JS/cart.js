@@ -40,6 +40,7 @@ function renderCart() {
     .appendTo("table");
 
     $("<th>")
+    .html("<u>Product</u>")
     .appendTo(tableHeads);
 
     $("<th>")

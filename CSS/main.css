@@ -89,7 +89,8 @@ footer {
     font-size: 5rem;
     position: absolute;
     top: 1rem;
-    left: 2rem; }
+    left: 2rem;
+    cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .hamburgerButton {
         display: none; } }
@@ -99,7 +100,8 @@ footer {
   font-size: 5rem;
   position: absolute;
   top: 1rem;
-  right: 2rem; }
+  right: 2rem;
+  cursor: pointer; }
   @media screen and (min-width: 480px) {
     .shoppingCartButton {
       top: 4rem;
@@ -139,6 +141,11 @@ body {
   color: #443344;
   margin: none;
   padding: none; }
+  body #shoppingBag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
   body #shoppingBag img {
     width: 100px; }
   body main {
