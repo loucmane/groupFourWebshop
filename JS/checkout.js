@@ -7,6 +7,8 @@ $(function() {
             $("#adrStreet").val() + ", " + $("#adrPCode").val() + " " + $("#adrCity").val() + ", " + $("#adrCountry").val());
     });
 
+
+
     $("#btnToPayment").on("click", function() {
         $("<p>").appendTo($("#transferredCustShipping")).html("Contact" + " " + $("#email").val());
         $("<hr>").appendTo($("#transferredCustShipping"));
@@ -43,3 +45,4 @@ function grandTotal(params) {
     total = costfromLS() + 59;
     return total;
 }
+
