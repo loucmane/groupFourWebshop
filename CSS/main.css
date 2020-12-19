@@ -203,3 +203,5 @@ body {
 
 .tableContainer {
   width: 100%; }
+  .tableContainer img {
+    width: 10rem; }

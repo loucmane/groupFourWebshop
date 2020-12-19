@@ -8,33 +8,9 @@ $(function() {
         console.log(("klick"));
         });
 
-$("<div>")
-.addClass("tableContainer")
-.appendTo($("main"));
-
-$("<table>")
-.appendTo(".tableContainer");
-
-$("<tr>")
-.appendTo("table");
-
-$("<th>")
-.html("price")
-.appendTo("tr");
-
-$("<th>")
-.html("Quantity")
-.appendTo("tr");
-
-$("<th>")
-.html("Total")
-.appendTo("tr");
-
-$("<hr>")
-.appendTo("table")
+let bag = [];
 
 renderCart();
-
 
 });
 
@@ -42,7 +18,6 @@ function saveBag() {
     localStorage.setItem("products", JSON.stringify(bag));
 }
 
-// Get shopping bag from LS
 function getBag() {
     bag = JSON.parse(localStorage.getItem("products"));
 }
@@ -50,18 +25,52 @@ function getBag() {
 function renderCart() {
 
     getBag();
-    console.log(bag)
 
-    $("#shoppingBag").html("");
+    $(".tableContainer")
+    .remove();
+
+    $("<div>")
+    .addClass("tableContainer")
+    .appendTo($("main"));
+
+    $("<table>")
+    .appendTo(".tableContainer");
+
+    $("<tr>")
+    .appendTo("table");
+
+    $("<th>")
+    .html("price")
+    .appendTo("tr");
+
+    $("<th>")
+    .html("Quantity")
+    .appendTo("tr");
+
+    $("<th>")
+    .html("Total")
+    .appendTo("tr");
+
+    $("<hr>")
+    .appendTo("table")
 
     $.each(bag, (i, product) => {
 
-       let tableRow = $("<tr>")
+        let tableRow = $("<tr>")
         .appendTo("table")
 
-        $("<td>")
-        .html(product.image)
+        let productContainer = $("<div>")
+        .addClass("productContainer")
         .appendTo(tableRow)
+
+        $("<img>")
+        .attr("src", product.image)
+        .attr("alt", product.name + " perfume bottle")
+        .appendTo(productContainer)
+
+        $("<p>")
+        .html(product.name)
+        .appendTo(productContainer)
 
         $("<td>")
         .html(product.price)
@@ -73,78 +82,84 @@ function renderCart() {
 
         $("<td>")
         .html(product.price * product.quantity)
-        .appendTo(tableRow)
+        .appendTo(tableRow)      
 
-        $("<img>").appendTo("#shoppingBag")
-            .attr("src", product.image)
-            .attr("alt", product.name + " perfume bottle");
+    });
+
+    $("<p>")
+    .appendTo(".tableContainer")
+    .html("<b>subtotal:</b> " + calculateTotal() + " SEK");
+
+    $("<p>")
+    .appendTo(".tableContainer")
+    .html("shipping & taxes calculated at checkout");
+
+    $("<button>")
+    .attr("type", "button")
+    .html("Continue Shopping")
+    .appendTo(".tableContainer")
+
+    $("<button>")
+    .attr("type", "button")
+    .html("CHECKOUT")
+    .appendTo(".tableContainer")
+
+    renderQuantityButtons();
+
+}
+
+function renderQuantityButtons() {
+    $.each(bag, (i, product) => {
 
         // DELETE FROM SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
-            .attr("type", "button")
-            .html("x")
-            .on("click", { product: product }, function() {
-
-                for (let i = 0; i < bag.length; i++) {
-                    if (bag[i].id === product.id) {
-                        bag.splice([i], 1);
-                        saveBag();
-                        getBag();
-                        createBagHTML();
-                    }
+        $("<button>").appendTo(".productContainer")
+        .attr("type", "button")
+        .html("x")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    bag.splice([i], 1);
+                    saveBag();
+                    renderCart();
                 }
-            });
-
-        $("<p>").appendTo("#shoppingBag")
-            .html(product.name + ", " + product.price + " SEK, " + "pcs: " + product.quantity);
-
-
-
-
-        // INCREASE QUANTITY IN SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
+            }
+        });
+    
+        $("<button>").appendTo(".productContainer")
             .attr("type", "button")
             .html("+")
-            .on("click", { product: product }, function() {
+            .on("click", function() {
                 for (let i = 0; i < bag.length; i++) {
                     if (bag[i].id === product.id) {
                         product.quantity++;
                         saveBag();
-                        getBag();
-                        createBagHTML();
+                        renderCart();
                     }
-
+    
                 }
             });
-
+    
         // DECREASE QUANTITY IN SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
+        $("<button>").appendTo(".productContainer")
             .attr("type", "button")
             .html("-")
-            .on("click", { product: product }, function() {
-
-                for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
-
-                    if (bag[i].id === product.id) {
-                        bag[i].quantity--;
-                        if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
-                            bag.splice([i], 1);
-                        }
-                        saveBag();
-                        getBag();
-                        createBagHTML();
-
+            .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
+    
+                if (bag[i].id === product.id) {
+                    bag[i].quantity--;
+                    if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                        bag.splice([i], 1);
                     }
+                    saveBag();
+                    renderCart();
+    
                 }
-            });
-
-    })
-
-
-
-    $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " SEK");
-
-
+            }
+        });
+    });
 }
 
 // CALCULATE TOTAL //
@@ -156,4 +171,4 @@ function calculateTotal() {
     }
     return total;
 
-}
+};
