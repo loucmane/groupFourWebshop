@@ -40,25 +40,37 @@ body {
     body main #productsContainer {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 5%; }
+      justify-content: center; }
       body main #productsContainer .eachProduct {
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; }
+        flex-direction: column;
+        margin-top: 5%; }
+        @media screen and (min-width: 768px) {
+          body main #productsContainer .eachProduct {
+            width: 33.3%; } }
         body main #productsContainer .eachProduct .productImage {
           width: 50%; }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct .productImage {
+              width: 80%; } }
         body main #productsContainer .eachProduct div {
           width: 70%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start; }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct div {
+              width: 50%; } }
           body main #productsContainer .eachProduct div p {
             color: #000000;
             font-size: 1.4rem;
             margin: 2%; }
+            @media screen and (min-width: 768px) {
+              body main #productsContainer .eachProduct div p {
+                font-size: 1.6rem; } }
         body main #productsContainer .eachProduct button {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
@@ -72,10 +84,9 @@ body {
           height: 30px;
           width: 70%;
           margin: 10%; }
-
-@media screen and (min-width: 481px) {
-  .productImage {
-    width: 30%; }
-  button {
-    font-size: 1.4rem;
-    width: 50%; } }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct button {
+              font-size: 1.4rem;
+              width: 50%;
+              height: 35px;
+              margin: 5%; } }
