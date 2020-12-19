@@ -175,7 +175,7 @@ function createBagHTML() {
 
 
     $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " SEK");
-
+    document.querySelector('.shoppingCartButton').textContent = itemsInCart;
 
 }
 
@@ -187,5 +187,16 @@ function calculateTotal() {
 
     }
     return total;
-
+  
 }
+
+const cartNumbers = () => {
+  let itemsInCart = 0;
+  for (let i = 0; i < bag.length; i++) {
+    itemsInCart += bag[i].quantity;
+  }
+  console.log(itemsInCart);
+};
+
+
+//hitta span som representerar cart, ändra innerhtml till itemsInCart
