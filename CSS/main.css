@@ -205,11 +205,9 @@ body {
           height: 30px;
           width: 70%;
           margin: 10%; }
-
           @media screen and (min-width: 768px) {
             body main #productsContainer .eachProduct button {
               font-size: 1.4rem;
               width: 50%;
               height: 35px;
               margin: 5%; } }
-
