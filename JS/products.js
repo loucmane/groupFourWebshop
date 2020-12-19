@@ -37,6 +37,14 @@ function getBag() {
 
 $(function() { // Window onload
 
+    $( ".hamburgerButton" ).click(function() {
+        $( " .myUl " ).slideToggle();
+        $( ".myUl" ).css({
+            display: "flex"
+        })
+        console.log(("klick"));
+        });
+
     if (localStorage.getItem("products") != null) { //Only get bag from LS if it has content
         getBag();
     }
@@ -121,6 +129,7 @@ function createBagHTML() {
 
         $("<p>").appendTo("#shoppingBag")
             .html(product.name + ", " + product.price + " SEK, " + "pcs: " + product.quantity);
+
 
 
 

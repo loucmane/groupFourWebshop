@@ -1,4 +1,11 @@
-window.onload = function () {
+$(function() {
 
-    alert('ello');
-}
+  $( ".hamburgerButton" ).click(function() {
+      $( " .myUl " ).slideToggle();
+      $( ".myUl" ).css({
+          display: "flex"
+      })
+      console.log(("klick"));
+      });
+  });
+

@@ -1,30 +1,57 @@
-// footer {
-//     @include flexCenter(column);
-//     justify-content: space-evenly;
-//     position: absolute;
-//     bottom: 0;
-//     width: 37.5rem;
-//     height: 50rem;
-//     background-color: $primary-alt;
-//     @include fontTitle();
-//     text-align: center;
-//     li {
-//         text-align: center;
-//         list-style: none;
-//         margin: 2rem;
-//     }
-//     a {
-//         text-decoration: none;
-//         color: $black;
-//         &:visited {
-//             opacity: 0.5;
-//         }
-//     }
-//     .socialmediaicons {
-//         font-size: 5rem;
-//     }
-//     p {
-//         margin: 2rem;
-//         @include fontBody();
-//     }
-// }
+footer {
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 50rem;
+    background-color: $primary-alt;
+    text-align: center;
+    li {
+        text-align: center;
+        list-style: none;
+        margin: 2rem;
+        @include fontTitle();
+    }
+    a {
+        text-decoration: none;
+        color: $black;
+        &:visited {
+            opacity: 0.5;
+        }
+    }
+    .socialmediaicons {
+        font-size: 5rem;
+    }
+    p {
+        margin: 2rem;
+        @include fontBody();
+    }
+    @media screen and(min-width: 481px) {
+        ul {
+            @include flexCenter(row);
+            li {
+                margin: 6rem;
+            }
+        }
+        .icon {
+            margin: 3rem;
+            font-size: 7rem;
+        }
+        .companyinfo {
+            @include flexCenter(row-reverse);
+            p {
+                @include fontTitle();
+                margin: 4rem;
+            }
+        }
+    }
+}
+
+//FOOTER mobile
+//1 skapa nödvändig html
+//2 tänk på mobilläge först
+//3 mixins, variabler
+//4 skapa partial för footer i scss
+// 5 display flex på container. 
+//5.5 justify-content, align-items och flex-direction på container.
+//6 absolute positioned to the bottom, bottom: 0?
+//7 place divs where you want them.
