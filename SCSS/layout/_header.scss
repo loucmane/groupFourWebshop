@@ -7,7 +7,6 @@
     @media screen and(min-width: 480px) {
         height: 15rem;
     }
-
     .hamburgerButton {
         z-index: 1000;
         font-size: 5rem;
@@ -18,24 +17,23 @@
             display: none;
         }
     }
+}
 
-  }
-
-  .shoppingCartButton {
+.shoppingCartButton {
     z-index: 800;
     font-size: 5rem;
     position: absolute;
     top: 1rem;
     right: 2rem;
-    @media screen and(min-width: 480px){
-      top: 4rem;
-      right: 8rem;
-      font-size: 7rem;
-
+    @media screen and(min-width: 480px) {
+        top: 4rem;
+        right: 8rem;
+        font-size: 7rem;
     }
 }
 
 .myUl {
+
 
   display: none;
   z-index: 900;
