@@ -175,7 +175,8 @@ function createBagHTML() {
 
 
     $("<p>").appendTo("#shoppingBag").html("Total: " + calculateTotal() + " SEK");
-
+     // finds the i tag within the shoppingCartButton class and changes the html to what the quantity of the bag is.
+    document.querySelector('.shoppingCartButton i').textContent = cartNumbers(); 
 
 }
 
@@ -187,5 +188,15 @@ function calculateTotal() {
 
     }
     return total;
-
+  
 }
+ //shows the amount of items on your cart
+const cartNumbers = () => {
+  let itemsInCart = 0;
+  for (let i = 0; i < bag.length; i++) {
+    itemsInCart += bag[i].quantity;
+  }
+  return itemsInCart;
+};
+
+
