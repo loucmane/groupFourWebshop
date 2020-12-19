@@ -94,7 +94,7 @@ table {
 .tableSum {
     @include flexCenter(column);
     
-    p {
+    span {
         margin: 1rem;
 
         &:last-of-type {

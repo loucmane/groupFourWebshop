@@ -2,16 +2,15 @@ let bag = [];
 
 $(function() {
 
-    $( ".hamburgerButton" ).click(function() {
+    $( ".hamburgerButton" )
+    .click(function() {
         $( " .myUl " ).slideToggle();
         $( ".myUl" ).css({
             display: "flex"
         })
-        console.log(("klick"));
-        });
+    });
 
-renderCart();
-
+    renderCart();
 });
 
 function saveBag() {
@@ -24,7 +23,9 @@ function getBag() {
 
 function renderCart() {
 
-    getBag();
+    if (localStorage.getItem("products") != null) { //Only get bag from LS if it has content
+        getBag();
+    }
 
     $(".tableContainer")
     .remove();
@@ -64,66 +65,69 @@ function renderCart() {
         .addClass("productContainer")
         .appendTo(tableRow)
 
-        $("<button>").appendTo(productContainer)
-             .attr("type", "button")
-             .addClass("qtyBtn")
-             .html("&#8722")
-             .on("click", function() {
-     
-             for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
-     
-                 if (bag[i].id === product.id) {
-                     bag[i].quantity--;
-                     if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
-                         bag.splice([i], 1);
-                     }
-                     saveBag();
-                     renderCart();
-                 }
-             }
-         });
+        $("<button>")
+        .attr("type", "button")
+        .addClass("qtyBtn")
+        .html("&#8722")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
 
-        $("<span>")
+                if (bag[i].id === product.id) {
+                    bag[i].quantity--;
+
+                    if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                        bag.splice([i], 1);
+                    }
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(productContainer);
+
+        let productSpan = $("<span>")
         .addClass("productSpan")
         .appendTo(productContainer)
 
         $("<img>")
         .attr("src", product.image)
         .attr("alt", product.name + " perfume bottle")
-        .appendTo(".productSpan")
+        .appendTo(productSpan)
 
         $("<p>")
         .html(product.name)
-        .appendTo(".productSpan")
+        .appendTo(productSpan)
      
-         $("<button>").appendTo(productContainer)
-             .attr("type", "button")
-             .addClass("qtyBtn")
-             .html("&#43;")
-             .on("click", function() {
-                 for (let i = 0; i < bag.length; i++) {
-                     if (bag[i].id === product.id) {
-                         product.quantity++;
-                         saveBag();
-                         renderCart();
-                     }
-                 }
-             });
+         $("<button>")
+        .attr("type", "button")
+        .addClass("qtyBtn")
+        .html("&#43;")
+        .on("click", function() {
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    product.quantity++;
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(productContainer);
 
-             $("<button>").appendTo(".productSpan")
-             .attr("type", "button")
-             .html("Remove")
-             .on("click", function() {
-         
-                 for (let i = 0; i < bag.length; i++) {
-                     if (bag[i].id === product.id) {
-                         bag.splice([i], 1);
-                         saveBag();
-                         renderCart();
-                     }
-                 }
-             });
-     
+        $("<button>")
+        .attr("type", "button")
+        .html("Remove")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    bag.splice([i], 1);
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(productSpan);
 
         $("<td>")
         .html(product.price + "kr")
@@ -136,21 +140,21 @@ function renderCart() {
         $("<td>")
         .html(product.price * product.quantity + "kr")
         .appendTo(tableRow)    
-
     });
 
     $("<div>")
     .addClass("tableSum")
     .appendTo(".tableContainer")
 
-    $("<p>")
-    .appendTo(".tableSum")
-    .html("<b>subtotal:</b> " + calculateTotal() + "kr");
+    $("<span>")
+    .html("<b>subtotal:</b> " + calculateTotal() + "kr")
+    .appendTo(".tableSum");
 
-    $("<p>")
-    .appendTo(".tableSum")
-    .html("shipping & taxes calculated at checkout");
+    $("<span>")
+    .html("shipping & taxes calculated at checkout")
+    .appendTo(".tableSum");
 
+    //Link to checkoutpage
     $("<button>")
     .attr("type", "button")
     .html("CHECKOUT")
@@ -159,6 +163,7 @@ function renderCart() {
     })
     .appendTo(".tableSum")
 
+    //Link to products page
     $("<button>")
     .attr("type", "button")
     .html("Continue Shopping")
@@ -166,7 +171,6 @@ function renderCart() {
         window.location.href = "../HTML/products.html";
     })
     .appendTo(".tableSum")
-
 }
 
 // CALCULATE TOTAL //
@@ -174,8 +178,6 @@ function calculateTotal() {
     let total = 0;
     for (let i = 0; i < bag.length; i++) {
         total = total + (bag[i].quantity * bag[i].price);
-
     }
     return total;
-
 };

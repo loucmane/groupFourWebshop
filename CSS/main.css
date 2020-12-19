@@ -315,13 +315,13 @@ table {
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  .tableSum p {
+  .tableSum span {
     margin: 1rem; }
-    .tableSum p:last-of-type {
+    .tableSum span:last-of-type {
       border-bottom: 1px solid black;
       padding-bottom: 1rem; }
       @media screen and (min-width: 400px) {
-        .tableSum p:last-of-type {
+        .tableSum span:last-of-type {
           border: none; } }
   .tableSum button:first-of-type {
     font-family: "Roboto Mono", monospace;
