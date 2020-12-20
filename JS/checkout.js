@@ -1,6 +1,6 @@
 $(function() {
 
-    $("#btnToShipping").one("click", function() {
+    $("#btnToShipping").on("click", function() {
         $("<p>").appendTo($("#transferredCustContact")).html("Contact" + " " + $("#email").val());
         $("<hr>").appendTo($("#transferredCustContact"));
         $("<p>").appendTo($("#transferredCustContact")).html("Ship to " + $("#fName").val() + " " + $("#lName").val() + ", " +
@@ -17,6 +17,7 @@ $(function() {
             $("#adrStreet").val() + ", " + $("#adrPCode").val() + " " + $("#adrCity").val() + ", " + $("#adrCountry").val());
         $("<hr>").appendTo($("#transferredCustShipping"));
         $("<p>").appendTo($("#transferredCustShipping")).html("Shipping Postnord 59 SEK");
+        $("<button>").appendTo($("#transferredCustShipping")).html("Change").on("click", function() {});
     });
 
     $("#btnReviewOrder").on("click", function() {
@@ -27,6 +28,7 @@ $(function() {
         $("<hr>").appendTo($("#transferredCustPayment"));
         $("<p>").appendTo($("#transferredCustPayment")).html("Shipping Postnord 59 SEK");
         $("<p>").appendTo($("#transferredCustPayment")).html("Payment Nets Payment");
+        $("<button>").appendTo($("#transferredCustPayment")).html("Change").on("click", function() {});
 
         $("<p>").appendTo($("#checkoutTotal")).html("Subtotal " + costfromLS() + " SEK");
         $("<p>").appendTo($("#checkoutTotal")).html("Shipping 59 SEK");
@@ -57,4 +59,3 @@ function saveInfo() {
 function getInfo() {
     localStorage.getItem("info");
 }
-
