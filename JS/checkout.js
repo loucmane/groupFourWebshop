@@ -33,7 +33,7 @@ $(function() {
         $("<p>").appendTo($("#checkoutTotal")).html("Subtotal " + costfromLS() + " SEK");
         $("<p>").appendTo($("#checkoutTotal")).html("Shipping 59 SEK");
         $("<hr>").appendTo($("#checkoutTotal"));
-        $("<p>").appendTo($("#checkoutTotal")).html("Total " + grandTotal() + " SEK");
+        $("<p>").appendTo($("#checkoutTotal")).addClass("total").html("Total " + grandTotal() + " SEK");
     });
 
 
