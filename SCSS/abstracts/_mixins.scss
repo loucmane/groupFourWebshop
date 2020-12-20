@@ -26,11 +26,17 @@
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontBody() {
+@mixin fontBodyDesktop() {
     font-family: $ff-roboto;
     font-weight: $fw-light;
-    font-size: $fs-body;
-    color: $primary-txt; //color variable set elsewher
+    font-size: 1.6rem;
+    color: $primary-txt; //color variable set elsewhere
+}
+
+@mixin fontBodyMobile($fontsize) {
+    font-family: $ff-roboto;
+    font-weight: $fw-light;
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontLogotype() {
@@ -41,6 +47,6 @@
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontPreset($type) {
-    @include body {}
-}
+// @mixin fontPreset($type) {
+//     @include body {}
+// }
