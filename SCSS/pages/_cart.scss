@@ -1,20 +1,16 @@
 header {
     text-align: center;
-
     h1 {
         @include fontLogotype();
         margin: 5rem;
     }
-
     h4 {
         @include fontTitle();
-
-        @media screen and(min-width:410px){
+        @media screen and(min-width: 410px) {
             @include fontHeading();
             margin: 2rem;
         }
     }
-
     .headerBanner {
         @include flexCenter(row);
         width: 100vw;
@@ -29,38 +25,32 @@ table {
     border-bottom: 1px solid black;
     padding-top: 2rem;
     padding-bottom: 2rem;
-
-    @media screen and(min-width:410px){
+    @media screen and(min-width: 410px) {
         margin: 0 10rem 0 10rem;
     }
-
     th {
-        display:none;
-        width:25%;
+        display: none;
+        width: 25%;
     }
-
     .tdQty {
         display: none;
     }
-
     .tdTotal {
         display: none;
     }
-
     .inputNumber {
         width: 3rem;
     }
 }
 
 .tableContainer {
-    display:flex;
+    display: flex;
     flex-direction: column;
     width: 100vw;
     margin: 2rem;
     text-align: center;
-    
     img {
-        width:10rem;
+        width: 10rem;
     }
 }
 
@@ -69,28 +59,23 @@ table {
     text-align: center;
     width: 8rem;
     margin: auto;
-
     p {
         display: none;
     }
-
-    @media screen and(min-width:410px){
+    @media screen and(min-width:410px) {
         margin-left: 10rem;
     }
-
     .productSpan {
         @include flexCenter(column);
-
         button {
-            display:none;
-            @include fontBody(); 
+            display: none;
+            @include fontBody(1.6rem);
             border: 1px solid black;
             padding: .5rem;
             margin: .5rem;
             border-radius: .5rem;
             background-color: white;
             cursor: pointer;
-
             &:hover {
                 background-color: black;
                 color: white;
@@ -100,7 +85,7 @@ table {
 }
 
 .qtyBtn {
-    display:none;
+    display: none;
     color: white;
     border: none;
     background-color: black;
@@ -112,37 +97,30 @@ table {
 
 .tableSum {
     @include flexCenter(column);
-    
     span {
         margin: 1rem;
-
         &:last-of-type {
             border-bottom: 1px solid black;
             padding-bottom: 1rem;
-
-            @media screen and(min-width:400px){
-                border:none;
+            @media screen and(min-width: 400px) {
+                border: none;
             }
         }
-    }    
-
+    }
     #editBtn {
         @include buttonWhite();
         margin: 2rem 0 1rem 0;
         padding: 2rem;
     }
-
     #checkoutBtn {
         @include buttonBlack();
         margin: 2rem;
     }
-
-    @media screen and(min-width:410px){  
+    @media screen and(min-width:410px) {
         align-items: flex-end;
         margin: 5rem 10rem 5rem 10rem;
         @include fontSubtitle();
     }
-
     #shopBtn {
         @include buttonWhite();
         margin: 2rem;
