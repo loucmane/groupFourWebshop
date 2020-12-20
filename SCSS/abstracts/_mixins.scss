@@ -31,12 +31,13 @@
     font-weight: $fw-light;
     font-size: $font-size;
     color: $primary-txt; //color variable set elsewhere
+
 }
 
 @mixin fontLogotype() {
     font-family: $ff-roboto;
     font-weight: $fw-bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 1.6rem;
     font-size: $fs-logotype;
     color: $primary-txt; //color variable set elsewher
 }

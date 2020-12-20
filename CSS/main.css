@@ -12,10 +12,12 @@ body {
   box-sizing: border-box; }
 
 body {
+
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
   font-size: 1.6rem;
   color: black;
+
   -webkit-text-size-adjust: 100%; }
 
 footer {
@@ -46,9 +48,11 @@ footer {
   footer p {
     margin: 2rem;
     font-family: "Roboto Mono", monospace;
+
     font-weight: 300;
     font-size: 1.6rem;
     color: black; }
+
   @media screen and (min-width: 481px) {
     footer ul {
       display: flex;
@@ -135,10 +139,125 @@ footer {
       justify-content: space-around; } }
 
 body {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #000000; }
+  body #logotype {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+    font-size: 4rem;
+    color: #443344; }
+  body .navButtons a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.2rem; }
+  body .navButtons i.fas.fa-arrow-right {
+    font-size: 0.8rem; }
+  body #information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    body #information .contactForm {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      color: #000000; }
+      body #information .contactForm #email,
+      body #information .contactForm #adrStreet,
+      body #information .contactForm #adrCountry,
+      body #information .contactForm #adrPhone {
+        width: 80%;
+        height: 40%;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        padding: 2% 0 2% 5%;
+        border-radius: 5px;
+        border: 1px solid #000000;
+        color: #000000;
+        font-size: 1.2rem; }
+      body #information .contactForm #adrStreet,
+      body #information .contactForm #adrCountry {
+        margin: 5%; }
+      body #information .contactForm .checkBox {
+        display: flex;
+        justify-content: flex-start;
+        width: 80%;
+        color: black;
+        border-radius: 5px; }
+        body #information .contactForm .checkBox input {
+          width: 24px;
+          height: 24px;
+          border: 1px solid #000000;
+          border-radius: 5px; }
+        body #information .contactForm .checkBox input,
+        body #information .contactForm .checkBox label {
+          margin: 5% 5% 5% 0;
+          font-size: 1.2rem; }
+      body #information .contactForm #fName,
+      body #information .contactForm #lName,
+      body #information .contactForm #adrPCode,
+      body #information .contactForm #adrCity {
+        width: 35%;
+        height: 40%;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        padding: 2% 0 2% 5%;
+        border-radius: 5px;
+        border: 1px solid #000000;
+        color: #000000;
+        font-size: 1.2rem; }
+  body .continueButton {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    height: 4rem;
+    width: 70%;
+    margin: 10%; }
+  body #shipping {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    body #shipping #transferredCustContact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid #000000;
+      width: 80%;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      padding: 5%; }
+      body #shipping #transferredCustContact hr {
+        margin: 5%;
+        width: 90%; }
+      body #shipping #transferredCustContact p {
+        width: 90%; }
+  body #payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+  body #review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+body {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
+
   font-size: 1.6rem;
   color: black;
+
   margin: none;
   padding: none; }
   body #shoppingBag {
@@ -202,8 +321,10 @@ body {
         body main #productsContainer .eachProduct button {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
+
           font-size: 1.6rem;
           color: black;
+
           background-color: #000000;
           color: #FFFFFF;
           border: none;
