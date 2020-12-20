@@ -1,0 +1,111 @@
+    body {
+        width: 100%;
+        height: 100%;
+        font-size: 1.2rem;
+        color: $black;
+        #logotype {
+            @include fontLogotype();
+        }
+        .navButtons {
+            a {
+                text-decoration: none;
+                color: $black;
+                font-size: 1.2rem;
+            }
+            i.fas.fa-arrow-right {
+                font-size: 0.8rem;
+            }
+        }
+        #information {
+            @include flexCenter(column);
+            .contactForm {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                color: $black;
+                #email,
+                #adrStreet,
+                #adrCountry,
+                #adrPhone {
+                    width: 80%;
+                    height: 40%;
+                    @include fontBody();
+                    padding: 2% 0 2% 5%;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    color: $black;
+                    font-size: 1.2rem;
+                }
+                #adrStreet,
+                #adrCountry {
+                    margin: 5%;
+                }
+                .checkBox {
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 80%;
+                    color: black;
+                    border-radius: 5px;
+                    input {
+                        width: 24px;
+                        height: 24px;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                    }
+                    input,
+                    label {
+                        margin: 5% 5% 5% 0;
+                        font-size: 1.2rem;
+                    }
+                }
+                #fName,
+                #lName,
+                #adrPCode,
+                #adrCity {
+                    width: 35%;
+                    height: 40%;
+                    @include fontBody();
+                    padding: 2% 0 2% 5%;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    color: $black;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .continueButton {
+            @include fontBody();
+            background-color: $black;
+            color: $white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            height: 4rem;
+            width: 70%;
+            margin: 10%;
+        }
+        #shipping {
+            @include flexCenter(column);
+            #transferredCustContact {
+                @include flexCenter(column);
+                border: 1px solid $black;
+                width: 80%;
+                font-size: 1.2rem;
+                border-radius: 5px;
+                padding: 5%;
+                hr {
+                    margin: 5%;
+                    width: 90%
+                }
+                p {
+                    width: 90%;
+                }
+            }
+        }
+        #payment {
+            @include flexCenter(column);
+        }
+        #review {
+            @include flexCenter(column);
+        }
+    }

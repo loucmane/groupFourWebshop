@@ -29,18 +29,18 @@
 @mixin fontBody() {
     font-family: $ff-roboto;
     font-weight: $fw-light;
-    font-size: $fs-body;
-    color: $primary-txt; //color variable set elsewher
+    // font-size: $fs-body;
+    // color: $primary-txt; //color variable set elsewher
 }
 
 @mixin fontLogotype() {
     font-family: $ff-roboto;
     font-weight: $fw-bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 1.6rem;
     font-size: $fs-logotype;
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontPreset($type) {
-    @include body {}
-}
+// @mixin fontPreset($type) {
+//     @include body {}
+// }

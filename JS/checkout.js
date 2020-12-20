@@ -1,10 +1,11 @@
 $(function() {
 
-    $("#btnToShipping").on("click", function() {
+    $("#btnToShipping").one("click", function() {
         $("<p>").appendTo($("#transferredCustContact")).html("Contact" + " " + $("#email").val());
         $("<hr>").appendTo($("#transferredCustContact"));
         $("<p>").appendTo($("#transferredCustContact")).html("Ship to " + $("#fName").val() + " " + $("#lName").val() + ", " +
             $("#adrStreet").val() + ", " + $("#adrPCode").val() + " " + $("#adrCity").val() + ", " + $("#adrCountry").val());
+        $("<button>").appendTo($("#transferredCustContact")).html("Change").on("click", function() {});
     });
 
     $("#btnToPayment").on("click", function() {
@@ -42,4 +43,14 @@ function costfromLS(params) {
 function grandTotal(params) {
     total = costfromLS() + 59;
     return total;
+}
+
+// Save shopping bag in LS
+function saveInfo() {
+    localStorage.setItem("info");
+}
+
+// Get shopping bag from LS
+function getInfo() {
+    localStorage.getItem("info");
 }
