@@ -130,24 +130,49 @@ function renderCart() {
         .appendTo(productSpan);
 
         $("<td>")
-        .html(product.price + "kr")
+        .addClass("tdDesc")
+        .attr("type", "number")
+        .html(product.name + "<br>" + "(x" + product.quantity+")")
+        .appendTo(tableRow);
+
+        let inputTd = $("<td>")
+        .appendTo(tableRow)
+
+        $("<input>")
+        .attr("type", "number")
+
+        $("<td>")
+        .addClass("tdPrice")
+        .html(product.price + " SEK")
         .appendTo(tableRow)
 
         $("<td>")
+        .addClass("tdQty")
         .html(product.quantity + "pc")
         .appendTo(tableRow)
 
         $("<td>")
-        .html(product.price * product.quantity + "kr")
+        .addClass("tdTotal")
+        .html(product.price * product.quantity + " SEK")
         .appendTo(tableRow)    
     });
 
     $("<div>")
     .addClass("tableSum")
-    .appendTo(".tableContainer")
+    .appendTo(".tableContainer");
+
+    $("<button>")
+    .attr("id", "editBtn")
+    .attr("type", "button")
+    .html("<i class='far fa-edit'></i>" + " Edit Cart")
+    .on("click", function() {
+        $(".productSpan button").toggle();
+        $(".qtyBtn").toggle()
+    })
+    .appendTo(".tableSum");
 
     $("<span>")
-    .html("<b>subtotal:</b> " + calculateTotal() + "kr")
+    .html("<b>subtotal:</b> " + calculateTotal() + " SEK")
     .appendTo(".tableSum");
 
     $("<span>")
@@ -157,15 +182,21 @@ function renderCart() {
     //Link to checkoutpage
     $("<button>")
     .attr("type", "button")
+    .attr("id", "checkoutBtn")
     .html("CHECKOUT")
     .on("click", function(){
         window.location.href = "../HTML/checkout.html";
     })
     .appendTo(".tableSum")
 
+    $("<p>")
+    .html("need something else?")
+    .appendTo(" .tablesum ")
+
     //Link to products page
     $("<button>")
     .attr("type", "button")
+    .attr("id", "shopBtn")
     .html("Continue Shopping")
     .on("click", function(){
         window.location.href = "../HTML/products.html";

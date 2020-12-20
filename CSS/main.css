@@ -246,7 +246,7 @@ header {
     align-items: center;
     flex-direction: row;
     width: 100vw;
-    height: 3rem;
+    height: 5rem;
     color: white;
     background-color: black; }
 
@@ -259,7 +259,14 @@ table {
     table {
       margin: 0 10rem 0 10rem; } }
   table th {
+    display: none;
     width: 25%; }
+  table .tdQty {
+    display: none; }
+  table .tdTotal {
+    display: none; }
+  table .inputNumber {
+    width: 3rem; }
 
 .tableContainer {
   display: flex;
@@ -276,8 +283,10 @@ table {
   align-items: center;
   flex-direction: row;
   text-align: center;
-  width: 15rem;
-  margin-right: 0; }
+  width: 8rem;
+  margin: auto; }
+  .productContainer p {
+    display: none; }
   @media screen and (min-width: 410px) {
     .productContainer {
       margin-left: 10rem; } }
@@ -287,6 +296,7 @@ table {
     align-items: center;
     flex-direction: column; }
     .productContainer .productSpan button {
+      display: none;
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.6rem;
@@ -302,12 +312,13 @@ table {
         color: white; }
 
 .qtyBtn {
+  display: none;
   color: white;
   border: none;
   background-color: black;
   border-radius: 50%;
-  width: 2rem;
   height: 2rem;
+  width: 2rem;
   cursor: pointer; }
 
 .tableSum {
@@ -323,7 +334,22 @@ table {
       @media screen and (min-width: 400px) {
         .tableSum span:last-of-type {
           border: none; } }
-  .tableSum button:first-of-type {
+  .tableSum #editBtn {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344;
+    border: 1px solid black;
+    background-color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 2rem 0 1rem 0;
+    padding: 2rem; }
+    .tableSum #editBtn:hover {
+      background-color: black;
+      color: white; }
+  .tableSum #checkoutBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.6rem;
@@ -332,24 +358,9 @@ table {
     color: white;
     background-color: black;
     padding: 2rem;
-    margin: 1rem;
     border-radius: .5rem;
-    transition: .3s ease-in-out;
-    cursor: pointer; }
-  .tableSum button:last-of-type {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300;
-    font-size: 1.6rem;
-    color: #443344;
-    border: 1px solid black;
-    background-color: white;
-    padding: .5rem;
-    margin: .5rem;
-    border-radius: .5rem;
-    cursor: pointer; }
-    .tableSum button:last-of-type:hover {
-      background-color: black;
-      color: white; }
+    cursor: pointer;
+    margin: 2rem; }
   @media screen and (min-width: 410px) {
     .tableSum {
       align-items: flex-end;
@@ -358,3 +369,17 @@ table {
       font-weight: 400;
       font-size: 1.6rem;
       color: #443344; } }
+  .tableSum #shopBtn {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #443344;
+    border: 1px solid black;
+    background-color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 2rem; }
+    .tableSum #shopBtn:hover {
+      background-color: black;
+      color: white; }
