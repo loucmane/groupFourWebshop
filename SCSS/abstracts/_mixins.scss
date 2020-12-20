@@ -16,7 +16,7 @@
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-title;
-    color: $primary-txt; //color variable set elsewher
+    color: $accent-txt; //color variable set elsewher
 }
 
 @mixin fontSubtitle() {
@@ -31,7 +31,6 @@
     font-weight: $fw-light;
     font-size: $font-size;
     color: $primary-txt; //color variable set elsewhere
-
 }
 
 @mixin fontLogotype() {

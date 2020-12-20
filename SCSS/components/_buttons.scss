@@ -1,11 +1,10 @@
 @mixin buttonWhite {
-    @include fontBody(); 
+    @include fontBody(1.6rem);
     border: 1px solid black;
     background-color: white;
     padding: .5rem;
     border-radius: .5rem;
     cursor: pointer;
-
     &:hover {
         background-color: black;
         color: white;
@@ -13,8 +12,8 @@
 }
 
 @mixin buttonBlack {
-    @include fontBody(); 
-    border:none;
+    @include fontBody(1.6rem);
+    border: none;
     color: white;
     background-color: black;
     padding: 2rem;
