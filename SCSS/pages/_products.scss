@@ -1,4 +1,9 @@
 body {
+
+    #shoppingBag {
+        @include flexCenter(column)
+    }
+
     @include fontBody();
     margin: none;
     padding: none;
@@ -24,22 +29,34 @@ body {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 5%;
             .eachProduct {
                 width: 50%;
                 @include flexCenter(column);
+                margin-top: 5%;
+                @media screen and(min-width: 768px) {
+                    width: 33.3%;
+                }
                 .productImage {
                     width: 50%;
+                    @media screen and(min-width: 768px) {
+                        width: 80%;
+                    }
                 }
                 div {
                     width: 70%;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
+                    @media screen and(min-width: 768px) {
+                        width: 50%;
+                    }
                     p {
                         color: $black;
                         font-size: 1.4rem;
                         margin: 2%;
+                        @media screen and(min-width: 768px) {
+                            font-size: 1.6rem;
+                        }
                     }
                 }
                 button {
@@ -52,19 +69,16 @@ body {
                     height: 30px;
                     width: 70%;
                     margin: 10%;
+                    @media screen and(min-width: 768px) {
+                        font-size: 1.4rem;
+                        width: 50%;
+                        height: 35px;
+                        margin: 5%;
+                    }
                 }
             }
         }
     }
+
 }
 
-// mediaqueries //
-@media screen and(min-width: 768px) {
-    .productImage {
-        width: 30%;
-    }
-    button {
-        font-size: 1.4rem;
-        width: 50%;
-    }
-}

@@ -6,7 +6,8 @@
 @import "base/base";
 @import "base/typography";
 
-@import "components/button";
+@import "components/buttons";
+@import "components/dropdown";
 
 @import "layout/footer";
 @import "layout/header";
@@ -16,3 +17,4 @@
 @import "pages/checkout";
 @import "pages/about"; 
 @import "pages/products";
+@import "pages/cart";

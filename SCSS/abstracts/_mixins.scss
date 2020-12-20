@@ -26,11 +26,12 @@
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontBody() {
+@mixin fontBody($font-size) {
     font-family: $ff-roboto;
     font-weight: $fw-light;
-    // font-size: $fs-body;
-    // color: $primary-txt; //color variable set elsewher
+    font-size: $font-size;
+    color: $primary-txt; //color variable set elsewhere
+
 }
 
 @mixin fontLogotype() {

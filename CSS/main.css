@@ -12,6 +12,12 @@ body {
   box-sizing: border-box; }
 
 body {
+
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: black;
+
   -webkit-text-size-adjust: 100%; }
 
 footer {
@@ -31,7 +37,7 @@ footer {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
-    color: #443344; }
+    color: black; }
   footer a {
     text-decoration: none;
     color: #000000; }
@@ -42,7 +48,11 @@ footer {
   footer p {
     margin: 2rem;
     font-family: "Roboto Mono", monospace;
-    font-weight: 300; }
+
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black; }
+
   @media screen and (min-width: 481px) {
     footer ul {
       display: flex;
@@ -63,7 +73,7 @@ footer {
         font-family: "Roboto Mono", monospace;
         font-weight: 400;
         font-size: 2.4rem;
-        color: #443344;
+        color: black;
         margin: 4rem; } }
 
 .navbar {
@@ -72,7 +82,7 @@ footer {
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   font-size: 2.4rem;
-  color: #443344;
+  color: black;
   width: 100%;
   height: 8rem; }
   @media screen and (min-width: 480px) {
@@ -83,7 +93,8 @@ footer {
     font-size: 5rem;
     position: absolute;
     top: 1rem;
-    left: 2rem; }
+    left: 2rem;
+    cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .hamburgerButton {
         display: none; } }
@@ -93,7 +104,8 @@ footer {
   font-size: 5rem;
   position: absolute;
   top: 1rem;
-  right: 2rem; }
+  right: 2rem;
+  cursor: pointer; }
   @media screen and (min-width: 480px) {
     .shoppingCartButton {
       top: 4rem;
@@ -242,8 +254,17 @@ body {
 body {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
+
+  font-size: 1.6rem;
+  color: black;
+
   margin: none;
   padding: none; }
+  body #shoppingBag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
   body #shoppingBag img {
     width: 100px; }
   body main {
@@ -255,7 +276,7 @@ body {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 2.4rem;
-      color: #443344;
+      color: black;
       font-weight: 700;
       color: #000000;
       text-align: center;
@@ -266,28 +287,44 @@ body {
     body main #productsContainer {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 5%; }
+      justify-content: center; }
       body main #productsContainer .eachProduct {
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; }
+        flex-direction: column;
+        margin-top: 5%; }
+        @media screen and (min-width: 768px) {
+          body main #productsContainer .eachProduct {
+            width: 33.3%; } }
         body main #productsContainer .eachProduct .productImage {
           width: 50%; }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct .productImage {
+              width: 80%; } }
         body main #productsContainer .eachProduct div {
           width: 70%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start; }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct div {
+              width: 50%; } }
           body main #productsContainer .eachProduct div p {
             color: #000000;
             font-size: 1.4rem;
             margin: 2%; }
+            @media screen and (min-width: 768px) {
+              body main #productsContainer .eachProduct div p {
+                font-size: 1.6rem; } }
         body main #productsContainer .eachProduct button {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
+
+          font-size: 1.6rem;
+          color: black;
+
           background-color: #000000;
           color: #FFFFFF;
           border: none;
@@ -296,10 +333,174 @@ body {
           height: 30px;
           width: 70%;
           margin: 10%; }
+          @media screen and (min-width: 768px) {
+            body main #productsContainer .eachProduct button {
+              font-size: 1.4rem;
+              width: 50%;
+              height: 35px;
+              margin: 5%; } }
 
-@media screen and (min-width: 768px) {
-  .productImage {
-    width: 30%; }
-  button {
-    font-size: 1.4rem;
-    width: 50%; } }
+header {
+  text-align: center; }
+  header h1 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    font-size: 4rem;
+    color: black;
+    margin: 5rem; }
+  header h4 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: black; }
+    @media screen and (min-width: 410px) {
+      header h4 {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 3.2rem;
+        color: black;
+        margin: 2rem; } }
+  header .headerBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 5rem;
+    color: white;
+    background-color: black; }
+
+table {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
+  @media screen and (min-width: 410px) {
+    table {
+      margin: 0 10rem 0 10rem; } }
+  table th {
+    display: none;
+    width: 25%; }
+  table .tdQty {
+    display: none; }
+  table .tdTotal {
+    display: none; }
+  table .inputNumber {
+    width: 3rem; }
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 2rem;
+  text-align: center; }
+  .tableContainer img {
+    width: 10rem; }
+
+.productContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: 8rem;
+  margin: auto; }
+  .productContainer p {
+    display: none; }
+  @media screen and (min-width: 410px) {
+    .productContainer {
+      margin-left: 10rem; } }
+  .productContainer .productSpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .productContainer .productSpan button {
+      display: none;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: black;
+      border: 1px solid black;
+      padding: .5rem;
+      margin: .5rem;
+      border-radius: .5rem;
+      background-color: white;
+      cursor: pointer; }
+      .productContainer .productSpan button:hover {
+        background-color: black;
+        color: white; }
+
+.qtyBtn {
+  display: none;
+  color: white;
+  border: none;
+  background-color: black;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer; }
+
+.tableSum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .tableSum span {
+    margin: 1rem; }
+    .tableSum span:last-of-type {
+      border-bottom: 1px solid black;
+      padding-bottom: 1rem; }
+      @media screen and (min-width: 400px) {
+        .tableSum span:last-of-type {
+          border: none; } }
+  .tableSum #editBtn {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 2rem 0 1rem 0;
+    padding: 2rem; }
+    .tableSum #editBtn:hover {
+      background-color: black;
+      color: white; }
+  .tableSum #checkoutBtn {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 2rem; }
+  @media screen and (min-width: 410px) {
+    .tableSum {
+      align-items: flex-end;
+      margin: 5rem 10rem 5rem 10rem;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: black; } }
+  .tableSum #shopBtn {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 2rem; }
+    .tableSum #shopBtn:hover {
+      background-color: black;
+      color: white; }

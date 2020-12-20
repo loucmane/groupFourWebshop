@@ -8,6 +8,8 @@ $(function() {
         $("<button>").appendTo($("#transferredCustContact")).html("Change").on("click", function() {});
     });
 
+
+
     $("#btnToPayment").on("click", function() {
         $("<p>").appendTo($("#transferredCustShipping")).html("Contact" + " " + $("#email").val());
         $("<hr>").appendTo($("#transferredCustShipping"));
@@ -45,6 +47,7 @@ function grandTotal(params) {
     return total;
 }
 
+
 // Save shopping bag in LS
 function saveInfo() {
     localStorage.setItem("info");
@@ -54,3 +57,4 @@ function saveInfo() {
 function getInfo() {
     localStorage.getItem("info");
 }
+
