@@ -238,7 +238,18 @@ body {
       body #shipping #transferredCustContact p {
         width: 90%; }
       body #shipping #transferredCustContact button {
-        background-color: white; }
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        padding: .5rem;
+        border-radius: .5rem;
+        cursor: pointer; }
+        body #shipping #transferredCustContact button:hover {
+          background-color: black;
+          color: white; }
 
 body {
   font-family: "Roboto Mono", monospace;
@@ -443,7 +454,7 @@ table {
   .tableSum #editBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: black;
     border: 1px solid black;
     background-color: white;
@@ -458,7 +469,7 @@ table {
   .tableSum #checkoutBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: black;
     border: none;
     color: white;
@@ -478,7 +489,7 @@ table {
   .tableSum #shopBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: black;
     border: 1px solid black;
     background-color: white;

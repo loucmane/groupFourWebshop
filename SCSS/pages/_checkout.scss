@@ -101,7 +101,7 @@ body {
                 width: 90%;
             }
             button {
-                background-color: white;
+                @include buttonWhite();
             }
         }
     }
