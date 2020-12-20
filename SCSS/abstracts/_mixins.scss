@@ -26,16 +26,10 @@
     color: $primary-txt; //color variable set elsewher
 }
 
-@mixin fontBodyDesktop() {
+@mixin fontBody($font-size) {
     font-family: $ff-roboto;
     font-weight: $fw-light;
-    font-size: 1.6rem;
-    color: $primary-txt; //color variable set elsewhere
-}
-
-@mixin fontBodyMobile($fontsize) {
-    font-family: $ff-roboto;
-    font-weight: $fw-light;
+    font-size: $font-size;
     color: $primary-txt; //color variable set elsewhere
 }
 
