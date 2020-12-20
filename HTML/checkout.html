@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <p id="logotype">LOGOTYPE</p>
+        <p id="logotype"> LOGOTYPE</p>
         <!---------- Information  --------------->
         <section id="information">
 
@@ -112,20 +112,14 @@
             <h2>Shipping Method</h2>
             <form>
                 <input type="radio" id="shipping" name="shipping" value="shipping">
-                <label for="shipping">Shipping</label>
-                <p>Postnord 59 SEK</p>
+                <label for="shipping">Shipping:</label>
+                <p>59 SEK</p>
             </form>
-            <button>&lt; Return to information</button>
+            <button class="returnButton">&lt; Return to information</button>
 
             <button class="continueButton" id="btnToPayment">Continue to payment</button>
+            <hr>
 
-            <div class="policyLinks">
-                <hr>
-                <p>Refund policy</p>
-                <p>Shipping policy</p>
-                <p>Privacy policy</p>
-                <p>Terms of service</p>
-            </div>
         </section>
 
         <!---------- Payment  --------------->
@@ -149,6 +143,7 @@
                 <a href="#review">Review</a>
             </div>
             <!----------------------->
+            <h2>Contact Information</h2>
 
             <div id="transferredCustShipping"></div>
 
@@ -157,16 +152,16 @@
 
             <div id="paymentInfoBox">
                 <p>After clicking “Review order”, you will be redirected to Nets Payment to complete your purchase securely.</p>
-                <img>
+                <img src="../IMG/mastercard-icon.png" alt="Mastercard icon">
             </div>
 
             <h2>Billing address</h2>
             <form>
-                <input type="radio">
-                <label for="same">Same as shipping address</label>
+
+                <label for="same"><input type="radio">Same as shipping address</label>
                 <hr>
-                <input type="radio">
-                <label for="different">Use a different billing address</label>
+
+                <label for="different"><input type="radio">Use a different billing address</label>
             </form>
             <button>&lt; Return to Shipping</button>
 
@@ -205,13 +200,6 @@
 
             <button class="orderButton">Complete Order</button>
 
-            <div class="policyLinks">
-                <hr>
-                <p>Refund policy</p>
-                <p>Shipping policy</p>
-                <p>Privacy policy</p>
-                <p>Terms of service</p>
-            </div>
         </section>
 
     </main>

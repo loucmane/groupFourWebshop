@@ -51,3 +51,20 @@
 // @mixin fontPreset($type) {
 //     @include body {}
 // }
+@mixin transferBox() {
+    @include flexCenter(column);
+    text-align: center;
+    border: 1px solid $black;
+    width: 80%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 5%;
+    hr {
+        margin: 5%;
+        width: 90%
+    }
+    button {
+        @include buttonWhite();
+        margin-top: 5%;
+    }
+}
