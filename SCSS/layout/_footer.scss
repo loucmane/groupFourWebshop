@@ -23,7 +23,7 @@ footer {
     }
     p {
         margin: 2rem;
-        @include fontBody(1.6rem);
+        @include fontBody();
     }
     @media screen and(min-width: 481px) {
         ul {
