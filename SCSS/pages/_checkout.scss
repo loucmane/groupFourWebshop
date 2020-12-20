@@ -28,6 +28,7 @@ main {
             #adrStreet,
             #adrCountry,
             #adrPhone {
+                @include fontBread();
                 width: 80%;
                 height: 40%;
                 padding: 2% 0 2% 5%;
@@ -75,14 +76,7 @@ main {
         }
     }
     .continueButton {
-        @include fontBread();
-        background-color: $black;
-        color: $white;
-        border: none;
-        border-radius: 5px;
-        height: 4rem;
-        width: 70%;
-        margin: 10%;
+        @include buttonSlim();
     }
     #shipping {
         @include flexCenter(column);
@@ -91,31 +85,18 @@ main {
             @include transferBox();
         }
         form {
-            display: flex;
-            border: 1px solid black;
+            border: 1px solid $black;
             border-radius: 5px;
             width: 80%;
-            padding: 5%;
-            input {
-                position: relative;
-                top: 2px;
-                flex-grow: 1;
-            }
-            label {
-                flex-grow: 2;
-            }
-            p {
-                flex-grow: 2;
-            }
+            @include flexCenter(row);
         }
         .returnButton {
-            background-color: white;
-            border: none;
-            @include fontBread();
+            @include buttonReturn();
             margin: 5% 30% 5% 0;
         }
         hr {
             width: 80%;
+            margin: 10%;
         }
     }
     #payment {
@@ -136,16 +117,36 @@ main {
             border: 1px solid $black;
             border-radius: 5px;
             width: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter(column);
             input {
-                margin-left: 5px;
+                margin-right: 1rem;
             }
             label {
                 margin: 5%;
             }
+        }
+        .returnButton {
+            @include buttonReturn();
+            margin: 5% 30% 5% 0;
+        }
+    }
+    #review {
+        width: 100%;
+        @include flexCenter(column);
+        #transferredCustPayment,
+        #checkoutTotal {
+            @include transferBox();
+            margin: 5%;
+            .total {
+                @include fontTitle();
+                text-transform: uppercase;
+                font-weight: $fw-bold;
+                color: $black;
+            }
+        }
+        .returnButton {
+            @include buttonReturn();
+            margin: 5% 30% 5% 0;
         }
     }
 }

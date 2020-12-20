@@ -65,6 +65,7 @@
     }
     button {
         @include buttonWhite();
+        @include fontBread();
         margin-top: 5%;
     }
 }
