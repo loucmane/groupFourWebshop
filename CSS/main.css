@@ -130,6 +130,7 @@ footer {
       flex-direction: row;
       justify-content: space-around; } }
 
+
 main {
   width: 100%;
   height: 100%;
@@ -138,6 +139,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+
   main #logotype {
     font-family: "Roboto Mono", monospace;
     font-weight: 700;
@@ -221,10 +223,12 @@ main {
     width: 70%;
     margin: 10%; }
   main #shipping {
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     width: 100%; }
     main #shipping #transferredCustContact {
       display: flex;
@@ -361,10 +365,11 @@ main {
       main #payment form label {
         margin: 5%; }
 
+
 body {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: black;
   margin: none;
   padding: none; }
@@ -429,7 +434,7 @@ body {
         body main #productsContainer .eachProduct button {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
-          font-size: 1.2rem;
+          font-size: 1.6rem;
           color: black;
           background-color: #000000;
           color: #FFFFFF;
@@ -564,7 +569,7 @@ table {
   .tableSum #editBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: black;
     border: 1px solid black;
     background-color: white;
@@ -579,7 +584,7 @@ table {
   .tableSum #checkoutBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: black;
     border: none;
     color: white;
@@ -599,7 +604,7 @@ table {
   .tableSum #shopBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: black;
     border: 1px solid black;
     background-color: white;
