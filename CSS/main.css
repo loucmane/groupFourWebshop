@@ -377,12 +377,23 @@ table {
   table th {
     display: none;
     width: 25%; }
+    @media screen and (min-width: 410px) {
+      table th {
+        display: table-cell; } }
   table .tdQty {
     display: none; }
+    @media screen and (min-width: 410px) {
+      table .tdQty {
+        display: table-cell; } }
   table .tdTotal {
     display: none; }
+    @media screen and (min-width: 410px) {
+      table .tdTotal {
+        display: table-cell; } }
   table .inputNumber {
     width: 3rem; }
+  table .phoneRow {
+    display: none; }
 
 .tableContainer {
   display: flex;
@@ -403,6 +414,9 @@ table {
   margin: auto; }
   .productContainer p {
     display: none; }
+    @media screen and (min-width: 410px) {
+      .productContainer p {
+        display: table-cell; } }
   @media screen and (min-width: 410px) {
     .productContainer {
       margin-left: 10rem; } }
@@ -426,6 +440,9 @@ table {
       .productContainer .productSpan button:hover {
         background-color: black;
         color: white; }
+        @media screen and (min-width: 410px) {
+          .productContainer .productSpan button:hover {
+            display: table-cell; } }
 
 .qtyBtn {
   display: none;
@@ -461,10 +478,14 @@ table {
     border-radius: .5rem;
     cursor: pointer;
     margin: 2rem 0 1rem 0;
-    padding: 2rem; }
+    padding: 1rem;
+    display: inline; }
     .tableSum #editBtn:hover {
       background-color: black;
       color: white; }
+    @media screen and (min-width: 410px) {
+      .tableSum #editBtn {
+        display: none; } }
   .tableSum #checkoutBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;

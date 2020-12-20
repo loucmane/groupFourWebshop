@@ -2,7 +2,7 @@ body {
     #shoppingBag {
         @include flexCenter(column)
     }
-    @include fontBody(1.4rem);
+    @include fontBody();
     margin: none;
     padding: none;
     #shoppingBag {
@@ -58,7 +58,7 @@ body {
                     }
                 }
                 button {
-                    @include fontBody(1.2rem);
+                    @include fontBody();
                     background-color: $black;
                     color: $white;
                     border: none;

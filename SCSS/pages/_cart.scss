@@ -31,17 +31,32 @@ table {
     th {
         display: none;
         width: 25%;
+        @media screen and(min-width: 410px) {
+            display: table-cell;
+        }
     }
     .tdQty {
         display: none;
+        @media screen and(min-width: 410px) {
+            display: table-cell;
+        }
     }
     .tdTotal {
         display: none;
+        @media screen and(min-width: 410px) {
+            display: table-cell;
+        }
     }
     .inputNumber {
         width: 3rem;
     }
+    .phoneRow {
+        display: none;
+    }
+    
 }
+
+
 
 .tableContainer {
     display: flex;
@@ -61,6 +76,9 @@ table {
     margin: auto;
     p {
         display: none;
+        @media screen and(min-width: 410px) {
+            display: table-cell;
+        }
     }
     @media screen and(min-width:410px) {
         margin-left: 10rem;
@@ -69,7 +87,7 @@ table {
         @include flexCenter(column);
         button {
             display: none;
-            @include fontBody(1.6rem);
+            @include fontBody();
             border: 1px solid black;
             padding: .5rem;
             margin: .5rem;
@@ -79,6 +97,9 @@ table {
             &:hover {
                 background-color: black;
                 color: white;
+                @media screen and(min-width: 410px) {
+                    display: table-cell;
+                }
             }
         }
     }
@@ -110,7 +131,12 @@ table {
     #editBtn {
         @include buttonWhite();
         margin: 2rem 0 1rem 0;
-        padding: 2rem;
+        padding: 1rem;
+
+        display:inline;
+        @media screen and(min-width: 410px) {
+            display: none
+        }
     }
     #checkoutBtn {
         @include buttonBlack();
