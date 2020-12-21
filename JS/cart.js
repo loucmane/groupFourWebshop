@@ -18,6 +18,10 @@ function getBag() {
     
 }
 
+$( "<h1>" )
+.html ( "LOGOTYPE" )
+.appendTo("main")
+
 function renderCart() {
 
     getBag();

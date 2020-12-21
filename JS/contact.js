@@ -1,12 +1,9 @@
 $(function() {
-  
+
+  renderHTML();
 });
 
 function renderHTML(){
-
-  $("<h1>")
-  .html("LOGOTYPE")
-  .appendTo("main")
 
   $("<img>")
   .attr("src", "../IMG/iceman.jpeg")
