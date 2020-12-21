@@ -4,10 +4,8 @@
     @include fontBread();
     color: $black;
     @include flexCenter(column);
-    #logotype {
-        @include fontLogotype();
-        font-size: 3rem;
-        margin: 5%;
+    @media screen and(min-width: 768px) {
+        @include fontBody();
     }
     .navButtons {
         margin-bottom: 5%;
@@ -25,25 +23,50 @@
     }
     hr {
         width: 80%;
+        margin: 10%;
+    }
+    .continueButton {
+        @include buttonSlim();
+        @media screen and(min-width: 768px) {
+            width: 25%;
+        }
+    }
+    .returnButton {
+        @include buttonReturn();
+        margin: 5% 30% 5% 0;
+        @media screen and(min-width: 768px) {
+            margin: none;
+        }
     }
     #information {
         @include flexCenter(column);
         width: 100%;
         .contactForm {
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+            #fName,
+            #lName,
+            #email,
+            #adrStreet,
+            #adrPCode,
+            #adrCity,
+            #adrCountry,
+            #adrPhone {
+                @include form();
+            }
+            #fName,
+            #lName,
+            #adrPCode,
+            #adrCity {
+                width: 35%;
+            }
             #email,
             #adrStreet,
             #adrCountry,
             #adrPhone {
-                @include fontBread();
                 width: 80%;
-                height: 40%;
-                padding: 2% 0 2% 5%;
-                border-radius: 5px;
-                border: 1px solid $black;
-                color: $black;
             }
             #adrStreet,
             #adrCountry {
@@ -70,32 +93,11 @@
                     top: 3px;
                 }
             }
-            #fName,
-            #lName,
-            #adrPCode,
-            #adrCity {
-                width: 35%;
-                height: 40%;
-                @include fontBread();
-                padding: 2% 0 2% 5%;
-                border-radius: 5px;
-                border: 1px solid $black;
-                color: $black;
-            }
         }
-    }
-    hr {
-        margin: 10%;
-    }
-    .continueButton {
-        @include buttonSlim();
     }
     #shipping {
         @include flexCenter(column);
         width: 100%;
-        #transferredCustContact {
-            @include transferBox();
-        }
         form {
             border: 1px solid $black;
             border-radius: 5px;
@@ -109,93 +111,10 @@
                 width: 20%;
             }
         }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
-        }
-        hr {
-            margin: 10%;
-        }
     }
     #payment {
         @include flexCenter(column);
         width: 100%;
-        #transferredCustShipping {
-            @include transferBox();
-        }
-        #paymentInfoBox {
-            @include transferBox();
-            margin: 5%;
-            img {
-                width: 30%;
-                margin-top: 5%;
-            }
-        }
-        form {
-            border: 1px solid $black;
-            border-radius: 5px;
-            width: 80%;
-            @include flexCenter(column);
-            input {
-                margin-right: 1rem;
-            }
-            label {
-                margin: 5%;
-            }
-            hr {
-                margin: 0
-            }
-        }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
-        }
-        hr {
-            margin: 10%;
-            #fName,
-            #lName,
-            #adrPCode,
-            #adrCity {
-                width: 35%;
-                height: 40%;
-                @include fontBread();
-                padding: 2% 0 2% 5%;
-                border-radius: 5px;
-                border: 1px solid $black;
-                color: $black;
-            }
-        }
-    }
-    .continueButton {
-        @include buttonSlim();
-    }
-    #shipping {
-        @include flexCenter(column);
-        width: 100%;
-        #transferredCustContact {
-            @include transferBox();
-        }
-        form {
-            border: 1px solid $black;
-            border-radius: 5px;
-            width: 80%;
-            @include flexCenter(row);
-        }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
-        }
-        hr {
-            width: 80%;
-            margin: 10%;
-        }
-    }
-    #payment {
-        @include flexCenter(column);
-        width: 100%;
-        #transferredCustShipping {
-            @include transferBox();
-        }
         #paymentInfoBox {
             @include transferBox();
             margin: 5%;
@@ -218,13 +137,6 @@
                 font-weight: $fw-bold;
                 color: $black;
             }
-        }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
-        }
-        hr {
-            margin: 10%;
         }
     }
 }
