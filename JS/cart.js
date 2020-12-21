@@ -2,14 +2,6 @@ let bag = [];
 
 $(function() {
 
-    $( ".hamburgerButton" )
-    .click(function() {
-        $( " .myUl " ).slideToggle();
-        $( ".myUl" ).css({
-            display: "flex"
-        })
-    });
-
     renderCart();
 });
 
@@ -18,14 +10,17 @@ function saveBag() {
 }
 
 function getBag() {
-    bag = JSON.parse(localStorage.getItem("products"));
+    let productsFromLS = localStorage.getItem("products")
+
+    if (productsFromLS) { //Only get bag from LS if it has content
+        bag = JSON.parse(localStorage.getItem("products"));
+    }
+    
 }
 
 function renderCart() {
 
-    if (localStorage.getItem("products") != null) { //Only get bag from LS if it has content
-        getBag();
-    }
+    getBag();
 
     $(".tableContainer")
     .remove();
