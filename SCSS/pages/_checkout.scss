@@ -20,6 +20,7 @@
             @include fontTitle();
             font-weight: $fw-bold;
             color: $black;
+
             text-align: center;
             margin: 5%;
         }
@@ -33,6 +34,19 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
+
+            #email,
+            #adrStreet,
+            #adrCountry,
+            #adrPhone {
+                @include fontBread();
+                width: 80%;
+                height: 40%;
+
+                padding: 2% 0 2% 5%;
+                border-radius: 5px;
+                border: 1px solid $black;
+
                 color: $black;
                 #email,
                 #adrStreet,
@@ -147,12 +161,71 @@
                     margin: 0
                 }
             }
+
             .returnButton {
                 @include buttonReturn();
                 margin: 5% 30% 5% 0;
             }
             hr {
                 margin: 10%;
+
+            #fName,
+            #lName,
+            #adrPCode,
+            #adrCity {
+                width: 35%;
+                height: 40%;
+
+
+                @include fontBread();
+
+                padding: 2% 0 2% 5%;
+                border-radius: 5px;
+                border: 1px solid $black;
+                color: $black;
+            }
+        }
+    }
+    .continueButton {
+
+
+        @include buttonSlim();
+
+    }
+    #shipping {
+        @include flexCenter(column);
+        width: 100%;
+        #transferredCustContact {
+            @include transferBox();
+        }
+        form {
+            border: 1px solid $black;
+            border-radius: 5px;
+            width: 80%;
+            @include flexCenter(row);
+        }
+        .returnButton {
+            @include buttonReturn();
+            margin: 5% 30% 5% 0;
+        }
+        hr {
+            width: 80%;
+            margin: 10%;
+        }
+    }
+    #payment {
+        @include flexCenter(column);
+        width: 100%;
+        #transferredCustShipping {
+            @include transferBox();
+        }
+        #paymentInfoBox {
+            @include transferBox();
+            margin: 5%;
+            img {
+                width: 30%;
+                margin-top: 5%;
+
             }
         }
         #review {

@@ -45,20 +45,24 @@ function renderCart() {
     .appendTo(tableHeads);
 
     $("<th>")
-    .html("<u>price</u>")
+    .html("<u>Price</u>")
     .appendTo(tableHeads);
 
     $("<th>")
-    .html("<u>Qty</u>")
+    .html("<u>Quantity</u>")
     .appendTo(tableHeads);
 
     $("<th>")
     .html("<u>Total</u>")
-    .appendTo("tr");
+    .appendTo(tableHeads);
 
     $.each(bag, (i, product) => {
 
         let tableRow = $("<tr>")
+        .appendTo("table")
+
+        let dropDownRow = $("<tr>")
+        .addClass("phoneRow")
         .appendTo("table")
 
         let productContainer = $("<div>")
@@ -127,7 +131,7 @@ function renderCart() {
                 }
             }
         })
-        .appendTo(productSpan);
+        .appendTo(productSpan)
 
         $("<td>")
         .addClass("tdDesc")
@@ -135,11 +139,8 @@ function renderCart() {
         .html(product.name + "<br>" + "(x" + product.quantity+")")
         .appendTo(tableRow);
 
-        let inputTd = $("<td>")
+        $("<td>")
         .appendTo(tableRow)
-
-        $("<input>")
-        .attr("type", "number")
 
         $("<td>")
         .addClass("tdPrice")
@@ -154,7 +155,58 @@ function renderCart() {
         $("<td>")
         .addClass("tdTotal")
         .html(product.price * product.quantity + " SEK")
-        .appendTo(tableRow)    
+        .appendTo(tableRow)
+        
+        let phoneTd1 = $("<td>")
+        .appendTo(dropDownRow)
+
+        $("<button>")
+        .attr("type", "button")
+        .attr("id", "phoneRemoveBtn")
+        .html("Remove")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    bag.splice([i], 1);
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(phoneTd1);
+
+        $("<td>")
+        //.addClass("tdQty")
+        .html("quantity:")
+        .appendTo(dropDownRow)
+
+        let phoneInputTd = $("<td>")
+        .appendTo(dropDownRow)
+
+        $("<input>")
+        .attr("type", "number")
+        .attr()
+        .appendTo(phoneInputTd)
+
+        let phoneTd4 = $("<td>")
+        .appendTo(dropDownRow)
+
+        $("<button>")
+        .attr("type", "button")
+        .attr("id", "phoneUpdateBtn")
+        .html("Update")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    bag.splice([i], 1);
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(phoneTd4);
     });
 
     $("<div>")
@@ -166,8 +218,7 @@ function renderCart() {
     .attr("type", "button")
     .html("<i class='far fa-edit'></i>" + " Edit Cart")
     .on("click", function() {
-        $(".productSpan button").toggle();
-        $(".qtyBtn").toggle()
+        $(".phoneRow").toggle();
     })
     .appendTo(".tableSum");
 
