@@ -1,4 +1,29 @@
+class Product {
+    constructor(image, name, price, description, id, quantity) {
+        this.image = image;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.id = id;
+        this.quantity = quantity;
+    }
+}
+
+let bag = [];
+
+// Save shopping bag in LS
+function saveBag() {
+    localStorage.setItem("products", JSON.stringify(bag));
+}
+
+// Get shopping bag from LS
+function getBag() {
+    bag = JSON.parse(localStorage.getItem("products"));
+}
+
+
 $(function() {
+
 
     $("#btnToShipping")
         .on("click", function() {
