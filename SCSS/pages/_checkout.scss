@@ -31,10 +31,6 @@ main {
                 @include fontBread();
                 width: 80%;
                 height: 40%;
-<<<<<<< HEAD
-                @include fontBody();
-=======
->>>>>>> d22b3acfdc71b099c42120dc3ca359381eea5dcb
                 padding: 2% 0 2% 5%;
                 border-radius: 5px;
                 border: 1px solid $black;
@@ -71,11 +67,7 @@ main {
             #adrCity {
                 width: 35%;
                 height: 40%;
-<<<<<<< HEAD
-                @include fontBody();
-=======
                 @include fontBread();
->>>>>>> d22b3acfdc71b099c42120dc3ca359381eea5dcb
                 padding: 2% 0 2% 5%;
                 border-radius: 5px;
                 border: 1px solid $black;
@@ -84,19 +76,7 @@ main {
         }
     }
     .continueButton {
-<<<<<<< HEAD
-        @include fontBody();
-        background-color: $black;
-        color: $white;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        height: 4rem;
-        width: 70%;
-        margin: 10%;
-=======
         @include buttonSlim();
->>>>>>> d22b3acfdc71b099c42120dc3ca359381eea5dcb
     }
     #shipping {
         @include flexCenter(column);

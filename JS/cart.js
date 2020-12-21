@@ -69,40 +69,60 @@ function renderCart() {
         .addClass("productContainer")
         .appendTo(tableRow)
 
+        //Product decrease button
         $("<button>")
         .attr("type", "button")
         .addClass("qtyBtn")
         .html("&#8722")
         .on("click", function() {
     
-            for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
-
+            for (let i = 0; i < bag.length; i++) {
                 if (bag[i].id === product.id) {
                     bag[i].quantity--;
 
-                    if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+                    if (bag[i].quantity === 0) { 
                         bag.splice([i], 1);
                     }
-                    saveBag();
-                    renderCart();
+                saveBag();
+                renderCart();
                 }
             }
         })
         .appendTo(productContainer);
 
+        //Product container
         let productSpan = $("<span>")
         .addClass("productSpan")
         .appendTo(productContainer)
 
+        //Product image
         $("<img>")
         .attr("src", product.image)
         .attr("alt", product.name + " perfume bottle")
         .appendTo(productSpan)
 
+        //Product Name
         $("<p>")
         .html(product.name)
         .appendTo(productSpan)
+
+        //Remove button
+        $("<button>")
+        .attr("type", "button")
+        .html("Remove")
+        .on("click", function() {
+    
+            for (let i = 0; i < bag.length; i++) {
+                if (bag[i].id === product.id) {
+                    bag.splice([i], 1);
+                    saveBag();
+                    renderCart();
+                }
+            }
+        })
+        .appendTo(productSpan)
      
+        //Product increase button
          $("<button>")
         .attr("type", "button")
         .addClass("qtyBtn")
@@ -118,28 +138,13 @@ function renderCart() {
         })
         .appendTo(productContainer);
 
-        $("<button>")
-        .attr("type", "button")
-        .html("Remove")
-        .on("click", function() {
-    
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
-                    bag.splice([i], 1);
-                    saveBag();
-                    renderCart();
-                }
-            }
-        })
-        .appendTo(productSpan)
-
         $("<td>")
-        .addClass("tdDesc")
-        .attr("type", "number")
+        .addClass("phoneDescription")
         .html(product.name + "<br>" + "(x" + product.quantity+")")
         .appendTo(tableRow);
 
         $("<td>")
+        .addClass("ghostTd")
         .appendTo(tableRow)
 
         $("<td>")
@@ -177,30 +182,30 @@ function renderCart() {
         .appendTo(phoneTd1);
 
         $("<td>")
-        //.addClass("tdQty")
         .html("quantity:")
         .appendTo(dropDownRow)
 
         let phoneInputTd = $("<td>")
         .appendTo(dropDownRow)
 
-        $("<input>")
+        let qtyInput = $("<input>")
         .attr("type", "number")
-        .attr()
         .appendTo(phoneInputTd)
 
         let phoneTd4 = $("<td>")
         .appendTo(dropDownRow)
 
+        //Update input:number
         $("<button>")
         .attr("type", "button")
-        .attr("id", "phoneUpdateBtn")
+        .addClass("phoneUpdateBtn")
         .html("Update")
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
+                console.log(bag[i].quantity)
                 if (bag[i].id === product.id) {
-                    bag.splice([i], 1);
+                    bag[i].quantity = qtyInput.val();
                     saveBag();
                     renderCart();
                 }
@@ -209,10 +214,12 @@ function renderCart() {
         .appendTo(phoneTd4);
     });
 
+    //Footer Card
     $("<div>")
     .addClass("tableSum")
     .appendTo(".tableContainer");
 
+    //Hidden Phone button
     $("<button>")
     .attr("id", "editBtn")
     .attr("type", "button")
@@ -223,11 +230,11 @@ function renderCart() {
     .appendTo(".tableSum");
 
     $("<span>")
-    .html("<b>subtotal:</b> " + calculateTotal() + " SEK")
+    .html("<b>Subtotal:</b> " + calculateTotal() + " SEK")
     .appendTo(".tableSum");
 
     $("<span>")
-    .html("shipping & taxes calculated at checkout")
+    .html("<i>shipping & taxes calculated at checkout</i>")
     .appendTo(".tableSum");
 
     //Link to checkoutpage

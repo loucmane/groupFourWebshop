@@ -540,25 +540,38 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
     width: 100vw;
     height: 5rem;
     color: white;
     background-color: black; }
+    @media screen and (min-width: 410px) {
+      header .headerBanner {
+        height: 7rem; } }
 
 table {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  padding-top: 2rem;
-  padding-bottom: 2rem; }
+  border-collapse: collapse;
+  padding: 2rem 0 2rem 0;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: black; }
   @media screen and (min-width: 410px) {
     table {
       margin: 0 10rem 0 10rem; } }
+  table tr:last-child {
+    border-bottom: none; }
   table th {
     display: none;
     width: 25%; }
     @media screen and (min-width: 410px) {
       table th {
         display: table-cell; } }
+  table td {
+    width: 25%; }
   table .tdQty {
     display: none; }
     @media screen and (min-width: 410px) {
@@ -569,10 +582,53 @@ table {
     @media screen and (min-width: 410px) {
       table .tdTotal {
         display: table-cell; } }
-  table .inputNumber {
-    width: 3rem; }
+  @media screen and (min-width: 410px) {
+    table .phoneDescription {
+      display: none; } }
+  @media screen and (min-width: 410px) {
+    table .ghostTd {
+      display: none; } }
   table .phoneRow {
-    display: none; }
+    display: none;
+    border-bottom: .1rem solid lightgray; }
+    table .phoneRow td {
+      padding-bottom: 2rem; }
+    table .phoneRow #phoneRemoveBtn {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: black;
+      border: 1px solid black;
+      background-color: white;
+      padding: .5rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: black; }
+      table .phoneRow #phoneRemoveBtn:hover {
+        background-color: black;
+        color: white; }
+    table .phoneRow input {
+      width: 100%; }
+    table .phoneRow .phoneUpdateBtn {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: black;
+      border: 1px solid black;
+      background-color: white;
+      padding: .5rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: black; }
+      table .phoneRow .phoneUpdateBtn:hover {
+        background-color: black;
+        color: white; }
 
 .tableContainer {
   display: flex;
@@ -582,56 +638,75 @@ table {
   text-align: center; }
   .tableContainer img {
     width: 10rem; }
+    @media screen and (min-width: 410px) {
+      .tableContainer img {
+        width: 20rem; } }
 
 .productContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  text-align: center;
-  width: 8rem;
-  margin: auto; }
-  .productContainer p {
-    display: none; }
-    @media screen and (min-width: 410px) {
-      .productContainer p {
-        display: table-cell; } }
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: black; }
   @media screen and (min-width: 410px) {
-    .productContainer {
-      margin-left: 10rem; } }
+    .productContainer p {
+      display: none; } }
+  @media screen and (min-width: 410px) and (min-width: 410px) {
+    .productContainer p {
+      display: table-cell; } }
   .productContainer .productSpan {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+    .productContainer .productSpan p {
+      display: none; }
+      @media screen and (min-width: 410px) {
+        .productContainer .productSpan p {
+          display: inline; } }
     .productContainer .productSpan button {
-      display: none;
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.6rem;
       color: black;
       border: 1px solid black;
-      padding: .5rem;
-      margin: .5rem;
-      border-radius: .5rem;
       background-color: white;
-      cursor: pointer; }
+      padding: .5rem;
+      border-radius: .5rem;
+      cursor: pointer;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: black;
+      margin: 1rem;
+      display: none; }
       .productContainer .productSpan button:hover {
         background-color: black;
         color: white; }
-        @media screen and (min-width: 410px) {
-          .productContainer .productSpan button:hover {
-            display: table-cell; } }
+      @media screen and (min-width: 410px) {
+        .productContainer .productSpan button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          display: table-cell; } }
 
 .qtyBtn {
   display: none;
   color: white;
+  font-size: 2rem;
   border: none;
   background-color: black;
   border-radius: 50%;
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   cursor: pointer; }
+  @media screen and (min-width: 410px) {
+    .qtyBtn {
+      display: inline; } }
 
 .tableSum {
   display: flex;
@@ -639,8 +714,16 @@ table {
   align-items: center;
   flex-direction: column; }
   .tableSum span {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #443344;
     margin: 1rem; }
     .tableSum span:last-of-type {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: black;
       border-bottom: 1px solid black;
       padding-bottom: 1rem; }
       @media screen and (min-width: 400px) {

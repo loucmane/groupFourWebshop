@@ -13,27 +13,40 @@ header {
     }
     .headerBanner {
         @include flexCenter(row);
+        @include fontBody();
         width: 100vw;
         height: 5rem;
         color: white;
         background-color: black;
+        @media screen and(min-width: 410px) {
+            height: 7rem;
+        }
     }
 }
 
 table {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    @media screen and(min-width: 410px) {
-        margin: 0 10rem 0 10rem;
+    border-collapse: collapse;
+    padding: 2rem 0 2rem 0;
+    @include fontBody();
+
+        @media screen and(min-width: 410px) {
+            margin: 0 10rem 0 10rem;
+        }
+
+    tr:last-child{
+        border-bottom: none;
     }
+
     th {
         display: none;
         width: 25%;
         @media screen and(min-width: 410px) {
             display: table-cell;
         }
+    }
+
+    td {
+        width: 25%;
     }
     .tdQty {
         display: none;
@@ -47,16 +60,44 @@ table {
             display: table-cell;
         }
     }
-    .inputNumber {
-        width: 3rem;
+
+    .phoneDescription {
+        @media screen and(min-width: 410px) {
+            display: none;
+        }
     }
+
+    .ghostTd {
+        @media screen and(min-width: 410px) {
+            display: none;
+        }
+    }
+
     .phoneRow {
         display: none;
+        border-bottom: .1rem solid lightgray;
+        
+
+        td {
+            padding-bottom: 2rem;
+        }
+
+        #phoneRemoveBtn {
+            @include buttonWhite();
+            @include fontBread();
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .phoneUpdateBtn {
+            @include buttonWhite();
+            @include fontBread();
+        }
     }
     
 }
-
-
 
 .tableContainer {
     display: flex;
@@ -64,42 +105,49 @@ table {
     width: 100vw;
     margin: 2rem;
     text-align: center;
+
     img {
         width: 10rem;
+        @media screen and(min-width:410px){
+            width:20rem;
+        }
     }
 }
 
 .productContainer {
     @include flexCenter(row);
-    text-align: center;
-    width: 8rem;
-    margin: auto;
+    @include fontSubtitle();
+
+    @media screen and(min-width:410px) {
+        //margin-left: 10rem;
+
     p {
         display: none;
         @media screen and(min-width: 410px) {
             display: table-cell;
         }
     }
-    @media screen and(min-width:410px) {
-        margin-left: 10rem;
+
     }
     .productSpan {
         @include flexCenter(column);
-        button {
+
+        p {
             display: none;
-            @include fontBody();
-            border: 1px solid black;
-            padding: .5rem;
-            margin: .5rem;
-            border-radius: .5rem;
-            background-color: white;
-            cursor: pointer;
-            &:hover {
-                background-color: black;
-                color: white;
-                @media screen and(min-width: 410px) {
-                    display: table-cell;
-                }
+            @media screen and(min-width: 410px){
+                display: inline;
+            }
+        }
+
+        button {
+            @include buttonWhite();
+            @include fontBread();
+            margin: 1rem;
+            display: none;
+            
+            @media screen and(min-width: 410px) {
+                @include fontBody();
+                display: table-cell;
             }
         }
     }
@@ -108,19 +156,26 @@ table {
 .qtyBtn {
     display: none;
     color: white;
+    font-size: 2rem; 
     border: none;
     background-color: black;
     border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
+    height: 3rem;
+    width: 3rem;
     cursor: pointer;
+
+    @media screen and(min-width: 410px) {
+        display: inline;
+    }
 }
 
 .tableSum {
     @include flexCenter(column);
     span {
+        @include fontTitle();
         margin: 1rem;
         &:last-of-type {
+            @include fontBody();
             border-bottom: 1px solid black;
             padding-bottom: 1rem;
             @media screen and(min-width: 400px) {
@@ -128,6 +183,7 @@ table {
             }
         }
     }
+
     #editBtn {
         @include buttonWhite();
         margin: 2rem 0 1rem 0;
@@ -138,6 +194,7 @@ table {
             display: none
         }
     }
+
     #checkoutBtn {
         @include buttonBlack();
         margin: 2rem;
@@ -147,6 +204,7 @@ table {
         margin: 5rem 10rem 5rem 10rem;
         @include fontSubtitle();
     }
+
     #shopBtn {
         @include buttonWhite();
         margin: 2rem;

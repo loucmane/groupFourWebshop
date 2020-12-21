@@ -1,14 +1,6 @@
-<<<<<<< HEAD
-body {
-    #shoppingBag {
-        @include flexCenter(column)
-    }
-    @include fontBody();
-=======
 main {
     @include fontBread();
     @include flexCenter(column);
->>>>>>> d22b3acfdc71b099c42120dc3ca359381eea5dcb
     margin: none;
     padding: 5% 0 5% 0;
     h2 {
@@ -54,24 +46,6 @@ main {
                         @include fontBody();
                     }
                 }
-<<<<<<< HEAD
-                button {
-                    @include fontBody();
-                    background-color: $black;
-                    color: $white;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 1.2rem;
-                    height: 30px;
-                    width: 70%;
-                    margin: 10%;
-                    @media screen and(min-width: 768px) {
-                        font-size: 1.4rem;
-                        width: 50%;
-                        height: 35px;
-                        margin: 5%;
-                    }
-=======
             }
             button {
                 @include fontBread;
@@ -87,7 +61,6 @@ main {
                     width: 50%;
                     height: 35px;
                     margin: 5%;
->>>>>>> d22b3acfdc71b099c42120dc3ca359381eea5dcb
                 }
             }
         }

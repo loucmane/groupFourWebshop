@@ -168,7 +168,7 @@ function createBagHTML() {
 function calculateTotal() {
     let total = 0;
     for (let i = 0; i < bag.length; i++) {
-        total = total + (bag[i].quantity * bag[i].price);
+        total += (bag[i].quantity * bag[i].price);
     }
     return total;
 }
@@ -184,7 +184,9 @@ const cartNumbers = () => {
   for (let i = 0; i < bag.length; i++) {
     itemsInCart += bag[i].quantity;
   }
+  console.log(itemsInCart);
   return itemsInCart;
+  
 };
 
 
