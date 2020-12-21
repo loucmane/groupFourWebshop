@@ -1,6 +1,10 @@
-main {
+
+#mainProducts {
+
+
     @include fontBread();
     @include flexCenter(column);
+
     margin: none;
     padding: 5% 0 5% 0;
     h2 {

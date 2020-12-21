@@ -130,7 +130,7 @@ footer {
       flex-direction: row;
       justify-content: space-around; } }
 
-main {
+#mainCheckout {
   width: 100%;
   height: 100%;
   font-family: "Roboto Mono", monospace;
@@ -142,32 +142,44 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  main #logotype {
+  #mainCheckout #logotype {
     font-family: "Roboto Mono", monospace;
     font-weight: 700;
     letter-spacing: 1.6rem;
     font-size: 4rem;
-    color: black; }
-  main .navButtons a {
-    text-decoration: none;
-    color: #000000; }
-  main .navButtons i.fas.fa-arrow-right {
-    font-size: 0.8rem; }
-  main #information {
+    color: black;
+    font-size: 3rem;
+    margin: 5%; }
+  #mainCheckout .navButtons {
+    margin-bottom: 5%; }
+    #mainCheckout .navButtons a {
+      text-decoration: none;
+      color: #000000; }
+  #mainCheckout h2 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #443344;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin: 5%; }
+  #mainCheckout hr {
+    width: 80%; }
+  #mainCheckout #information {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    main #information .contactForm {
+    #mainCheckout #information .contactForm {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      color: #000000; }
-      main #information .contactForm #email,
-      main #information .contactForm #adrStreet,
-      main #information .contactForm #adrCountry,
-      main #information .contactForm #adrPhone {
+      justify-content: space-evenly; }
+      #mainCheckout #information .contactForm #email,
+      #mainCheckout #information .contactForm #adrStreet,
+      #mainCheckout #information .contactForm #adrCountry,
+      #mainCheckout #information .contactForm #adrPhone {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -178,265 +190,493 @@ main {
         border-radius: 5px;
         border: 1px solid #000000;
         color: #000000; }
-      main #information .contactForm #adrStreet,
-      main #information .contactForm #adrCountry {
-        margin: 5%; }
-      main #information .contactForm .checkBox {
-        display: flex;
-        justify-content: flex-start;
-        width: 80%;
-        color: black;
-        border-radius: 5px; }
-        main #information .contactForm .checkBox input {
-          width: 24px;
-          height: 24px;
+        #mainCheckout #information .contactForm #email #email,
+        #mainCheckout #information .contactForm #email #adrStreet,
+        #mainCheckout #information .contactForm #email #adrCountry,
+        #mainCheckout #information .contactForm #email #adrPhone,
+        #mainCheckout #information .contactForm #adrStreet #email,
+        #mainCheckout #information .contactForm #adrStreet #adrStreet,
+        #mainCheckout #information .contactForm #adrStreet #adrCountry,
+        #mainCheckout #information .contactForm #adrStreet #adrPhone,
+        #mainCheckout #information .contactForm #adrCountry #email,
+        #mainCheckout #information .contactForm #adrCountry #adrStreet,
+        #mainCheckout #information .contactForm #adrCountry #adrCountry,
+        #mainCheckout #information .contactForm #adrCountry #adrPhone,
+        #mainCheckout #information .contactForm #adrPhone #email,
+        #mainCheckout #information .contactForm #adrPhone #adrStreet,
+        #mainCheckout #information .contactForm #adrPhone #adrCountry,
+        #mainCheckout #information .contactForm #adrPhone #adrPhone {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          width: 80%;
+          height: 40%;
+          padding: 2% 0 2% 5%;
+          border-radius: 5px;
           border: 1px solid #000000;
+          color: #000000; }
+        #mainCheckout #information .contactForm #email #adrStreet,
+        #mainCheckout #information .contactForm #email #adrCountry,
+        #mainCheckout #information .contactForm #adrStreet #adrStreet,
+        #mainCheckout #information .contactForm #adrStreet #adrCountry,
+        #mainCheckout #information .contactForm #adrCountry #adrStreet,
+        #mainCheckout #information .contactForm #adrCountry #adrCountry,
+        #mainCheckout #information .contactForm #adrPhone #adrStreet,
+        #mainCheckout #information .contactForm #adrPhone #adrCountry {
+          margin: 5%; }
+        #mainCheckout #information .contactForm #email .checkBox,
+        #mainCheckout #information .contactForm #adrStreet .checkBox,
+        #mainCheckout #information .contactForm #adrCountry .checkBox,
+        #mainCheckout #information .contactForm #adrPhone .checkBox {
+          display: flex;
+          justify-content: flex-start;
+          width: 80%;
+          color: black;
           border-radius: 5px; }
-        main #information .contactForm .checkBox input,
-        main #information .contactForm .checkBox label {
-          margin: 5% 5% 5% 0; }
-        main #information .contactForm .checkBox label {
-          position: relative;
-          top: 3px; }
-      main #information .contactForm #fName,
-      main #information .contactForm #lName,
-      main #information .contactForm #adrPCode,
-      main #information .contactForm #adrCity {
-        width: 35%;
-        height: 40%;
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.2rem;
-        color: black;
-        padding: 2% 0 2% 5%;
-        border-radius: 5px;
+          #mainCheckout #information .contactForm #email .checkBox input,
+          #mainCheckout #information .contactForm #adrStreet .checkBox input,
+          #mainCheckout #information .contactForm #adrCountry .checkBox input,
+          #mainCheckout #information .contactForm #adrPhone .checkBox input {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000000;
+            border-radius: 5px; }
+          #mainCheckout #information .contactForm #email .checkBox input,
+          #mainCheckout #information .contactForm #email .checkBox label,
+          #mainCheckout #information .contactForm #adrStreet .checkBox input,
+          #mainCheckout #information .contactForm #adrStreet .checkBox label,
+          #mainCheckout #information .contactForm #adrCountry .checkBox input,
+          #mainCheckout #information .contactForm #adrCountry .checkBox label,
+          #mainCheckout #information .contactForm #adrPhone .checkBox input,
+          #mainCheckout #information .contactForm #adrPhone .checkBox label {
+            margin: 5% 5% 5% 0; }
+          #mainCheckout #information .contactForm #email .checkBox label,
+          #mainCheckout #information .contactForm #adrStreet .checkBox label,
+          #mainCheckout #information .contactForm #adrCountry .checkBox label,
+          #mainCheckout #information .contactForm #adrPhone .checkBox label {
+            position: relative;
+            top: 3px; }
+        #mainCheckout #information .contactForm #email #fName,
+        #mainCheckout #information .contactForm #email #lName,
+        #mainCheckout #information .contactForm #email #adrPCode,
+        #mainCheckout #information .contactForm #email #adrCity,
+        #mainCheckout #information .contactForm #adrStreet #fName,
+        #mainCheckout #information .contactForm #adrStreet #lName,
+        #mainCheckout #information .contactForm #adrStreet #adrPCode,
+        #mainCheckout #information .contactForm #adrStreet #adrCity,
+        #mainCheckout #information .contactForm #adrCountry #fName,
+        #mainCheckout #information .contactForm #adrCountry #lName,
+        #mainCheckout #information .contactForm #adrCountry #adrPCode,
+        #mainCheckout #information .contactForm #adrCountry #adrCity,
+        #mainCheckout #information .contactForm #adrPhone #fName,
+        #mainCheckout #information .contactForm #adrPhone #lName,
+        #mainCheckout #information .contactForm #adrPhone #adrPCode,
+        #mainCheckout #information .contactForm #adrPhone #adrCity {
+          width: 35%;
+          height: 40%;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          padding: 2% 0 2% 5%;
+          border-radius: 5px;
+          border: 1px solid #000000;
+          color: #000000; }
+      #mainCheckout #information .contactForm hr {
+        margin: 10%; }
+    #mainCheckout #information .continueButton {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: black;
+      background-color: #000000;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      height: 4rem;
+      width: 50%;
+      margin: 5%; }
+    #mainCheckout #information #shipping {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%; }
+      #mainCheckout #information #shipping #transferredCustContact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
         border: 1px solid #000000;
-        color: #000000; }
-  main .continueButton {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300;
-    font-size: 1.2rem;
-    color: black;
-    background-color: #000000;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    height: 4rem;
-    width: 50%;
-    margin: 5%; }
-  main #shipping {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%; }
-    main #shipping #transferredCustContact {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      border: 1px solid #000000;
-      width: 80%;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      padding: 5%; }
-      main #shipping #transferredCustContact hr {
-        margin: 5%;
-        width: 90%; }
-      main #shipping #transferredCustContact button {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.6rem;
-        color: black;
-        border: 1px solid black;
+        width: 80%;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        padding: 5%; }
+        #mainCheckout #information #shipping #transferredCustContact hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #shipping #transferredCustContact button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #shipping #transferredCustContact button:hover {
+            background-color: black;
+            color: white; }
+      #mainCheckout #information #shipping form {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; }
+        #mainCheckout #information #shipping form label {
+          width: 80%;
+          justify-content: flex-end; }
+        #mainCheckout #information #shipping form input {
+          width: 20%; }
+      #mainCheckout #information #shipping .returnButton {
         background-color: white;
-        padding: .5rem;
-        border-radius: .5rem;
-        cursor: pointer;
+        border: none;
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
         color: black;
-        margin-top: 5%; }
-        main #shipping #transferredCustContact button:hover {
-          background-color: black;
-          color: white; }
-    main #shipping form {
-      border: 1px solid #000000;
-      border-radius: 5px;
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row; }
-    main #shipping .returnButton {
-      background-color: white;
-      border: none;
-      font-family: "Roboto Mono", monospace;
-      font-weight: 300;
-      font-size: 1.2rem;
-      color: black;
-      margin: 5% 30% 5% 0; }
-    main #shipping hr {
-      width: 80%;
-      margin: 10%; }
-  main #payment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%; }
-    main #payment #transferredCustShipping {
+        margin: 5% 30% 5% 0; }
+      #mainCheckout #information #shipping hr {
+        margin: 10%; }
+    #mainCheckout #information #payment {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      text-align: center;
-      border: 1px solid #000000;
-      width: 80%;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      padding: 5%; }
-      main #payment #transferredCustShipping hr {
-        margin: 5%;
-        width: 90%; }
-      main #payment #transferredCustShipping button {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.6rem;
-        color: black;
-        border: 1px solid black;
-        background-color: white;
-        padding: .5rem;
-        border-radius: .5rem;
-        cursor: pointer;
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
+      width: 100%; }
+      #mainCheckout #information #payment #transferredCustShipping {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #000000;
+        width: 80%;
         font-size: 1.2rem;
-        color: black;
-        margin-top: 5%; }
-        main #payment #transferredCustShipping button:hover {
-          background-color: black;
-          color: white; }
-    main #payment #paymentInfoBox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      border: 1px solid #000000;
-      width: 80%;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      padding: 5%;
-      margin: 5%; }
-      main #payment #paymentInfoBox hr {
-        margin: 5%;
-        width: 90%; }
-      main #payment #paymentInfoBox button {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.6rem;
-        color: black;
-        border: 1px solid black;
-        background-color: white;
-        padding: .5rem;
-        border-radius: .5rem;
-        cursor: pointer;
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
+        border-radius: 5px;
+        padding: 5%; }
+        #mainCheckout #information #payment #transferredCustShipping hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #payment #transferredCustShipping button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #payment #transferredCustShipping button:hover {
+            background-color: black;
+            color: white; }
+      #mainCheckout #information #payment #paymentInfoBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #000000;
+        width: 80%;
         font-size: 1.2rem;
-        color: black;
-        margin-top: 5%; }
-        main #payment #paymentInfoBox button:hover {
-          background-color: black;
-          color: white; }
-      main #payment #paymentInfoBox img {
-        width: 30%;
-        margin-top: 5%; }
-    main #payment form {
-      border: 1px solid #000000;
-      border-radius: 5px;
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column; }
-      main #payment form input {
-        margin-right: 1rem; }
-      main #payment form label {
+        border-radius: 5px;
+        padding: 5%;
         margin: 5%; }
-    main #payment .returnButton {
-      background-color: white;
-      border: none;
-      font-family: "Roboto Mono", monospace;
-      font-weight: 300;
-      font-size: 1.2rem;
-      color: black;
-      margin: 5% 30% 5% 0; }
-  main #review {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
-    main #review #transferredCustPayment,
-    main #review #checkoutTotal {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      border: 1px solid #000000;
-      width: 80%;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      padding: 5%;
-      margin: 5%; }
-      main #review #transferredCustPayment hr,
-      main #review #checkoutTotal hr {
-        margin: 5%;
-        width: 90%; }
-      main #review #transferredCustPayment button,
-      main #review #checkoutTotal button {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.6rem;
-        color: black;
-        border: 1px solid black;
+        #mainCheckout #information #payment #paymentInfoBox hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #payment #paymentInfoBox button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #payment #paymentInfoBox button:hover {
+            background-color: black;
+            color: white; }
+        #mainCheckout #information #payment #paymentInfoBox img {
+          width: 30%;
+          margin-top: 5%; }
+      #mainCheckout #information #payment form {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        #mainCheckout #information #payment form input {
+          margin-right: 1rem; }
+        #mainCheckout #information #payment form label {
+          margin: 5%; }
+        #mainCheckout #information #payment form hr {
+          margin: 0; }
+      #mainCheckout #information #payment .returnButton {
         background-color: white;
-        padding: .5rem;
-        border-radius: .5rem;
-        cursor: pointer;
+        border: none;
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
         color: black;
-        margin-top: 5%; }
-        main #review #transferredCustPayment button:hover,
-        main #review #checkoutTotal button:hover {
-          background-color: black;
-          color: white; }
-      main #review #transferredCustPayment .total,
-      main #review #checkoutTotal .total {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 400;
-        font-size: 2.4rem;
-        color: #443344;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #000000; }
-    main #review .returnButton {
-      background-color: white;
-      border: none;
+        margin: 5% 30% 5% 0; }
+      #mainCheckout #information #payment hr {
+        margin: 10%; }
+        #mainCheckout #information #payment hr #fName,
+        #mainCheckout #information #payment hr #lName,
+        #mainCheckout #information #payment hr #adrPCode,
+        #mainCheckout #information #payment hr #adrCity {
+          width: 35%;
+          height: 40%;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          padding: 2% 0 2% 5%;
+          border-radius: 5px;
+          border: 1px solid #000000;
+          color: #000000; }
+    #mainCheckout #information .continueButton {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.2rem;
       color: black;
-      margin: 5% 30% 5% 0; }
+      background-color: #000000;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      height: 4rem;
+      width: 50%;
+      margin: 5%; }
+    #mainCheckout #information #shipping {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%; }
+      #mainCheckout #information #shipping #transferredCustContact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #000000;
+        width: 80%;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        padding: 5%; }
+        #mainCheckout #information #shipping #transferredCustContact hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #shipping #transferredCustContact button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #shipping #transferredCustContact button:hover {
+            background-color: black;
+            color: white; }
+      #mainCheckout #information #shipping form {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; }
+      #mainCheckout #information #shipping .returnButton {
+        background-color: white;
+        border: none;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: black;
+        margin: 5% 30% 5% 0; }
+      #mainCheckout #information #shipping hr {
+        width: 80%;
+        margin: 10%; }
+    #mainCheckout #information #payment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%; }
+      #mainCheckout #information #payment #transferredCustShipping {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #000000;
+        width: 80%;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        padding: 5%; }
+        #mainCheckout #information #payment #transferredCustShipping hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #payment #transferredCustShipping button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #payment #transferredCustShipping button:hover {
+            background-color: black;
+            color: white; }
+      #mainCheckout #information #payment #paymentInfoBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid #000000;
+        width: 80%;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        padding: 5%;
+        margin: 5%; }
+        #mainCheckout #information #payment #paymentInfoBox hr {
+          margin: 5%;
+          width: 90%; }
+        #mainCheckout #information #payment #paymentInfoBox button {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.6rem;
+          color: black;
+          border: 1px solid black;
+          background-color: white;
+          padding: .5rem;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin-top: 5%; }
+          #mainCheckout #information #payment #paymentInfoBox button:hover {
+            background-color: black;
+            color: white; }
+        #mainCheckout #information #payment #paymentInfoBox img {
+          width: 30%;
+          margin-top: 5%; }
+      #mainCheckout #information #payment #review {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
+        #mainCheckout #information #payment #review #transferredCustPayment,
+        #mainCheckout #information #payment #review #checkoutTotal {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          text-align: center;
+          border: 1px solid #000000;
+          width: 80%;
+          font-size: 1.2rem;
+          border-radius: 5px;
+          padding: 5%;
+          margin: 5%; }
+          #mainCheckout #information #payment #review #transferredCustPayment hr,
+          #mainCheckout #information #payment #review #checkoutTotal hr {
+            margin: 5%;
+            width: 90%; }
+          #mainCheckout #information #payment #review #transferredCustPayment button,
+          #mainCheckout #information #payment #review #checkoutTotal button {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 300;
+            font-size: 1.6rem;
+            color: black;
+            border: 1px solid black;
+            background-color: white;
+            padding: .5rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: black;
+            margin-top: 5%; }
+            #mainCheckout #information #payment #review #transferredCustPayment button:hover,
+            #mainCheckout #information #payment #review #checkoutTotal button:hover {
+              background-color: black;
+              color: white; }
+          #mainCheckout #information #payment #review #transferredCustPayment .total,
+          #mainCheckout #information #payment #review #checkoutTotal .total {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 400;
+            font-size: 2.4rem;
+            color: #443344;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #000000; }
+        #mainCheckout #information #payment #review .returnButton {
+          background-color: white;
+          border: none;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 300;
+          font-size: 1.2rem;
+          color: black;
+          margin: 5% 30% 5% 0; }
+        #mainCheckout #information #payment #review hr {
+          margin: 10%; }
 
-main {
+#mainProducts {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
   font-size: 1.2rem;
@@ -447,7 +687,7 @@ main {
   flex-direction: column;
   margin: none;
   padding: 5% 0 5% 0; }
-  main h2 {
+  #mainProducts h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
@@ -456,14 +696,14 @@ main {
     color: #000000;
     text-align: center;
     margin: 5%; }
-  main hr {
+  #mainProducts hr {
     width: 80%;
     border: 1px solid #000000; }
-  main #productsContainer {
+  #mainProducts #productsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; }
-    main #productsContainer .eachProduct {
+    #mainProducts #productsContainer .eachProduct {
       width: 50%;
       display: flex;
       justify-content: center;
@@ -471,31 +711,31 @@ main {
       flex-direction: column;
       margin-top: 5%; }
       @media screen and (min-width: 768px) {
-        main #productsContainer .eachProduct {
+        #mainProducts #productsContainer .eachProduct {
           width: 33.3%; } }
-      main #productsContainer .eachProduct .productImage {
+      #mainProducts #productsContainer .eachProduct .productImage {
         width: 50%; }
         @media screen and (min-width: 768px) {
-          main #productsContainer .eachProduct .productImage {
+          #mainProducts #productsContainer .eachProduct .productImage {
             width: 80%; } }
-      main #productsContainer .eachProduct div {
+      #mainProducts #productsContainer .eachProduct div {
         width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start; }
         @media screen and (min-width: 768px) {
-          main #productsContainer .eachProduct div {
+          #mainProducts #productsContainer .eachProduct div {
             width: 50%; } }
-        main #productsContainer .eachProduct div p {
+        #mainProducts #productsContainer .eachProduct div p {
           color: #000000;
           margin: 2%; }
           @media screen and (min-width: 768px) {
-            main #productsContainer .eachProduct div p {
+            #mainProducts #productsContainer .eachProduct div p {
               font-family: "Roboto Mono", monospace;
               font-weight: 300;
               font-size: 1.6rem;
               color: black; } }
-      main #productsContainer .eachProduct button {
+      #mainProducts #productsContainer .eachProduct button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -508,7 +748,7 @@ main {
         width: 70%;
         margin: 10%; }
         @media screen and (min-width: 768px) {
-          main #productsContainer .eachProduct button {
+          #mainProducts #productsContainer .eachProduct button {
             font-size: 1.4rem;
             width: 50%;
             height: 35px;
