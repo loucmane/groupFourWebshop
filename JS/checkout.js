@@ -11,16 +11,27 @@ class Product {
 
 let bag = [];
 
-// Save shopping bag in LS
+let custInfo = [];
+
+// Save shopping cart in LS
 function saveBag() {
     localStorage.setItem("products", JSON.stringify(bag));
 }
 
-// Get shopping bag from LS
+// Get shopping cart from LS
 function getBag() {
     bag = JSON.parse(localStorage.getItem("products"));
 }
 
+// Save customer information in LS
+function saveCustInfo() {
+    localStorage.setItem("Information", JSON.stringify(custInfo));
+}
+
+// Get customer information from LS
+function getCustInfo() {
+    custInfo = JSON.parse(localStorage.getItem("Information"));
+}
 
 $(function() {
 
@@ -170,15 +181,4 @@ function costfromLS(params) {
 function grandTotal(params) {
     total = costfromLS() + 59;
     return total;
-}
-
-
-// Save shopping bag in LS
-function saveInfo() {
-    localStorage.setItem("info");
-}
-
-// Get shopping bag from LS
-function getInfo() {
-    localStorage.getItem("info");
 }
