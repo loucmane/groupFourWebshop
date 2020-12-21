@@ -13,7 +13,7 @@ $(function() {
         window.location.href = "../HTML/cart.html";
     });
 
-const cartNumbers = () => {
+    const cartNumbers = () => {
 
     let itemsInCart = 0;
     
