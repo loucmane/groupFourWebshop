@@ -204,7 +204,7 @@ function renderCart() {
             for (let i = 0; i < bag.length; i++) {
                 console.log(bag[i].quantity)
                 if (bag[i].id === product.id) {
-                    bag[i].quantity = qtyInput.val();
+                    bag[i].quantity = parseInt(qtyInput.val());
                     saveBag();
                     renderCart();
                 }
