@@ -1022,3 +1022,59 @@ table {
     .tableSum #shopBtn:hover {
       background-color: black;
       color: white; }
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  main h1 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+    font-size: 4rem;
+    color: black; }
+  main img {
+    max-width: 100%;
+    height: auto; }
+    @media screen and (min-width: 410px) {
+      main img {
+        width: 100%; } }
+  main #contactContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3rem; }
+    main #contactContainer h2 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 3.2rem;
+      color: black;
+      margin: 3rem; }
+    main #contactContainer h3 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: black;
+      margin-bottom: 2rem; }
+    main #contactContainer h4 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: black; }
+    main #contactContainer p {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: black;
+      margin-bottom: 2rem; }
+    main #contactContainer .sectionContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      main #contactContainer .sectionContainer p {
+        margin: 0; }
+        main #contactContainer .sectionContainer p:last-child {
+          margin-bottom: 2rem; }

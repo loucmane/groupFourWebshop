@@ -1,0 +1,51 @@
+main {
+    @include flexCenter(column);
+    h1 {
+        @include fontLogotype();
+        
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+
+        @media screen and(min-width: 410px){
+            width: 100%;
+        }
+    }
+    #contactContainer {
+        @include flexCenter(column);
+        margin-bottom: 3rem;
+
+        h2 {
+            @include fontHeading();
+            margin: 3rem;
+        }
+
+        h3 {
+            @include fontSubtitle();
+            margin-bottom: 2rem;
+        }
+
+        h4 {
+            @include fontSubtitle();
+        }
+
+        p {
+            @include fontBody();
+            margin-bottom: 2rem;
+        }
+
+        .sectionContainer{
+            @include flexCenter(column);
+
+            p {
+                margin:0;
+
+                &:last-child {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
