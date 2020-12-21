@@ -1,152 +1,180 @@
-main {
-    width: 100%;
-    height: 100%;
-    @include fontBread();
-    color: $black;
-    @include flexCenter(column);
-    #logotype {
-        @include fontLogotype();
-    }
-    .navButtons {
-        a {
-            text-decoration: none;
-            color: $black;
-        }
-        i.fas.fa-arrow-right {
-            font-size: 0.8rem;
-        }
-    }
-    #information {
-        @include flexCenter(column);
+    #mainCheckout {
         width: 100%;
-        .contactForm {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            color: $black;
-            #email,
-            #adrStreet,
-            #adrCountry,
-            #adrPhone {
-                @include fontBread();
-                width: 80%;
-                height: 40%;
-                padding: 2% 0 2% 5%;
-                border-radius: 5px;
-                border: 1px solid $black;
-                color: $black;
-            }
-            #adrStreet,
-            #adrCountry {
-                margin: 5%;
-            }
-            .checkBox {
-                display: flex;
-                justify-content: flex-start;
-                width: 80%;
-                color: black;
-                border-radius: 5px;
-                input {
-                    width: 24px;
-                    height: 24px;
-                    border: 1px solid $black;
-                    border-radius: 5px;
-                }
-                input,
-                label {
-                    margin: 5% 5% 5% 0;
-                }
-                label {
-                    position: relative;
-                    top: 3px;
-                }
-            }
-            #fName,
-            #lName,
-            #adrPCode,
-            #adrCity {
-                width: 35%;
-                height: 40%;
-                @include fontBread();
-                padding: 2% 0 2% 5%;
-                border-radius: 5px;
-                border: 1px solid $black;
+        height: 100%;
+        @include fontBread();
+        color: $black;
+        @include flexCenter(column);
+        #logotype {
+            @include fontLogotype();
+            font-size: 3rem;
+            margin: 5%;
+        }
+        .navButtons {
+            margin-bottom: 5%;
+            a {
+                text-decoration: none;
                 color: $black;
             }
         }
-    }
-    .continueButton {
-        @include buttonSlim();
-    }
-    #shipping {
-        @include flexCenter(column);
-        width: 100%;
-        #transferredCustContact {
-            @include transferBox();
-        }
-        form {
-            border: 1px solid $black;
-            border-radius: 5px;
-            width: 80%;
-            @include flexCenter(row);
-        }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
+        h2 {
+            @include fontTitle();
+            font-weight: $fw-bold;
+            color: $black;
+            text-align: center;
+            margin: 5%;
         }
         hr {
             width: 80%;
-            margin: 10%;
         }
-    }
-    #payment {
-        @include flexCenter(column);
-        width: 100%;
-        #transferredCustShipping {
-            @include transferBox();
-        }
-        #paymentInfoBox {
-            @include transferBox();
-            margin: 5%;
-            img {
-                width: 30%;
-                margin-top: 5%;
-            }
-        }
-        form {
-            border: 1px solid $black;
-            border-radius: 5px;
-            width: 80%;
+        #information {
             @include flexCenter(column);
-            input {
-                margin-right: 1rem;
-            }
-            label {
-                margin: 5%;
-            }
-        }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
-        }
-    }
-    #review {
-        width: 100%;
-        @include flexCenter(column);
-        #transferredCustPayment,
-        #checkoutTotal {
-            @include transferBox();
-            margin: 5%;
-            .total {
-                @include fontTitle();
-                text-transform: uppercase;
-                font-weight: $fw-bold;
+            width: 100%;
+            .contactForm {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
                 color: $black;
+                #email,
+                #adrStreet,
+                #adrCountry,
+                #adrPhone {
+                    @include fontBread();
+                    width: 80%;
+                    height: 40%;
+                    padding: 2% 0 2% 5%;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    color: $black;
+                }
+                #adrStreet,
+                #adrCountry {
+                    margin: 5%;
+                }
+                .checkBox {
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 80%;
+                    color: black;
+                    border-radius: 5px;
+                    input {
+                        width: 24px;
+                        height: 24px;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                    }
+                    input,
+                    label {
+                        margin: 5% 5% 5% 0;
+                    }
+                    label {
+                        position: relative;
+                        top: 3px;
+                    }
+                }
+                #fName,
+                #lName,
+                #adrPCode,
+                #adrCity {
+                    width: 35%;
+                    height: 40%;
+                    @include fontBread();
+                    padding: 2% 0 2% 5%;
+                    border-radius: 5px;
+                    border: 1px solid $black;
+                    color: $black;
+                }
+            }
+            hr {
+                margin: 10%;
             }
         }
-        .returnButton {
-            @include buttonReturn();
-            margin: 5% 30% 5% 0;
+        .continueButton {
+            @include buttonSlim();
+        }
+        #shipping {
+            @include flexCenter(column);
+            width: 100%;
+            #transferredCustContact {
+                @include transferBox();
+            }
+            form {
+                border: 1px solid $black;
+                border-radius: 5px;
+                width: 80%;
+                @include flexCenter(row);
+                label {
+                    width: 80%;
+                    justify-content: flex-end;
+                }
+                input {
+                    width: 20%;
+                }
+            }
+            .returnButton {
+                @include buttonReturn();
+                margin: 5% 30% 5% 0;
+            }
+            hr {
+                margin: 10%;
+            }
+        }
+        #payment {
+            @include flexCenter(column);
+            width: 100%;
+            #transferredCustShipping {
+                @include transferBox();
+            }
+            #paymentInfoBox {
+                @include transferBox();
+                margin: 5%;
+                img {
+                    width: 30%;
+                    margin-top: 5%;
+                }
+            }
+            form {
+                border: 1px solid $black;
+                border-radius: 5px;
+                width: 80%;
+                @include flexCenter(column);
+                input {
+                    margin-right: 1rem;
+                }
+                label {
+                    margin: 5%;
+                }
+                hr {
+                    margin: 0
+                }
+            }
+            .returnButton {
+                @include buttonReturn();
+                margin: 5% 30% 5% 0;
+            }
+            hr {
+                margin: 10%;
+            }
+        }
+        #review {
+            width: 100%;
+            @include flexCenter(column);
+            #transferredCustPayment,
+            #checkoutTotal {
+                @include transferBox();
+                margin: 5%;
+                .total {
+                    @include fontTitle();
+                    text-transform: uppercase;
+                    font-weight: $fw-bold;
+                    color: $black;
+                }
+            }
+            .returnButton {
+                @include buttonReturn();
+                margin: 5% 30% 5% 0;
+            }
+            hr {
+                margin: 10%;
+            }
         }
     }
-}
