@@ -79,8 +79,10 @@ $(function() { // Window onload
                 bag.push(addedItem);
             }
 
+            
             saveBag();
             createBagHTML();
+            cartNumbers();
         });
     });
 });

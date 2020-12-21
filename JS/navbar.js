@@ -13,17 +13,7 @@ $(function() {
         window.location.href = "../HTML/cart.html";
     });
 
-    const cartNumbers = () => {
-
-    let itemsInCart = 0;
-    
-    for (let i = 0; i < bag.length; i++) {
-        itemsInCart += bag[i].quantity;
-    }
-    return itemsInCart;
-};
-
-    document.querySelector('.shoppingCartButton i').textContent = cartNumbers();
+    cartNumbers();
 });
 
 function getBag() {
@@ -33,3 +23,17 @@ function getBag() {
         bag = JSON.parse(localStorage.getItem("products"));
     }
 }
+
+function cartNumbers() {
+
+    getBag();
+
+    let itemsInCart = 0;
+    
+    for (let i = 0; i < bag.length; i++) {
+        itemsInCart += bag[i].quantity;
+    }    
+
+    $(".shoppingCartButton i")
+    .html(itemsInCart);
+};
