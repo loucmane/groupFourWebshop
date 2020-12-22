@@ -241,11 +241,3 @@ function renderCart() {
     .appendTo(".tableSum")
 }
 
-// CALCULATE TOTAL //
-function calculateTotal() {
-    let total = 0;
-    for (let i = 0; i < bag.length; i++) {
-        total = total + (bag[i].quantity * bag[i].product.price);
-    }
-    return total;
-};

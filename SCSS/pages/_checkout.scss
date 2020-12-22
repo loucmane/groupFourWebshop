@@ -9,11 +9,13 @@
     }
     .navButtons {
         margin: 5%;
+        
         a {
             text-decoration: none;
             color: $black;
         }
     }
+
     h2 {
         @include fontTitle();
         font-weight: $fw-bold;
@@ -21,10 +23,12 @@
         text-align: center;
         margin: 5%;
     }
+
     hr {
         width: 80%;
         margin: 10%;
     }
+    
     .continueButton,
     #completeButton {
         @include buttonSlim();
@@ -40,10 +44,10 @@
         //     margin: none;
         // }
     }
-    #information {
+    #information { 
         @include flexCenter(column);
         width: 100%;
-        .contactForm {
+        #contactForm {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -97,23 +101,26 @@
             }
         }
     }
-    #shipping {
-        @include flexCenter(column);
-        width: 100%;
-        form {
+     #shipping {
+         @include flexCenter(column);
+         
+         form {
             border: 1px solid $black;
             border-radius: 5px;
             width: 80%;
-            @include flexCenter(row);
+            margin: 1rem;
+            padding: 2rem;
+            
             label {
-                width: 80%;
-                justify-content: flex-end;
+            margin-top: 1rem;
+            
+                input{
+                    margin-right: 1rem;
+                }
             }
-            input {
-                width: 20%;
-            }
-        }
-    }
+         }
+     }
+
     #payment {
         @include flexCenter(column);
         width: 100%;
@@ -127,8 +134,11 @@
         }
     }
     #review {
+        display: none;
         width: 100%;
-        @include flexCenter(column);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         #checkoutOrderInfo,
         #checkoutTotal {
             @include transferBox();
@@ -140,10 +150,19 @@
                 color: $black;
             }
         }
-    }
-    .productDiv {
-        img {
-            width: 20%;
+        .pContainer{
+            margin: 3rem;
+            text-align: start;
+            
         }
+    }
+    #productDivContainer {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 1rem;
+    }
+
+    .productDiv {
+        width: 30%;
     }
 }

@@ -1,8 +1,8 @@
 #confirmationContainer {
     @include flexCenter(column);
     text-align: center;
-    margin: 5%;
-    h2,
+    //margin: 5%;
+    
     #firstMessage,
     #secondMessage,
     button {
@@ -11,15 +11,19 @@
             margin: 3%
         }
     }
+
     h2 {
         @include fontHeading();
     }
+
     #firstMessage {
         @include fontSubtitle();
     }
+
     #secondMessage {
         @include fontBody();
     }
+    
     button {
         @include buttonBlack();
         width: 80%;

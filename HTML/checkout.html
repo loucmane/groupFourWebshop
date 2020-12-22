@@ -20,8 +20,9 @@
 
 </head>
 
-<body>
+<body> 
 
+    <header>
     <div class="headerBanner">
 
         <p>free shipping on all orders from 30 €</p>
@@ -29,6 +30,7 @@
         <h1 class="logotype">LOGOTYPE</h1>
 
     </div>
+    </header>
 
 
     <main id="mainCheckout">
@@ -54,7 +56,7 @@
             </div>
             <!------->
 
-            <form class="contactForm">
+            <form id="contactForm">
                 <h2>Contact Information</h2>
 
                 <input type="email" placeholder="Email address" id="email">
@@ -106,9 +108,10 @@
 
 
             <h2>Shipping Method</h2>
-            <form>
+            <form id="radioForm">
 
                 <label><input type="radio" id="shippingPostNord" name="shipping" value=59>Shipping: Postnord 59 SEK</label>
+                <br><br>
                 <label><input type="radio" id="shippingDHL" name="shipping" value=159>Shipping: Express DHL 159 SEK</label>
 
             </form>

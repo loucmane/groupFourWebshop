@@ -1,24 +1,3 @@
-.headerBanner {
-    text-align: center;
-    @include flexCenter(column);
-    p {
-        @include fontBody();
-        font-size: 1.4rem;
-        color: white;
-        background-color: black;
-        width: 100vw;
-        padding: 2.5rem;
-        @media screen and(min-width: 410px) {
-            padding: 3.5rem;
-            font-size: 1.6rem;
-        }
-    }
-    h1 {
-        @include fontLogotype();
-        margin-top: 5rem;
-    }
-}
-
 table {
     border-collapse: collapse;
     padding: 2rem 0 2rem 0;

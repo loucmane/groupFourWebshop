@@ -1,9 +1,5 @@
 main {
     @include flexCenter(column);
-    h1 {
-        @include fontLogotype();
-        
-    }
 
     img {
         max-width: 100%;

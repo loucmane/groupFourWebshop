@@ -1,41 +1,45 @@
 $(function() {
+    buttonFunctions();
+    $( "#review" ).hide()
+
+});
+
+function buttonFunctions() {
 
     $("#btnToShipping")
-        .on("click", function() {
-            window.location.href = "#shipping";
-        });
+    .on("click", function() {
+        window.location.href = "#shipping";
+    });
 
     $("#btnToPayment")
-        .on("click", function() {
-            window.location.href = "#payment";
-        });
+    .on("click", function() {
+        window.location.href = "#payment";
+    });
 
     $("#btnReviewOrder")
-        .on("click", function() {
-            //$("<p>").appendTo($("#checkoutOrderInfo"))
-            // .html("Contact" +
-            // " " +
-            // $("#email").val());
+    .on("click", function() {
 
-            // $("<hr>")
-            // .appendTo($("#checkoutOrderInfo"));
+        $( " #review " ).toggle();
+        $( " #review " ).css({
+            display: "flex"
+        })
 
-            // $("<p>")
-            // .appendTo($("#checkoutOrderInfo"))
-            // .html("Ship to " +
-            // $("#fName").val() +
-            // " " +
-            // $("#lName").val() +
-            // ", " +
-            // $("#adrStreet").val() +
-            // ", " +
-            // $("#adrPCode").val() +
-            // " " +
-            // $("#adrCity").val() +
-            // ", " +
-            // $("#adrCountry").val());
+        getOrderInfo();
+        renderOrderInfo();
+        renderOrderSummary();
 
-            let email = $("#email").val();
+        window.location.href = "#review";
+    });
+
+    $("#completeButton")
+    .on("click", function() {
+        window.location.href = "../HTML/confirmation.html";
+    });
+} 
+
+function getOrderInfo() {
+
+    let email = $("#email").val();
             let fName = $("#fName").val();
             let lName = $("#lName").val();
             let street = $("#adrStreet").val();
@@ -43,7 +47,7 @@ $(function() {
             let city = $("#adrCity").val();
             let country = $("#adrCountry").val();
             let phone = $("#adrPhone").val();
-            let shipping = $("[name='shipping']:checked").val();
+            let shipping = $("[name='shipping']:checked").text() + parseInt($("[name='shipping']:checked").val());
 
             let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping);
 
@@ -51,143 +55,109 @@ $(function() {
             custInfo.push(order);
             setToLocalStorage();
 
-            let container1 = $("#checkoutOrderInfo");
+}
 
-            for (let i = 0; i < custInfo.length; i++) {
+function renderOrderInfo() {
 
-                container1.html("");
+    let orderInfo = $("#checkoutOrderInfo");
 
-                $("<h4>")
-                    .html("Your order information")
-                    .appendTo(container1);
+    for (let i = 0; i < custInfo.length; i++) {
 
-                $("<p>")
-                    .html("Name: " + custInfo[i].fName + " " + custInfo[i].lName)
-                    .appendTo(container1);
+        orderInfo.html("");
 
-                $("<p>")
-                    .html("Email: " + custInfo[i].email)
-                    .appendTo(container1);
+        $("<h4>")
+        .html("Your order information")
+        .appendTo(orderInfo);
 
-                $("<p>").html("Phone: " + custInfo[i].phone)
-                    .appendTo(container1);
+        let pContainer = $("<div>")
+        .addClass("pContainer")
+        .appendTo(orderInfo) 
 
+        $("<p>")
+        .html("Name: " + custInfo[i].fName + " " + custInfo[i].lName)
+        .appendTo(pContainer);
 
-                $("<p>")
-                    .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
-                    .appendTo(container1);
+        $("<p>")
+        .html("Email: " + custInfo[i].email)
+        .appendTo(pContainer);
 
-                $("<hr>")
-                    .appendTo(container1);
+        $("<p>").html("Phone: " + custInfo[i].phone)
+        .appendTo(pContainer);
 
-                $("<p>")
-                    .html("Shipping: " + "XXX " + custInfo[i].shipping + " SEK")
-                    .appendTo(container1);
+        $("<p>")
+        .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
+        .appendTo(pContainer);
 
+        $("<hr>")
+        .appendTo(orderInfo);
 
-            }
+        $("<p>")
+        .html("Shipping: " + custInfo[i].shipping + " SEK")
+        .appendTo(orderInfo);
+        }
 
+    $("<hr>")
+        .appendTo(orderInfo);
 
+    $("<p>")
+        .appendTo(orderInfo)
+        .html("Payment: Nets Payment");
 
-            $("<hr>")
-                .appendTo(container1);
+    $("<button>")
+    .appendTo(orderInfo)
+    .html("Change")
+    .on("click", function() {
+        window.location.href = "#information";
+    });
+}
 
-            $("<p>")
-                .appendTo(container1)
-                .html("Payment: Nets Payment");
+function renderOrderSummary() {
 
-            $("<button>")
-                .appendTo(container1)
-                .html("Change")
-                .on("click", function() {
-                    window.location.href = "#information";
-                });
+    let orderSummary = $("#checkoutTotal");
+    orderSummary.html("");
 
+    let productDivContainer = $("<div>")
+    .attr("id", "productDivContainer")
+    .appendTo(orderSummary)
 
+    $("<h4>")
+    .html("Your Products")
+    .appendTo(orderSummary);
 
+    //ADD IMAGES TO ORDER SUMMARY
+    for (let i = 0; i < bag.length; i++) {
 
+        let productDiv = $("<div>")
+        .addClass("productDiv")
+        .appendTo(productDivContainer);
 
-            let container2 = $("#checkoutTotal");
+        $("<img>")
+        .attr("src", bag[i].product.image)
+        .attr("alt", bag[i].product.name + " perfume bottle")
+        .appendTo(productDiv);
 
-            for (let i = 0; i < bag.length; i++) {
+        $("<p>")
+        .html(bag[i].product.name + "<br>" + bag[i].product.price + " SEK " + "<br>" + bag[i].quantity + "pc(s)" )
+        .appendTo(productDiv);
+    }
 
-                container2.html("");
+    //ADD COST + GRAND TOTAL TO ORDER SUMMARY
+    for (let i = 0; i < custInfo.length; i++) {
 
-                $("<h4>")
-                    .html("Your Products")
-                    .appendTo(container2);
+        $("<p>")
+        .appendTo(orderSummary)
+        .html("Subtotal " + calculateTotal() + " SEK");
 
-                //Product container
-                let productDiv = $("<div>")
-                    .addClass("productDiv")
-                    .appendTo(container2);
+        $("<p>")
+        .appendTo(orderSummary)
+        .html("Shipping " + custInfo[i].shipping + " SEK");
 
-                //Product image
-                $("<img>")
-                    .attr("src", bag[i].product.image)
-                    .attr("alt", bag[i].product.name + " perfume bottle")
-                    .appendTo(productDiv);
+        $("<hr>")
+        .appendTo(orderSummary);
 
-                //Product Name, Quantity, Price
-                $("<p>")
-                    .html(bag[i].product.name + " " + bag[i].quantity + " pcs " + bag[i].product.price + " SEK")
-                    .appendTo(productDiv);
-
-            }
-
-            for (let i = 0; i < custInfo.length; i++) {
-
-                // CALCULATE TOTAL //
-                function costFromLS() {
-                    let subTotal = 0;
-                    for (let i = 0; i < bag.length; i++) {
-                        subTotal = subTotal + (bag[i].quantity * bag[i].product.price);
-                    }
-                    return subTotal;
-                };
-
-                $("<p>")
-                    .appendTo(container2)
-                    .html("Subtotal " + costFromLS() + " SEK");
-
-                // let shippingCost = custInfo[i].shipping;
-
-                $("<p>")
-                    .appendTo(container2)
-                    .html("Shipping " + custInfo[i].shipping + " SEK");
-
-                $("<hr>")
-                    .appendTo(container2);
-
-
-
-                function grandTotal() {
-                    let grandTotal = 0;
-                    for (let i = 0; i < custInfo.length; i++) {
-
-                        grandTotal = grandTotal + (costFromLS() + custInfo[i].shipping);
-                    }
-
-                    return grandTotal;
-                };
-
-                $("<p>")
-                    .appendTo(container2)
-                    .addClass("total")
-                    .html("Total " + grandTotal() + " SEK");
-            }
-
-            window.location.href = "#review";
-        });
-
-    $("#completeButton")
-        .on("click", function() {
-
-            window.location.href = "../HTML/confirmation.html";
-        });
-});
-
-// function costfromLS(params) {
-//     subTotal =  + 100;
-//     return subTotal;
-// }
+        $("<p>")
+        .appendTo(orderSummary)
+        .addClass("total")
+        .html("Total " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
+    }
+}

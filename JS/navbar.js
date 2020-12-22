@@ -5,16 +5,25 @@ $(function() {
 
 function renderNavbar() {
     $( ".hamburgerButton" )
-    .click(function() {
+    .on("click", function() {
         $( " .myUl " ).slideToggle();
         $( ".myUl" ).css({
             display: "flex"
         })
     });
 
-    $( ".shoppingCartButton").click(function(){
-        window.location.href = "../HTML/cart.html";
-    });
+    //HYPERLINK SHOPPINGCARTBUTTON -> CART
+$( ".shoppingCartButton" )
+.on ("click", function(){
+  window.location.href = "../HTML/cart.html";
+});
+
+//HYPERLINK LOGOTYPE -> HOME
+$( ".logotype" )
+.on("click", function(){
+  window.location.href = "../index.html";
+  console.log("klick");
+});
 }
 
 function cartNumbers() {
