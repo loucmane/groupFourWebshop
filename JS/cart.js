@@ -5,26 +5,13 @@ $(function() {
     renderCart();
 });
 
-function saveBag() {
-    localStorage.setItem("products", JSON.stringify(bag));
-}
-
-function getBag() {
-    let productsFromLS = localStorage.getItem("products")
-
-    if (productsFromLS) { //Only get bag from LS if it has content
-        bag = JSON.parse(localStorage.getItem("products"));
-    }
-    
-}
-
-$( "<h1>" )
-.html ( "LOGOTYPE" )
-.appendTo("main")
-
 function renderCart() {
 
     getBag();
+
+    $( "<h1>" )
+    .html ( "LOGOTYPE" )
+    .appendTo("main")
 
     $(".tableContainer")
     .remove();
@@ -76,7 +63,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
+                if (bag[i].id === product.product.id) {
                     bag[i].quantity--;
 
                     if (bag[i].quantity === 0) { 
@@ -96,13 +83,13 @@ function renderCart() {
 
         //Product image
         $("<img>")
-        .attr("src", product.image)
-        .attr("alt", product.name + " perfume bottle")
+        .attr("src", product.product.image)
+        .attr("alt", product.product.name + " perfume bottle")
         .appendTo(productSpan)
 
         //Product Name
         $("<p>")
-        .html(product.name)
+        .html(product.product.name)
         .appendTo(productSpan)
 
         //Remove button
@@ -112,7 +99,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
+                if (bag[i].id === product.product.id) {
                     bag.splice([i], 1);
                     saveBag();
                     renderCart();
@@ -128,7 +115,7 @@ function renderCart() {
         .html("&#43;")
         .on("click", function() {
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
+                if (bag[i].id === product.product.id) {
                     product.quantity++;
                     saveBag();
                     renderCart();
@@ -139,7 +126,7 @@ function renderCart() {
 
         $("<td>")
         .addClass("phoneDescription")
-        .html(product.name + "<br>" + "(x" + product.quantity+")")
+        .html(product.product.name + "<br>" + "(x" + product.quantity+")")
         .appendTo(tableRow);
 
         $("<td>")
@@ -148,7 +135,7 @@ function renderCart() {
 
         $("<td>")
         .addClass("tdPrice")
-        .html(product.price + " SEK")
+        .html(product.product.price + " SEK")
         .appendTo(tableRow)
 
         $("<td>")
@@ -158,7 +145,7 @@ function renderCart() {
 
         $("<td>")
         .addClass("tdTotal")
-        .html(product.price * product.quantity + " SEK")
+        .html(product.product.price * product.quantity + " SEK")
         .appendTo(tableRow)
         
         let phoneTd1 = $("<td>")
@@ -171,7 +158,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
+                if (bag[i].id === product.product.id) {
                     bag.splice([i], 1);
                     saveBag();
                     renderCart();
@@ -203,7 +190,7 @@ function renderCart() {
     
             for (let i = 0; i < bag.length; i++) {
                 console.log(bag[i].quantity)
-                if (bag[i].id === product.id) {
+                if (bag[i].id === product.product.id) {
                     bag[i].quantity = parseInt(qtyInput.val());
                     saveBag();
                     renderCart();
@@ -265,7 +252,7 @@ function renderCart() {
 function calculateTotal() {
     let total = 0;
     for (let i = 0; i < bag.length; i++) {
-        total = total + (bag[i].quantity * bag[i].price);
+        total = total + (bag[i].quantity * bag[i].product.price);
     }
     return total;
 };
