@@ -15,13 +15,17 @@ $(function() {
 });
 
 bag = [];
+custInfo = [];
 
 function saveBag() {
     localStorage.setItem("products", JSON.stringify(bag));
+    localStorage.setItem("Information", JSON.stringify(custInfo));
+
 }
 
 function getBag() {
     bag = JSON.parse(localStorage.getItem("products")) || [] ;
+    custInfo = JSON.parse(localStorage.getItem("Information")) || [] ;
 }
 
 function cartNumbers() {

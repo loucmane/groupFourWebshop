@@ -9,10 +9,6 @@ function renderCart() {
 
     getBag();
 
-    $( "<h1>" )
-    .html ( "LOGOTYPE" )
-    .appendTo("main")
-
     $(".tableContainer")
     .remove();
 
@@ -63,7 +59,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.product.id) {
+                if (bag[i].product.id === product.product.id) {
                     bag[i].quantity--;
 
                     if (bag[i].quantity === 0) { 
@@ -99,7 +95,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.product.id) {
+                if (bag[i].product.id === product.product.id) {
                     bag.splice([i], 1);
                     saveBag();
                     renderCart();
@@ -115,7 +111,7 @@ function renderCart() {
         .html("&#43;")
         .on("click", function() {
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.product.id) {
+                if (bag[i].product.id === product.product.id) {
                     product.quantity++;
                     saveBag();
                     renderCart();
@@ -158,7 +154,7 @@ function renderCart() {
         .on("click", function() {
     
             for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.product.id) {
+                if (bag[i].product.id === product.product.id) {
                     bag.splice([i], 1);
                     saveBag();
                     renderCart();
@@ -190,7 +186,7 @@ function renderCart() {
     
             for (let i = 0; i < bag.length; i++) {
                 console.log(bag[i].quantity)
-                if (bag[i].id === product.product.id) {
+                if (bag[i].product.id === product.product.id) {
                     bag[i].quantity = parseInt(qtyInput.val());
                     saveBag();
                     renderCart();
