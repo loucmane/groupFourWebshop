@@ -1,10 +1,16 @@
 class Product {
-    constructor(image, name, price, description, id, quantity) {
+    constructor(image, name, price, description, id) {
         this.image = image;
         this.name = name;
         this.price = price;
         this.description = description;
         this.id = id;
+    }
+}
+
+class CartItem {
+    constructor(product, quantity) {
+        this.product = product;
         this.quantity = quantity;
     }
 }
@@ -21,23 +27,10 @@ let myProducts = [product1, product2, product3, product4, product5];
 
 let bag = [];
 
-// Save shopping bag in LS
-function saveBag() {
-    localStorage.setItem("products", JSON.stringify(bag));
-}
-
-// Get shopping bag from LS
-function getBag() {
-    bag = JSON.parse(localStorage.getItem("products"));
-}
-
-$(function() { // Window onload
-
+$(function() {
+    
+    getBag();
     createBagHTML();
-
-    if (localStorage.getItem("products") != null) { //Only get bag from LS if it has content
-        getBag();
-    }
 
     $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
 
@@ -75,10 +68,9 @@ $(function() { // Window onload
             }
 
             if (foundProduct === false) {
-                let addedItem = new Product(product.image, product.name, product.price, product.description, product.id, 1);
+                let addedItem = new CartItem(product, 1);
                 bag.push(addedItem);
             }
-
             
             saveBag();
             createBagHTML();

@@ -1,5 +1,4 @@
 $(function() {
-    getBag();
 
     $( ".hamburgerButton" )
     .click(function() {
@@ -12,16 +11,17 @@ $(function() {
     $( ".shoppingCartButton").click(function(){
         window.location.href = "../HTML/cart.html";
     });
-
     cartNumbers();
 });
 
-function getBag() {
-    let productsFromLS = localStorage.getItem("products");
+bag = [];
 
-    if (productsFromLS) { //Only get bag from LS if it has content
-        bag = JSON.parse(localStorage.getItem("products"));
-    }
+function saveBag() {
+    localStorage.setItem("products", JSON.stringify(bag));
+}
+
+function getBag() {
+    bag = JSON.parse(localStorage.getItem("products")) || [] ;
 }
 
 function cartNumbers() {
@@ -32,7 +32,7 @@ function cartNumbers() {
     
     for (let i = 0; i < bag.length; i++) {
         itemsInCart += bag[i].quantity;
-    }    
+    }  
 
     $(".shoppingCartButton i")
     .html(itemsInCart);
