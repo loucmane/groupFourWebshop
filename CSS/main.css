@@ -165,7 +165,8 @@ footer {
   #mainCheckout hr {
     width: 80%;
     margin: 10%; }
-  #mainCheckout .continueButton {
+  #mainCheckout .continueButton,
+  #mainCheckout #completeButton {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.2rem;
@@ -176,9 +177,11 @@ footer {
     border-radius: 5px;
     height: 4rem;
     width: 50%;
-    margin: 5%; }
+    margin: 5%;
+    cursor: pointer; }
     @media screen and (min-width: 768px) {
-      #mainCheckout .continueButton {
+      #mainCheckout .continueButton,
+      #mainCheckout #completeButton {
         width: 25%; } }
   #mainCheckout .returnButton {
     background-color: white;
@@ -187,10 +190,8 @@ footer {
     font-weight: 300;
     font-size: 1.2rem;
     color: black;
-    margin: 5% 30% 5% 0; }
-    @media screen and (min-width: 768px) {
-      #mainCheckout .returnButton {
-        margin: none; } }
+    cursor: pointer;
+    width: 100%; }
   #mainCheckout #information {
     display: flex;
     justify-content: center;
@@ -441,43 +442,34 @@ footer {
             height: 35px;
             margin: 5%; } }
 
-header {
-  text-align: center; }
-  header h1 {
+.headerBanner {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .headerBanner p {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
+    font-size: 1.4rem;
+    color: white;
+    background-color: black;
+    width: 100vw;
+    padding: 2.5rem; }
+    @media screen and (min-width: 410px) {
+      .headerBanner p {
+        padding: 3.5rem;
+        font-size: 1.6rem; } }
+  .headerBanner h1 {
     font-family: "Roboto Mono", monospace;
     font-weight: 700;
     letter-spacing: 1.6rem;
     font-size: 4rem;
     color: black;
-    margin: 5rem; }
-  header h4 {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 400;
-    font-size: 2.4rem;
-    color: #443344; }
-    @media screen and (min-width: 410px) {
-      header h4 {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 3.2rem;
-        color: black;
-        margin: 2rem; } }
-  header .headerBanner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300;
-    font-size: 1.6rem;
-    color: black;
-    width: 100vw;
-    height: 5rem;
-    color: white;
-    background-color: black; }
-    @media screen and (min-width: 410px) {
-      header .headerBanner {
-        height: 7rem; } }
+    cursor: pointer;
+    margin-top: 5rem; }
 
 table {
   border-collapse: collapse;
@@ -720,7 +712,8 @@ main {
     font-weight: 700;
     letter-spacing: 1.6rem;
     font-size: 4rem;
-    color: black; }
+    color: black;
+    cursor: pointer; }
   main img {
     max-width: 100%;
     height: auto; }
@@ -773,23 +766,17 @@ main {
   flex-direction: column;
   text-align: center;
   margin: 5%; }
-  #confirmationContainer .logotype {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 700;
-    letter-spacing: 1.6rem;
-    font-size: 4rem;
-    color: black; }
   #confirmationContainer h2,
   #confirmationContainer #firstMessage,
   #confirmationContainer #secondMessage,
   #confirmationContainer button {
-    margin: 15% 5% 15% 5%; }
+    margin: 10% 5% 10% 5%; }
     @media screen and (min-width: 768px) {
       #confirmationContainer h2,
       #confirmationContainer #firstMessage,
       #confirmationContainer #secondMessage,
       #confirmationContainer button {
-        margin: 5%; } }
+        margin: 3%; } }
   #confirmationContainer h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;

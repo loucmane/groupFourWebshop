@@ -13,6 +13,8 @@ $(function() {
 
     getBag();
 
+    localStorage.clear();
+
     //Link to landing page
     $(".logotype")
         .on("click", function() {
@@ -22,7 +24,7 @@ $(function() {
     //Link to checkoutpage
     $("button")
         .on("click", function() {
-            localStorage.clear();
+
             window.location.href = "../HTML/products.html";
         });
 });

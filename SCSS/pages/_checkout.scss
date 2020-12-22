@@ -25,7 +25,8 @@
         width: 80%;
         margin: 10%;
     }
-    .continueButton {
+    .continueButton,
+    #completeButton {
         @include buttonSlim();
         @media screen and(min-width: 768px) {
             width: 25%;
@@ -33,10 +34,11 @@
     }
     .returnButton {
         @include buttonReturn();
-        margin: 5% 30% 5% 0;
-        @media screen and(min-width: 768px) {
-            margin: none;
-        }
+        width: 100%;
+        // margin: 5%;
+        // @media screen and(min-width: 768px) {
+        //     margin: none;
+        // }
     }
     #information {
         @include flexCenter(column);

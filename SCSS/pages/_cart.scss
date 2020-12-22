@@ -1,26 +1,21 @@
-header {
+.headerBanner {
     text-align: center;
-    h1 {
-        @include fontLogotype();
-        margin: 5rem;
-    }
-    h4 {
-        @include fontTitle();
-        @media screen and(min-width: 410px) {
-            @include fontHeading();
-            margin: 2rem;
-        }
-    }
-    .headerBanner {
-        @include flexCenter(row);
+    @include flexCenter(column);
+    p {
         @include fontBody();
-        width: 100vw;
-        height: 5rem;
+        font-size: 1.4rem;
         color: white;
         background-color: black;
+        width: 100vw;
+        padding: 2.5rem;
         @media screen and(min-width: 410px) {
-            height: 7rem;
+            padding: 3.5rem;
+            font-size: 1.6rem;
         }
+    }
+    h1 {
+        @include fontLogotype();
+        margin-top: 5rem;
     }
 }
 
@@ -28,15 +23,12 @@ table {
     border-collapse: collapse;
     padding: 2rem 0 2rem 0;
     @include fontBody();
-
-        @media screen and(min-width: 410px) {
-            margin: 0 10rem 0 10rem;
-        }
-
-    tr:last-child{
+    @media screen and(min-width: 410px) {
+        margin: 0 10rem 0 10rem;
+    }
+    tr:last-child {
         border-bottom: none;
     }
-
     th {
         display: none;
         width: 25%;
@@ -44,7 +36,6 @@ table {
             display: table-cell;
         }
     }
-
     td {
         width: 25%;
     }
@@ -60,43 +51,34 @@ table {
             display: table-cell;
         }
     }
-
     .phoneDescription {
         @media screen and(min-width: 410px) {
             display: none;
         }
     }
-
     .ghostTd {
         @media screen and(min-width: 410px) {
             display: none;
         }
     }
-
     .phoneRow {
         display: none;
         border-bottom: .1rem solid lightgray;
-        
-
         td {
             padding-bottom: 2rem;
         }
-
         #phoneRemoveBtn {
             @include buttonWhite();
             @include fontBread();
         }
-
         input {
             width: 100%;
         }
-
         .phoneUpdateBtn {
             @include buttonWhite();
             @include fontBread();
         }
     }
-    
 }
 
 .tableContainer {
@@ -105,11 +87,10 @@ table {
     width: 100vw;
     margin: 2rem;
     text-align: center;
-
     img {
         width: 10rem;
-        @media screen and(min-width:410px){
-            width:20rem;
+        @media screen and(min-width: 410px) {
+            width: 20rem;
         }
     }
 }
@@ -117,34 +98,28 @@ table {
 .productContainer {
     @include flexCenter(row);
     @include fontSubtitle();
-
-    @media screen and(min-width:410px) {
+    @media screen and(min-width: 410px) {
         //margin-left: 10rem;
-
-    p {
-        display: none;
-        @media screen and(min-width: 410px) {
-            display: table-cell;
+        p {
+            display: none;
+            @media screen and(min-width: 410px) {
+                display: table-cell;
+            }
         }
-    }
-
     }
     .productSpan {
         @include flexCenter(column);
-
         p {
             display: none;
-            @media screen and(min-width: 410px){
+            @media screen and(min-width: 410px) {
                 display: inline;
             }
         }
-
         button {
             @include buttonWhite();
             @include fontBread();
             margin: 1rem;
             display: none;
-            
             @media screen and(min-width: 410px) {
                 @include fontBody();
                 display: table-cell;
@@ -156,14 +131,13 @@ table {
 .qtyBtn {
     display: none;
     color: white;
-    font-size: 2rem; 
+    font-size: 2rem;
     border: none;
     background-color: black;
     border-radius: 50%;
     height: 3rem;
     width: 3rem;
     cursor: pointer;
-
     @media screen and(min-width: 410px) {
         display: inline;
     }
@@ -183,18 +157,15 @@ table {
             }
         }
     }
-
     #editBtn {
         @include buttonWhite();
         margin: 2rem 0 1rem 0;
         padding: 1rem;
-
-        display:inline;
+        display: inline;
         @media screen and(min-width: 410px) {
             display: none
         }
     }
-
     #checkoutBtn {
         @include buttonBlack();
         margin: 2rem;
@@ -204,7 +175,6 @@ table {
         margin: 5rem 10rem 5rem 10rem;
         @include fontSubtitle();
     }
-
     #shopBtn {
         @include buttonWhite();
         margin: 2rem;

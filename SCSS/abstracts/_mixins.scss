@@ -46,6 +46,7 @@
     letter-spacing: 1.6rem;
     font-size: $fs-logotype;
     color: $primary-txt; //color variable set elsewher
+    cursor: pointer;
 }
 
 // @mixin fontPreset($type) {
