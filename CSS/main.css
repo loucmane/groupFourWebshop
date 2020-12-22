@@ -363,6 +363,8 @@ footer {
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
+  #mainCheckout .productDiv img {
+    width: 20%; }
 
 #mainProducts {
   font-family: "Roboto Mono", monospace;

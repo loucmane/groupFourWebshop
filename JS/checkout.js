@@ -51,52 +51,131 @@ $(function() {
             custInfo.push(order);
             setToLocalStorage();
 
+            let container1 = $("#checkoutOrderInfo");
+
             for (let i = 0; i < custInfo.length; i++) {
 
-                console.log(custInfo[i].email);
-                console.log(myProducts[i].image);
-                
-                let container = $("#checkoutOrderInfo");
+                container1.html("");
 
                 $("<h4>")
-                .html("Your Order Information")
-                .appendTo(container);
+                    .html("Your order information")
+                    .appendTo(container1);
 
                 $("<p>")
-                .html(custInfo[i].fName)
-                .appendTo(container);
-                
+                    .html("Name: " + custInfo[i].fName + " " + custInfo[i].lName)
+                    .appendTo(container1);
+
+                $("<p>")
+                    .html("Email: " + custInfo[i].email)
+                    .appendTo(container1);
+
+                $("<p>").html("Phone: " + custInfo[i].phone)
+                    .appendTo(container1);
+
+
+                $("<p>")
+                    .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
+                    .appendTo(container1);
+
+                $("<hr>")
+                    .appendTo(container1);
+
+                $("<p>")
+                    .html("Shipping: " + "XXX " + custInfo[i].shipping + " SEK")
+                    .appendTo(container1);
+
+
             }
 
+
+
             $("<hr>")
-            .appendTo($("#checkoutOrderInfo"));
+                .appendTo(container1);
 
             $("<p>")
-            .appendTo($("#checkoutOrderInfo"))
-            .html("Payment Nets Payment");
+                .appendTo(container1)
+                .html("Payment: Nets Payment");
 
             $("<button>")
-            .appendTo($("#checkoutOrderInfo"))
-            .html("Change")
-            .on("click", function() {});
+                .appendTo(container1)
+                .html("Change")
+                .on("click", function() {
+                    window.location.href = "#information";
+                });
 
-            $("<p>")
-            .appendTo($("#checkoutTotal"))
-            .html("Subtotal " +
-                costfromLS() +
-                " SEK");
 
-            $("<p>")
-            .appendTo($("#checkoutTotal"))
-            .html("Shipping 59 SEK");
 
-            $("<hr>")
-            .appendTo($("#checkoutTotal"));
 
-            $("<p>")
-            .appendTo($("#checkoutTotal"))
-            .addClass("total")
-            .html("Total " + grandTotal() + " SEK");
+
+            let container2 = $("#checkoutTotal");
+
+            for (let i = 0; i < bag.length; i++) {
+
+                container2.html("");
+
+                $("<h4>")
+                    .html("Your Products")
+                    .appendTo(container2);
+
+                //Product container
+                let productDiv = $("<div>")
+                    .addClass("productDiv")
+                    .appendTo(container2);
+
+                //Product image
+                $("<img>")
+                    .attr("src", bag[i].product.image)
+                    .attr("alt", bag[i].product.name + " perfume bottle")
+                    .appendTo(productDiv);
+
+                //Product Name, Quantity, Price
+                $("<p>")
+                    .html(bag[i].product.name + " " + bag[i].quantity + " pcs " + bag[i].product.price + " SEK")
+                    .appendTo(productDiv);
+
+            }
+
+            for (let i = 0; i < custInfo.length; i++) {
+
+                // CALCULATE TOTAL //
+                function costFromLS() {
+                    let subTotal = 0;
+                    for (let i = 0; i < bag.length; i++) {
+                        subTotal = subTotal + (bag[i].quantity * bag[i].product.price);
+                    }
+                    return subTotal;
+                };
+
+                $("<p>")
+                    .appendTo(container2)
+                    .html("Subtotal " + costFromLS() + " SEK");
+
+                // let shippingCost = custInfo[i].shipping;
+
+                $("<p>")
+                    .appendTo(container2)
+                    .html("Shipping " + custInfo[i].shipping + " SEK");
+
+                $("<hr>")
+                    .appendTo(container2);
+
+
+
+                function grandTotal() {
+                    let grandTotal = 0;
+                    for (let i = 0; i < custInfo.length; i++) {
+
+                        grandTotal = grandTotal + (costFromLS() + custInfo[i].shipping);
+                    }
+
+                    return grandTotal;
+                };
+
+                $("<p>")
+                    .appendTo(container2)
+                    .addClass("total")
+                    .html("Total " + grandTotal() + " SEK");
+            }
 
             window.location.href = "#review";
         });
@@ -108,12 +187,7 @@ $(function() {
         });
 });
 
-function costfromLS(params) {
-    subtotal = 100 + 100;
-    return subtotal;
-}
-
-function grandTotal(params) {
-    total = costfromLS() + 59;
-    return total;
-}
+// function costfromLS(params) {
+//     subTotal =  + 100;
+//     return subTotal;
+// }
