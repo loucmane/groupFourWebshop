@@ -129,7 +129,7 @@
     #review {
         width: 100%;
         @include flexCenter(column);
-        #transferredCustPayment,
+        #checkoutOrderInfo,
         #checkoutTotal {
             @include transferBox();
             margin: 5%;

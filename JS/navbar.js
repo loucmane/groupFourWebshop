@@ -1,5 +1,9 @@
 $(function() {
+    renderNavbar();
+    cartNumbers();
+});
 
+function renderNavbar() {
     $( ".hamburgerButton" )
     .click(function() {
         $( " .myUl " ).slideToggle();
@@ -11,26 +15,11 @@ $(function() {
     $( ".shoppingCartButton").click(function(){
         window.location.href = "../HTML/cart.html";
     });
-    cartNumbers();
-});
-
-bag = [];
-custInfo = [];
-
-function saveBag() {
-    localStorage.setItem("products", JSON.stringify(bag));
-    localStorage.setItem("Information", JSON.stringify(custInfo));
-
-}
-
-function getBag() {
-    bag = JSON.parse(localStorage.getItem("products")) || [] ;
-    custInfo = JSON.parse(localStorage.getItem("Information")) || [] ;
 }
 
 function cartNumbers() {
 
-    getBag();
+    getFromLocalStorage();
 
     let itemsInCart = 0;
     
@@ -40,4 +29,4 @@ function cartNumbers() {
 
     $(".shoppingCartButton i")
     .html(itemsInCart);
-};
+}

@@ -108,7 +108,8 @@
             <h2>Shipping Method</h2>
             <form>
 
-                <label><input type="radio" id="shipping" name="shipping" value="shipping">Shipping: Postnord 59 SEK</label>
+                <label><input type="radio" id="shippingPostNord" name="shipping" value="Postnord 59 SEK">Shipping: Postnord 59 SEK</label>
+                <label><input type="radio" id="shippingDHL" name="shipping" value="Express DHL 159 SEK">Shipping: Express DHL 159 SEK</label>
 
             </form>
             <a href="#information"><button class="returnButton">&lt; Return to information</button></a>
@@ -149,7 +150,6 @@
                 <img src="../IMG/mastercard-icon.png" alt="Mastercard icon">
             </div>
 
-
             <a href="#shipping"><button class="returnButton">&lt; Return to shipping</button></a>
 
             <button class="continueButton" id="btnReviewOrder">Review Order</button>
@@ -180,7 +180,7 @@
             <!------->
 
             <h2>Review Order</h2>
-            <div id="transferredCustPayment">
+            <div id="checkoutOrderInfo">
             </div>
             <div id="checkoutTotal"></div>
             <a href="#payment"><button class="returnButton">&lt; Return to payment</button></a>

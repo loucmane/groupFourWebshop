@@ -317,7 +317,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    #mainCheckout #review #transferredCustPayment,
+    #mainCheckout #review #checkoutOrderInfo,
     #mainCheckout #review #checkoutTotal {
       display: flex;
       justify-content: center;
@@ -330,11 +330,11 @@ footer {
       border-radius: 5px;
       padding: 5%;
       margin: 5%; }
-      #mainCheckout #review #transferredCustPayment hr,
+      #mainCheckout #review #checkoutOrderInfo hr,
       #mainCheckout #review #checkoutTotal hr {
         margin: 5%;
         width: 90%; }
-      #mainCheckout #review #transferredCustPayment button,
+      #mainCheckout #review #checkoutOrderInfo button,
       #mainCheckout #review #checkoutTotal button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
@@ -350,11 +350,11 @@ footer {
         font-size: 1.2rem;
         color: black;
         margin-top: 5%; }
-        #mainCheckout #review #transferredCustPayment button:hover,
+        #mainCheckout #review #checkoutOrderInfo button:hover,
         #mainCheckout #review #checkoutTotal button:hover {
           background-color: black;
           color: white; }
-      #mainCheckout #review #transferredCustPayment .total,
+      #mainCheckout #review #checkoutOrderInfo .total,
       #mainCheckout #review #checkoutTotal .total {
         font-family: "Roboto Mono", monospace;
         font-weight: 400;

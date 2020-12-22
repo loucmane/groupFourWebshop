@@ -1,13 +1,10 @@
-let bag = [];
-
 $(function() {
-
     renderCart();
 });
 
 function renderCart() {
 
-    getBag();
+    getFromLocalStorage();
 
     $(".tableContainer")
     .remove();
@@ -65,7 +62,7 @@ function renderCart() {
                     if (bag[i].quantity === 0) { 
                         bag.splice([i], 1);
                     }
-                saveBag();
+                setToLocalStorage();
                 renderCart();
                 }
             }
@@ -97,7 +94,7 @@ function renderCart() {
             for (let i = 0; i < bag.length; i++) {
                 if (bag[i].product.id === product.product.id) {
                     bag.splice([i], 1);
-                    saveBag();
+                    setToLocalStorage();
                     renderCart();
                 }
             }
@@ -113,7 +110,7 @@ function renderCart() {
             for (let i = 0; i < bag.length; i++) {
                 if (bag[i].product.id === product.product.id) {
                     product.quantity++;
-                    saveBag();
+                    setToLocalStorage();
                     renderCart();
                 }
             }
@@ -156,7 +153,7 @@ function renderCart() {
             for (let i = 0; i < bag.length; i++) {
                 if (bag[i].product.id === product.product.id) {
                     bag.splice([i], 1);
-                    saveBag();
+                    setToLocalStorage();
                     renderCart();
                 }
             }
@@ -188,7 +185,7 @@ function renderCart() {
                 console.log(bag[i].quantity)
                 if (bag[i].product.id === product.product.id) {
                     bag[i].quantity = parseInt(qtyInput.val());
-                    saveBag();
+                    setToLocalStorage();
                     renderCart();
                 }
             }

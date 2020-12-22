@@ -1,13 +1,3 @@
-class CustomerInfo {
-    constructor(email, firstName, lastName) {
-        
-    }
-}
-
-let bag = [];
-
-let custInfo = [];
-
 $(function() {
 
     $("#btnToShipping")
@@ -22,42 +12,71 @@ $(function() {
 
     $("#btnReviewOrder")
         .on("click", function() {
-            $("<p>").appendTo($("#transferredCustPayment"))
-            .html("Contact" +
-            " " +
-            $("#email").val());
+            //$("<p>").appendTo($("#checkoutOrderInfo"))
+            // .html("Contact" +
+            // " " +
+            // $("#email").val());
+
+            // $("<hr>")
+            // .appendTo($("#checkoutOrderInfo"));
+
+            // $("<p>")
+            // .appendTo($("#checkoutOrderInfo"))
+            // .html("Ship to " +
+            // $("#fName").val() +
+            // " " +
+            // $("#lName").val() +
+            // ", " +
+            // $("#adrStreet").val() +
+            // ", " +
+            // $("#adrPCode").val() +
+            // " " +
+            // $("#adrCity").val() +
+            // ", " +
+            // $("#adrCountry").val());
+
+            let email = $("#email").val();
+            let fName = $("#fName").val();
+            let lName = $("#lName").val();
+            let street = $("#adrStreet").val();
+            let postal = $("#adrPCode").val();
+            let city = $("#adrCity").val();
+            let country = $("#adrCountry").val();
+            let phone = $("#adrPhone").val();
+            let shipping = $("[name='shipping']:checked").val();
+
+            let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping);
+
+            custInfo = [];
+            custInfo.push(order);
+            setToLocalStorage();
+
+            for (let i = 0; i < custInfo.length; i++) {
+
+                console.log(custInfo[i].email);
+                console.log(myProducts[i].image);
+                
+                let container = $("#checkoutOrderInfo");
+
+                $("<h4>")
+                .html("Your Order Information")
+                .appendTo(container);
+
+                $("<p>")
+                .html(custInfo[i].fName)
+                .appendTo(container);
+                
+            }
 
             $("<hr>")
-            .appendTo($("#transferredCustPayment"));
+            .appendTo($("#checkoutOrderInfo"));
 
             $("<p>")
-            .appendTo($("#transferredCustPayment"))
-            .html("Ship to " +
-            $("#fName").val() +
-            " " +
-            $("#lName").val() +
-            ", " +
-            $("#adrStreet").val() +
-            ", " +
-            $("#adrPCode").val() +
-            " " +
-            $("#adrCity").val() +
-            ", " +
-            $("#adrCountry").val());
-
-            $("<hr>")
-                .appendTo($("#transferredCustPayment"));
-
-            $("<p>")
-            .appendTo($("#transferredCustPayment"))
-            .html("Shipping Postnord 59 SEK");
-
-            $("<p>")
-            .appendTo($("#transferredCustPayment"))
+            .appendTo($("#checkoutOrderInfo"))
             .html("Payment Nets Payment");
 
             $("<button>")
-            .appendTo($("#transferredCustPayment"))
+            .appendTo($("#checkoutOrderInfo"))
             .html("Change")
             .on("click", function() {});
 
@@ -77,14 +96,9 @@ $(function() {
             $("<p>")
             .appendTo($("#checkoutTotal"))
             .addClass("total")
-            .html("Total " +
-                grandTotal() +
-                " SEK");
+            .html("Total " + grandTotal() + " SEK");
 
             window.location.href = "#review";
-
-            custInfo.push();
-            saveBag();
         });
 
     $("#completeButton")

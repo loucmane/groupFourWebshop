@@ -1,17 +1,6 @@
-let bag = [];
-
-function getBag() {
-    let productsFromLS = localStorage.getItem("products")
-
-    if (productsFromLS) { //Only get bag from LS if it has content
-        bag = JSON.parse(localStorage.getItem("products"));
-    }
-
-}
-
 $(function() {
 
-    getBag();
+    getFromLocalStorage();
 
     localStorage.clear();
 
