@@ -1,7 +1,7 @@
 $(function() {
-    
+
     getFromLocalStorage();
-    createBagHTML();
+    // createBagHTML();
 
     $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
 
@@ -19,100 +19,100 @@ $(function() {
         let textLeft = $("<div>").appendTo(divTag);
 
         $("<p>").appendTo(textLeft)
-        .html(product.name);
+            .html(product.name);
 
         $("<p>").appendTo(textLeft)
-        .html(product.price + " SEK");
+            .html(product.price + " SEK");
 
         $("<button>").appendTo(divTag)
-        .attr("type", "button")
-        .html("Add to bag")
-        .on("click", { product: product }, function() {
+            .attr("type", "button")
+            .html("Add to bag")
+            .on("click", { product: product }, function() {
 
-            let foundProduct = false;
+                let foundProduct = false;
 
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
-                    foundProduct = true;
-                    bag[i].quantity++;
+                for (let i = 0; i < bag.length; i++) {
+                    if (bag[i].product.id === product.id) {
+                        foundProduct = true;
+                        bag[i].quantity++;
+                    }
                 }
-            }
 
-            if (foundProduct === false) {
-                let addedItem = new CartItem(product, 1);
-                bag.push(addedItem);
-            }
-            
-            setToLocalStorage();
-            createBagHTML();
-            cartNumbers();
-        });
+                if (foundProduct === false) {
+                    let addedItem = new CartItem(product, 1);
+                    bag.push(addedItem);
+                }
+
+                setToLocalStorage();
+                // createBagHTML();
+                cartNumbers();
+            });
     });
 });
 
-function createBagHTML() {
+// function createBagHTML() {
 
-    $("#shoppingBag").html("");
+//     $("#shoppingBag").html("");
 
-    $.each(bag, (i, product) => {
+//     $.each(bag, (i, product) => {
 
-        $("<img>").appendTo("#shoppingBag")
-        .attr("src", product.image)
-        .attr("alt", product.name + " perfume bottle");
+//         $("<img>").appendTo("#shoppingBag")
+//         .attr("src", product.product.image)
+//         .attr("alt", product.product.name + " perfume bottle");
 
-        // DELETE FROM SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
-        .attr("type", "button")
-        .html("x")
-        .on("click", { product: product }, function() {
+// // DELETE FROM SHOPPING BAG //
+// $("<button>").appendTo("#shoppingBag")
+// .attr("type", "button")
+// .html("x")
+// .on("click", { product: product }, function() {
 
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
-                    bag.splice([i], 1);
-                    setToLocalStorage();
-                    createBagHTML();
-                }
-            }
-        });
+//     for (let i = 0; i < bag.length; i++) {
+//         if (bag[i].id === product.id) {
+//             bag.splice([i], 1);
+//             setToLocalStorage();
+//             createBagHTML();
+//         }
+//     }
+// });
 
-        $("<p>").appendTo("#shoppingBag")
-        .html(product.name + ", " + product.price + " SEK, " + "pcs: " + product.quantity);
+// $("<p>").appendTo("#shoppingBag")
+// .html(product.product.name + ", " + product.product.price + " SEK, " + "pcs: " + product.quantity);
 
-        // INCREASE QUANTITY IN SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
-        .attr("type", "button")
-        .html("+")
-        .on("click", { product: product }, function() {
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].id === product.id) {
-                    product.quantity++;
-                    setToLocalStorage();
-                    createBagHTML();
-                }
-            }
-        });
+// // INCREASE QUANTITY IN SHOPPING BAG //
+// $("<button>").appendTo("#shoppingBag")
+// .attr("type", "button")
+// .html("+")
+// .on("click", { product: product }, function() {
+//     for (let i = 0; i < bag.length; i++) {
+//         if (bag[i].id === product.id) {
+//             product.quantity++;
+//             setToLocalStorage();
+//             createBagHTML();
+//         }
+//     }
+// });
 
-        // DECREASE QUANTITY IN SHOPPING BAG //
-        $("<button>").appendTo("#shoppingBag")
-        .attr("type", "button")
-        .html("-")
-        .on("click", { product: product }, function() {
+// // DECREASE QUANTITY IN SHOPPING BAG //
+// $("<button>").appendTo("#shoppingBag")
+// .attr("type", "button")
+// .html("-")
+// .on("click", { product: product }, function() {
 
-            for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
+//     for (let i = 0; i < bag.length; i++) { // Looping bag, if clicked object id is found in bag -> decrease quantity of that product
 
-                if (bag[i].id === product.id) {
-                    bag[i].quantity--;
+//         if (bag[i].id === product.id) {
+//             bag[i].quantity--;
 
-                    if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
-                        bag.splice([i], 1);
-                    }
-                    setToLocalStorage();
-                    createBagHTML();
-                }
-            }
-        });
-    })
-}
+//             if (bag[i].quantity === 0) { // If the quantity of the product becomes 0 -> splice that product from array
+//                 bag.splice([i], 1);
+//             }
+//             setToLocalStorage();
+//             createBagHTML();
+//         }
+//     }
+// });
+//     })
+// }
 
 // CALCULATE TOTAL //
 function calculateTotal() {
@@ -122,5 +122,3 @@ function calculateTotal() {
     }
     return total;
 }
-
-
