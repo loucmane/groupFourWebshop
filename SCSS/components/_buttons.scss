@@ -25,6 +25,7 @@
     background-color: white;
     border: none;
     @include fontBread();
+    cursor: pointer;
 }
 
 @mixin buttonSlim {
@@ -36,4 +37,5 @@
     height: 4rem;
     width: 50%;
     margin: 5%;
+    cursor: pointer;
 }

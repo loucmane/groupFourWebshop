@@ -21,15 +21,15 @@
 </head>
 
 <body>
-    <header>
-        <div class="headerBanner">
 
-            <p>free shipping on all orders from 30 €</p>
+    <div class="headerBanner">
 
-            <h1 class="logotype">LOGOTYPE</h1>
+        <p>free shipping on all orders from 30 €</p>
 
-        </div>
-    </header>
+        <h1 class="logotype">LOGOTYPE</h1>
+
+    </div>
+
 
     <main id="mainCheckout">
         <!---------- Information  --------------->
@@ -111,7 +111,7 @@
                 <label><input type="radio" id="shipping" name="shipping" value="shipping">Shipping: Postnord 59 SEK</label>
 
             </form>
-            <button class="returnButton">&lt; Return to information</button>
+            <a href="#information"><button class="returnButton">&lt; Return to information</button></a>
 
             <button class="continueButton" id="btnToPayment">Continue to payment</button>
             <hr>
@@ -150,7 +150,7 @@
             </div>
 
 
-            <button class="returnButton">&lt; Return to Shipping</button>
+            <a href="#shipping"><button class="returnButton">&lt; Return to shipping</button></a>
 
             <button class="continueButton" id="btnReviewOrder">Review Order</button>
             <p>You won't be charged yet!</p>
@@ -183,9 +183,9 @@
             <div id="transferredCustPayment">
             </div>
             <div id="checkoutTotal"></div>
-            <button class="returnButton">&lt; Return to payment</button>
+            <a href="#payment"><button class="returnButton">&lt; Return to payment</button></a>
 
-            <button class="continueButton">Complete Order</button>
+            <button id="completeButton">Complete Order</button>
             <hr>
         </section>
 

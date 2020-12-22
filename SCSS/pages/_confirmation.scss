@@ -2,16 +2,13 @@
     @include flexCenter(column);
     text-align: center;
     margin: 5%;
-    .logotype {
-        @include fontLogotype();
-    }
     h2,
     #firstMessage,
     #secondMessage,
     button {
-        margin: 15% 5% 15% 5%;
+        margin: 10% 5% 10% 5%;
         @media screen and(min-width: 768px) {
-            margin: 5%;
+            margin: 3%
         }
     }
     h2 {
