@@ -149,7 +149,7 @@ footer {
       font-size: 1.6rem;
       color: black; } }
   #mainCheckout .navButtons {
-    margin-bottom: 5%; }
+    margin: 5%; }
     #mainCheckout .navButtons a {
       text-decoration: none;
       color: #000000; }

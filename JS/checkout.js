@@ -35,6 +35,17 @@ function getCustInfo() {
 
 $(function() {
 
+    $("#btnToShipping")
+        .on("click", function() {
+            window.location.href = "#shipping";
+        });
+
+    $("#btnToPayment")
+        .on("click", function() {
+            window.location.href = "#payment";
+        });
+
+
     $("#btnReviewOrder")
         .on("click", function() {
             $("<p>").appendTo($("#transferredCustPayment"))
@@ -95,6 +106,8 @@ $(function() {
                 .html("Total " +
                     grandTotal() +
                     " SEK");
+
+            window.location.href = "#review";
 
 
         });
