@@ -432,9 +432,10 @@ footer {
         color: #FFFFFF;
         border: none;
         border-radius: 5px;
-        height: 30px;
-        width: 70%;
-        margin: 10%; }
+        height: 4rem;
+        width: 50%;
+        margin: 5%;
+        cursor: pointer; }
         @media screen and (min-width: 768px) {
           #mainProducts #productsContainer .eachProduct button {
             font-size: 1.4rem;
