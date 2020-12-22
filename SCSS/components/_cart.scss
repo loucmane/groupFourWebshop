@@ -1,0 +1,30 @@
+
+
+@mixin cartNumber {
+    
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0rem;
+    margin: 0;
+    
+    line-height: 1.9rem;
+    background: $accent-txt;
+    color: #fff;
+    border-radius: 50%;
+    //vertical-align: top;
+    text-align: center;
+    font-size: 1.2rem;
+    //position: relative;
+   // top: .4rem;
+   // right: 4rem;
+  }
+
+//   .shoppingCartButton {
+        
+//         font-size: 4rem;
+//         cursor:pointer;
+//         display:inline-block;
+//         position:relative;
+      
+//   }
+

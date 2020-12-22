@@ -20,7 +20,6 @@ footer {
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 100vw;
   height: 50rem;
   background-color: #FFF8E2;
   text-align: center; }
@@ -70,6 +69,7 @@ footer {
 
 .navbar {
   display: flex;
+  justify-content: flex-end;
   background-color: #FFF8E2;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
@@ -79,9 +79,10 @@ footer {
   height: 8rem; }
   @media screen and (min-width: 480px) {
     .navbar {
-      height: 15rem; } }
+      height: 15rem;
+      justify-content: flex-start; } }
   .navbar .hamburgerButton {
-    z-index: 1000;
+    z-index: 1400;
     font-size: 5rem;
     position: absolute;
     top: 1rem;
@@ -92,21 +93,31 @@ footer {
         display: none; } }
 
 .shoppingCartButton {
-  z-index: 800;
+  z-index: 950;
   font-size: 5rem;
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
+  position: relative;
   cursor: pointer; }
   @media screen and (min-width: 480px) {
     .shoppingCartButton {
-      top: 4rem;
-      right: 8rem;
-      font-size: 7rem; } }
+      top: 4rem; } }
+  .shoppingCartButton #cartNumber {
+    position: absolute;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0rem;
+    margin: 0;
+    line-height: 1.9rem;
+    background: #443344;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+    top: .8rem;
+    right: .6rem; }
 
 .myUl {
   display: none;
-  z-index: 900;
+  z-index: 1300;
   flex-direction: column;
   justify-content: center;
   align-items: center;

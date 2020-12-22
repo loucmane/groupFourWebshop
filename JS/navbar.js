@@ -34,6 +34,6 @@ function cartNumbers() {
         itemsInCart += bag[i].quantity;
     }  
 
-    $(".shoppingCartButton i")
+    $("#cartNumber")
     .html(itemsInCart);
 };
