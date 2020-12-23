@@ -1,0 +1,11 @@
+#heroBackground {
+    background-image: url("../IMG/ginger-single.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 90vh;
+    @media screen and(min-width: 768px) {
+        background-image: url("../IMG/ginger-double.png");
+    }
+}
