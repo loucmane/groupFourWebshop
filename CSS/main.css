@@ -104,8 +104,7 @@ header {
   font-weight: 400;
   font-size: 2.4rem;
   color: #443344;
-  width: 100%;
-  padding: 5%; }
+  width: 100%; }
   @media screen and (min-width: 480px) {
     .navbar {
       justify-content: space-around;
@@ -114,13 +113,14 @@ header {
   .navbar .hamburgerButton {
     z-index: 1000;
     font-size: 3rem;
-    width: 30%;
-    cursor: pointer; }
+    cursor: pointer;
+    margin: 5%; }
     @media screen and (min-width: 480px) {
       .navbar .hamburgerButton {
         display: none; } }
   .navbar .myUl {
     display: none;
+    position: absolute;
     z-index: 900;
     flex-direction: column;
     justify-content: center;
@@ -128,6 +128,14 @@ header {
     height: 100vh;
     width: 100vw;
     background-color: #FFF8E2; }
+    @media screen and (min-width: 480px) {
+      .navbar .myUl {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around; } }
     .navbar .myUl a {
       text-decoration: none;
       color: #000000; }
@@ -138,27 +146,17 @@ header {
       text-align: center;
       list-style: none;
       margin: 2rem; }
-    @media screen and (min-width: 480px) {
-      .navbar .myUl {
-        display: flex;
-        height: 100%;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-around; } }
   .navbar .shoppingCartButton {
     z-index: 800;
     font-size: 3rem;
+    margin: 5%;
     cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .shoppingCartButton {
         position: relative;
         font-size: 2rem;
-        top: 1.6rem; } }
-    .navbar .shoppingCartButton i.fa-shopping-cart#text {
-      font-family: "Roboto Mono", monospace;
-      font-weight: 400;
-      font-size: 2.4rem;
-      color: #443344; }
+        top: 1.6rem;
+        margin: 0; } }
 
 #heroBackground {
   background-image: url("../IMG/ginger-single.png");
@@ -218,8 +216,23 @@ header {
     font-weight: 300;
     font-size: 3.2rem;
     color: black;
-    margin: 10%;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-top: 10%; }
+  #landingpageMain img {
+    width: 70%;
+    margin-top: 5%; }
+  #landingpageMain button {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: black;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin: 5%; }
 
 main {
   width: 100%;
