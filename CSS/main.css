@@ -12,9 +12,6 @@ html {
 body {
   box-sizing: border-box; }
 
-body {
-  -webkit-text-size-adjust: 100%; }
-
 footer {
   display: flex;
   justify-content: center;
