@@ -4,7 +4,6 @@
     background-color: $primary-alt;
     @include fontTitle();
     width: 100%;
-    padding: 5%;
     @media screen and(min-width: 480px) {
         justify-content: space-around;
         font-size: 1.6rem;
@@ -13,14 +12,15 @@
     .hamburgerButton {
         z-index: 1000;
         font-size: 3rem;
-        width: 30%;
         cursor: pointer;
+        margin: 5%;
         @media screen and(min-width: 480px) {
             display: none;
         }
     }
     .myUl {
         display: none;
+        position: absolute;
         z-index: 900;
         flex-direction: column;
         justify-content: center;
@@ -28,6 +28,14 @@
         height: 100vh;
         width: 100vw;
         background-color: $primary-alt;
+        @media screen and(min-width: 480px) {
+            display: flex;
+            position: relative;
+            height: 100%;
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
         a {
             text-decoration: none;
             color: $black;
@@ -41,25 +49,17 @@
             list-style: none;
             margin: 2rem;
         }
-        @media screen and(min-width: 480px) {
-            display: flex;
-            height: 100%;
-            width: 80%;
-            flex-direction: row;
-            justify-content: space-around;
-        }
     }
     .shoppingCartButton {
         z-index: 800;
         font-size: 3rem;
+        margin: 5%;
         cursor: pointer;
         @media screen and(min-width: 480px) {
             position: relative;
             font-size: 2rem;
             top: 1.6rem;
-        }
-        i.fa-shopping-cart#text {
-            @include fontTitle();
+            margin: 0;
         }
     }
 }
