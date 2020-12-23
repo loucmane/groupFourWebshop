@@ -3,10 +3,8 @@ $(function() {
     renderShippingSection();
     renderPaymentSection();
     renderReviewSection()
-
     buttonFunctions();
     $( "#review" ).hide()
-    
 });
 
 function renderInfoSection() {
@@ -29,6 +27,7 @@ function renderInfoSection() {
         .attr("type", "email")
         .attr("placeholder", "Email Address")
         .attr("id", "email")
+        .attr("name", "email")
         .appendTo(contactForm)
 
     let newsLetter = $("<div>")
@@ -51,42 +50,49 @@ function renderInfoSection() {
     .attr("type", "text")
     .attr("placeholder", "First Name")
     .attr("id", "fName")
+    .attr("name", "fName")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "text")
     .attr("placeholder", "Last Name")
     .attr("id", "lName")
+    .attr("name", "lName")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "text")
     .attr("placeholder", "Street Name, Street Number")
     .attr("id", "adrStreet")
+    .attr("name", "adrStreet")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "number")
     .attr("placeholder", "Postal Code")
     .attr("id", "adrPCode")
+    .attr("name", "adrPCode")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "text")
     .attr("placeholder", "City / Town")
     .attr("id", "adrCity")
+    .attr("name", "adrCity")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "text")
     .attr("placeholder", "Country / Region")
     .attr("id", "adrCountry")
+    .attr("name", "adrCountry")
     .appendTo(contactForm)
 
     $("<input>")
     .attr("type", "tel")
     .attr("placeholder", "Movile Phone Number")
     .attr("id", "adrPhone")
+    .attr("name", "adrPhone")
     .appendTo(contactForm)
 
     let saveInfo = $("<div>")
@@ -105,7 +111,7 @@ function renderInfoSection() {
     .addClass("continueButton")
     .attr("id", "btnToShipping")
     .html("Continue to shipping")
-    .appendTo(infoSection)
+    .appendTo(contactForm)
 
     $("<hr>")
     .appendTo(infoSection)
@@ -233,15 +239,6 @@ function renderReviewSection() {
     .attr("id", "checkoutTotal")
     .appendTo(reviewSection)
 
-    let aTag = $("<a>")
-    .attr("href", "#payment")
-    .appendTo(reviewSection)
-
-    $("<button>")
-    .addClass("returnButton")
-    .html("&lt; Return to payment")
-    .appendTo(aTag)
-
     $("<button>")
     .attr("id", "completeButton")
     .html("Complete Order")
@@ -284,9 +281,13 @@ function renderReviewSection() {
 // }
 
 function buttonFunctions() {
+    
+    $(document).ready(function() {
+        $("#btnToShipping")
+        .on("click", function() {
+            validateForm();
+        });
 
-    $("#btnToShipping")
-    .on("click", function() {
         window.location.href = "#shipping";
     });
 
@@ -295,11 +296,12 @@ function buttonFunctions() {
         window.location.href = "#payment";
     });
 
+    
     $("#btnReviewOrder")
     .on("click", function() {
 
-        $( " #review " ).toggle();
-        $( " #review " ).css({
+        $( "#review" ).toggle();
+        $( "#review" ).css({
             display: "flex"
         })
 
@@ -308,9 +310,9 @@ function buttonFunctions() {
         renderOrderSummary();
 
         window.location.href = "#review";
-    });
+    });  
 
-    $(document).ready(function(){
+    $(document).ready(function() {
         $("#completeButton")
         .on("click", function() {
             window.setTimeout(completeOrder, 2000)
@@ -319,15 +321,39 @@ function buttonFunctions() {
 
             $( ".loadingBar" ).slideToggle();
             $( ".loadingBar" ).css({
-            display: "block"
-        })
-            
+                display: "block"
+            });
         });
-    })
-} 
+    });
+};
+
+function validateForm() {
+    $("#contactForm").validate({
+        rules: {
+            email: 'required',
+            fName: 'required',
+            lName: 'required',
+            adrStreet: 'required',
+            adrPCode: 'required',
+            adrCity: 'required',
+            adrPhone: 'required'
+        },
+        messages: {
+            email : "",
+            fName: "",
+            lName: "",
+            adrStreet: "",
+            adrPCode: "",
+            adrCity: "",
+            adrPhone: ""
+        }
+    });
+}
 
 function completeOrder() {
-    window.location.href = "../HTML/confirmation.html";
+    validateForm();
+    // window.location.href = "../HTML/confirmation.html";
+    window.open("../HTML/confirmation.html")
 }
 
 function getOrderInfo() {
@@ -350,7 +376,6 @@ function getOrderInfo() {
     custInfo = [];
     custInfo.push(order);
     setToLocalStorage();
-
 }
 
 function renderOrderInfo() {
@@ -393,7 +418,7 @@ function renderOrderInfo() {
         .appendTo(orderInfo);
         } else {
             $("<p>")
-            .html("Shipping: FREE")
+            .html("Shipping: FREE!")
             .appendTo(orderInfo)
         }
         

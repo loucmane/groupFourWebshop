@@ -2,22 +2,19 @@
     @include flexCenter(column);
     text-align: center;
     //margin: 5%;
-    
-    #firstMessage,
-    #secondMessage,
-    button {
-        margin: 10% 5% 10% 5%;
-        @media screen and(min-width: 768px) {
-            margin: 3%
-        }
-    }
 
     h2 {
         @include fontHeading();
     }
 
+    h4 {
+        @include fontTitle();
+        margin: 2rem;
+    }
+
     #firstMessage {
         @include fontSubtitle();
+        margin: 3rem;
     }
 
     #secondMessage {
@@ -32,8 +29,21 @@
         }
     }
 
+    #continueShopping {
+        margin: 3rem;
+    }
+
+    #closeWindow {
+        @include buttonWhite()
+    }
+
     #orderSummary {
-        border: 1px solid black;
+        //border: 1px solid black;
         
+
+        #orderNumber {
+            @include fontSubtitle;
+            margin: .5rem;
+        }
     }
 }

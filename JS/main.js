@@ -28,6 +28,7 @@ class CustomerInfo {
       this.shipping = shipping;
       this.date = date;
       this.orderNumber = orderNumber;
+      this.product
   }
 }
 
