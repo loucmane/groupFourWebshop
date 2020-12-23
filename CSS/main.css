@@ -157,7 +157,8 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  height: 90vh; }
+  height: 100vh;
+  width: 100vw; }
   @media screen and (min-width: 768px) {
     #heroBackground {
       background-image: url("../IMG/ginger-double.png"); } }
