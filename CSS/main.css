@@ -171,7 +171,7 @@ header {
   align-items: flex-end; }
   @media screen and (min-width: 768px) {
     #heroBackground {
-      background-image: url("../IMG/ginger-double2.png");
+      background-image: url("../IMG/ginger-double.png");
       align-items: flex-start; } }
   #heroBackground #heroText {
     background-color: #FDFBF4;
