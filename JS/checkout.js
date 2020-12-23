@@ -291,10 +291,14 @@ function buttonFunctions() {
         window.location.href = "#shipping";
     });
 
+    $(document).ready(function() {
     $("#btnToPayment")
     .on("click", function() {
-        window.location.href = "#payment";
+        validateForm();
     });
+
+    window.location.href = "#payment";
+});
 
     
     $("#btnReviewOrder")
@@ -336,22 +340,23 @@ function validateForm() {
             adrStreet: 'required',
             adrPCode: 'required',
             adrCity: 'required',
-            adrPhone: 'required'
+            adrPhone: 'required',
+            adrCountry: 'required'
         },
-        messages: {
-            email : "",
-            fName: "",
-            lName: "",
-            adrStreet: "",
-            adrPCode: "",
-            adrCity: "",
-            adrPhone: ""
-        }
+        // messages: {
+        //     email : "",
+        //     fName: "",
+        //     lName: "",
+        //     adrStreet: "",
+        //     adrPCode: "",
+        //     adrCity: "",
+        //     adrPhone: ""
+        // }
     });
 }
 
 function completeOrder() {
-    validateForm();
+
     // window.location.href = "../HTML/confirmation.html";
     window.open("../HTML/confirmation.html")
 }

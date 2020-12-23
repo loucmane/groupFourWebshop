@@ -49,56 +49,28 @@ main {
     #information { 
         @include flexCenter(column);
         width: 100%;
+
         #contactForm {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            #fName,
-            #lName,
-            #email,
-            #adrStreet,
-            #adrPCode,
-            #adrCity,
-            #adrCountry,
-            #adrPhone {
+            
+            input {
                 @include form();
             }
-            #fName,
-            #lName,
-            #adrPCode,
-            #adrCity {
-                width: 35%;
-            }
-            #email,
-            #adrStreet,
-            #adrCountry,
-            #adrPhone {
-                width: 80%;
-            }
-            #adrStreet,
-            #adrCountry {
-                margin: 5%;
-            }
+            
             .checkBox {
-                display: flex;
-                justify-content: flex-start;
+                @include flexCenter(row);
                 width: 80%;
                 color: black;
                 border-radius: 5px;
+
                 input {
                     width: 24px;
                     height: 24px;
                     border: 1px solid $black;
                     border-radius: 5px;
-                }
-                input,
-                label {
-                    margin: 5% 5% 5% 0;
-                }
-                label {
-                    position: relative;
-                    top: 3px;
                 }
             }
         }

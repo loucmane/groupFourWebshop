@@ -235,14 +235,7 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly; }
-      main #information #contactForm #fName,
-      main #information #contactForm #lName,
-      main #information #contactForm #email,
-      main #information #contactForm #adrStreet,
-      main #information #contactForm #adrPCode,
-      main #information #contactForm #adrCity,
-      main #information #contactForm #adrCountry,
-      main #information #contactForm #adrPhone {
+      main #information #contactForm input {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -251,23 +244,14 @@ main {
         padding: 2% 0 2% 5%;
         border-radius: 5px;
         border: 1px solid #000000;
-        color: #000000; }
-      main #information #contactForm #fName,
-      main #information #contactForm #lName,
-      main #information #contactForm #adrPCode,
-      main #information #contactForm #adrCity {
-        width: 35%; }
-      main #information #contactForm #email,
-      main #information #contactForm #adrStreet,
-      main #information #contactForm #adrCountry,
-      main #information #contactForm #adrPhone {
-        width: 80%; }
-      main #information #contactForm #adrStreet,
-      main #information #contactForm #adrCountry {
-        margin: 5%; }
+        color: #000000;
+        width: 80%;
+        margin: 1rem; }
       main #information #contactForm .checkBox {
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
         width: 80%;
         color: black;
         border-radius: 5px; }
@@ -276,12 +260,6 @@ main {
           height: 24px;
           border: 1px solid #000000;
           border-radius: 5px; }
-        main #information #contactForm .checkBox input,
-        main #information #contactForm .checkBox label {
-          margin: 5% 5% 5% 0; }
-        main #information #contactForm .checkBox label {
-          position: relative;
-          top: 3px; }
   main #shipping {
     display: flex;
     justify-content: center;

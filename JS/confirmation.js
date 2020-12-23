@@ -13,7 +13,7 @@ $(function() {
     //Link to checkoutpage
     $("#continueShopping")
         .on("click", function() {
-            localStorage.clear();
+            
             window.location.href = "../HTML/products.html";
         });
 });
@@ -132,6 +132,7 @@ function renderOrderSummary() {
 
         $("<hr>")
         .appendTo(orderSummary)
+        localStorage.clear();
     }
 
     
