@@ -16,7 +16,7 @@ class CartItem {
 }
 
 class CustomerInfo {
-  constructor(email, fName, lName, street, postal, city, country, phone, shipping) {
+  constructor(email, fName, lName, street, postal, city, country, phone, shipping, date, orderNumber) {
       this.email = email;
       this.fName = fName;
       this.lName = lName;
@@ -26,6 +26,8 @@ class CustomerInfo {
       this.country = country;
       this.phone = phone;
       this.shipping = shipping;
+      this.date = date;
+      this.orderNumber = orderNumber;
   }
 }
 

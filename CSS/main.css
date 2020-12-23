@@ -82,13 +82,11 @@ header {
     color: black;
     cursor: pointer;
     margin: 5rem; }
-  header h4 {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300;
-    font-size: 3.2rem;
-    color: black;
-    margin: 3rem; }
   header .headerBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 1.6rem;
@@ -161,7 +159,7 @@ header {
       flex-direction: row;
       justify-content: space-around; } }
 
-#mainCheckout {
+main {
   width: 100%;
   height: 100%;
   font-family: "Roboto Mono", monospace;
@@ -174,17 +172,17 @@ header {
   align-items: center;
   flex-direction: column; }
   @media screen and (min-width: 768px) {
-    #mainCheckout {
+    main {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.6rem;
       color: black; } }
-  #mainCheckout .navButtons {
+  main .navButtons {
     margin: 5%; }
-    #mainCheckout .navButtons a {
+    main .navButtons a {
       text-decoration: none;
       color: #000000; }
-  #mainCheckout h2 {
+  main h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
@@ -193,11 +191,11 @@ header {
     color: #000000;
     text-align: center;
     margin: 5%; }
-  #mainCheckout hr {
+  main hr {
     width: 80%;
     margin: 10%; }
-  #mainCheckout .continueButton,
-  #mainCheckout #completeButton {
+  main .continueButton,
+  main #completeButton {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.2rem;
@@ -206,15 +204,14 @@ header {
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
-    height: 4rem;
-    width: 50%;
+    padding: 2rem;
     margin: 5%;
     cursor: pointer; }
     @media screen and (min-width: 768px) {
-      #mainCheckout .continueButton,
-      #mainCheckout #completeButton {
+      main .continueButton,
+      main #completeButton {
         width: 25%; } }
-  #mainCheckout .returnButton {
+  main .returnButton {
     background-color: white;
     border: none;
     font-family: "Roboto Mono", monospace;
@@ -223,25 +220,25 @@ header {
     color: black;
     cursor: pointer;
     width: 100%; }
-  #mainCheckout #information {
+  main #information {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    #mainCheckout #information #contactForm {
+    main #information #contactForm {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly; }
-      #mainCheckout #information #contactForm #fName,
-      #mainCheckout #information #contactForm #lName,
-      #mainCheckout #information #contactForm #email,
-      #mainCheckout #information #contactForm #adrStreet,
-      #mainCheckout #information #contactForm #adrPCode,
-      #mainCheckout #information #contactForm #adrCity,
-      #mainCheckout #information #contactForm #adrCountry,
-      #mainCheckout #information #contactForm #adrPhone {
+      main #information #contactForm #fName,
+      main #information #contactForm #lName,
+      main #information #contactForm #email,
+      main #information #contactForm #adrStreet,
+      main #information #contactForm #adrPCode,
+      main #information #contactForm #adrCity,
+      main #information #contactForm #adrCountry,
+      main #information #contactForm #adrPhone {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -251,58 +248,58 @@ header {
         border-radius: 5px;
         border: 1px solid #000000;
         color: #000000; }
-      #mainCheckout #information #contactForm #fName,
-      #mainCheckout #information #contactForm #lName,
-      #mainCheckout #information #contactForm #adrPCode,
-      #mainCheckout #information #contactForm #adrCity {
+      main #information #contactForm #fName,
+      main #information #contactForm #lName,
+      main #information #contactForm #adrPCode,
+      main #information #contactForm #adrCity {
         width: 35%; }
-      #mainCheckout #information #contactForm #email,
-      #mainCheckout #information #contactForm #adrStreet,
-      #mainCheckout #information #contactForm #adrCountry,
-      #mainCheckout #information #contactForm #adrPhone {
+      main #information #contactForm #email,
+      main #information #contactForm #adrStreet,
+      main #information #contactForm #adrCountry,
+      main #information #contactForm #adrPhone {
         width: 80%; }
-      #mainCheckout #information #contactForm #adrStreet,
-      #mainCheckout #information #contactForm #adrCountry {
+      main #information #contactForm #adrStreet,
+      main #information #contactForm #adrCountry {
         margin: 5%; }
-      #mainCheckout #information #contactForm .checkBox {
+      main #information #contactForm .checkBox {
         display: flex;
         justify-content: flex-start;
         width: 80%;
         color: black;
         border-radius: 5px; }
-        #mainCheckout #information #contactForm .checkBox input {
+        main #information #contactForm .checkBox input {
           width: 24px;
           height: 24px;
           border: 1px solid #000000;
           border-radius: 5px; }
-        #mainCheckout #information #contactForm .checkBox input,
-        #mainCheckout #information #contactForm .checkBox label {
+        main #information #contactForm .checkBox input,
+        main #information #contactForm .checkBox label {
           margin: 5% 5% 5% 0; }
-        #mainCheckout #information #contactForm .checkBox label {
+        main #information #contactForm .checkBox label {
           position: relative;
           top: 3px; }
-  #mainCheckout #shipping {
+  main #shipping {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    #mainCheckout #shipping form {
+    main #shipping form {
       border: 1px solid #000000;
       border-radius: 5px;
       width: 80%;
       margin: 1rem;
       padding: 2rem; }
-      #mainCheckout #shipping form label {
+      main #shipping form label {
         margin-top: 1rem; }
-        #mainCheckout #shipping form label input {
+        main #shipping form label input {
           margin-right: 1rem; }
-  #mainCheckout #payment {
+  main #payment {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    #mainCheckout #payment #paymentInfoBox {
+    main #payment #paymentInfoBox {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -314,10 +311,10 @@ header {
       border-radius: 5px;
       padding: 5%;
       margin: 5%; }
-      #mainCheckout #payment #paymentInfoBox hr {
+      main #payment #paymentInfoBox hr {
         margin: 5%;
         width: 90%; }
-      #mainCheckout #payment #paymentInfoBox button {
+      main #payment #paymentInfoBox button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.6rem;
@@ -332,20 +329,20 @@ header {
         font-size: 1.2rem;
         color: black;
         margin-top: 5%; }
-        #mainCheckout #payment #paymentInfoBox button:hover {
+        main #payment #paymentInfoBox button:hover {
           background-color: black;
           color: white; }
-      #mainCheckout #payment #paymentInfoBox img {
+      main #payment #paymentInfoBox img {
         width: 30%;
         margin-top: 5%; }
-  #mainCheckout #review {
+  main #review {
     display: none;
     width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    #mainCheckout #review #checkoutOrderInfo,
-    #mainCheckout #review #checkoutTotal {
+    main #review #checkoutOrderInfo,
+    main #review #checkoutTotal {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -357,12 +354,12 @@ header {
       border-radius: 5px;
       padding: 5%;
       margin: 5%; }
-      #mainCheckout #review #checkoutOrderInfo hr,
-      #mainCheckout #review #checkoutTotal hr {
+      main #review #checkoutOrderInfo hr,
+      main #review #checkoutTotal hr {
         margin: 5%;
         width: 90%; }
-      #mainCheckout #review #checkoutOrderInfo button,
-      #mainCheckout #review #checkoutTotal button {
+      main #review #checkoutOrderInfo button,
+      main #review #checkoutTotal button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.6rem;
@@ -377,12 +374,12 @@ header {
         font-size: 1.2rem;
         color: black;
         margin-top: 5%; }
-        #mainCheckout #review #checkoutOrderInfo button:hover,
-        #mainCheckout #review #checkoutTotal button:hover {
+        main #review #checkoutOrderInfo button:hover,
+        main #review #checkoutTotal button:hover {
           background-color: black;
           color: white; }
-      #mainCheckout #review #checkoutOrderInfo .total,
-      #mainCheckout #review #checkoutTotal .total {
+      main #review #checkoutOrderInfo .total,
+      main #review #checkoutTotal .total {
         font-family: "Roboto Mono", monospace;
         font-weight: 400;
         font-size: 2.4rem;
@@ -390,15 +387,45 @@ header {
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
-    #mainCheckout #review .pContainer {
+    main #review .pContainer {
       margin: 3rem;
       text-align: start; }
-  #mainCheckout #productDivContainer {
+  main #productDivContainer {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 1rem; }
-  #mainCheckout .productDiv {
+  main .productDiv {
     width: 30%; }
+
+.modal {
+  display: none;
+  align-items: center;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8) no-repeat; }
+  .modal p {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 1.6rem;
+    font-size: 4rem;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    z-index: 3000; }
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading .modal {
+  overflow: hidden; }
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+  display: flex; }
 
 #mainProducts {
   font-family: "Roboto Mono", monospace;
@@ -468,8 +495,7 @@ header {
         color: #FFFFFF;
         border: none;
         border-radius: 5px;
-        height: 4rem;
-        width: 50%;
+        padding: 2rem;
         margin: 5%;
         cursor: pointer; }
         @media screen and (min-width: 768px) {
@@ -710,6 +736,12 @@ table {
       background-color: black;
       color: white; }
 
+h4 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 3.2rem;
+  color: black; }
+
 main {
   display: flex;
   justify-content: center;
@@ -805,3 +837,5 @@ main {
     @media screen and (min-width: 768px) {
       #confirmationContainer button {
         width: 30%; } }
+  #confirmationContainer #orderSummary {
+    border: 1px solid black; }
