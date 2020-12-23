@@ -24,177 +24,12 @@
 
     <header>
     <div class="headerBanner">
-
-        <p>free shipping on all orders from 30 €</p>
-
-        <h1 class="logotype">LOGOTYPE</h1>
-
+        <p>free shipping on all orders from 5000 SEK</p>
     </div>
+    <h1 class="logotype">LOGOTYPE</h1>
     </header>
 
-
-    <main id="mainCheckout">
-        <!---------- Information  --------------->
-        <section id="information">
-
-            <!--Top navigation buttons-->
-            <div class="navButtons">
-
-                <a href="#">Cart ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#information">Information ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#shipping">Shipping ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#payment">Payment ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#review">Review</a>
-            </div>
-            <!------->
-
-            <form id="contactForm">
-                <h2>Contact Information</h2>
-
-                <input type="email" placeholder="Email address" id="email">
-
-                <div class="checkBox">
-                    <input type="checkbox">
-                    <label>Subscribe to newsletter</label>
-                </div>
-
-                <h2>Shipping Address</h2>
-                <input type="text" placeholder="First Name" id="fName"> <input type="text" placeholder="Last Name" id="lName">
-                <input type="text" placeholder="Street Name, Street Number" id="adrStreet">
-                <input type="number" placeholder="Postal Code" id="adrPCode"> <input type="text" placeholder="City/Town" id="adrCity">
-                <input type="text" placeholder="Country/Region" id="adrCountry">
-                <input type="tel" placeholder="Mobile phone number" id="adrPhone">
-
-                <div class="checkBox">
-                    <input type="checkbox">
-                    <label>Save Information</label>
-                </div>
-            </form>
-
-            <button class="continueButton" id="btnToShipping">Continue to shipping</button>
-            <hr>
-        </section>
-
-        <!---------- Shipping  --------------->
-        <section id="shipping">
-
-            <!--Top navigation buttons-->
-            <div class="navButtons">
-
-                <a href="#">Cart ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#information">Information ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#shipping">Shipping ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#payment">Payment ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#review">Review</a>
-            </div>
-            <!--------->
-
-
-
-            <h2>Shipping Method</h2>
-            <form id="radioForm">
-
-                <label><input type="radio" id="shippingPostNord" name="shipping" value=59>Shipping: Postnord 59 SEK</label>
-                <br><br>
-                <label><input type="radio" id="shippingDHL" name="shipping" value=159>Shipping: Express DHL 159 SEK</label>
-
-            </form>
-            <a href="#information"><button class="returnButton">&lt; Return to information</button></a>
-
-            <button class="continueButton" id="btnToPayment">Continue to payment</button>
-            <hr>
-
-        </section>
-
-        <!---------- Payment  --------------->
-        <section id="payment">
-
-            <!--Top navigation buttons-->
-            <div class="navButtons">
-
-                <a href="#">Cart ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#information">Information ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#shipping">Shipping ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#payment">Payment ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#review">Review</a>
-            </div>
-            <!---------->
-
-
-            <h2>Payment</h2>
-            <p>All transactions are secure and encrypted.</p>
-
-            <div id="paymentInfoBox">
-                <p>After clicking “Review order”, you will be redirected to Nets Payment to complete your purchase securely.</p>
-                <img src="../IMG/mastercard-icon.png" alt="Mastercard icon">
-            </div>
-
-            <a href="#shipping"><button class="returnButton">&lt; Return to shipping</button></a>
-
-            <button class="continueButton" id="btnReviewOrder">Review Order</button>
-            <p>You won't be charged yet!</p>
-            <hr>
-        </section>
-
-        <!---------- Review  --------------->
-        <section id="review">
-
-            <!--Top navigation buttons-->
-            <div class="navButtons">
-
-                <a href="#">Cart ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#information">Information ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#shipping">Shipping ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#payment">Payment ></a>
-                <!-- <i class="fas fa-arrow-right"></i> -->
-
-                <a href="#review">Review</a>
-            </div>
-            <!------->
-
-            <h2>Review Order</h2>
-            <div id="checkoutOrderInfo">
-            </div>
-            <div id="checkoutTotal"></div>
-            <a href="#payment"><button class="returnButton">&lt; Return to payment</button></a>
-
-            <button id="completeButton">Complete Order</button>
-            <hr>
-        </section>
-
-    </main>
-
-
+    <main></main>
 
     <footer>
         <ul>
@@ -225,6 +60,12 @@
         </div>
 
     </footer>
+    <div class="modal">
+        <p>Processing order...</p>
+    </div>
+    <div class="loadingBar">
+        
+    </div>
 </body>
 
 </html>

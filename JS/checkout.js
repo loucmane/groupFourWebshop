@@ -1,8 +1,287 @@
 $(function() {
+    renderInfoSection();
+    renderShippingSection();
+    renderPaymentSection();
+    renderReviewSection()
+
     buttonFunctions();
     $( "#review" ).hide()
-
+    
 });
+
+function renderInfoSection() {
+
+    let infoSection = $("<section>")
+    .attr("id", "information")
+    .appendTo("main");
+
+    //renderNavButtons();
+
+    let contactForm = $("<form>")
+    .attr("id", "contactForm")
+    .appendTo(infoSection)
+
+    $("<h2>")
+    .html("Contact Information")
+    .appendTo(contactForm)
+
+    $("<input>")
+        .attr("type", "email")
+        .attr("placeholder", "Email Address")
+        .attr("id", "email")
+        .appendTo(contactForm)
+
+    let newsLetter = $("<div>")
+    .addClass("checkBox")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "checkbox")
+    .appendTo(newsLetter)
+
+    $("<label>")
+    .html("Subscribe to newsletter")
+    .appendTo(newsLetter)
+
+    $("<h2>")
+    .html("Shipping Address")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "text")
+    .attr("placeholder", "First Name")
+    .attr("id", "fName")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "text")
+    .attr("placeholder", "Last Name")
+    .attr("id", "lName")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "text")
+    .attr("placeholder", "Street Name, Street Number")
+    .attr("id", "adrStreet")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "number")
+    .attr("placeholder", "Postal Code")
+    .attr("id", "adrPCode")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "text")
+    .attr("placeholder", "City / Town")
+    .attr("id", "adrCity")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "text")
+    .attr("placeholder", "Country / Region")
+    .attr("id", "adrCountry")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "tel")
+    .attr("placeholder", "Movile Phone Number")
+    .attr("id", "adrPhone")
+    .appendTo(contactForm)
+
+    let saveInfo = $("<div>")
+    .addClass("checkBox")
+    .appendTo(contactForm)
+
+    $("<input>")
+    .attr("type", "checkbox")
+    .appendTo(saveInfo)
+
+    $("<label>")
+    .html("Save Information")
+    .appendTo(saveInfo)
+
+    $("<button>")
+    .addClass("continueButton")
+    .attr("id", "btnToShipping")
+    .html("Continue to shipping")
+    .appendTo(infoSection)
+
+    $("<hr>")
+    .appendTo(infoSection)
+
+}
+
+function renderShippingSection() {
+    
+
+    let shippingSection = $("<section>")
+    .attr("id", "shipping")
+    .appendTo("main");
+    
+    let radioForm = $("<form>")
+    .attr("id", "radioForm")
+    .appendTo(shippingSection)
+
+    $("<h2>")
+    .html("Shipping Method")
+    .appendTo(radioForm)
+
+    let postNord = {price: 59, text:'PostNord', id:'postNord'}
+    let DHL = {price: 159, text:'Express DHL', id:'DHL'}
+
+    let radioButtons = [postNord, DHL]
+
+    for (let i = 0; i < radioButtons.length; i++) {
+        
+        $("<input>")
+        .attr("type", "radio")
+        .attr("name", "shipping")
+        .attr("value", radioButtons[i].price)
+        .appendTo(radioForm)
+
+        $("<label>")
+        .attr("id", radioButtons[i].id)
+        .html("Shipping:" + radioButtons[i].text + " " + radioButtons[i].price + " SEK" + "<br>")
+        .appendTo(radioForm)
+    }
+
+    let aTag = $("<a>")
+    .attr("href", "#information")
+    .appendTo(shippingSection)
+
+    $("<button>")
+    .addClass("returnButton")
+    .html("&lt; Return to information")
+    .appendTo(aTag)
+
+    $("<button>")
+    .addClass("continueButton")
+    .attr("id", "btnToPayment")
+    .html("Continue to payment")
+    .appendTo(shippingSection)
+
+    $("<hr>")
+    .appendTo(shippingSection)
+}
+
+function renderPaymentSection() {
+    let paymentSection = $("<section>")
+    .attr("id", "payment")
+    .appendTo("main");
+    
+
+    $("<h2>")
+    .html("Payment")
+    .appendTo(paymentSection)
+
+    $("<p>")
+    .html("All transactions are secure and encrypted.")
+    .appendTo(paymentSection)
+
+    let infoBox = $("<div>")
+    .attr("id", "paymentInfoBox")
+    .appendTo(paymentSection)
+
+    $("<p>")
+    .html("After clicking “Review order”, you will be redirected to Nets Payment to complete your purchase securely.")
+    .appendTo(infoBox)
+
+    $("<img>")
+    .attr("src", "../IMG/mastercard-icon.png")
+    .attr("alt", "Mastercard Icon")
+    .appendTo(infoBox)
+
+    let aTag = $("<a>")
+    .attr("href", "#shipping")
+    .appendTo(paymentSection)
+
+    $("<button>")
+    .addClass("returnButton")
+    .html("&lt; Return to shipping")
+    .appendTo(aTag)
+
+    $("<button>")
+    .addClass("continueButton")
+    .attr("id", "btnReviewOrder")
+    .html("Review Order")
+    .appendTo(paymentSection)
+
+    $("<p>")
+    .html("You won't be charged yet!")
+    .appendTo(paymentSection)
+
+    $("<hr>")
+    .appendTo(paymentSection)
+}
+
+function renderReviewSection() {
+
+    let reviewSection = $("<section>")
+    .attr("id", "review")
+    .appendTo("main");
+
+    $("<h2>")
+    .html("Review Order")
+    .appendTo(reviewSection)
+
+    $("<div>")
+    .attr("id", "checkoutOrderInfo")
+    .appendTo(reviewSection)
+
+    $("<div>")
+    .attr("id", "checkoutTotal")
+    .appendTo(reviewSection)
+
+    let aTag = $("<a>")
+    .attr("href", "#payment")
+    .appendTo(reviewSection)
+
+    $("<button>")
+    .addClass("returnButton")
+    .html("&lt; Return to payment")
+    .appendTo(aTag)
+
+    $("<button>")
+    .attr("id", "completeButton")
+    .html("Complete Order")
+    .appendTo(reviewSection)
+
+    $("<hr>")
+    .appendTo(reviewSection)
+
+}
+// function renderNavButtons() {
+
+//     let navButton = $("<div>")
+//     .addClass("navButtons")
+
+//     $("<a>")
+//     .attr("#")
+//     .html("Cart >")
+//     .appendTo(navButton)
+
+//     $("<a>")
+//     .attr("#information")
+//     .html("Information >")
+//     .appendTo(navButton)
+
+//     $("<a>")
+//     .attr("#shipping")
+//     .html("Shipping >")
+//     .appendTo(navButton)
+
+//     $("<a>")
+//     .attr("#payment")
+//     .html("Payment >")
+//     .appendTo(navButton)
+
+//     $("<a>")
+//     .attr("#review")
+//     .html("Payment")
+//     .appendTo(navButton)
+
+// }
 
 function buttonFunctions() {
 
@@ -31,29 +310,46 @@ function buttonFunctions() {
         window.location.href = "#review";
     });
 
-    $("#completeButton")
-    .on("click", function() {
-        window.location.href = "../HTML/confirmation.html";
-    });
+    $(document).ready(function(){
+        $("#completeButton")
+        .on("click", function() {
+            window.setTimeout(completeOrder, 2000)
+    
+            $("body").addClass("loading");
+
+            $( ".loadingBar" ).slideToggle();
+            $( ".loadingBar" ).css({
+            display: "block"
+        })
+            
+        });
+    })
 } 
+
+function completeOrder() {
+    window.location.href = "../HTML/confirmation.html";
+}
 
 function getOrderInfo() {
 
     let email = $("#email").val();
-            let fName = $("#fName").val();
-            let lName = $("#lName").val();
-            let street = $("#adrStreet").val();
-            let postal = $("#adrPCode").val();
-            let city = $("#adrCity").val();
-            let country = $("#adrCountry").val();
-            let phone = $("#adrPhone").val();
-            let shipping = $("[name='shipping']:checked").text() + parseInt($("[name='shipping']:checked").val());
+    let fName = $("#fName").val();
+    let lName = $("#lName").val();
+    let street = $("#adrStreet").val();
+    let postal = $("#adrPCode").val();
+    let city = $("#adrCity").val();
+    let country = $("#adrCountry").val();
+    let phone = $("#adrPhone").val();
+    let shipping = parseInt($("[name='shipping']:checked").val());
+    let date = new Date().toUTCString();
+    let orderNumber = 1 + Math.floor(Math.random() * 1000000);
 
-            let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping);
 
-            custInfo = [];
-            custInfo.push(order);
-            setToLocalStorage();
+    let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping, date, orderNumber);
+
+    custInfo = [];
+    custInfo.push(order);
+    setToLocalStorage();
 
 }
 
@@ -91,8 +387,19 @@ function renderOrderInfo() {
         $("<hr>")
         .appendTo(orderInfo);
 
+        if(calculateTotal()<5000){
         $("<p>")
         .html("Shipping: " + custInfo[i].shipping + " SEK")
+        .appendTo(orderInfo);
+        } else {
+            $("<p>")
+            .html("Shipping: FREE")
+            .appendTo(orderInfo)
+        }
+        
+
+        $("<p>")
+        .html("Order Number: " + custInfo[i].orderNumber)
         .appendTo(orderInfo);
         }
 
@@ -148,16 +455,39 @@ function renderOrderSummary() {
         .appendTo(orderSummary)
         .html("Subtotal " + calculateTotal() + " SEK");
 
+        if(calculateTotal()<5000){
         $("<p>")
         .appendTo(orderSummary)
         .html("Shipping " + custInfo[i].shipping + " SEK");
+        } else {
+            $("<p>")
+            .appendTo(orderSummary)
+            .html("Shipping FREE!");
+        }
 
         $("<hr>")
         .appendTo(orderSummary);
-
-        $("<p>")
-        .appendTo(orderSummary)
-        .addClass("total")
-        .html("Total " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
+            if(calculateTotal()<5000) {
+            $("<p>")
+            .appendTo(orderSummary)
+            .addClass("total")
+            .html("Total " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
+            } else {
+                $("<p>")
+            .appendTo(orderSummary)
+            .addClass("total")
+            .html("Total " + calculateTotal() + " SEK");
+            }
     }
+
+    $("<p>")
+        .appendTo(orderSummary)
+        .html("Need to add more products?");
+
+    $("<button>")
+        .appendTo(orderSummary)
+        .html("Back to cart")
+        .on("click", function() {
+            window.location.href = "../HTML/cart.html";
+        });
 }
