@@ -9,6 +9,13 @@ function renderCart() {
     $(".tableContainer")
     .remove();
 
+    $("<h4>")
+    .html("you cart.")
+    .appendTo("main")
+
+    $("<hr>")
+    .appendTo("main")    
+
     $("<div>")
     .addClass("tableContainer")
     .appendTo($("main"));
@@ -194,7 +201,7 @@ function renderCart() {
     });
 
     //Footer Card
-    $("<div>")
+    let summary = $("<div>")
     .addClass("tableSum")
     .appendTo(".tableContainer");
 
@@ -206,15 +213,21 @@ function renderCart() {
     .on("click", function() {
         $(".phoneRow").toggle();
     })
-    .appendTo(".tableSum");
+    .appendTo(summary);
+
+    $("<hr>")
+    .appendTo(summary)
 
     $("<span>")
     .html("<b>Subtotal:</b> " + calculateTotal() + " SEK")
-    .appendTo(".tableSum");
+    .appendTo(summary);
 
     $("<span>")
     .html("<i>shipping & taxes calculated at checkout</i>")
-    .appendTo(".tableSum");
+    .appendTo(summary);
+
+    $("<hr>")
+    .appendTo(summary)
 
     //Link to checkoutpage
     $("<button>")
@@ -224,11 +237,11 @@ function renderCart() {
     .on("click", function(){
         window.location.href = "../HTML/checkout.html";
     })
-    .appendTo(".tableSum")
+    .appendTo(summary)
 
     $("<p>")
     .html("need something else?")
-    .appendTo(" .tablesum ")
+    .appendTo(summary)
 
     //Link to products page
     $("<button>")
@@ -238,6 +251,6 @@ function renderCart() {
     .on("click", function(){
         window.location.href = "../HTML/products.html";
     })
-    .appendTo(".tableSum")
+    .appendTo(summary)
 }
 
