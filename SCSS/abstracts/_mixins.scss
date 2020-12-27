@@ -9,21 +9,21 @@
     font-family: $ff-roboto;
     font-weight: $fw-light;
     font-size: $fs-heading;
-    color: $primary-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontTitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-title;
-    color: $accent-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontSubtitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-subtitle;
-    color: $primary-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontBody() {
