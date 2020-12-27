@@ -13,10 +13,12 @@ function renderNavbar() {
     });
 
     //HYPERLINK SHOPPINGCARTBUTTON -> CART
-$( ".shoppingCartButton" )
+$( ".shoppingCartButton",)
 .on ("click", function(){
   window.location.href = "../HTML/cart.html";
 });
+
+$
 
 //HYPERLINK LOGOTYPE -> HOME
 $( ".logotype" )

@@ -1,14 +1,35 @@
 #confirmationContainer {
     @include flexCenter(column);
     text-align: center;
-    //margin: 5%;
+    @include fontBody();
+
+    #orderSummary {
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    padding: 1rem;
+
+        h4 {
+            margin: 3rem 0 3rem 0;
+        }
+    }
+
+    .pContainer{
+        margin: 0 10% 0 10%;
+        text-align: start;
+        
+    }
 
     h2 {
         @include fontHeading();
+        margin: 2rem;
     }
 
     h4 {
         @include fontTitle();
+    }
+
+    hr {
         margin: 2rem;
     }
 
@@ -37,13 +58,18 @@
         @include buttonWhite()
     }
 
-    #orderSummary {
-        //border: 1px solid black;
-        
+    #orderNumber {
+        @include fontSubtitle;
+        margin: .5rem;
+    }
 
-        #orderNumber {
-            @include fontSubtitle;
-            margin: .5rem;
+    #productDivContainer {
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+        img {
+            width: 10rem;
         }
     }
+    
 }

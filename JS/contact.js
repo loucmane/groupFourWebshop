@@ -6,6 +6,7 @@ $(function() {
 function renderHTML(){
 
   $("<img>")
+  .attr("id", "iceMan")
   .attr("src", "../IMG/iceman.jpeg")
   .appendTo("main")
 

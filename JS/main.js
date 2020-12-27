@@ -46,13 +46,13 @@ custInfo = [];
 
 //SET TO LOCAL STORAGE
 function setToLocalStorage() {
-  localStorage.setItem("products", JSON.stringify(bag));
+  localStorage.setItem("Products", JSON.stringify(bag));
   localStorage.setItem("Information", JSON.stringify(custInfo));
 }
 
 //GET FROM LOCAL STORAGE
 function getFromLocalStorage() {
-  bag = JSON.parse(localStorage.getItem("products")) || [] ;
+  bag = JSON.parse(localStorage.getItem("Products")) || [] ;
   custInfo = JSON.parse(localStorage.getItem("Information")) || [] ;
 }
 

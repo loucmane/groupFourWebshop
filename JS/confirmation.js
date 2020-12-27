@@ -1,8 +1,5 @@
 $(function() {
-
-    
     renderOrderSummary();
-    //localStorage.clear();
 
     // Link to landing page
     // $(".logotype")
@@ -19,7 +16,6 @@ $(function() {
 });
 
 function renderOrderSummary() {
-    getFromLocalStorage();
 
     let orderSummary = $("#orderSummary");
 
@@ -30,6 +26,9 @@ function renderOrderSummary() {
         $("<h4>")
         .html("Your order information")
         .appendTo(orderSummary);
+
+        $("<hr>")
+        .appendTo(orderSummary)
 
         let pContainer = $("<div>")
         .addClass("pContainer")
@@ -49,7 +48,6 @@ function renderOrderSummary() {
         $("<p>")
         .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
         .appendTo(pContainer);
-
 
         $("<hr>")
         .appendTo(orderSummary);
@@ -130,8 +128,6 @@ function renderOrderSummary() {
         .html("(VAT included)")
         .appendTo(orderSummary)
 
-        $("<hr>")
-        .appendTo(orderSummary)
         localStorage.clear();
     }
 

@@ -1,12 +1,32 @@
-main {
+#mainContact {
     @include flexCenter(column);
 
-    img {
+     #iceMan {
         max-width: 100%;
         height: auto;
 
-        @media screen and(min-width: 410px){
-            width: 100%;
+        @media screen and(min-width: 410px) {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+    }
+
+    #contactBackground {
+        display:hidden;
+
+        @media screen and(min-width: 768px) {
+        background-image: url("../IMG/iceman.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-items: flex-start;
         }
     }
     #contactContainer {

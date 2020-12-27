@@ -1,10 +1,20 @@
+#cartMain {
+    @include fontBody();
+    text-align: center;
+    h4 {
+        @include fontHeading();
+        margin: 3rem;
+    }
+}
+
 table {
+    width:100%;
     border-collapse: collapse;
     padding: 2rem 0 2rem 0;
-    @include fontBody();
     @media screen and(min-width: 410px) {
-        margin: 0 10rem 0 10rem;
+    margin: 0 10rem 0 10rem;
     }
+
     tr:last-child {
         border-bottom: none;
     }
@@ -17,6 +27,7 @@ table {
     }
     td {
         width: 25%;
+        margin: 0;
     }
     .tdQty {
         display: none;
@@ -51,7 +62,7 @@ table {
             @include fontBread();
         }
         input {
-            width: 100%;
+            width: 80%;
         }
         .phoneUpdateBtn {
             @include buttonWhite();
@@ -64,7 +75,6 @@ table {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    margin: 2rem;
     text-align: center;
     img {
         width: 10rem;
@@ -160,6 +170,14 @@ table {
     }
 }
 
-h4 {
-    @include fontHeading();
+#errorMsg {
+    @include fontSubtitle();
+    text-align: center;
+    margin: 5rem;
+    
+
+    @media screen and(min-width: 410px){
+        @include fontHeading();
+        margin: 20rem;
+    }
 }
