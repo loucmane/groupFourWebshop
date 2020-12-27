@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: flex-end;
     @media screen and(min-width: 768px) {
-        background-image: url("../IMG/ginger-double2.png");
+        background-image: url("../IMG/ginger-double.png");
         align-items: flex-start;
     }
     #heroText {
@@ -52,7 +52,15 @@
     text-align: center;
     h3 {
         @include fontHeading();
-        margin: 10%;
         text-transform: uppercase;
+        margin-top: 10%
+    }
+    img {
+        width: 70%;
+        margin-top: 5%;
+    }
+    button {
+        @include buttonBlack();
+        margin: 5%;
     }
 }
