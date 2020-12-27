@@ -100,35 +100,29 @@ header {
 
 .navbar {
   display: flex;
+  justify-content: space-between;
+  background-color: #FFF8E2;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   font-size: 2.4rem;
-  color: #443344;
-
-  justify-content: space-between;
-  background-color: #FFF8E2;
+  color: black;
   width: 100%;
   padding: 5%; }
-
   @media screen and (min-width: 480px) {
     .navbar {
-      font-family: "Roboto Mono", monospace;
-      font-weight: 400;
-      font-size: 1.6rem;
-      color: black;
       justify-content: space-around;
+      font-size: 1.6rem;
       padding: 0; } }
   .navbar .hamburgerButton {
     z-index: 1000;
     font-size: 3rem;
-    cursor: pointer;
-    margin: 5%; }
+    width: 30%;
+    cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .hamburgerButton {
         display: none; } }
   .navbar .myUl {
     display: none;
-    position: absolute;
     z-index: 900;
     flex-direction: column;
     justify-content: center;
@@ -136,14 +130,6 @@ header {
     height: 100vh;
     width: 100vw;
     background-color: #FFF8E2; }
-    @media screen and (min-width: 480px) {
-      .navbar .myUl {
-        display: flex;
-        position: relative;
-        height: 100%;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-around; } }
     .navbar .myUl a {
       text-decoration: none;
       color: #000000; }
@@ -154,21 +140,22 @@ header {
       text-align: center;
       list-style: none;
       margin: 2rem; }
+    @media screen and (min-width: 480px) {
+      .navbar .myUl {
+        display: flex;
+        height: 100%;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around; } }
   .navbar .shoppingCartButton {
     z-index: 800;
     font-size: 3rem;
-    margin: 5%;
     cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .shoppingCartButton {
         position: relative;
-
+        font-size: 2rem;
         top: 1.6rem; } }
-    .navbar .shoppingCartButton i.fa-shopping-cart#text {
-      font-family: "Roboto Mono", monospace;
-      font-weight: 400;
-      font-size: 2.4rem;
-      color: #443344; }
 
 #heroBackground {
   background-image: url("../IMG/ginger-single.png");
@@ -212,7 +199,7 @@ header {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 2.4rem;
-      color: #443344;
+      color: black;
       font-size: 1.2rem;
       margin: 5%; }
       @media screen and (min-width: 768px) {
@@ -236,7 +223,7 @@ header {
   #landingpageMain button {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: none;
     color: white;
@@ -273,7 +260,7 @@ header {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
-    color: #443344;
+    color: black;
     font-weight: 700;
     color: #000000;
     text-align: center;
@@ -469,7 +456,7 @@ header {
         font-family: "Roboto Mono", monospace;
         font-weight: 400;
         font-size: 2.4rem;
-        color: #443344;
+        color: black;
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
@@ -543,18 +530,12 @@ body.loading .modal {
       color: black; } }
   #mainProducts h2 {
     font-family: "Roboto Mono", monospace;
-    font-weight: 400;
-    font-size: 2.4rem;
-    color: #443344;
-    font-weight: 700;
-    color: #000000;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: black;
     margin: 5%; }
     @media screen and (min-width: 410px) {
       #mainProducts h2 {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 3.2rem;
-        color: black;
         margin: 0; } }
   #mainProducts #productsContainer {
     display: flex;
@@ -578,13 +559,13 @@ body.loading .modal {
       #mainProducts #productsContainer .eachProduct div {
         width: 70%;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start; }
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; }
         @media screen and (min-width: 768px) {
           #mainProducts #productsContainer .eachProduct div {
             width: 50%; } }
         #mainProducts #productsContainer .eachProduct div p {
-          color: #000000;
           margin: 2%; }
           @media screen and (min-width: 768px) {
             #mainProducts #productsContainer .eachProduct div p {
@@ -636,6 +617,9 @@ body.loading .modal {
         #mainProducts #productsContainer #cartBtnContainer #goCartBtn:hover {
           background-color: black;
           color: white; }
+        @media screen and (min-width: 768px) {
+          #mainProducts #productsContainer #cartBtnContainer #goCartBtn {
+            margin-top: 5rem; } }
 
 #cartMain {
   font-family: "Roboto Mono", monospace;
@@ -812,7 +796,7 @@ table {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
-    color: #443344;
+    color: black;
     margin: 1rem; }
     .tableSum span:last-of-type {
       font-family: "Roboto Mono", monospace;
@@ -990,7 +974,7 @@ table {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
-    color: #443344; }
+    color: black; }
   #confirmationContainer hr {
     margin: 2rem; }
   #confirmationContainer #firstMessage {

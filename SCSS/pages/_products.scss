@@ -1,30 +1,21 @@
-
 #mainProducts {
     @include fontBread();
     @include flexCenter(column);
     padding: 5% 0 5% 0;
-
-    @media screen and(min-width: 410px){
+    @media screen and(min-width: 410px) {
         @include fontBody();
     }
-    
     h2 {
-        @include fontTitle();
-        font-weight: $fw-bold;
-        color: $black;
+        @include fontHeading();
         margin: 5%;
-
-        @media screen and(min-width: 410px){
-            @include fontHeading();
+        @media screen and(min-width: 410px) {
             margin: 0;
         }
     }
-
     #productsContainer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
         .eachProduct {
             width: 50%;
             @include flexCenter(column);
@@ -40,15 +31,11 @@
             }
             div {
                 width: 70%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-
+                @include flexCenter(column);
                 @media screen and(min-width: 768px) {
                     width: 50%;
                 }
                 p {
-                    color: $black;
                     margin: 2%;
                     @media screen and(min-width: 768px) {
                         @include fontBody();
@@ -57,7 +44,6 @@
             }
             .addCartBtn {
                 @include buttonSlim();
-
                 @media screen and(min-width: 768px) {
                     @include buttonBlack();
                 }
@@ -66,10 +52,12 @@
         #cartBtnContainer {
             @include flexCenter(column);
             width: 100vw;
-
             #goCartBtn {
                 @include buttonWhite();
                 margin-top: 2rem;
+                @media screen and(min-width: 768px) {
+                    margin-top: 5rem;
+                }
             }
         }
     }
