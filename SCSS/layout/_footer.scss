@@ -2,45 +2,52 @@ footer {
     @include flexCenter(column);
     justify-content: space-evenly;
     width: 100vw;
-    height: 50rem;
+    height: 40rem;
     background-color: $primary-alt;
     text-align: center;
+
     li {
         text-align: center;
         list-style: none;
         margin: 2rem;
-        @include fontTitle();
+        @include fontSubtitle();
     }
+
+    .icon {
+        margin: 0 1rem 0 1rem;
+    }
+
     a {
         text-decoration: none;
         color: $black;
-        &:visited {
-            opacity: 0.5;
-        }
     }
     .socialmediaicons {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     p {
-        margin: 2rem;
+        margin-top: 1rem;
         @include fontBody();
     }
+
     @media screen and(min-width: 481px) {
+
+        height: 30rem;
+
         ul {
             @include flexCenter(row);
             li {
-                margin: 6rem;
+                margin: 3rem 5rem 3rem 5rem;
             }
         }
         .icon {
             margin: 3rem;
-            font-size: 7rem;
+            font-size: 5rem;
         }
         .companyinfo {
             @include flexCenter(row-reverse);
             p {
-                @include fontTitle();
-                margin: 4rem;
+                @include fontSubtitle();
+                margin: 2rem;
             }
         }
     }

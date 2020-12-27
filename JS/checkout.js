@@ -1,19 +1,10 @@
 $(function() {
     renderInfoSection();
-    renderShippingSection();
-    renderPaymentSection();
-    renderReviewSection()
-    buttonFunctions();
-    $( "#review" ).hide()
 });
 
 function renderInfoSection() {
 
-    let infoSection = $("<section>")
-    .attr("id", "information")
-    .appendTo("main");
-
-    //renderNavButtons();
+    let infoSection = $("#information")
 
     let contactForm = $("<form>")
     .attr("id", "contactForm")
@@ -90,7 +81,7 @@ function renderInfoSection() {
 
     $("<input>")
     .attr("type", "tel")
-    .attr("placeholder", "Movile Phone Number")
+    .attr("placeholder", "Mobile Phone Number")
     .attr("id", "adrPhone")
     .attr("name", "adrPhone")
     .appendTo(contactForm)
@@ -107,11 +98,19 @@ function renderInfoSection() {
     .html("Save Information")
     .appendTo(saveInfo)
 
+    //SUBMIT FORM, SEE function buttonFunctions()
     $("<button>")
     .addClass("continueButton")
     .attr("id", "btnToShipping")
     .html("Continue to shipping")
     .appendTo(contactForm)
+
+    $(document).ready(function() {
+        $("#btnToShipping")
+        .on("click", function() {
+            validateInfoForm();
+        });
+    });
 
     $("<hr>")
     .appendTo(infoSection)
@@ -119,11 +118,8 @@ function renderInfoSection() {
 }
 
 function renderShippingSection() {
-    
 
-    let shippingSection = $("<section>")
-    .attr("id", "shipping")
-    .appendTo("main");
+    let shippingSection = $("#shipping").html("")
     
     let radioForm = $("<form>")
     .attr("id", "radioForm")
@@ -133,24 +129,41 @@ function renderShippingSection() {
     .html("Shipping Method")
     .appendTo(radioForm)
 
+    let radioContainer = $("<div>")
+        .attr("id", "radioContainer")
+        .appendTo(radioForm)
+
     let postNord = {price: 59, text:'PostNord', id:'postNord'}
     let DHL = {price: 159, text:'Express DHL', id:'DHL'}
 
     let radioButtons = [postNord, DHL]
 
     for (let i = 0; i < radioButtons.length; i++) {
-        
+
         $("<input>")
         .attr("type", "radio")
         .attr("name", "shipping")
         .attr("value", radioButtons[i].price)
-        .appendTo(radioForm)
+        .appendTo(radioContainer)
 
         $("<label>")
         .attr("id", radioButtons[i].id)
         .html("Shipping:" + radioButtons[i].text + " " + radioButtons[i].price + " SEK" + "<br>")
-        .appendTo(radioForm)
+        .appendTo(radioContainer)
     }
+
+    $("<button>")
+    .addClass("continueButton")
+    .attr("id", "btnToPayment")
+    .html("Continue to payment")
+    .appendTo(radioForm)
+
+    $(document).ready(function() {
+        $("#btnToPayment")
+        .on("click", function() {
+            validateRadioForm();
+        });
+    });
 
     let aTag = $("<a>")
     .attr("href", "#information")
@@ -159,23 +172,24 @@ function renderShippingSection() {
     $("<button>")
     .addClass("returnButton")
     .html("&lt; Return to information")
-    .appendTo(aTag)
+    .on("click", function(){
+        $("#contactForm")
+        .removeClass("checked");
 
-    $("<button>")
-    .addClass("continueButton")
-    .attr("id", "btnToPayment")
-    .html("Continue to payment")
-    .appendTo(shippingSection)
+        $("#contactForm input")
+        .attr("readonly", false)
+    })
+    .appendTo(aTag)
 
     $("<hr>")
     .appendTo(shippingSection)
 }
 
 function renderPaymentSection() {
-    let paymentSection = $("<section>")
-    .attr("id", "payment")
-    .appendTo("main");
-    
+    let paymentSection = $("#payment");
+
+    $("#payment")
+    .html("")
 
     $("<h2>")
     .html("Payment")
@@ -190,7 +204,7 @@ function renderPaymentSection() {
     .appendTo(paymentSection)
 
     $("<p>")
-    .html("After clicking “Review order”, you will be redirected to Nets Payment to complete your purchase securely.")
+    .html("After clicking “Review Order”, you will be redirected to Nets Payment to complete your purchase securely.")
     .appendTo(infoBox)
 
     $("<img>")
@@ -205,12 +219,29 @@ function renderPaymentSection() {
     $("<button>")
     .addClass("returnButton")
     .html("&lt; Return to shipping")
+    .on("click", function(){
+        $("#radioForm")
+        .removeClass("checked");
+
+        $(':radio:not(:checked)').attr('disabled', false);
+            renderPaymentSection()
+    })
     .appendTo(aTag)
 
     $("<button>")
     .addClass("continueButton")
     .attr("id", "btnReviewOrder")
     .html("Review Order")
+    .on("click", function() {
+        console.log("klick");
+        $("#payment").addClass("checked")
+
+        renderReviewSection();
+        renderOrderInfo();
+        renderOrderReview();
+
+        window.location.href = "#review";
+    })
     .appendTo(paymentSection)
 
     $("<p>")
@@ -223,9 +254,10 @@ function renderPaymentSection() {
 
 function renderReviewSection() {
 
-    let reviewSection = $("<section>")
-    .attr("id", "review")
-    .appendTo("main");
+    let reviewSection = $("#review")
+
+    $("#review")
+    .html("");
 
     $("<h2>")
     .html("Review Order")
@@ -242,126 +274,24 @@ function renderReviewSection() {
     $("<button>")
     .attr("id", "completeButton")
     .html("Complete Order")
+    .on("click", function() {
+        window.setTimeout(completeOrder, 2000)
+
+        $("body").addClass("loading");
+
+        $( ".loadingBar" ).slideToggle();
+        $( ".loadingBar" ).css({
+            display: "block"
+        });
+    })
     .appendTo(reviewSection)
 
     $("<hr>")
     .appendTo(reviewSection)
 
 }
-// function renderNavButtons() {
 
-//     let navButton = $("<div>")
-//     .addClass("navButtons")
-
-//     $("<a>")
-//     .attr("#")
-//     .html("Cart >")
-//     .appendTo(navButton)
-
-//     $("<a>")
-//     .attr("#information")
-//     .html("Information >")
-//     .appendTo(navButton)
-
-//     $("<a>")
-//     .attr("#shipping")
-//     .html("Shipping >")
-//     .appendTo(navButton)
-
-//     $("<a>")
-//     .attr("#payment")
-//     .html("Payment >")
-//     .appendTo(navButton)
-
-//     $("<a>")
-//     .attr("#review")
-//     .html("Payment")
-//     .appendTo(navButton)
-
-// }
-
-function buttonFunctions() {
-    
-    $(document).ready(function() {
-        $("#btnToShipping")
-        .on("click", function() {
-            validateForm();
-        });
-
-        window.location.href = "#shipping";
-    });
-
-    $(document).ready(function() {
-    $("#btnToPayment")
-    .on("click", function() {
-        validateForm();
-    });
-
-    window.location.href = "#payment";
-});
-
-    
-    $("#btnReviewOrder")
-    .on("click", function() {
-
-        $( "#review" ).toggle();
-        $( "#review" ).css({
-            display: "flex"
-        })
-
-        getOrderInfo();
-        renderOrderInfo();
-        renderOrderSummary();
-
-        window.location.href = "#review";
-    });  
-
-    $(document).ready(function() {
-        $("#completeButton")
-        .on("click", function() {
-            window.setTimeout(completeOrder, 2000)
-    
-            $("body").addClass("loading");
-
-            $( ".loadingBar" ).slideToggle();
-            $( ".loadingBar" ).css({
-                display: "block"
-            });
-        });
-    });
-};
-
-function validateForm() {
-    $("#contactForm").validate({
-        rules: {
-            email: 'required',
-            fName: 'required',
-            lName: 'required',
-            adrStreet: 'required',
-            adrPCode: 'required',
-            adrCity: 'required',
-            adrPhone: 'required',
-            adrCountry: 'required'
-        },
-        // messages: {
-        //     email : "",
-        //     fName: "",
-        //     lName: "",
-        //     adrStreet: "",
-        //     adrPCode: "",
-        //     adrCity: "",
-        //     adrPhone: ""
-        // }
-    });
-}
-
-function completeOrder() {
-
-    // window.location.href = "../HTML/confirmation.html";
-    window.open("../HTML/confirmation.html")
-}
-
-function getOrderInfo() {
+function setOrderInfo() {
 
     let email = $("#email").val();
     let fName = $("#fName").val();
@@ -384,12 +314,12 @@ function getOrderInfo() {
 }
 
 function renderOrderInfo() {
+    setOrderInfo();
 
     let orderInfo = $("#checkoutOrderInfo");
+    orderInfo.html("");
 
     for (let i = 0; i < custInfo.length; i++) {
-
-        orderInfo.html("");
 
         $("<h4>")
         .html("Your order information")
@@ -426,7 +356,6 @@ function renderOrderInfo() {
             .html("Shipping: FREE!")
             .appendTo(orderInfo)
         }
-        
 
         $("<p>")
         .html("Order Number: " + custInfo[i].orderNumber)
@@ -441,27 +370,46 @@ function renderOrderInfo() {
         .html("Payment: Nets Payment");
 
     $("<button>")
-    .appendTo(orderInfo)
+    .attr("id", "changeBtn")
     .html("Change")
     .on("click", function() {
+
+        $("#contactForm")
+        .removeClass("checked");
+
+        $("#contactForm input")
+        .attr("readonly", false)
+
+        $("#radioForm")
+        .removeClass("checked");
+
+        $(':radio:not(:checked)').attr('disabled', false);
+            renderPaymentSection()
+
+        $("#payment")
+        .removeClass("checked")
+
         window.location.href = "#information";
-    });
+    })
+    .appendTo(orderInfo)
 }
 
-function renderOrderSummary() {
+function renderOrderReview() {
 
-    let orderSummary = $("#checkoutTotal");
-    orderSummary.html("");
-
-    let productDivContainer = $("<div>")
-    .attr("id", "productDivContainer")
-    .appendTo(orderSummary)
+    let orderReview = $("#checkoutTotal");
+    orderReview.html("");
 
     $("<h4>")
     .html("Your Products")
-    .appendTo(orderSummary);
+    .appendTo(orderReview);
 
-    //ADD IMAGES TO ORDER SUMMARY
+    let productDivContainer = $("<div>")
+    .attr("id", "productDivContainer")
+    .appendTo(orderReview)
+
+    
+
+    //ADD IMAGES TO ORDER Review
     for (let i = 0; i < bag.length; i++) {
 
         let productDiv = $("<div>")
@@ -478,46 +426,93 @@ function renderOrderSummary() {
         .appendTo(productDiv);
     }
 
-    //ADD COST + GRAND TOTAL TO ORDER SUMMARY
+    //ADD COST + GRAND TOTAL TO ORDER Review
     for (let i = 0; i < custInfo.length; i++) {
 
         $("<p>")
-        .appendTo(orderSummary)
+        .appendTo(orderReview)
         .html("Subtotal " + calculateTotal() + " SEK");
 
         if(calculateTotal()<5000){
         $("<p>")
-        .appendTo(orderSummary)
+        .appendTo(orderReview)
         .html("Shipping " + custInfo[i].shipping + " SEK");
         } else {
             $("<p>")
-            .appendTo(orderSummary)
+            .appendTo(orderReview)
             .html("Shipping FREE!");
         }
 
         $("<hr>")
-        .appendTo(orderSummary);
+        .appendTo(orderReview);
             if(calculateTotal()<5000) {
             $("<p>")
-            .appendTo(orderSummary)
+            .appendTo(orderReview)
             .addClass("total")
             .html("Total " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
             } else {
                 $("<p>")
-            .appendTo(orderSummary)
+            .appendTo(orderReview)
             .addClass("total")
             .html("Total " + calculateTotal() + " SEK");
             }
     }
 
     $("<p>")
-        .appendTo(orderSummary)
+        .appendTo(orderReview)
         .html("Need to add more products?");
 
     $("<button>")
-        .appendTo(orderSummary)
+        .appendTo(orderReview)
         .html("Back to cart")
         .on("click", function() {
             window.location.href = "../HTML/cart.html";
         });
+}
+
+function validateInfoForm() {
+    $("#contactForm").validate({
+        rules: {
+            email: 'required',
+            fName: 'required',
+            lName: 'required',
+            adrStreet: 'required',
+            adrPCode: 'required',
+            adrCity: 'required',
+            adrPhone: 'required',
+            adrCountry: 'required'
+        },
+        
+        submitHandler: function() {
+            $("#contactForm")
+            .addClass("checked")
+            
+            $("#contactForm input")
+            .attr("readonly", true)
+
+            renderShippingSection();
+        }
+    });
+    window.location.href = "#shipping";
+}
+
+function validateRadioForm() {
+    $("#radioForm").validate({
+        rules: {
+            shipping: "required",
+        },
+
+        submitHandler: function() {
+            $("#radioForm")
+            .addClass("checked")
+
+            $(':radio:not(:checked)').attr('disabled', true);
+            renderPaymentSection()
+        }
+    });
+    window.location.href = "#payment";
+}
+
+function completeOrder() {
+    window.location.href = "../HTML/confirmation.html";
 }

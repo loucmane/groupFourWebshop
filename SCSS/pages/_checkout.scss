@@ -1,4 +1,4 @@
-main {
+#mainCheckout {
     width: 100%;
     height: 100%;
     @include fontBread();
@@ -55,44 +55,60 @@ main {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
+
+            @media screen and(min-width: 410px){
+                width: 80%;
+            }
             
             input {
                 @include form();
+
+                @media screen and(min-width: 410px){
+                    @include fontBody();
+                }
             }
             
             .checkBox {
                 @include flexCenter(row);
                 width: 80%;
                 color: black;
-                border-radius: 5px;
+                border-radius: .5rem;
 
                 input {
-                    width: 24px;
-                    height: 24px;
+                    width: 2rem;
+                    height: 2rem;
                     border: 1px solid $black;
                     border-radius: 5px;
                 }
             }
         }
+        #contactForm.checked {
+            opacity: 0.4;
+        }
     }
      #shipping {
          @include flexCenter(column);
+         width: 100%;
          
          form {
+            @include flexCenter(column);
+            justify-content: flex-start;;
             border: 1px solid $black;
             border-radius: 5px;
             width: 80%;
             margin: 1rem;
-            padding: 2rem;
-            
-            label {
-            margin-top: 1rem;
-            
+
+            #radioContainer {
+                margin: 1rem;
+                justify-content: center;
+                
                 input{
+                    width: 2rem;
+                    height: 2rem;
                     margin-right: 1rem;
-                }
+                }  
             }
-         }
+        }
      }
 
     #payment {
@@ -107,12 +123,13 @@ main {
             }
         }
     }
+
+    #payment.checked {
+        opacity: 0.4;
+    }
     #review {
-        display: none;
+        @include flexCenter(column);
         width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         #checkoutOrderInfo,
         #checkoutTotal {
             @include transferBox();
@@ -123,21 +140,31 @@ main {
                 font-weight: $fw-bold;
                 color: $black;
             }
+            h4 {
+                @include fontSubtitle();
+                margin: 1rem;
+            }
         }
         .pContainer{
-            margin: 3rem;
+            margin: 1rem;
             text-align: start;
             
         }
     }
     #productDivContainer {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 1rem;
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        width: 100%;
     }
 
     .productDiv {
         width: 30%;
+
+        img {
+            width: 10rem;
+            
+        }
     }
 }
 
@@ -159,16 +186,23 @@ main {
     }
 }
 
-
-
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
 body.loading .modal {
     overflow: hidden;   
 }
 
-/* Anytime the body has the loading class, our
-   modal element will be visible */
 body.loading .modal {
     display: flex;
+}
+
+// #radioForm {
+//     @include flexCenter(column);
+//     width: 80%;
+
+//     @media screen and(min-width: 410px){
+//     width: 80%;
+//     }
+// }
+
+#radioForm.checked {
+    opacity: 0.4;
 }

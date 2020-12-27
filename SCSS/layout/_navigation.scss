@@ -1,13 +1,14 @@
 .navbar {
     display: flex;
+    @include fontTitle();
     justify-content: space-between;
     background-color: $primary-alt;
-    @include fontTitle();
     width: 100%;
     padding: 5%;
+    
     @media screen and(min-width: 480px) {
+        @include fontSubtitle();
         justify-content: space-around;
-        font-size: 1.6rem;
         padding: 0;
     }
     .hamburgerButton {
@@ -15,6 +16,7 @@
         font-size: 3rem;
         width: 30%;
         cursor: pointer;
+        
         @media screen and(min-width: 480px) {
             display: none;
         }
@@ -50,12 +52,10 @@
         }
     }
     .shoppingCartButton {
-        z-index: 800;
-        font-size: 3rem;
         cursor: pointer;
+        
         @media screen and(min-width: 480px) {
             position: relative;
-            font-size: 2rem;
             top: 1.6rem;
         }
         i.fa-shopping-cart#text {

@@ -25,6 +25,7 @@ $(function() {
             .html(product.price + " SEK");
 
         $("<button>").appendTo(divTag)
+            .addClass("addCartBtn")
             .attr("type", "button")
             .html("Add to bag")
             .on("click", { product: product }, function() {
@@ -48,6 +49,18 @@ $(function() {
                 cartNumbers();
             });
     });
+
+    $("<div>")
+    .attr("id", "cartBtnContainer")
+    .appendTo("#productsContainer")
+
+    $("<button>")
+    .attr("id", "goCartBtn")
+    .html("<i class='fas fa-shopping-cart'></i> " + "Go to Shopping Cart")
+    .on ("click", function(){
+        window.location.href = "../HTML/cart.html";
+      })
+    .appendTo("#cartBtnContainer")
 });
 
 // function createBagHTML() {

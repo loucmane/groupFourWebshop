@@ -19,7 +19,7 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   width: 100vw;
-  height: 50rem;
+  height: 40rem;
   background-color: #FFF8E2;
   text-align: center; }
   footer li {
@@ -28,43 +28,45 @@ footer {
     margin: 2rem;
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
-    font-size: 2.4rem;
-    color: #443344; }
+    font-size: 1.6rem;
+    color: black; }
+  footer .icon {
+    margin: 0 1rem 0 1rem; }
   footer a {
     text-decoration: none;
     color: #000000; }
-    footer a:visited {
-      opacity: 0.5; }
   footer .socialmediaicons {
-    font-size: 5rem; }
+    font-size: 4rem; }
   footer p {
-    margin: 2rem;
+    margin-top: 1rem;
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black; }
   @media screen and (min-width: 481px) {
-    footer ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row; }
-      footer ul li {
-        margin: 6rem; }
-    footer .icon {
-      margin: 3rem;
-      font-size: 7rem; }
-    footer .companyinfo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row-reverse; }
-      footer .companyinfo p {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 400;
-        font-size: 2.4rem;
-        color: #443344;
-        margin: 4rem; } }
+    footer {
+      height: 30rem; }
+      footer ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row; }
+        footer ul li {
+          margin: 3rem 5rem 3rem 5rem; }
+      footer .icon {
+        margin: 3rem;
+        font-size: 5rem; }
+      footer .companyinfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse; }
+        footer .companyinfo p {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 400;
+          font-size: 1.6rem;
+          color: black;
+          margin: 2rem; } }
 
 header {
   display: flex;
@@ -98,18 +100,21 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  background-color: #FFF8E2;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   font-size: 2.4rem;
   color: #443344;
+  justify-content: space-between;
+  background-color: #FFF8E2;
   width: 100%;
   padding: 5%; }
   @media screen and (min-width: 480px) {
     .navbar {
-      justify-content: space-around;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
       font-size: 1.6rem;
+      color: black;
+      justify-content: space-around;
       padding: 0; } }
   .navbar .hamburgerButton {
     z-index: 1000;
@@ -146,13 +151,10 @@ header {
         flex-direction: row;
         justify-content: space-around; } }
   .navbar .shoppingCartButton {
-    z-index: 800;
-    font-size: 3rem;
     cursor: pointer; }
     @media screen and (min-width: 480px) {
       .navbar .shoppingCartButton {
         position: relative;
-        font-size: 2rem;
         top: 1.6rem; } }
     .navbar .shoppingCartButton i.fa-shopping-cart#text {
       font-family: "Roboto Mono", monospace;
@@ -221,7 +223,7 @@ header {
     margin: 10%;
     text-transform: uppercase; }
 
-main {
+#mainCheckout {
   width: 100%;
   height: 100%;
   font-family: "Roboto Mono", monospace;
@@ -234,17 +236,17 @@ main {
   align-items: center;
   flex-direction: column; }
   @media screen and (min-width: 768px) {
-    main {
+    #mainCheckout {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black; } }
-  main .navButtons {
+  #mainCheckout .navButtons {
     margin: 5%; }
-    main .navButtons a {
+    #mainCheckout .navButtons a {
       text-decoration: none;
       color: #000000; }
-  main h2 {
+  #mainCheckout h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
@@ -253,11 +255,11 @@ main {
     color: #000000;
     text-align: center;
     margin: 5%; }
-  main hr {
+  #mainCheckout hr {
     width: 80%;
     margin: 10%; }
-  main .continueButton,
-  main #completeButton {
+  #mainCheckout .continueButton,
+  #mainCheckout #completeButton {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.2rem;
@@ -270,10 +272,10 @@ main {
     margin: 5%;
     cursor: pointer; }
     @media screen and (min-width: 768px) {
-      main .continueButton,
-      main #completeButton {
+      #mainCheckout .continueButton,
+      #mainCheckout #completeButton {
         width: 25%; } }
-  main .returnButton {
+  #mainCheckout .returnButton {
     background-color: white;
     border: none;
     font-family: "Roboto Mono", monospace;
@@ -282,18 +284,21 @@ main {
     color: black;
     cursor: pointer;
     width: 100%; }
-  main #information {
+  #mainCheckout #information {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    main #information #contactForm {
+    #mainCheckout #information #contactForm {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly; }
-      main #information #contactForm input {
+      @media screen and (min-width: 410px) {
+        #mainCheckout #information #contactForm {
+          width: 80%; } }
+      #mainCheckout #information #contactForm input {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -305,84 +310,57 @@ main {
         color: #000000;
         width: 80%;
         margin: 1rem; }
-      main #information #contactForm .checkBox {
+        @media screen and (min-width: 410px) {
+          #mainCheckout #information #contactForm input {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: black; } }
+      #mainCheckout #information #contactForm .checkBox {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
         width: 80%;
         color: black;
-        border-radius: 5px; }
-        main #information #contactForm .checkBox input {
-          width: 24px;
-          height: 24px;
+        border-radius: .5rem; }
+        #mainCheckout #information #contactForm .checkBox input {
+          width: 2rem;
+          height: 2rem;
           border: 1px solid #000000;
           border-radius: 5px; }
-  main #shipping {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
-    main #shipping form {
-      border: 1px solid #000000;
-      border-radius: 5px;
-      width: 80%;
-      margin: 1rem;
-      padding: 2rem; }
-      main #shipping form label {
-        margin-top: 1rem; }
-        main #shipping form label input {
-          margin-right: 1rem; }
-  main #payment {
+    #mainCheckout #information #contactForm.checked {
+      opacity: 0.4; }
+  #mainCheckout #shipping {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%; }
-    main #payment #paymentInfoBox {
+    #mainCheckout #shipping form {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      text-align: center;
+      justify-content: flex-start;
       border: 1px solid #000000;
-      width: 80%;
-      font-size: 1.2rem;
       border-radius: 5px;
-      padding: 5%;
-      margin: 5%; }
-      main #payment #paymentInfoBox hr {
-        margin: 5%;
-        width: 90%; }
-      main #payment #paymentInfoBox button {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.6rem;
-        color: black;
-        border: 1px solid black;
-        background-color: white;
-        padding: .5rem;
-        border-radius: .5rem;
-        cursor: pointer;
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 1.2rem;
-        color: black;
-        margin-top: 5%; }
-        main #payment #paymentInfoBox button:hover {
-          background-color: black;
-          color: white; }
-      main #payment #paymentInfoBox img {
-        width: 30%;
-        margin-top: 5%; }
-  main #review {
-    display: none;
-    width: 100%;
+      width: 80%;
+      margin: 1rem; }
+      #mainCheckout #shipping form #radioContainer {
+        margin: 1rem;
+        justify-content: center; }
+        #mainCheckout #shipping form #radioContainer input {
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1rem; }
+  #mainCheckout #payment {
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; }
-    main #review #checkoutOrderInfo,
-    main #review #checkoutTotal {
+    flex-direction: column;
+    width: 100%; }
+    #mainCheckout #payment #paymentInfoBox {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -394,15 +372,13 @@ main {
       border-radius: 5px;
       padding: 5%;
       margin: 5%; }
-      main #review #checkoutOrderInfo hr,
-      main #review #checkoutTotal hr {
+      #mainCheckout #payment #paymentInfoBox hr {
         margin: 5%;
         width: 90%; }
-      main #review #checkoutOrderInfo button,
-      main #review #checkoutTotal button {
+      #mainCheckout #payment #paymentInfoBox button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: black;
         border: 1px solid black;
         background-color: white;
@@ -414,12 +390,59 @@ main {
         font-size: 1.2rem;
         color: black;
         margin-top: 5%; }
-        main #review #checkoutOrderInfo button:hover,
-        main #review #checkoutTotal button:hover {
+        #mainCheckout #payment #paymentInfoBox button:hover {
           background-color: black;
           color: white; }
-      main #review #checkoutOrderInfo .total,
-      main #review #checkoutTotal .total {
+      #mainCheckout #payment #paymentInfoBox img {
+        width: 30%;
+        margin-top: 5%; }
+  #mainCheckout #payment.checked {
+    opacity: 0.4; }
+  #mainCheckout #review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; }
+    #mainCheckout #review #checkoutOrderInfo,
+    #mainCheckout #review #checkoutTotal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      border: 1px solid #000000;
+      width: 80%;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      padding: 5%;
+      margin: 5%; }
+      #mainCheckout #review #checkoutOrderInfo hr,
+      #mainCheckout #review #checkoutTotal hr {
+        margin: 5%;
+        width: 90%; }
+      #mainCheckout #review #checkoutOrderInfo button,
+      #mainCheckout #review #checkoutTotal button {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.4rem;
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        padding: .5rem;
+        border-radius: .5rem;
+        cursor: pointer;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: black;
+        margin-top: 5%; }
+        #mainCheckout #review #checkoutOrderInfo button:hover,
+        #mainCheckout #review #checkoutTotal button:hover {
+          background-color: black;
+          color: white; }
+      #mainCheckout #review #checkoutOrderInfo .total,
+      #mainCheckout #review #checkoutTotal .total {
         font-family: "Roboto Mono", monospace;
         font-weight: 400;
         font-size: 2.4rem;
@@ -427,15 +450,28 @@ main {
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
-    main #review .pContainer {
-      margin: 3rem;
+      #mainCheckout #review #checkoutOrderInfo h4,
+      #mainCheckout #review #checkoutTotal h4 {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: black;
+        margin: 1rem; }
+    #mainCheckout #review .pContainer {
+      margin: 1rem;
       text-align: start; }
-  main #productDivContainer {
+  #mainCheckout #productDivContainer {
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 1rem; }
-  main .productDiv {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    width: 100%; }
+  #mainCheckout .productDiv {
     width: 30%; }
+    #mainCheckout .productDiv img {
+      width: 10rem; }
 
 .modal {
   display: none;
@@ -457,15 +493,14 @@ main {
     text-align: center;
     z-index: 3000; }
 
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
 body.loading .modal {
   overflow: hidden; }
 
-/* Anytime the body has the loading class, our
-   modal element will be visible */
 body.loading .modal {
   display: flex; }
+
+#radioForm.checked {
+  opacity: 0.4; }
 
 #mainProducts {
   font-family: "Roboto Mono", monospace;
@@ -476,8 +511,13 @@ body.loading .modal {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: none;
   padding: 5% 0 5% 0; }
+  @media screen and (min-width: 410px) {
+    #mainProducts {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: black; } }
   #mainProducts h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
@@ -485,11 +525,14 @@ body.loading .modal {
     color: #443344;
     font-weight: 700;
     color: #000000;
-    text-align: center;
     margin: 5%; }
-  #mainProducts hr {
-    width: 80%;
-    border: 1px solid #000000; }
+    @media screen and (min-width: 410px) {
+      #mainProducts h2 {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 3.2rem;
+        color: black;
+        margin: 0; } }
   #mainProducts #productsContainer {
     display: flex;
     flex-wrap: wrap;
@@ -524,9 +567,9 @@ body.loading .modal {
             #mainProducts #productsContainer .eachProduct div p {
               font-family: "Roboto Mono", monospace;
               font-weight: 300;
-              font-size: 1.6rem;
+              font-size: 1.4rem;
               color: black; } }
-      #mainProducts #productsContainer .eachProduct button {
+      #mainProducts #productsContainer .eachProduct .addCartBtn {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.2rem;
@@ -539,19 +582,55 @@ body.loading .modal {
         margin: 5%;
         cursor: pointer; }
         @media screen and (min-width: 768px) {
-          #mainProducts #productsContainer .eachProduct button {
+          #mainProducts #productsContainer .eachProduct .addCartBtn {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 300;
             font-size: 1.4rem;
-            width: 50%;
-            height: 35px;
-            margin: 5%; } }
+            color: black;
+            border: none;
+            color: white;
+            background-color: black;
+            padding: 2rem;
+            border-radius: .5rem;
+            cursor: pointer; } }
+    #mainProducts #productsContainer #cartBtnContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100vw; }
+      #mainProducts #productsContainer #cartBtnContainer #goCartBtn {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.4rem;
+        color: black;
+        border: 1px solid black;
+        background-color: white;
+        padding: .5rem;
+        border-radius: .5rem;
+        cursor: pointer;
+        margin-top: 2rem; }
+        #mainProducts #productsContainer #cartBtnContainer #goCartBtn:hover {
+          background-color: black;
+          color: white; }
 
-table {
-  border-collapse: collapse;
-  padding: 2rem 0 2rem 0;
+#cartMain {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
-  font-size: 1.6rem;
-  color: black; }
+  font-size: 1.4rem;
+  color: black;
+  text-align: center; }
+  #cartMain h4 {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: black;
+    margin: 3rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 2rem 0 2rem 0; }
   @media screen and (min-width: 410px) {
     table {
       margin: 0 10rem 0 10rem; } }
@@ -564,7 +643,8 @@ table {
       table th {
         display: table-cell; } }
   table td {
-    width: 25%; }
+    width: 25%;
+    margin: 0; }
   table .tdQty {
     display: none; }
     @media screen and (min-width: 410px) {
@@ -589,7 +669,7 @@ table {
     table .phoneRow #phoneRemoveBtn {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black;
       border: 1px solid black;
       background-color: white;
@@ -604,11 +684,11 @@ table {
         background-color: black;
         color: white; }
     table .phoneRow input {
-      width: 100%; }
+      width: 80%; }
     table .phoneRow .phoneUpdateBtn {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black;
       border: 1px solid black;
       background-color: white;
@@ -627,7 +707,6 @@ table {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  margin: 2rem;
   text-align: center; }
   .tableContainer img {
     width: 10rem; }
@@ -663,7 +742,7 @@ table {
     .productContainer .productSpan button {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black;
       border: 1px solid black;
       background-color: white;
@@ -683,7 +762,7 @@ table {
         .productContainer .productSpan button {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           color: black;
           display: table-cell; } }
 
@@ -715,7 +794,7 @@ table {
     .tableSum span:last-of-type {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black;
       border-bottom: 1px solid black;
       padding-bottom: 1rem; }
@@ -725,7 +804,7 @@ table {
   .tableSum #editBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: 1px solid black;
     background-color: white;
@@ -744,7 +823,7 @@ table {
   .tableSum #checkoutBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: none;
     color: white;
@@ -764,7 +843,7 @@ table {
   .tableSum #shopBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: 1px solid black;
     background-color: white;
@@ -776,60 +855,86 @@ table {
       background-color: black;
       color: white; }
 
-h4 {
+#errorMsg {
   font-family: "Roboto Mono", monospace;
-  font-weight: 300;
-  font-size: 3.2rem;
-  color: black; }
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: black;
+  text-align: center;
+  margin: 5rem; }
+  @media screen and (min-width: 410px) {
+    #errorMsg {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 3.2rem;
+      color: black;
+      margin: 20rem; } }
 
-main {
+#mainContact {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  main img {
+  #mainContact #iceMan {
     max-width: 100%;
     height: auto; }
     @media screen and (min-width: 410px) {
-      main img {
-        width: 100%; } }
-  main #contactContainer {
+      #mainContact #iceMan {
+        visibility: hidden;
+        height: 0;
+        width: 0; } }
+  #mainContact #contactBackground {
+    display: hidden; }
+    @media screen and (min-width: 768px) {
+      #mainContact #contactBackground {
+        background-image: url("../IMG/iceman.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-items: flex-start; } }
+  #mainContact #contactContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 3rem; }
-    main #contactContainer h2 {
+    #mainContact #contactContainer h2 {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 3.2rem;
       color: black;
       margin: 3rem; }
-    main #contactContainer h3 {
+    #mainContact #contactContainer h3 {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 1.6rem;
       color: black;
       margin-bottom: 2rem; }
-    main #contactContainer h4 {
+    #mainContact #contactContainer h4 {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 1.6rem;
       color: black; }
-    main #contactContainer p {
+    #mainContact #contactContainer p {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: black;
       margin-bottom: 2rem; }
-    main #contactContainer .sectionContainer {
+    #mainContact #contactContainer .sectionContainer {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column; }
-      main #contactContainer .sectionContainer p {
+      #mainContact #contactContainer .sectionContainer p {
         margin: 0; }
-        main #contactContainer .sectionContainer p:last-child {
+        #mainContact #contactContainer .sectionContainer p:last-child {
           margin-bottom: 2rem; }
 
 #confirmationContainer {
@@ -837,17 +942,33 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center; }
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: black; }
+  #confirmationContainer #orderSummary {
+    border: 1px solid black;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    padding: 1rem; }
+    #confirmationContainer #orderSummary h4 {
+      margin: 3rem 0 3rem 0; }
+  #confirmationContainer .pContainer {
+    margin: 0 10% 0 10%;
+    text-align: start; }
   #confirmationContainer h2 {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 3.2rem;
-    color: black; }
+    color: black;
+    margin: 2rem; }
   #confirmationContainer h4 {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 2.4rem;
-    color: #443344;
+    color: #443344; }
+  #confirmationContainer hr {
     margin: 2rem; }
   #confirmationContainer #firstMessage {
     font-family: "Roboto Mono", monospace;
@@ -858,12 +979,12 @@ main {
   #confirmationContainer #secondMessage {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black; }
   #confirmationContainer button {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: none;
     color: white;
@@ -880,7 +1001,7 @@ main {
   #confirmationContainer #closeWindow {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: 1px solid black;
     background-color: white;
@@ -890,9 +1011,18 @@ main {
     #confirmationContainer #closeWindow:hover {
       background-color: black;
       color: white; }
-  #confirmationContainer #orderSummary #orderNumber {
+  #confirmationContainer #orderNumber {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 1.6rem;
     color: black;
     margin: .5rem; }
+  #confirmationContainer #productDivContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3rem; }
+    #confirmationContainer #productDivContainer img {
+      width: 10rem; }
