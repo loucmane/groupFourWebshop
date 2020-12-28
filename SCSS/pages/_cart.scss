@@ -12,7 +12,7 @@ table {
     border-collapse: collapse;
     padding: 2rem 0 2rem 0;
     @media screen and(min-width: 410px) {
-    margin: 0 10rem 0 10rem;
+        width: 80%;
     }
 
     tr:last-child {
@@ -76,6 +76,15 @@ table {
     flex-direction: column;
     width: 100vw;
     text-align: center;
+
+    table {
+        @media screen and(min-width: 410px) {
+            border: 1px solid black;
+            border-radius: 4rem;
+            margin: auto;
+        }
+    }
+
     img {
         width: 10rem;
         @media screen and(min-width: 410px) {
@@ -161,7 +170,7 @@ table {
     }
     @media screen and(min-width:410px) {
         align-items: flex-end;
-        margin: 5rem 10rem 5rem 10rem;
+        margin: 3rem;
         @include fontSubtitle();
     }
     #shopBtn {
@@ -172,6 +181,7 @@ table {
 
 #errorMsg {
     @include fontSubtitle();
+    cursor: pointer;
     text-align: center;
     margin: 5rem;
     

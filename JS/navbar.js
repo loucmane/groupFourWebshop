@@ -10,6 +10,7 @@ function renderNavbar() {
         $( ".myUl" ).css({
             display: "flex"
         })
+        $(" main ").fadeToggle()
     });
 
     //HYPERLINK SHOPPINGCARTBUTTON -> CART
@@ -38,6 +39,6 @@ function cartNumbers() {
         itemsInCart += bag[i].quantity;
     }  
 
-    $(".shoppingCartButton i")
+    $("#counterContainer")
     .html(itemsInCart);
 }

@@ -129,6 +129,7 @@ function renderOrderSummary() {
         .appendTo(orderSummary)
 
         localStorage.clear();
+        cartNumbers();
     }
 
     

@@ -86,18 +86,6 @@ function renderInfoSection() {
     .attr("name", "adrPhone")
     .appendTo(contactForm)
 
-    let saveInfo = $("<div>")
-    .addClass("checkBox")
-    .appendTo(contactForm)
-
-    $("<input>")
-    .attr("type", "checkbox")
-    .appendTo(saveInfo)
-
-    $("<label>")
-    .html("Save Information")
-    .appendTo(saveInfo)
-
     //SUBMIT FORM, SEE function buttonFunctions()
     $("<button>")
     .addClass("continueButton")
