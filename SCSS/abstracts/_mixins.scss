@@ -9,21 +9,21 @@
     font-family: $ff-roboto;
     font-weight: $fw-light;
     font-size: $fs-heading;
-    color: $primary-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontTitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-title;
-    color: $accent-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontSubtitle() {
     font-family: $ff-roboto;
     font-weight: $fw-regular;
     font-size: $fs-subtitle;
-    color: $primary-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
 }
 
 @mixin fontBody() {
@@ -45,28 +45,28 @@
     font-weight: $fw-bold;
     letter-spacing: 1.6rem;
     font-size: $fs-logotype;
-    color: $primary-txt; //color variable set elsewher
+    color: $primary-txt; //color variable set elsewhere
     cursor: pointer;
 }
 
-// @mixin fontPreset($type) {
-//     @include body {}
-// }
 @mixin transferBox() {
     @include flexCenter(column);
     text-align: center;
     border: 1px solid $black;
     width: 80%;
-    font-size: 1.2rem;
     border-radius: 5px;
-    padding: 5%;
+    padding: 3rem;
+    @media screen and(min-width: 768px) {
+        width: 50%;
+        @include fontBody();
+    }
     hr {
         margin: 5%;
         width: 90%
     }
     button {
         @include buttonWhite();
-        @include fontBread();
+        @include fontBody();
         margin-top: 5%;
     }
 }

@@ -1,7 +1,5 @@
 $(function() {
 
-    getFromLocalStorage();
-
 
     $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
 
@@ -16,12 +14,12 @@ $(function() {
             .attr("id", product.id);
 
 
-        let textLeft = $("<div>").appendTo(divTag);
+        let textContainer = $("<div>").appendTo(divTag);
 
-        $("<p>").appendTo(textLeft)
+        $("<p>").appendTo(textContainer)
             .html(product.name);
 
-        $("<p>").appendTo(textLeft)
+        $("<p>").appendTo(textContainer)
             .html(product.price + " SEK");
 
         $("<button>").appendTo(divTag)
@@ -51,14 +49,14 @@ $(function() {
     });
 
     $("<div>")
-    .attr("id", "cartBtnContainer")
-    .appendTo("#productsContainer")
+        .attr("id", "cartBtnContainer")
+        .appendTo("#productsContainer")
 
     $("<button>")
-    .attr("id", "goCartBtn")
-    .html("<i class='fas fa-shopping-cart'></i> " + "Go to Shopping Cart")
-    .on ("click", function(){
-        window.location.href = "../HTML/cart.html";
-      })
-    .appendTo("#cartBtnContainer")
+        .attr("id", "goCartBtn")
+        .html("<i class='fas fa-shopping-cart'></i> " + "Go to Shopping Cart")
+        .on("click", function() {
+            window.location.href = "../HTML/cart.html";
+        })
+        .appendTo("#cartBtnContainer")
 });

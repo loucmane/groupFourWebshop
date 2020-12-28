@@ -6,12 +6,9 @@
         @include fontBody();
     }
     h2 {
-        @include fontTitle();
-        font-weight: $fw-bold;
-        color: $black;
+        @include fontHeading();
         margin: 5%;
         @media screen and(min-width: 410px) {
-            @include fontHeading();
             margin: 0;
         }
     }
@@ -34,14 +31,11 @@
             }
             div {
                 width: 70%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
+                @include flexCenter(column);
                 @media screen and(min-width: 768px) {
                     width: 50%;
                 }
                 p {
-                    color: $black;
                     margin: 2%;
                     text-align: center;
                     @media screen and(min-width: 768px) {
@@ -62,6 +56,9 @@
             #goCartBtn {
                 @include buttonWhite();
                 margin-top: 2rem;
+                @media screen and(min-width: 768px) {
+                    margin-top: 5rem;
+                }
             }
         }
     }
