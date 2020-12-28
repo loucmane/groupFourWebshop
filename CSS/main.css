@@ -104,12 +104,10 @@ header {
   font-weight: 400;
   font-size: 2.4rem;
   color: #443344;
-
   justify-content: space-between;
   background-color: #FFF8E2;
   width: 100%;
   padding: 5%; }
-
   @media screen and (min-width: 480px) {
     .navbar {
       font-family: "Roboto Mono", monospace;
@@ -162,13 +160,8 @@ header {
     @media screen and (min-width: 480px) {
       .navbar .shoppingCartButton {
         position: relative;
-
-        top: 1.6rem; } }
-    .navbar .shoppingCartButton i.fa-shopping-cart#text {
-      font-family: "Roboto Mono", monospace;
-      font-weight: 400;
-      font-size: 2.4rem;
-      color: #443344; }
+        top: 1.6rem;
+        margin: 0; } }
 
 #heroBackground {
   background-image: url("../IMG/ginger-single.png");
@@ -236,7 +229,7 @@ header {
   #landingpageMain button {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: black;
     border: none;
     color: white;
@@ -585,7 +578,8 @@ body.loading .modal {
             width: 50%; } }
         #mainProducts #productsContainer .eachProduct div p {
           color: #000000;
-          margin: 2%; }
+          margin: 2%;
+          text-align: center; }
           @media screen and (min-width: 768px) {
             #mainProducts #productsContainer .eachProduct div p {
               font-family: "Roboto Mono", monospace;
