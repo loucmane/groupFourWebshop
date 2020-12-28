@@ -1,0 +1,195 @@
+#mainCheckout {
+    width: 100%;
+    height: 100%;
+    @include fontBread();
+    color: $black;
+    @include flexCenter(column);
+    @media screen and(min-width: 768px) {
+        @include fontBody();
+    }
+    .navButtons {
+        margin: 5%;
+        a {
+            text-decoration: none;
+            color: $black;
+        }
+    }
+    h2 {
+        @include fontTitle();
+        font-weight: $fw-bold;
+        color: $black;
+        text-align: center;
+        margin: 5%;
+    }
+    hr {
+        width: 80%;
+        margin: 10%;
+        @media screen and(min-width: 768px) {
+            margin: 5rem;
+        }
+    }
+    .continueButton,
+    #completeButton {
+        @include buttonSlim();
+    }
+    .returnButton {
+        @include buttonReturn();
+        margin: 2rem;
+    }
+    #information {
+        @include flexCenter(column);
+        width: 100%;
+        #contactForm {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            @media screen and(min-width: 768px) {
+                width: 50%;
+            }
+            input {
+                @include form();
+                @media screen and(min-width: 410px) {
+                    @include fontBody();
+                }
+            }
+            .checkBox {
+                @include flexCenter(row);
+                width: 80%;
+                color: black;
+                border-radius: .5rem;
+                input {
+                    width: 2rem;
+                    height: 2rem;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                }
+            }
+        }
+        #contactForm.checked {
+            opacity: 0.4;
+        }
+    }
+    #shipping {
+        @include flexCenter(column);
+        width: 100%;
+        form {
+            @include flexCenter(column);
+            border: 1px solid $black;
+            border-radius: 5px;
+            width: 80%;
+            @media screen and(min-width: 768px) {
+                width: 50%;
+            }
+            #radioContainer {
+                justify-content: center;
+                margin: 1rem;
+                label,
+                input {
+                    margin: .5rem;
+                    @media screen and(min-width: 768px) {
+                        margin: 1rem;
+                    }
+                }
+                input {
+                    width: 2rem;
+                    height: 2rem;
+                    position: relative;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    #payment {
+        @include flexCenter(column);
+        width: 100%;
+        #paymentInfoBox {
+            @include transferBox();
+            p {
+                margin: 2rem;
+            }
+            img {
+                width: 30%;
+                margin: 2rem;
+            }
+        }
+    }
+    #payment.checked {
+        opacity: 0.4;
+    }
+    #review {
+        @include flexCenter(column);
+        width: 100%;
+        h2 {
+            @media screen and(min-width: 768px) {
+                margin: 0;
+            }
+        }
+        #checkoutOrderInfo,
+        #checkoutTotal {
+            @include transferBox();
+            margin: 5%;
+            p {
+                margin: .5rem;
+            }
+            .total {
+                @include fontTitle();
+                text-transform: uppercase;
+                font-weight: $fw-bold;
+                color: $black;
+            }
+            h4 {
+                @include fontSubtitle();
+                margin: 1rem;
+            }
+        }
+        .pContainer {
+            margin: 1rem;
+            p {
+                margin: .5rem;
+            }
+        }
+    }
+    #productDivContainer {
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .productDiv {
+        @include flexCenter(column);
+        width: 30%;
+        img {
+            width: 10rem;
+        }
+    }
+}
+
+.modal {
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8) no-repeat;
+    p {
+        @include fontLogotype();
+        text-align: center;
+        z-index: 3000;
+    }
+}
+
+body.loading .modal {
+    overflow: hidden;
+}
+
+body.loading .modal {
+    display: flex;
+}
+
+#radioForm.checked {
+    opacity: 0.4;
+}

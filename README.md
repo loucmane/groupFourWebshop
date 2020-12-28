@@ -13,7 +13,7 @@ Function names should use camelCase.
 Class names should use PascalCase Eg. Class ToDo.
 
 ### HTML
-All html is generated through javascript. All classnames, id:s, etc should use camelCase
+All classnames, id:s, etc should use camelCase
 
 ### SCSS
 Color presets can be found under _variables.scss Presets for flex, box shadows, buttons, etc, can be found under _mixins.scss

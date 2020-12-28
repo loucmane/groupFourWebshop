@@ -1,0 +1,67 @@
+#mainContact {
+    @include flexCenter(column);
+
+     #iceMan {
+        max-width: 100%;
+        height: auto;
+
+        @media screen and(min-width: 410px) {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+    }
+
+    #contactBackground {
+        display:hidden;
+
+        @media screen and(min-width: 768px) {
+        background-image: url("../IMG/iceman.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        align-items: flex-start;
+        }
+    }
+    #contactContainer {
+        @include flexCenter(column);
+        margin-bottom: 3rem;
+
+        h2 {
+            @include fontHeading();
+            margin: 3rem;
+        }
+
+        h3 {
+            @include fontSubtitle();
+            margin-bottom: 2rem;
+        }
+
+        h4 {
+            @include fontSubtitle();
+        }
+
+        p {
+            @include fontBody();
+            margin-bottom: 2rem;
+        }
+
+        .sectionContainer{
+            @include flexCenter(column);
+
+            p {
+                margin:0;
+
+                &:last-child {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}

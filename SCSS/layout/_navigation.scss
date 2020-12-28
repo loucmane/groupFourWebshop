@@ -1,0 +1,94 @@
+.navbar {
+    @include fontTitle();
+    background-color: $primary-alt;
+    @include fontTitle();
+    width: 100%;
+    padding: 5%;
+    height: 8rem;
+
+    @media screen and(min-width: 480px) {
+        height: 8rem;
+        justify-content: space-around;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+    .hamburgerButton {
+        position: absolute;
+        top: 2rem;
+        left: 3rem;
+        z-index: 1000;
+        font-size: 3rem;
+        width: 30%;
+        cursor: pointer;
+        @media screen and(min-width: 480px) {
+            display: none;
+        }
+    }
+    .myUl {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: $primary-alt;
+
+        @media screen and(min-width: 480px) {
+            display: flex;
+            position: relative;
+            height: 100%;
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        a {
+            text-decoration: none;
+            color: $black;
+            &:visited {
+                opacity: 0.2;
+            }
+        }
+        li {
+            z-index: 2000;
+            text-align: center;
+            list-style: none;
+            margin: 2rem;
+        }
+        @media screen and(min-width: 480px) {
+            display: flex;
+            height: 100%;
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+    .shoppingCartButton {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 800;
+        font-size: 3rem;
+        cursor: pointer;
+        @media screen and(min-width: 480px) {
+            margin-right: 2rem;
+        }
+
+        #counterContainer {
+            @include flexCenter(column);
+            position: absolute;
+            top: 0;
+            border: 1px solid $primary;
+            right: -5px;
+            background-color: $accent-txt;
+            color: $primary;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
+    }
+}
