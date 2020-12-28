@@ -15,16 +15,12 @@ $(function() {
             .attr("alt", product.name + " perfume bottle")
             .attr("id", product.id);
 
-
         let descDiv = $("<div>")
         .addClass("descDiv")
         .appendTo(divTag);
 
         $("<p>").appendTo(descDiv)
             .html(product.name + "<br>" + product.price + " SEK");
-
-        // $("<p>").appendTo(descDiv)
-        //     .html(product.price + " SEK");
 
         $("<button>").appendTo(descDiv)
             .addClass("addCartBtn")
@@ -53,14 +49,14 @@ $(function() {
     });
 
     $("<div>")
-    .attr("id", "cartBtnContainer")
-    .appendTo("#productsContainer")
+        .attr("id", "cartBtnContainer")
+        .appendTo("#productsContainer")
 
     $("<button>")
-    .attr("id", "goCartBtn")
-    .html("<i class='fas fa-shopping-cart'></i> " + "Go to Shopping Cart")
-    .on ("click", function(){
-        window.location.href = "../HTML/cart.html";
-      })
-    .appendTo("#cartBtnContainer")
+        .attr("id", "goCartBtn")
+        .html("<i class='fas fa-shopping-cart'></i> " + "Go to Shopping Cart")
+        .on("click", function() {
+            window.location.href = "../HTML/cart.html";
+        })
+        .appendTo("#cartBtnContainer")
 });
