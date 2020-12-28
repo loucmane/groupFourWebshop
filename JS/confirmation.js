@@ -125,5 +125,5 @@ function renderOrderSummary() {
         localStorage.clear();
         cartNumbers();
     }
-}
+
 
