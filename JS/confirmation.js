@@ -122,5 +122,8 @@ function renderOrderSummary() {
         .html("(VAT included)")
         .appendTo(orderSummary)
 
-    localStorage.clear();
+        localStorage.clear();
+        cartNumbers();
+    }
 }
+

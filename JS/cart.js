@@ -9,8 +9,8 @@ function renderCart() {
     $(".tableContainer")
     .remove();
 
-    $("<hr>")
-    .appendTo("main")    
+    // $("<hr>")
+    // .appendTo("main")    
 
     $("<div>")
     .addClass("tableContainer")

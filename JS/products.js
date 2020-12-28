@@ -1,11 +1,13 @@
 $(function() {
 
+    getFromLocalStorage();
 
-    $.each(myProducts, (i, product) => { // Looping the objects and creating html from them //
+// Looping the objects and creating html from them //
+    $.each(myProducts, (i, product) => { 
 
         let divTag = $("<div>")
-            .appendTo($("#productsContainer"))
-            .addClass("eachProduct");
+            .addClass("eachProduct")
+            .appendTo($("#productsContainer"));
 
         $("<img>").appendTo(divTag)
             .addClass("productImage")
@@ -13,19 +15,17 @@ $(function() {
             .attr("alt", product.name + " perfume bottle")
             .attr("id", product.id);
 
+        let descDiv = $("<div>")
+        .addClass("descDiv")
+        .appendTo(divTag);
 
-        let textContainer = $("<div>").appendTo(divTag);
+        $("<p>").appendTo(descDiv)
+            .html(product.name + "<br>" + product.price + " SEK");
 
-        $("<p>").appendTo(textContainer)
-            .html(product.name);
-
-        $("<p>").appendTo(textContainer)
-            .html(product.price + " SEK");
-
-        $("<button>").appendTo(divTag)
+        $("<button>").appendTo(descDiv)
             .addClass("addCartBtn")
             .attr("type", "button")
-            .html("Add to bag")
+            .html("<i class='fas fa-cart-plus'></i>")
             .on("click", { product: product }, function() {
 
                 let foundProduct = false;

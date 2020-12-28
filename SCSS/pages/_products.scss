@@ -16,6 +16,13 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        @media screen and(min-width: 768px) {
+            width: 80%;
+            justify-content: space-evenly;
+            margin: auto;
+        }
+
         .eachProduct {
             width: 50%;
             @include flexCenter(column);
@@ -25,26 +32,48 @@
             }
             .productImage {
                 width: 50%;
+                
                 @media screen and(min-width: 768px) {
+                    box-shadow: 2px 2px 10px lightgray;
                     width: 80%;
                 }
             }
             div {
                 width: 70%;
+                display: flex;
+                // flex-direction: column;
+                // justify-content: flex-start;
+
                 @include flexCenter(column);
+
                 @media screen and(min-width: 768px) {
                     width: 50%;
                 }
                 p {
-                    margin: 2%;
-                    text-align: center;
+                    align-self: flex-start;
+                    color: $black;
+                    width: 80%;
                     @media screen and(min-width: 768px) {
-                        @include fontBody();
+                        @include fontSubtitle();
                     }
                 }
             }
+
+            .descDiv {
+                margin-top: 3rem;
+            }
+
             .addCartBtn {
-                @include buttonSlim();
+                @include buttonBlack();
+                align-self: flex-end;
+                @include flexCenter(column);
+                height: 4rem;
+                width: 4rem;
+                cursor: pointer;
+                
+                i {
+                    font-size: 2rem;
+                }
                 @media screen and(min-width: 768px) {
                     @include buttonBlack();
                 }
@@ -57,7 +86,8 @@
                 @include buttonWhite();
                 margin-top: 2rem;
                 @media screen and(min-width: 768px) {
-                    margin-top: 5rem;
+                    padding: 2rem;
+                    margin-top: 6rem;
                 }
             }
         }

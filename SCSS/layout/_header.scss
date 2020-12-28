@@ -14,5 +14,8 @@ header {
         @include fontLogotype();
         text-align: center;
         margin: 2rem;
+        @media screen and(min-width: 768px) {
+            margin-top: 6rem;
+        }
     }
 }
