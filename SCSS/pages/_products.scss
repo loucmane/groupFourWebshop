@@ -60,11 +60,19 @@
             }
 
             .descDiv {
+                @include flexCenter(row);
                 margin-top: 3rem;
+                border: 1px solid black;
+                padding: 1rem;
+                border-radius: 1.5rem;
+                @media screen and(min-width: 768px) {
+                    border: none;
+                    padding: 0;
+                }
             }
 
             .addCartBtn {
-                @include buttonBlack();
+                @include buttonWhite();
                 align-self: flex-end;
                 @include flexCenter(column);
                 height: 4rem;
