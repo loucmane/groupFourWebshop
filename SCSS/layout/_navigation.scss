@@ -73,6 +73,7 @@
         z-index: 800;
         font-size: 3rem;
         cursor: pointer;
+        
         @media screen and(min-width: 480px) {
             margin-right: 2rem;
         }
@@ -83,7 +84,7 @@
             top: 0;
             border: 1px solid $primary;
             right: -5px;
-            background-color: $accent-txt;
+            background-color: black;
             color: $primary;
             border-radius: 50%;
             width: 2rem;

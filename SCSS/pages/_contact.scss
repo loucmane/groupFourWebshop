@@ -4,31 +4,12 @@
      #iceMan {
         max-width: 100%;
         height: auto;
-
-        @media screen and(min-width: 410px) {
-            visibility: hidden;
-            height: 0;
-            width: 0;
-        }
     }
 
     #contactBackground {
         display:hidden;
-
-        @media screen and(min-width: 768px) {
-        background-image: url("../IMG/iceman.jpeg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        height: 80vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        align-items: flex-start;
-        }
     }
+
     #contactContainer {
         @include flexCenter(column);
         margin-bottom: 3rem;
@@ -62,6 +43,24 @@
                     margin-bottom: 2rem;
                 }
             }
+        }
+    }
+    
+    //MEDIA QUERIES
+    @media screen and(min-width: 768px) {
+        #iceMan {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+
+        #contactBackground {
+            background-image: url("../IMG/iceman.jpeg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            width: 100%;
         }
     }
 }
