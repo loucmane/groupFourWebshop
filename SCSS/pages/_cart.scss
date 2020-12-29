@@ -1,193 +1,235 @@
 #cartMain {
     @include fontBody();
     text-align: center;
+
     h4 {
         @include fontHeading();
         margin: 3rem;
     }
-}
 
-table {
-    width:100%;
-    border-collapse: collapse;
-    padding: 2rem 0 2rem 0;
-    @media screen and(min-width: 410px) {
-        width: 80%;
-    }
+    .tableContainer {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
 
-    tr:last-child {
-        border-bottom: none;
-    }
-    th {
-        display: none;
-        width: 25%;
-        @media screen and(min-width: 410px) {
-            display: table-cell;
-        }
-    }
-    td {
-        width: 25%;
-        margin: 0;
-    }
-    .tdQty {
-        display: none;
-        @media screen and(min-width: 410px) {
-            display: table-cell;
-        }
-    }
-    .tdTotal {
-        display: none;
-        @media screen and(min-width: 410px) {
-            display: table-cell;
-        }
-    }
-    .phoneDescription {
-        @media screen and(min-width: 410px) {
-            display: none;
-        }
-    }
-    .ghostTd {
-        @media screen and(min-width: 410px) {
-            display: none;
-        }
-    }
-    .phoneRow {
-        display: none;
-        border-bottom: .1rem solid lightgray;
-        td {
-            padding-bottom: 2rem;
-        }
-        #phoneRemoveBtn {
-            @include buttonWhite();
-            @include fontBread();
-        }
-        input {
+        table {
             width: 80%;
-        }
-        .phoneUpdateBtn {
-            @include buttonWhite();
-            @include fontBread();
-        }
-    }
-}
+            border-collapse: collapse;
+            padding: 2rem 0 2rem 0;
+        
+            tr {
 
-.tableContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    text-align: center;
+                th {
+                    display: none;
+                    width: 25%;
+                }
 
-    table {
-        @media screen and(min-width: 410px) {
-            border: 1px solid black;
-            border-radius: 4rem;
-            margin: auto;
-        }
-    }
+                td {
+                    width: 25%;
+                }
 
-    img {
-        width: 10rem;
-        @media screen and(min-width: 410px) {
-            width: 20rem;
-        }
-    }
-}
+                .productTd {
 
-.productContainer {
-    @include flexCenter(row);
-    @include fontSubtitle();
-    @media screen and(min-width: 410px) {
-        //margin-left: 10rem;
-        p {
-            display: none;
-            @media screen and(min-width: 410px) {
-                display: table-cell;
+                    .productContainer {
+                        @include flexCenter(row);
+                        @include fontSubtitle();
+                    
+                            p {
+                                display: none;
+                            }
+                        
+                        .qtyBtn {
+                            display: none;
+                        }
+
+                        .productSpan {
+                            @include flexCenter(column);
+
+                            img {
+                                width: 10rem;
+                            }
+
+                            p {
+                                display: none;
+                            }
+
+                            button {
+                                @include buttonWhite();
+                                @include fontBread();
+                                margin: 1rem;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                
+                .tdQty {
+                    display: none;
+                }
+
+                .tdTotal {
+                    display: none;
+                }
+            }
+
+            .phoneRow {
+                display: none;
+                border-bottom: .1rem solid lightgray;
+
+                td {
+                    padding-bottom: 2rem;
+                }
+
+                #phoneRemoveBtn {
+                    @include buttonWhite();
+                    @include fontBread();
+                }
+
+                input {
+                    width: 80%;
+                }
+
+                .phoneUpdateBtn {
+                    @include buttonWhite();
+                    @include fontBread();
+                }
             }
         }
     }
-    .productSpan {
+
+    .tableSum {
         @include flexCenter(column);
-        p {
-            display: none;
-            @media screen and(min-width: 410px) {
-                display: inline;
-            }
-        }
-        button {
+
+        #editBtn {
             @include buttonWhite();
-            @include fontBread();
+            margin: 2rem 0 1rem 0;
+            padding: 1rem;
+            display: inline;
+        }
+
+        span {
+            @include fontTitle();
             margin: 1rem;
-            display: none;
-            @media screen and(min-width: 410px) {
+
+            &:last-of-type {
                 @include fontBody();
-                display: table-cell;
+                border-bottom: 1px solid black;
+                padding-bottom: 1rem;
             }
         }
-    }
-}
+        
+        #checkoutBtn {
+            @include buttonBlack();
+            margin: 2rem;
+        }
 
-.qtyBtn {
-    display: none;
-    color: white;
-    font-size: 2rem;
-    border: none;
-    background-color: black;
-    border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
-    cursor: pointer;
-    @media screen and(min-width: 410px) {
-        display: inline;
-    }
-}
-
-.tableSum {
-    @include flexCenter(column);
-    span {
-        @include fontTitle();
-        margin: 1rem;
-        &:last-of-type {
-            @include fontBody();
-            border-bottom: 1px solid black;
-            padding-bottom: 1rem;
-            @media screen and(min-width: 400px) {
-                border: none;
-            }
+        #shopBtn {
+            @include buttonWhite();
+            margin: 2rem;
         }
     }
-    #editBtn {
-        @include buttonWhite();
-        margin: 2rem 0 1rem 0;
-        padding: 1rem;
-        display: inline;
-        @media screen and(min-width: 410px) {
-            display: none
-        }
-    }
-    #checkoutBtn {
-        @include buttonBlack();
-        margin: 2rem;
-    }
-    @media screen and(min-width:410px) {
-        align-items: flex-end;
-        margin: 3rem;
+
+    #errorMsg {
         @include fontSubtitle();
-    }
-    #shopBtn {
-        @include buttonWhite();
-        margin: 2rem;
-    }
-}
+        cursor: pointer;
+        text-align: center;
+        margin: 5rem;
 
-#errorMsg {
-    @include fontSubtitle();
-    cursor: pointer;
-    text-align: center;
-    margin: 5rem;
-    
+        @media screen and(min-width: 768px){
+            @include fontHeading();
+            margin: 20rem;
+        }
+    }
 
-    @media screen and(min-width: 410px){
-        @include fontHeading();
-        margin: 20rem;
+    //MEDIA QUERIES
+    @media screen and(min-width:768px) {
+        .tableContainer {
+
+            table {
+                @include fontSubtitle();
+                    border: 1px solid black;
+                    width: 90%;
+                    margin: auto;    
+                
+                tr {
+
+                    th {
+                        display: table-cell;
+                    }
+
+                    .productTd {
+
+                        .productContainer {
+
+                            p {
+                                display: table-cell;
+                            }
+
+                            .qtyBtn {
+                                display: inline;
+                                color: white;
+                                font-size: 2rem;
+                                border: none;
+                                background-color: black;
+                                border-radius: 50%;
+                                height: 3rem;
+                                width: 3rem;
+                                cursor: pointer;
+                            }
+
+                            .productSpan {
+
+                                img {
+                                    width: 20rem;
+                                }
+
+                                p {
+                                    display: inline;
+                                }
+
+                                button {
+                                    @include fontBody();
+                                    display: table-cell;
+                                }
+                            }
+                        }
+                    }
+
+                    .phoneDescription {
+                        display: none;
+                    }
+
+                    .ghostTd {
+                        display: none;
+                    }
+
+                    .tdQty {
+                        display: table-cell;
+                    }
+
+                    .tdTotal {
+                        display: table-cell;
+                    }
+                }
+            }
+        }
+
+        .tableSum {
+            align-items: flex-end;
+            margin: 3rem;
+            @include fontSubtitle();
+
+            #editBtn {
+                display: none
+            }
+
+            span {
+
+                &:last-of-type {
+                    border: none;
+                }
+            }
+        }
+        
     }
 }
