@@ -30,6 +30,7 @@ function renderInfoSection() {
         .appendTo(newsLetter)
 
     $("<label>")
+        .attr("id", "checkBoxLabel")
         .html("Subscribe to newsletter")
         .appendTo(newsLetter)
 
@@ -261,6 +262,7 @@ function renderReviewSection() {
 
     $("<button>")
         .attr("id", "completeButton")
+        .addClass("continueButton")
         .html("Complete Order")
         .on("click", function() {
             window.setTimeout(completeOrder, 2000)
@@ -394,8 +396,6 @@ function renderOrderReview() {
     let productDivContainer = $("<div>")
         .attr("id", "productDivContainer")
         .appendTo(orderReview)
-
-
 
     //ADD IMAGES TO ORDER Review
     for (let i = 0; i < bag.length; i++) {

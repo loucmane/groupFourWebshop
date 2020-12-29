@@ -27,7 +27,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("us@company.com")
+        .html("us@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -35,7 +35,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("se@company.com")
+        .html("se@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -43,7 +43,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("uk@company.com")
+        .html("uk@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -51,7 +51,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("fr@company.com")
+        .html("fr@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -59,7 +59,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("jp@company.com")
+        .html("jp@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -67,7 +67,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("dk@company.com")
+        .html("dk@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -75,7 +75,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("au@company.com")
+        .html("au@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -83,7 +83,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("info@company.com")
+        .html("info@accent.com")
         .appendTo(container)
 
     $("<h4>")
@@ -91,7 +91,7 @@ function renderHTML() {
         .appendTo(container)
 
     $("<p>")
-        .html("press@company.com")
+        .html("press@accent.com")
         .appendTo(container)
 
     let postalAddress = $("<div>")
@@ -103,7 +103,7 @@ function renderHTML() {
         .appendTo(postalAddress)
 
     $("<p>")
-        .html("Company Name")
+        .html("/ACCENT")
         .appendTo(postalAddress)
 
     $("<p>")
@@ -135,13 +135,13 @@ function renderHTML() {
         .appendTo(followContainer)
 
     $("<p>")
-        .html("instagram.com/company")
+        .html("instagram.com/accent")
         .appendTo(followContainer)
     $("<p>")
-        .html("twitter.com/company")
+        .html("twitter.com/accent")
         .appendTo(followContainer)
     $("<p>")
-        .html("facebook.com/company")
+        .html("facebook.com/accent")
         .appendTo(followContainer)
 
     $("<h4>")

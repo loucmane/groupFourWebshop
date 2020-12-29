@@ -1,35 +1,10 @@
 #confirmationContainer {
     @include flexCenter(column);
-    text-align: center;
     @include fontBody();
-
-    #orderSummary {
-    border: 1px solid black;
-    border-radius: 1.5rem;
-    margin: 2rem;
-    padding: 1rem;
-
-        h4 {
-            margin: 3rem 0 3rem 0;
-        }
-    }
-
-    .pContainer{
-        margin: 0 10% 0 10%;
-        text-align: start;
-        
-    }
+    text-align: center;
 
     h2 {
         @include fontHeading();
-        margin: 2rem;
-    }
-
-    h4 {
-        @include fontTitle();
-    }
-
-    hr {
         margin: 2rem;
     }
 
@@ -38,38 +13,66 @@
         margin: 3rem;
     }
 
+    #orderSummary {
+    border: 1px solid rgb(100, 57, 57);
+    border-radius: 1.5rem;
+    margin: 2rem;
+    padding: 1rem;
+
+        h4 {
+            @include fontTitle();
+            margin: 3rem 0 3rem 0;
+        }
+
+        .pContainer{
+            margin: 0 10% 0 10%;
+            
+        }
+
+        #orderNumber {
+            @include fontSubtitle;
+            margin: .5rem;
+        }
+
+        hr {
+            margin: 2rem;
+        }
+
+        #productDivContainer {
+            @include flexCenter(row);
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+
+            img {
+                width: 10rem;
+            }
+        }
+    }
+
     #secondMessage {
         @include fontBody();
+        margin: 3rem;
     }
     
-    button {
+    #continueShopping {
         @include buttonBlack();
         width: 80%;
-        @media screen and(min-width: 768px) {
+        margin-bottom: 5rem;
+    }
+
+    //MEDIA QUERIES
+    @media screen and(min-width: 768px){
+        #orderSummary {
+            width: 75%;
+
+            .pContainer {
+                width: 60%;
+                margin:auto;
+            }
+        }
+        
+        #continueShopping {
             width: 30%;
         }
     }
-
-    #continueShopping {
-        margin: 3rem;
-    }
-
-    #closeWindow {
-        @include buttonWhite()
-    }
-
-    #orderNumber {
-        @include fontSubtitle;
-        margin: .5rem;
-    }
-
-    #productDivContainer {
-        @include flexCenter(row);
-        flex-wrap: wrap;
-        margin-bottom: 3rem;
-        img {
-            width: 10rem;
-        }
-    }
-    
 }
