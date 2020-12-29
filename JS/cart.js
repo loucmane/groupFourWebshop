@@ -1,5 +1,6 @@
 $(function() {
     renderCart();
+
 });
 
 function renderCart() {

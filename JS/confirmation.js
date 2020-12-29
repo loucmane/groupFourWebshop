@@ -1,7 +1,6 @@
 $(function() {
     renderOrderSummary();
 
-    //Link to checkoutpage
     $("#continueShopping")
         .on("click", function() {
 
