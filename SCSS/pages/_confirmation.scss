@@ -54,7 +54,7 @@
         margin: 3rem;
     }
     
-    #continueShopping {
+    #shopBtn {
         @include buttonBlack();
         width: 80%;
         margin-bottom: 5rem;
@@ -71,7 +71,7 @@
             }
         }
         
-        #continueShopping {
+        #shopBtn {
             width: 30%;
         }
     }

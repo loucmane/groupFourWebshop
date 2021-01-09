@@ -41,26 +41,26 @@ let product5 = new Product("../IMG/perfume-bottle-ginger.jpg", "Ginger", 850, "L
 
 //ALL LISTS
 myProducts = [product1, product2, product3, product4, product5];
-bag = [];
-custInfo = [];
+cart = [];
+orderInfo = [];
 
 //SET TO LOCAL STORAGE
 function setToLocalStorage() {
-  localStorage.setItem("Products", JSON.stringify(bag));
-  localStorage.setItem("Information", JSON.stringify(custInfo));
+  localStorage.setItem("shoppingCart", JSON.stringify(cart));
+  localStorage.setItem("orderInformation", JSON.stringify(orderInfo));
 }
 
 //GET FROM LOCAL STORAGE
 function getFromLocalStorage() {
-  bag = JSON.parse(localStorage.getItem("Products")) || [] ;
-  custInfo = JSON.parse(localStorage.getItem("Information")) || [] ;
+  cart = JSON.parse(localStorage.getItem("shoppingCart")) || [] ;
+  orderInfo = JSON.parse(localStorage.getItem("orderInformation")) || [] ;
 }
 
-// CALCULATE TOTAL //
+// CALCULATE TOTAL
 function calculateTotal() {
   let total = 0;
-  for (let i = 0; i < bag.length; i++) {
-      total = total + (bag[i].quantity * bag[i].product.price);
+  for (let i = 0; i < cart.length; i++) {
+      total = total + (cart[i].quantity * cart[i].product.price);
   }
   return total;
 };

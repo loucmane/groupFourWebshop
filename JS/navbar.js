@@ -4,29 +4,27 @@ $(function() {
 });
 
 function renderNavbar() {
-    $( ".hamburgerButton" )
+    $( ".hamburgerBtn" )
     .on("click", function() {
-        $( " .myUl " ).slideToggle();
+        $( ".myUl" ).slideToggle();
         $( ".myUl" ).css({
             display: "flex"
         })
-        $(" main ").fadeToggle()
+        $("main").fadeToggle()
     });
 
     //HYPERLINK SHOPPINGCARTBUTTON -> CART
-$( ".shoppingCartButton",)
-.on ("click", function(){
-  window.location.href = "../HTML/cart.html";
-});
+    $( ".shoppingCartBtn",)
+    .on ("click", function(){
+    window.location.href = "../HTML/cart.html";
+    });
 
-$
-
-//HYPERLINK LOGOTYPE -> HOME
-$( ".logotype" )
-.on("click", function(){
-  window.location.href = "../index.html";
-  console.log("klick");
-});
+    //HYPERLINK LOGOTYPE -> HOME
+    $( ".logotype" )
+    .on("click", function(){
+    window.location.href = "../index.html";
+    console.log("klick");
+    });
 }
 
 function cartNumbers() {
@@ -35,8 +33,8 @@ function cartNumbers() {
 
     let itemsInCart = 0;
     
-    for (let i = 0; i < bag.length; i++) {
-        itemsInCart += bag[i].quantity;
+    for (let i = 0; i < cart.length; i++) {
+        itemsInCart += cart[i].quantity;
     }  
 
     $("#counterContainer")

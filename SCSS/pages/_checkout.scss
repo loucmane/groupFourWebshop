@@ -69,6 +69,7 @@
             width: 80%;
            
             #radioContainer {
+
                 justify-content: center;
                 margin: 1rem;
 
@@ -82,6 +83,10 @@
                     height: 2rem;
                     position: relative;
                     top: 5px;
+                }
+
+                label.error {
+                    color: red;
                 }
             }
         }
@@ -160,11 +165,11 @@
         }
     }
 
-    .continueButton {
+    .continueBtn {
         margin-top: 3rem;
         @include buttonSlim();
     }
-    .returnButton {
+    .returnBtn {
         @include buttonReturn();
         margin: 2rem;
     }

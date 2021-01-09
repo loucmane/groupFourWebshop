@@ -124,7 +124,7 @@ header {
       justify-content: space-around;
       font-size: 1.6rem;
       padding: 0; } }
-  .navbar .hamburgerButton {
+  .navbar .hamburgerBtn {
     position: absolute;
     top: 2rem;
     left: 3rem;
@@ -133,7 +133,7 @@ header {
     width: 30%;
     cursor: pointer; }
     @media screen and (min-width: 480px) {
-      .navbar .hamburgerButton {
+      .navbar .hamburgerBtn {
         display: none; } }
   .navbar .myUl {
     display: none;
@@ -172,7 +172,7 @@ header {
         width: 80%;
         flex-direction: row;
         justify-content: space-around; } }
-  .navbar .shoppingCartButton {
+  .navbar .shoppingCartBtn {
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -180,9 +180,9 @@ header {
     font-size: 3rem;
     cursor: pointer; }
     @media screen and (min-width: 480px) {
-      .navbar .shoppingCartButton {
+      .navbar .shoppingCartBtn {
         margin-right: 2rem; } }
-    .navbar .shoppingCartButton #counterContainer {
+    .navbar .shoppingCartBtn #counterContainer {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -372,6 +372,8 @@ header {
           height: 2rem;
           position: relative;
           top: 5px; }
+        #mainCheckout #shipping form #radioContainer label.error {
+          color: red; }
   #mainCheckout #payment {
     display: flex;
     justify-content: center;
@@ -517,7 +519,7 @@ header {
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
-  #mainCheckout .continueButton {
+  #mainCheckout .continueBtn {
     margin-top: 3rem;
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
@@ -530,7 +532,7 @@ header {
     padding: 2rem;
     margin: 5%;
     cursor: pointer; }
-  #mainCheckout .returnButton {
+  #mainCheckout .returnBtn {
     background-color: white;
     border: none;
     font-family: "Roboto Mono", monospace;
@@ -1057,7 +1059,7 @@ body.loading .modal {
     font-size: 1.4rem;
     color: black;
     margin: 3rem; }
-  #confirmationContainer #continueShopping {
+  #confirmationContainer #shopBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.4rem;
@@ -1076,5 +1078,5 @@ body.loading .modal {
       #confirmationContainer #orderSummary .pContainer {
         width: 60%;
         margin: auto; }
-    #confirmationContainer #continueShopping {
+    #confirmationContainer #shopBtn {
       width: 30%; } }
