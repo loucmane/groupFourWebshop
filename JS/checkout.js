@@ -1,14 +1,13 @@
 $(function() {
+
     renderInfoSection();
 });
 
 function renderInfoSection() {
 
-    let infoSection = $("#information")
-
     let contactForm = $("<form>")
         .attr("id", "contactForm")
-        .appendTo(infoSection)
+        .appendTo($("#information"))
 
     $("<h2>")
         .html("Contact Information")
@@ -87,9 +86,9 @@ function renderInfoSection() {
         .attr("name", "adrPhone")
         .appendTo(contactForm)
 
-    //SUBMIT FORM, SEE function buttonFunctions()
+    //SUBMIT CONTACT FORM
     $("<button>")
-        .addClass("continueButton")
+        .addClass("continueBtn")
         .attr("id", "btnToShipping")
         .html("Continue to shipping")
         .appendTo(contactForm)
@@ -102,13 +101,13 @@ function renderInfoSection() {
     });
 
     $("<hr>")
-        .appendTo(infoSection)
-
+        .appendTo($("#information"))
 }
 
 function renderShippingSection() {
 
-    let shippingSection = $("#shipping").html("")
+    let shippingSection = $("#shipping")
+        .html("")
 
     let radioForm = $("<form>")
         .attr("id", "radioForm")
@@ -141,8 +140,9 @@ function renderShippingSection() {
             .appendTo(radioContainer)
     }
 
+    //SUBMIT RADIO FORM
     $("<button>")
-        .addClass("continueButton")
+        .addClass("continueBtn")
         .attr("id", "btnToPayment")
         .html("Continue to payment")
         .appendTo(radioForm)
@@ -159,7 +159,7 @@ function renderShippingSection() {
         .appendTo(shippingSection)
 
     $("<button>")
-        .addClass("returnButton")
+        .addClass("returnBtn")
         .html("&lt; Return to information")
         .on("click", function() {
             $("#contactForm")
@@ -176,9 +176,7 @@ function renderShippingSection() {
 
 function renderPaymentSection() {
     let paymentSection = $("#payment");
-
-    $("#payment")
-        .html("")
+    paymentSection.html("")
 
     let infoBox = $("<div>")
         .attr("id", "paymentInfoBox")
@@ -206,7 +204,7 @@ function renderPaymentSection() {
         .appendTo(paymentSection)
 
     $("<button>")
-        .addClass("returnButton")
+        .addClass("returnBtn")
         .html("&lt; Return to shipping")
         .on("click", function() {
             $("#radioForm")
@@ -216,9 +214,10 @@ function renderPaymentSection() {
             renderPaymentSection()
         })
         .appendTo(aTag)
-
+    
+    //REVIEW ORDER
     $("<button>")
-        .addClass("continueButton")
+        .addClass("continueBtn")
         .attr("id", "btnReviewOrder")
         .html("Review Order")
         .on("click", function() {
@@ -227,7 +226,7 @@ function renderPaymentSection() {
 
             renderReviewSection();
             renderOrderInfo();
-            renderOrderReview();
+            renderCartSummary();
 
             window.location.href = "#review";
         })
@@ -261,8 +260,8 @@ function renderReviewSection() {
         .appendTo(reviewSection)
 
     $("<button>")
-        .attr("id", "completeButton")
-        .addClass("continueButton")
+        .attr("id", "completeBtn")
+        .addClass("continueBtn")
         .html("Complete Order")
         .on("click", function() {
             window.setTimeout(completeOrder, 2000)
@@ -298,65 +297,65 @@ function setOrderInfo() {
 
     let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping, date, orderNumber);
 
-    custInfo = [];
-    custInfo.push(order);
+    orderInfo = [];
+    orderInfo.push(order);
     setToLocalStorage();
 }
 
 function renderOrderInfo() {
     setOrderInfo();
 
-    let orderInfo = $("#checkoutOrderInfo");
-    orderInfo.html("");
+    let orderSummary = $("#checkoutOrderInfo");
+    orderSummary.html("");
 
-    for (let i = 0; i < custInfo.length; i++) {
+    for (let i = 0; i < orderInfo.length; i++) {
 
         $("<h4>")
             .html("Order Details")
-            .appendTo(orderInfo);
+            .appendTo(orderSummary);
 
         let pContainer =  $("<div>")
             .addClass("pContainer")
-            .appendTo(orderInfo)
+            .appendTo(orderSummary)
 
         $("<p>")
-            .html("Name: " + custInfo[i].fName + " " + custInfo[i].lName)
+            .html("Name: " + orderInfo[i].fName + " " + orderInfo[i].lName)
             .appendTo(pContainer);
 
         $("<p>")
-            .html("Email: " + custInfo[i].email)
+            .html("Email: " + orderInfo[i].email)
             .appendTo(pContainer);
 
-        $("<p>").html("Phone: " + custInfo[i].phone)
+        $("<p>").html("Phone: " + orderInfo[i].phone)
             .appendTo(pContainer);
 
         $("<p>")
-            .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
+            .html("Address: " + orderInfo[i].street + ", " + orderInfo[i].postal + " " + orderInfo[i].city + ", " + orderInfo[i].country)
             .appendTo(pContainer);
 
         $("<hr>")
-            .appendTo(orderInfo);
+            .appendTo(orderSummary);
 
         if (calculateTotal() < 5000) {
             $("<p>")
-                .html("Shipping: " + custInfo[i].shipping + " SEK")
-                .appendTo(orderInfo);
+                .html("Shipping: " + orderInfo[i].shipping + " SEK")
+                .appendTo(orderSummary);
         } else {
             $("<p>")
                 .html("Shipping: FREE!")
-                .appendTo(orderInfo)
+                .appendTo(orderSummary)
         }
 
         $("<p>")
-            .html("Order Number: " + custInfo[i].orderNumber)
-            .appendTo(orderInfo);
+            .html("Order Number: " + orderInfo[i].orderNumber)
+            .appendTo(orderSummary);
     }
 
     $("<hr>")
-        .appendTo(orderInfo);
+        .appendTo(orderSummary);
 
     $("<p>")
-        .appendTo(orderInfo)
+        .appendTo(orderSummary)
         .html("Payment: Nets Payment");
 
     $("<button>")
@@ -381,77 +380,77 @@ function renderOrderInfo() {
 
             window.location.href = "#information";
         })
-        .appendTo(orderInfo)
+        .appendTo(orderSummary)
 }
 
-function renderOrderReview() {
+function renderCartSummary() {
 
-    let orderReview = $("#checkoutTotal");
-    orderReview.html("");
+    let cartSummary = $("#checkoutTotal");
+    cartSummary.html("");
 
     $("<h4>")
         .html("Your Products")
-        .appendTo(orderReview);
+        .appendTo(cartSummary);
 
     let productDivContainer = $("<div>")
         .attr("id", "productDivContainer")
-        .appendTo(orderReview)
+        .appendTo(cartSummary)
 
-    //ADD IMAGES TO ORDER Review
-    for (let i = 0; i < bag.length; i++) {
+    //ADD IMAGES TO ORDER REVIEW
+    for (let i = 0; i < cart.length; i++) {
 
         let productDiv = $("<div>")
             .addClass("productDiv")
             .appendTo(productDivContainer);
 
         $("<img>")
-            .attr("src", bag[i].product.image)
-            .attr("alt", bag[i].product.name + " perfume bottle")
+            .attr("src", cart[i].product.image)
+            .attr("alt", cart[i].product.name + " perfume bottle")
             .appendTo(productDiv);
 
         $("<p>")
-            .html(bag[i].product.name + "<br>" + bag[i].product.price + " SEK " + "<br>" + bag[i].quantity + "pc(s)")
+            .html(cart[i].product.name + "<br>" + cart[i].product.price + " SEK " + "<br>" + cart[i].quantity + "pc(s)")
             .appendTo(productDiv);
     }
 
-    //ADD COST + GRAND TOTAL TO ORDER Review
-    for (let i = 0; i < custInfo.length; i++) {
+    //ADD COST + GRAND TOTAL TO ORDER REVIEW
+    for (let i = 0; i < orderInfo.length; i++) {
 
         $("<p>")
-            .appendTo(orderReview)
+            .appendTo(cartSummary)
             .html("Subtotal " + calculateTotal() + " SEK");
 
         if (calculateTotal() < 5000) {
             $("<p>")
-                .appendTo(orderReview)
-                .html("Shipping " + custInfo[i].shipping + " SEK");
+                .appendTo(cartSummary)
+                .html("Shipping " + orderInfo[i].shipping + " SEK");
         } else {
             $("<p>")
-                .appendTo(orderReview)
+                .appendTo(cartSummary)
                 .html("Shipping FREE!");
         }
 
         $("<hr>")
-            .appendTo(orderReview);
+            .appendTo(cartSummary);
         if (calculateTotal() < 5000) {
             $("<p>")
-                .appendTo(orderReview)
+                .appendTo(cartSummary)
                 .addClass("total")
-                .html("Total " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
+                .html("Total " + (calculateTotal() + parseInt(orderInfo[i].shipping)) + " SEK");
         } else {
             $("<p>")
-                .appendTo(orderReview)
+                .appendTo(cartSummary)
                 .addClass("total")
                 .html("Total " + calculateTotal() + " SEK");
         }
     }
 
     $("<p>")
-        .appendTo(orderReview)
+        .appendTo(cartSummary)
         .html("Need to add more products?");
 
     $("<button>")
-        .appendTo(orderReview)
+        .appendTo(cartSummary)
         .html("Back to cart")
         .on("click", function() {
             window.location.href = "../HTML/cart.html";
@@ -488,6 +487,9 @@ function validateRadioForm() {
     $("#radioForm").validate({
         rules: {
             shipping: "required",
+        },
+        messages: {
+            shipping: "Please select shipping method"
         },
 
         submitHandler: function() {

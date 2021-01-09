@@ -1,8 +1,5 @@
 $(function() {
 
-    getFromLocalStorage();
-
-// Looping the objects and creating html from them //
     $.each(myProducts, (i, product) => { 
 
         let divTag = $("<div>")
@@ -30,20 +27,22 @@ $(function() {
 
                 let foundProduct = false;
 
-                for (let i = 0; i < bag.length; i++) {
-                    if (bag[i].product.id === product.id) {
+                for (let i = 0; i < cart.length; i++) {
+                    if (cart[i].product.id === product.id) {
                         foundProduct = true;
-                        bag[i].quantity++;
+                        cart[i].quantity++;
                     }
                 }
 
                 if (foundProduct === false) {
                     let addedItem = new CartItem(product, 1);
-                    bag.push(addedItem);
+                    cart.push(addedItem);
                 }
 
+                //MAIN.JS
                 setToLocalStorage();
 
+                //NAVBAR.JS
                 cartNumbers();
             });
     });
