@@ -7,8 +7,8 @@ header {
         @include fontSubtitle();
         text-align: center;
         width: 100vw;
-        color: white;
-        background-color: black;
+        color: $white;
+        background-color: $black;
         height: 5rem;
     }
 
@@ -16,8 +16,10 @@ header {
         @include fontLogotype();
         text-align: center;
         margin: 2rem;
-        
-        @media screen and(min-width: 768px) {
+    }
+
+    @media screen and(min-width: 768px) {
+        h1 {
             margin-top: 5rem;
         }
     }

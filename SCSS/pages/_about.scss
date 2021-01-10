@@ -10,7 +10,7 @@
             @include flexCenter(column);
             background-color: $secondary;
             height: 40%;
-            border: 1px solid black;
+            border: .1rem solid $black;
             @include transition(.4s ease-in-out);
             cursor: pointer;
 
@@ -30,7 +30,7 @@
             div {
                 @include flexCenter(column);
                 @include fontBread();
-                border: 1px solid black;
+                border: .1rem solid $black;
                 background-color: $secondary;
                 flex-grow: 1;
                 height: 100%;
@@ -48,7 +48,7 @@
     #displaySection {
         height: 70vh;
         width: 100vw;
-        border: 1px solid black;
+        border: .1rem solid $black;
 
         h1 {
             @include fontLogotype();

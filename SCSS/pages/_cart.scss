@@ -113,7 +113,7 @@
 
             &:last-of-type {
                 @include fontBody();
-                border-bottom: 1px solid black;
+                border-bottom: .1rem solid $black;
                 padding-bottom: 1rem;
             }
         }
@@ -134,11 +134,6 @@
         cursor: pointer;
         text-align: center;
         margin: 5rem;
-
-        @media screen and(min-width: 768px){
-            @include fontHeading();
-            margin: 20rem;
-        }
     }
 
     //MEDIA QUERIES
@@ -147,7 +142,7 @@
 
             table {
                 @include fontSubtitle();
-                    border: 1px solid black;
+                    border: .1rem solid $black;
                     width: 90%;
                     margin: auto;    
                 
@@ -170,7 +165,7 @@
                                 color: white;
                                 font-size: 2rem;
                                 border: none;
-                                background-color: black;
+                                background-color: $black;
                                 border-radius: 50%;
                                 height: 3rem;
                                 width: 3rem;
@@ -230,6 +225,10 @@
                 }
             }
         }
-        
+
+        #errorMsg {
+            @include fontHeading();
+            margin: 20rem;
+        }
     }
 }
