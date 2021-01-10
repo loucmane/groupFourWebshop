@@ -39,16 +39,16 @@
             .checkBox {
                 @include flexCenter(row);
                 width: 80%;
-                color: black;
+                color: $black;
                 border-radius: .5rem;
                 input {
                     width: 2rem;
                     height: 2rem;
-                    border: 1px solid $black;
-                    border-radius: 5px;
+                    border: .1rem solid $black;
+                    border-radius: .5rem;
                 }
                 #checkBoxLabel {
-                    color: black;
+                    color: $black;
                     width: auto;
                 }
             }
@@ -64,11 +64,12 @@
 
         form {
             @include flexCenter(column);
-            border: 1px solid $black;
-            border-radius: 5px;
+            border: .1rem solid $black;
+            border-radius: .5rem;
             width: 80%;
            
             #radioContainer {
+
                 justify-content: center;
                 margin: 1rem;
 
@@ -81,7 +82,11 @@
                     width: 2rem;
                     height: 2rem;
                     position: relative;
-                    top: 5px;
+                    top: .5rem;
+                }
+
+                label.error {
+                    color: red;
                 }
             }
         }
@@ -160,11 +165,11 @@
         }
     }
 
-    .continueButton {
+    .continueBtn {
         margin-top: 3rem;
         @include buttonSlim();
     }
-    .returnButton {
+    .returnBtn {
         @include buttonReturn();
         margin: 2rem;
     }

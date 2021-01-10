@@ -1,7 +1,8 @@
 $(function() {
+
     renderOrderSummary();
 
-    $("#continueShopping")
+    $("#shopBtn")
         .on("click", function() {
 
             window.location.href = "../HTML/products.html";
@@ -12,7 +13,7 @@ function renderOrderSummary() {
 
     let orderSummary = $("#orderSummary");
 
-    for (let i = 0; i < custInfo.length; i++) {
+    for (let i = 0; i < orderInfo.length; i++) {
 
         orderSummary.html("");
 
@@ -28,18 +29,18 @@ function renderOrderSummary() {
             .appendTo(orderSummary)
 
         $("<p>")
-            .html("Name: " + custInfo[i].fName + " " + custInfo[i].lName)
+            .html("Name: " + orderInfo[i].fName + " " + orderInfo[i].lName)
             .appendTo(pContainer);
 
         $("<p>")
-            .html("Email: " + custInfo[i].email)
+            .html("Email: " + orderInfo[i].email)
             .appendTo(pContainer);
 
-        $("<p>").html("Phone: " + custInfo[i].phone)
+        $("<p>").html("Phone: " + orderInfo[i].phone)
             .appendTo(pContainer);
 
         $("<p>")
-            .html("Address: " + custInfo[i].street + ", " + custInfo[i].postal + " " + custInfo[i].city + ", " + custInfo[i].country)
+            .html("Address: " + orderInfo[i].street + ", " + orderInfo[i].postal + " " + orderInfo[i].city + ", " + orderInfo[i].country)
             .appendTo(pContainer);
 
         $("<hr>")
@@ -47,12 +48,12 @@ function renderOrderSummary() {
 
         $("<p>")
             .attr("id", "orderNumber")
-            .html("Order Number: " + custInfo[i].orderNumber)
+            .html("Order Number: " + orderInfo[i].orderNumber)
             .appendTo(orderSummary);
 
         if (calculateTotal() < 5000) {
             $("<p>")
-                .html("Shipping: " + custInfo[i].shipping + " SEK")
+                .html("Shipping: " + orderInfo[i].shipping + " SEK")
                 .appendTo(orderSummary);
         } else {
             $("<p>")
@@ -61,13 +62,12 @@ function renderOrderSummary() {
         }
 
         $("<p>")
-            .html(custInfo[i].date)
+            .html(orderInfo[i].date)
             .appendTo(orderSummary);
 
         $("<p>")
             .appendTo(orderSummary)
             .html("Nets Payment");
-
     }
 
     $("<hr>")
@@ -82,24 +82,24 @@ function renderOrderSummary() {
         .appendTo(orderSummary)
 
     //ADD IMAGES TO ORDER SUMMARY
-    for (let i = 0; i < bag.length; i++) {
+    for (let i = 0; i < cart.length; i++) {
 
         let productDiv = $("<div>")
             .addClass("productDiv")
             .appendTo(productDivContainer);
 
         $("<img>")
-            .attr("src", bag[i].product.image)
-            .attr("alt", bag[i].product.name + " perfume bottle")
+            .attr("src", cart[i].product.image)
+            .attr("alt", cart[i].product.name + " perfume bottle")
             .appendTo(productDiv);
 
         $("<p>")
-            .html(bag[i].product.name + "<br>" + bag[i].product.price + " SEK " + "<br>" + bag[i].quantity + "pc(s)")
+            .html(cart[i].product.name + "<br>" + cart[i].product.price + " SEK " + "<br>" + cart[i].quantity + "pc(s)")
             .appendTo(productDiv);
     }
 
     //ADD COST + GRAND TOTAL TO ORDER SUMMARY
-    for (let i = 0; i < custInfo.length; i++) {
+    for (let i = 0; i < orderInfo.length; i++) {
 
         $("<hr>")
             .appendTo(orderSummary);
@@ -108,7 +108,7 @@ function renderOrderSummary() {
             $("<h4>")
                 .appendTo(orderSummary)
                 .addClass("total")
-                .html("Total Cost: " + (calculateTotal() + parseInt(custInfo[i].shipping)) + " SEK");
+                .html("Total Cost: " + (calculateTotal() + parseInt(orderInfo[i].shipping)) + " SEK");
         } else {
             $("<h4>")
                 .appendTo(orderSummary)
@@ -121,8 +121,6 @@ function renderOrderSummary() {
         .html("(VAT included)")
         .appendTo(orderSummary)
 
-        localStorage.clear();
-        cartNumbers();
-    }
-
-
+    localStorage.clear();
+    cartNumbers();
+}

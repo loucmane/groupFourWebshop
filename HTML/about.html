@@ -10,7 +10,7 @@
 
     <script src="../JS/navbar.js"></script>
     <script src="../JS/main.js"></script>
-    <script src="../JS/contact.js"></script>
+    <script src="../JS/about.js"></script>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -20,10 +20,10 @@
 
 <body>
     <header>
+
         <nav class="navbar">
 
             <span class="hamburgerBtn"><i class="fas fa-bars"></i></span>
-
 
             <ul class="myUl">
                 <li><a href="../index.html">Home</a></li>
@@ -31,19 +31,40 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            
             <span class="shoppingCartBtn"><i class="fas fa-shopping-cart"></i>
                 <span id="counterContainer"></span>
             </span>
         </nav>
 
-        <h1 class="logotype">/ACCENT</h1>
-
     </header>
 
-    <main id="mainContact">
+    <main id="mainAbout">
+        <section id="sideBar">
+            <div id="about" class="selected">
+                <p>ABOUT US</p>
+            </div>
+            <div id="categoryContainer">
+                <div id="founders">
+                    <p>Founders</p>
+                </div>
+                <div id="history">
+                    <p>History</p>
+                </div>
+                <div id="philosophy">
+                    <p>Philosophy</p>
+                </div>
+                <div id="manufacture">
+                    <p>Manufacture</p>
+                </div>
+            </div>
+        </section>
 
-        <div id="contactBackground"></div>
-
+        <section id="displaySection">
+            <h1 class="logotype">/ACCENT</h1>
+            <div id="infoBox"></div>
+            <div id="imgBox"></div>
+        </section>
     </main>
 
     <footer>

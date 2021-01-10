@@ -5,13 +5,11 @@ $(function() {
 
 function renderCart() {
 
+    setToLocalStorage();
     getFromLocalStorage();
 
     $(".tableContainer")
     .remove();
-
-    // $("<hr>")
-    // .appendTo("main")    
 
     $("<div>")
     .addClass("tableContainer")
@@ -40,7 +38,7 @@ function renderCart() {
     .appendTo(tableHeads);
 
     //CHECK IF SHOPPINGCART IS EMPTY
-    if(bag.length === 0){
+    if(cart.length === 0){
         $("<h1>")
         .attr("id", "errorMsg")
         .html("Your shopping cart is empty!")
@@ -58,7 +56,7 @@ function renderCart() {
         return
     }
 
-    $.each(bag, (i, product) => {
+    $.each(cart, (i, product) => {
 
         let tableRow = $("<tr>")
         .appendTo("table")
@@ -82,14 +80,13 @@ function renderCart() {
         .html("&#8722")
         .on("click", function() {
     
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].product.id === product.product.id) {
-                    bag[i].quantity--;
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].product.id === product.product.id) {
+                    cart[i].quantity--;
 
-                    if (bag[i].quantity === 0) { 
-                        bag.splice([i], 1);
+                    if (cart[i].quantity === 0) { 
+                        cart.splice([i], 1);
                     }
-                setToLocalStorage();
                 renderCart();
                 }
             }
@@ -118,10 +115,9 @@ function renderCart() {
         .html("Remove")
         .on("click", function() {
     
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].product.id === product.product.id) {
-                    bag.splice([i], 1);
-                    setToLocalStorage();
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].product.id === product.product.id) {
+                    cart.splice([i], 1);
                     renderCart();
                 }
             }
@@ -134,10 +130,9 @@ function renderCart() {
         .addClass("qtyBtn")
         .html("&#43;")
         .on("click", function() {
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].product.id === product.product.id) {
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].product.id === product.product.id) {
                     product.quantity++;
-                    setToLocalStorage();
                     renderCart();
                 }
             }
@@ -177,10 +172,9 @@ function renderCart() {
         .html("Remove")
         .on("click", function() {
     
-            for (let i = 0; i < bag.length; i++) {
-                if (bag[i].product.id === product.product.id) {
-                    bag.splice([i], 1);
-                    setToLocalStorage();
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].product.id === product.product.id) {
+                    cart.splice([i], 1);
                     renderCart();
                 }
             }
@@ -208,12 +202,16 @@ function renderCart() {
         .html("Update")
         .on("click", function() {
     
-            for (let i = 0; i < bag.length; i++) {
-                console.log(bag[i].quantity)
-                if (bag[i].product.id === product.product.id) {
-                    bag[i].quantity = parseInt(qtyInput.val());
-                    setToLocalStorage();
+            for (let i = 0; i < cart.length; i++) {
+
+                if (cart[i].product.id === product.product.id) {
+                    if (qtyInput.val() === null) {
+                        alert("enter valid number")
+                    } 
+                    cart[i].quantity = parseInt(qtyInput.val());
+
                     renderCart();
+                    
                 }
             }
         })
@@ -276,4 +274,3 @@ function renderCart() {
     })
     .appendTo(summary)
 }
-

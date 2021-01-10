@@ -1,8 +1,8 @@
 *,
 *::after,
 *::before {
-  margin: 0px;
-  padding: 0px;
+  margin: 0rem;
+  padding: 0rem;
   box-sizing: inherit; }
 
 html {
@@ -30,11 +30,13 @@ footer {
     font-weight: 400;
     font-size: 1.6rem;
     color: black; }
+    footer li a {
+      text-decoration: none;
+      color: #000000; }
   footer .icon {
     margin: 0 1rem 0 1rem; }
-  footer a {
-    text-decoration: none;
-    color: #000000; }
+    footer .icon i {
+      cursor: pointer; }
   footer .socialmediaicons {
     font-size: 4rem; }
   footer p {
@@ -43,7 +45,7 @@ footer {
     font-weight: 300;
     font-size: 1.4rem;
     color: black; }
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: 768px) {
     footer {
       height: 30rem; }
       footer ul {
@@ -52,11 +54,7 @@ footer {
         align-items: center;
         flex-direction: row; }
         footer ul li {
-          margin: 3rem 5rem 3rem 5rem;
-          font-family: "Roboto Mono", monospace;
-          font-weight: 400;
-          font-size: 2.4rem;
-          color: black; }
+          margin: 3rem 5rem 3rem 5rem; }
       footer .icon {
         margin: 3rem;
         font-size: 5rem; }
@@ -66,10 +64,6 @@ footer {
         align-items: center;
         flex-direction: row-reverse; }
         footer .companyinfo p {
-          font-family: "Roboto Mono", monospace;
-          font-weight: 400;
-          font-size: 1.6rem;
-          color: black;
           margin: 2rem; } }
 
 header {
@@ -89,8 +83,8 @@ header {
     color: black;
     text-align: center;
     width: 100vw;
-    color: white;
-    background-color: black;
+    color: #FFFFFF;
+    background-color: #000000;
     height: 5rem; }
   header h1 {
     font-family: "Roboto Mono", monospace;
@@ -101,9 +95,9 @@ header {
     cursor: pointer;
     text-align: center;
     margin: 2rem; }
-    @media screen and (min-width: 768px) {
-      header h1 {
-        margin-top: 5rem; } }
+  @media screen and (min-width: 768px) {
+    header h1 {
+      margin-top: 5rem; } }
 
 .navbar {
   font-family: "Roboto Mono", monospace;
@@ -111,50 +105,30 @@ header {
   font-size: 2.4rem;
   color: black;
   background-color: #FFF8E2;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 400;
-  font-size: 2.4rem;
-  color: black;
   width: 100%;
   padding: 5%;
   height: 8rem; }
-  @media screen and (min-width: 480px) {
-    .navbar {
-      height: 8rem;
-      justify-content: space-around;
-      font-size: 1.6rem;
-      padding: 0; } }
-  .navbar .hamburgerButton {
+  .navbar .hamburgerBtn {
+    width: 30%;
     position: absolute;
     top: 2rem;
     left: 3rem;
     z-index: 1000;
     font-size: 3rem;
-    width: 30%;
     cursor: pointer; }
-    @media screen and (min-width: 480px) {
-      .navbar .hamburgerButton {
-        display: none; } }
   .navbar .myUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 900;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100vw;
     background-color: #FFF8E2; }
-    @media screen and (min-width: 480px) {
-      .navbar .myUl {
-        display: flex;
-        position: relative;
-        height: 100%;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-around; } }
     .navbar .myUl a {
       text-decoration: none;
       color: #000000; }
@@ -165,43 +139,53 @@ header {
       text-align: center;
       list-style: none;
       margin: 2rem; }
-    @media screen and (min-width: 480px) {
-      .navbar .myUl {
-        display: flex;
-        height: 100%;
-        width: 80%;
-        flex-direction: row;
-        justify-content: space-around; } }
-  .navbar .shoppingCartButton {
+  .navbar .shoppingCartBtn {
     position: absolute;
     top: 2rem;
     right: 2rem;
     z-index: 800;
     font-size: 3rem;
     cursor: pointer; }
-    @media screen and (min-width: 480px) {
-      .navbar .shoppingCartButton {
-        margin-right: 2rem; } }
-    .navbar .shoppingCartButton #counterContainer {
+    .navbar .shoppingCartBtn #counterContainer {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       position: absolute;
       top: 0;
-      border: 1px solid #FFF5D3;
-      right: -5px;
-      background-color: black;
+      border: 0.1rem solid #FFF5D3;
+      right: -.5rem;
+      background-color: #000000;
       color: #FFF5D3;
       border-radius: 50%;
       width: 2rem;
       height: 2rem;
       font-size: 1rem; }
+  @media screen and (min-width: 768px) {
+    .navbar {
+      justify-content: space-around;
+      height: 8rem;
+      padding: 0;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: black; }
+      .navbar .hamburgerBtn {
+        display: none; }
+      .navbar .myUl {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 80%;
+        flex-direction: row;
+        justify-content: space-around; }
+      .navbar .shoppingCartBtn {
+        margin-right: 2rem; } }
 
-#landingpageMain {
+#mainLanding {
   width: 100%;
   text-align: center; }
-  #landingpageMain #heroBackground {
+  #mainLanding #heroBackground {
     background-image: url("../IMG/ginger-single.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -212,13 +196,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: flex-end; }
-    #landingpageMain #heroBackground #heroText {
+    #mainLanding #heroBackground #heroText {
       background-color: #FDFBF4;
       text-align: center;
-      border-radius: .5rem;
       width: 80%;
       margin: 10%; }
-      #landingpageMain #heroBackground #heroText h3 {
+      #mainLanding #heroBackground #heroText h3 {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 3.2rem;
@@ -226,7 +209,7 @@ header {
         font-size: 1.4rem;
         margin: 5%;
         text-transform: uppercase; }
-      #landingpageMain #heroBackground #heroText p {
+      #mainLanding #heroBackground #heroText p {
         display: none;
         font-family: "Roboto Mono", monospace;
         font-weight: 400;
@@ -235,35 +218,35 @@ header {
         font-size: 1.2rem;
         margin: 5%; }
     @media screen and (min-width: 768px) {
-      #landingpageMain #heroBackground {
+      #mainLanding #heroBackground {
         background-image: url("../IMG/ginger-double.png");
         align-items: flex-start; }
-        #landingpageMain #heroBackground #heroText {
+        #mainLanding #heroBackground #heroText {
           width: 20%;
           width: 25%;
-          padding: 10px; }
-          #landingpageMain #heroBackground #heroText h3 {
+          padding: 1rem; }
+          #mainLanding #heroBackground #heroText h3 {
             font-size: 2.4rem; }
-          #landingpageMain #heroBackground #heroText p {
+          #mainLanding #heroBackground #heroText p {
             display: block;
             font-size: 1.6rem; } }
-  #landingpageMain #newArrivalsContainer h3 {
+  #mainLanding #arrivalsContainer h3 {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 3.2rem;
     color: black;
     text-transform: uppercase;
     margin-top: 10%; }
-  #landingpageMain #newArrivalsContainer img {
+  #mainLanding #arrivalsContainer img {
     width: 70%;
     margin-top: 5%; }
-  #landingpageMain #newArrivalsContainer button {
+  #mainLanding #arrivalsContainer button {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.4rem;
     color: black;
-    border: 1px solid black;
-    background-color: white;
+    border: 0.1rem solid #000000;
+    background-color: #FFFFFF;
     padding: 1rem;
     border-radius: .5rem;
     cursor: pointer;
@@ -274,9 +257,9 @@ header {
     width: 20rem;
     padding: 3rem;
     margin: 5%; }
-    #landingpageMain #newArrivalsContainer button:hover {
-      background-color: black;
-      color: white; }
+    #mainLanding #arrivalsContainer button:hover {
+      background-color: #000000;
+      color: #FFFFFF; }
 
 #mainCheckout {
   display: flex;
@@ -320,8 +303,8 @@ header {
         color: black;
         height: 40%;
         padding: 2% 0 2% 5%;
-        border-radius: 5px;
-        border: 1px solid #000000;
+        border-radius: .5rem;
+        border: 0.1rem solid #000000;
         color: #000000;
         width: 80%;
         margin: 1rem; }
@@ -335,15 +318,15 @@ header {
         align-items: center;
         flex-direction: row;
         width: 80%;
-        color: black;
+        color: #000000;
         border-radius: .5rem; }
         #mainCheckout #information #contactForm .checkBox input {
           width: 2rem;
           height: 2rem;
-          border: 1px solid #000000;
-          border-radius: 5px; }
+          border: 0.1rem solid #000000;
+          border-radius: .5rem; }
         #mainCheckout #information #contactForm .checkBox #checkBoxLabel {
-          color: black;
+          color: #000000;
           width: auto; }
     #mainCheckout #information #contactForm.checked {
       opacity: 0.4; }
@@ -358,8 +341,8 @@ header {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      border: 1px solid #000000;
-      border-radius: 5px;
+      border: 0.1rem solid #000000;
+      border-radius: .5rem;
       width: 80%; }
       #mainCheckout #shipping form #radioContainer {
         justify-content: center;
@@ -371,7 +354,9 @@ header {
           width: 2rem;
           height: 2rem;
           position: relative;
-          top: 5px; }
+          top: .5rem; }
+        #mainCheckout #shipping form #radioContainer label.error {
+          color: red; }
   #mainCheckout #payment {
     display: flex;
     justify-content: center;
@@ -386,7 +371,7 @@ header {
       text-align: center;
       border: 1px solid #000000;
       width: 80%;
-      border-radius: 5px;
+      border-radius: .5rem;
       padding: 3rem; }
       @media screen and (min-width: 768px) {
         #mainCheckout #payment #paymentInfoBox {
@@ -403,8 +388,8 @@ header {
         font-weight: 300;
         font-size: 1.4rem;
         color: black;
-        border: 1px solid black;
-        background-color: white;
+        border: 0.1rem solid #000000;
+        background-color: #FFFFFF;
         padding: 1rem;
         border-radius: .5rem;
         cursor: pointer;
@@ -414,8 +399,8 @@ header {
         color: black;
         margin-top: 5%; }
         #mainCheckout #payment #paymentInfoBox button:hover {
-          background-color: black;
-          color: white; }
+          background-color: #000000;
+          color: #FFFFFF; }
       #mainCheckout #payment #paymentInfoBox p {
         margin: 2rem; }
       #mainCheckout #payment #paymentInfoBox img {
@@ -438,7 +423,7 @@ header {
       text-align: center;
       border: 1px solid #000000;
       width: 80%;
-      border-radius: 5px;
+      border-radius: .5rem;
       padding: 3rem;
       margin: 2rem; }
       @media screen and (min-width: 768px) {
@@ -459,8 +444,8 @@ header {
         font-weight: 300;
         font-size: 1.4rem;
         color: black;
-        border: 1px solid black;
-        background-color: white;
+        border: 0.1rem solid #000000;
+        background-color: #FFFFFF;
         padding: 1rem;
         border-radius: .5rem;
         cursor: pointer;
@@ -471,8 +456,8 @@ header {
         margin-top: 5%; }
         #mainCheckout #review #checkoutOrderInfo button:hover,
         #mainCheckout #review #checkoutTotal button:hover {
-          background-color: black;
-          color: white; }
+          background-color: #000000;
+          color: #FFFFFF; }
       #mainCheckout #review #checkoutOrderInfo h4,
       #mainCheckout #review #checkoutTotal h4 {
         font-family: "Roboto Mono", monospace;
@@ -517,7 +502,7 @@ header {
         text-transform: uppercase;
         font-weight: 700;
         color: #000000; }
-  #mainCheckout .continueButton {
+  #mainCheckout .continueBtn {
     margin-top: 3rem;
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
@@ -526,12 +511,12 @@ header {
     background-color: #000000;
     color: #FFFFFF;
     border: none;
-    border-radius: 5px;
+    border-radius: .5rem;
     padding: 2rem;
     margin: 5%;
     cursor: pointer; }
-  #mainCheckout .returnButton {
-    background-color: white;
+  #mainCheckout .returnBtn {
+    background-color: #FFFFFF;
     border: none;
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
@@ -636,8 +621,8 @@ body.loading .modal {
           font-size: 1.4rem;
           color: black;
           border: none;
-          color: white;
-          background-color: black;
+          color: #FFFFFF;
+          background-color: #000000;
           padding: 2rem;
           border-radius: .5rem;
           cursor: pointer;
@@ -662,15 +647,15 @@ body.loading .modal {
         font-weight: 300;
         font-size: 1.4rem;
         color: black;
-        border: 1px solid black;
-        background-color: white;
+        border: 0.1rem solid #000000;
+        background-color: #FFFFFF;
         padding: 1rem;
         border-radius: .5rem;
         cursor: pointer;
         margin-top: 2rem; }
         #mainProducts #productsContainer #cartBtnContainer #goCartBtn:hover {
-          background-color: black;
-          color: white; }
+          background-color: #000000;
+          color: #FFFFFF; }
   @media screen and (min-width: 768px) {
     #mainProducts {
       font-family: "Roboto Mono", monospace;
@@ -684,7 +669,7 @@ body.loading .modal {
         #mainProducts #productsContainer .eachProduct {
           width: 33.3%; }
           #mainProducts #productsContainer .eachProduct .productImage {
-            box-shadow: 2px 2px 10px lightgray;
+            box-shadow: .2rem .2rem 1rem lightgray;
             width: 80%; }
           #mainProducts #productsContainer .eachProduct .descDiv {
             width: 80%;
@@ -699,32 +684,32 @@ body.loading .modal {
           padding: 2rem;
           margin-top: 6rem; } }
 
-#cartMain {
+#mainCart {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
   font-size: 1.4rem;
   color: black;
   text-align: center; }
-  #cartMain h4 {
+  #mainCart h4 {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 3.2rem;
     color: black;
     margin: 3rem; }
-  #cartMain .tableContainer {
+  #mainCart .tableContainer {
     display: flex;
     flex-direction: column;
     text-align: center; }
-    #cartMain .tableContainer table {
+    #mainCart .tableContainer table {
       width: 80%;
       border-collapse: collapse;
       padding: 2rem 0 2rem 0; }
-      #cartMain .tableContainer table tr th {
+      #mainCart .tableContainer table tr th {
         display: none;
         width: 25%; }
-      #cartMain .tableContainer table tr td {
+      #mainCart .tableContainer table tr td {
         width: 25%; }
-      #cartMain .tableContainer table tr .productTd .productContainer {
+      #mainCart .tableContainer table tr .productTd .productContainer {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -733,26 +718,26 @@ body.loading .modal {
         font-weight: 400;
         font-size: 1.6rem;
         color: black; }
-        #cartMain .tableContainer table tr .productTd .productContainer p {
+        #mainCart .tableContainer table tr .productTd .productContainer p {
           display: none; }
-        #cartMain .tableContainer table tr .productTd .productContainer .qtyBtn {
+        #mainCart .tableContainer table tr .productTd .productContainer .qtyBtn {
           display: none; }
-        #cartMain .tableContainer table tr .productTd .productContainer .productSpan {
+        #mainCart .tableContainer table tr .productTd .productContainer .productSpan {
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column; }
-          #cartMain .tableContainer table tr .productTd .productContainer .productSpan img {
+          #mainCart .tableContainer table tr .productTd .productContainer .productSpan img {
             width: 10rem; }
-          #cartMain .tableContainer table tr .productTd .productContainer .productSpan p {
+          #mainCart .tableContainer table tr .productTd .productContainer .productSpan p {
             display: none; }
-          #cartMain .tableContainer table tr .productTd .productContainer .productSpan button {
+          #mainCart .tableContainer table tr .productTd .productContainer .productSpan button {
             font-family: "Roboto Mono", monospace;
             font-weight: 300;
             font-size: 1.4rem;
             color: black;
-            border: 1px solid black;
-            background-color: white;
+            border: 0.1rem solid #000000;
+            background-color: #FFFFFF;
             padding: 1rem;
             border-radius: .5rem;
             cursor: pointer;
@@ -762,25 +747,25 @@ body.loading .modal {
             color: black;
             margin: 1rem;
             display: none; }
-            #cartMain .tableContainer table tr .productTd .productContainer .productSpan button:hover {
-              background-color: black;
-              color: white; }
-      #cartMain .tableContainer table tr .tdQty {
+            #mainCart .tableContainer table tr .productTd .productContainer .productSpan button:hover {
+              background-color: #000000;
+              color: #FFFFFF; }
+      #mainCart .tableContainer table tr .tdQty {
         display: none; }
-      #cartMain .tableContainer table tr .tdTotal {
+      #mainCart .tableContainer table tr .tdTotal {
         display: none; }
-      #cartMain .tableContainer table .phoneRow {
+      #mainCart .tableContainer table .phoneRow {
         display: none;
         border-bottom: .1rem solid lightgray; }
-        #cartMain .tableContainer table .phoneRow td {
+        #mainCart .tableContainer table .phoneRow td {
           padding-bottom: 2rem; }
-        #cartMain .tableContainer table .phoneRow #phoneRemoveBtn {
+        #mainCart .tableContainer table .phoneRow #phoneRemoveBtn {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
           font-size: 1.4rem;
           color: black;
-          border: 1px solid black;
-          background-color: white;
+          border: 0.1rem solid #000000;
+          background-color: #FFFFFF;
           padding: 1rem;
           border-radius: .5rem;
           cursor: pointer;
@@ -788,18 +773,18 @@ body.loading .modal {
           font-weight: 300;
           font-size: 1.2rem;
           color: black; }
-          #cartMain .tableContainer table .phoneRow #phoneRemoveBtn:hover {
-            background-color: black;
-            color: white; }
-        #cartMain .tableContainer table .phoneRow input {
+          #mainCart .tableContainer table .phoneRow #phoneRemoveBtn:hover {
+            background-color: #000000;
+            color: #FFFFFF; }
+        #mainCart .tableContainer table .phoneRow input {
           width: 80%; }
-        #cartMain .tableContainer table .phoneRow .phoneUpdateBtn {
+        #mainCart .tableContainer table .phoneRow .phoneUpdateBtn {
           font-family: "Roboto Mono", monospace;
           font-weight: 300;
           font-size: 1.4rem;
           color: black;
-          border: 1px solid black;
-          background-color: white;
+          border: 0.1rem solid #000000;
+          background-color: #FFFFFF;
           padding: 1rem;
           border-radius: .5rem;
           cursor: pointer;
@@ -807,70 +792,70 @@ body.loading .modal {
           font-weight: 300;
           font-size: 1.2rem;
           color: black; }
-          #cartMain .tableContainer table .phoneRow .phoneUpdateBtn:hover {
-            background-color: black;
-            color: white; }
-  #cartMain .tableSum {
+          #mainCart .tableContainer table .phoneRow .phoneUpdateBtn:hover {
+            background-color: #000000;
+            color: #FFFFFF; }
+  #mainCart .tableSum {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    #cartMain .tableSum #editBtn {
+    #mainCart .tableSum #editBtn {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.4rem;
       color: black;
-      border: 1px solid black;
-      background-color: white;
+      border: 0.1rem solid #000000;
+      background-color: #FFFFFF;
       padding: 1rem;
       border-radius: .5rem;
       cursor: pointer;
       margin: 2rem 0 1rem 0;
       padding: 1rem;
       display: inline; }
-      #cartMain .tableSum #editBtn:hover {
-        background-color: black;
-        color: white; }
-    #cartMain .tableSum span {
+      #mainCart .tableSum #editBtn:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+    #mainCart .tableSum span {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 2.4rem;
       color: black;
       margin: 1rem; }
-      #cartMain .tableSum span:last-of-type {
+      #mainCart .tableSum span:last-of-type {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.4rem;
         color: black;
-        border-bottom: 1px solid black;
+        border-bottom: 0.1rem solid #000000;
         padding-bottom: 1rem; }
-    #cartMain .tableSum #checkoutBtn {
+    #mainCart .tableSum #checkoutBtn {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.4rem;
       color: black;
       border: none;
-      color: white;
-      background-color: black;
+      color: #FFFFFF;
+      background-color: #000000;
       padding: 2rem;
       border-radius: .5rem;
       cursor: pointer;
       margin: 2rem; }
-    #cartMain .tableSum #shopBtn {
+    #mainCart .tableSum #shopBtn {
       font-family: "Roboto Mono", monospace;
       font-weight: 300;
       font-size: 1.4rem;
       color: black;
-      border: 1px solid black;
-      background-color: white;
+      border: 0.1rem solid #000000;
+      background-color: #FFFFFF;
       padding: 1rem;
       border-radius: .5rem;
       cursor: pointer;
       margin: 2rem; }
-      #cartMain .tableSum #shopBtn:hover {
-        background-color: black;
-        color: white; }
-  #cartMain #errorMsg {
+      #mainCart .tableSum #shopBtn:hover {
+        background-color: #000000;
+        color: #FFFFFF; }
+  #mainCart #errorMsg {
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
     font-size: 1.6rem;
@@ -878,65 +863,64 @@ body.loading .modal {
     cursor: pointer;
     text-align: center;
     margin: 5rem; }
-    @media screen and (min-width: 768px) {
-      #cartMain #errorMsg {
-        font-family: "Roboto Mono", monospace;
-        font-weight: 300;
-        font-size: 3.2rem;
-        color: black;
-        margin: 20rem; } }
   @media screen and (min-width: 768px) {
-    #cartMain .tableContainer table {
+    #mainCart .tableContainer table {
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 1.6rem;
       color: black;
-      border: 1px solid black;
+      border: 0.1rem solid #000000;
       width: 90%;
       margin: auto; }
-      #cartMain .tableContainer table tr th {
+      #mainCart .tableContainer table tr th {
         display: table-cell; }
-      #cartMain .tableContainer table tr .productTd .productContainer p {
+      #mainCart .tableContainer table tr .productTd .productContainer p {
         display: table-cell; }
-      #cartMain .tableContainer table tr .productTd .productContainer .qtyBtn {
+      #mainCart .tableContainer table tr .productTd .productContainer .qtyBtn {
         display: inline;
         color: white;
         font-size: 2rem;
         border: none;
-        background-color: black;
+        background-color: #000000;
         border-radius: 50%;
         height: 3rem;
         width: 3rem;
         cursor: pointer; }
-      #cartMain .tableContainer table tr .productTd .productContainer .productSpan img {
+      #mainCart .tableContainer table tr .productTd .productContainer .productSpan img {
         width: 20rem; }
-      #cartMain .tableContainer table tr .productTd .productContainer .productSpan p {
+      #mainCart .tableContainer table tr .productTd .productContainer .productSpan p {
         display: inline; }
-      #cartMain .tableContainer table tr .productTd .productContainer .productSpan button {
+      #mainCart .tableContainer table tr .productTd .productContainer .productSpan button {
         font-family: "Roboto Mono", monospace;
         font-weight: 300;
         font-size: 1.4rem;
         color: black;
         display: table-cell; }
-      #cartMain .tableContainer table tr .phoneDescription {
+      #mainCart .tableContainer table tr .phoneDescription {
         display: none; }
-      #cartMain .tableContainer table tr .ghostTd {
+      #mainCart .tableContainer table tr .ghostTd {
         display: none; }
-      #cartMain .tableContainer table tr .tdQty {
+      #mainCart .tableContainer table tr .tdQty {
         display: table-cell; }
-      #cartMain .tableContainer table tr .tdTotal {
+      #mainCart .tableContainer table tr .tdTotal {
         display: table-cell; }
-    #cartMain .tableSum {
+    #mainCart .tableSum {
       align-items: flex-end;
       margin: 3rem;
       font-family: "Roboto Mono", monospace;
       font-weight: 400;
       font-size: 1.6rem;
       color: black; }
-      #cartMain .tableSum #editBtn {
+      #mainCart .tableSum #editBtn {
         display: none; }
-      #cartMain .tableSum span:last-of-type {
-        border: none; } }
+      #mainCart .tableSum span:last-of-type {
+        border: none; }
+    #mainCart #errorMsg {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 3.2rem;
+      color: black;
+      margin: 20rem; } }
 
 #mainContact {
   display: flex;
@@ -1022,7 +1006,7 @@ body.loading .modal {
     color: black;
     margin: 3rem; }
   #confirmationContainer #orderSummary {
-    border: 1px solid #643939;
+    border: 0.1rem solid #000000;
     border-radius: 1.5rem;
     margin: 2rem;
     padding: 1rem; }
@@ -1057,14 +1041,14 @@ body.loading .modal {
     font-size: 1.4rem;
     color: black;
     margin: 3rem; }
-  #confirmationContainer #continueShopping {
+  #confirmationContainer #shopBtn {
     font-family: "Roboto Mono", monospace;
     font-weight: 300;
     font-size: 1.4rem;
     color: black;
     border: none;
-    color: white;
-    background-color: black;
+    color: #FFFFFF;
+    background-color: #000000;
     padding: 2rem;
     border-radius: .5rem;
     cursor: pointer;
@@ -1076,5 +1060,203 @@ body.loading .modal {
       #confirmationContainer #orderSummary .pContainer {
         width: 60%;
         margin: auto; }
-    #confirmationContainer #continueShopping {
+    #confirmationContainer #shopBtn {
       width: 30%; } }
+
+#mainAbout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #mainAbout #sideBar {
+    height: 20vh;
+    width: 100vw;
+    background-color: white; }
+    #mainAbout #sideBar #about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #FDFBF4;
+      height: 40%;
+      border: 0.1rem solid #000000;
+      -webkit-transition: 0.4s ease-in-out;
+      -o-transition: 0.4s ease-in-out;
+      -ms-transition: 0.4s ease-in-out;
+      -moz-transition: 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
+      cursor: pointer; }
+      #mainAbout #sideBar #about p {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 400;
+        font-size: 2.4rem;
+        color: black; }
+      #mainAbout #sideBar #about.selected {
+        background-color: #FFF5D3; }
+    #mainAbout #sideBar #categoryContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      height: 60%; }
+      #mainAbout #sideBar #categoryContainer div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Roboto Mono", monospace;
+        font-weight: 300;
+        font-size: 1.2rem;
+        color: black;
+        border: 0.1rem solid #000000;
+        background-color: #FDFBF4;
+        flex-grow: 1;
+        height: 100%;
+        -webkit-transition: 0.4s ease-in-out;
+        -o-transition: 0.4s ease-in-out;
+        -ms-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        transition: 0.4s ease-in-out;
+        cursor: pointer; }
+      #mainAbout #sideBar #categoryContainer .selected {
+        background-color: #FFF5D3;
+        flex-grow: 5; }
+  #mainAbout #displaySection {
+    height: 70vh;
+    width: 100vw;
+    border: 0.1rem solid #000000; }
+    #mainAbout #displaySection h1 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      letter-spacing: 1.6rem;
+      font-size: 4rem;
+      color: black;
+      cursor: pointer;
+      text-align: center;
+      margin: 3rem; }
+    #mainAbout #displaySection #infoBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: "Roboto Mono", monospace;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: black;
+      position: relative;
+      top: 0;
+      left: 20%;
+      padding: 2rem;
+      width: 60%;
+      height: 60%;
+      background-color: #FDFBF4;
+      text-align: center;
+      opacity: .8;
+      -webkit-transition: 0.4s ease-in-out;
+      -o-transition: 0.4s ease-in-out;
+      -ms-transition: 0.4s ease-in-out;
+      -moz-transition: 0.4s ease-in-out;
+      transition: 0.4s ease-in-out;
+      z-index: 1000; }
+    #mainAbout #displaySection #infoBox.founders {
+      -webkit-transform: translate(30%, 30%);
+      -o-transform: translate(30%, 30%);
+      -ms-transform: translate(30%, 30%);
+      -moz-transform: translate(30%, 30%);
+      transform: translate(30%, 30%); }
+    #mainAbout #displaySection #infoBox.history {
+      -webkit-transform: translate(-20%, 30%);
+      -o-transform: translate(-20%, 30%);
+      -ms-transform: translate(-20%, 30%);
+      -moz-transform: translate(-20%, 30%);
+      transform: translate(-20%, 30%); }
+    #mainAbout #displaySection #infoBox.philosophy {
+      -webkit-transform: translate(30%, -10%);
+      -o-transform: translate(30%, -10%);
+      -ms-transform: translate(30%, -10%);
+      -moz-transform: translate(30%, -10%);
+      transform: translate(30%, -10%); }
+    #mainAbout #displaySection #infoBox.manufacture {
+      -webkit-transform: translate(-30%, 0%);
+      -o-transform: translate(-30%, 0%);
+      -ms-transform: translate(-30%, 0%);
+      -moz-transform: translate(-30%, 0%);
+      transform: translate(-30%, 0%); }
+    #mainAbout #displaySection #imgBox {
+      position: relative;
+      top: -60%;
+      left: 20%;
+      width: 60%;
+      height: 60%;
+      background-image: url("../IMG/webshop minimalistic orange.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-transition: 0.4s ease-in-out;
+      -o-transition: 0.4s ease-in-out;
+      -ms-transition: 0.4s ease-in-out;
+      -moz-transition: 0.4s ease-in-out;
+      transition: 0.4s ease-in-out; }
+    #mainAbout #displaySection #imgBox.founders {
+      background-image: url("../IMG/webshop coffeebeans.jpg");
+      -webkit-transform: translate(-30%, -5%);
+      -o-transform: translate(-30%, -5%);
+      -ms-transform: translate(-30%, -5%);
+      -moz-transform: translate(-30%, -5%);
+      transform: translate(-30%, -5%); }
+    #mainAbout #displaySection #imgBox.history {
+      background-image: url("../IMG/webshop lavendel.jpg");
+      -webkit-transform: translate(20%, -10%);
+      -o-transform: translate(20%, -10%);
+      -ms-transform: translate(20%, -10%);
+      -moz-transform: translate(20%, -10%);
+      transform: translate(20%, -10%); }
+    #mainAbout #displaySection #imgBox.philosophy {
+      background-image: url("../IMG/webshop oranges.jpg");
+      -webkit-transform: translate(-30%, 30%);
+      -o-transform: translate(-30%, 30%);
+      -ms-transform: translate(-30%, 30%);
+      -moz-transform: translate(-30%, 30%);
+      transform: translate(-30%, 30%); }
+    #mainAbout #displaySection #imgBox.manufacture {
+      background-image: url("../IMG/webshop tobacco.jpg");
+      -webkit-transform: translate(30%, 30%);
+      -o-transform: translate(30%, 30%);
+      -ms-transform: translate(30%, 30%);
+      -moz-transform: translate(30%, 30%);
+      transform: translate(30%, 30%); }
+  @media screen and (min-width: 768px) {
+    #mainAbout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; }
+      #mainAbout #sideBar {
+        height: 100vh;
+        width: 30vw; }
+        #mainAbout #sideBar #categoryContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 60%; }
+          #mainAbout #sideBar #categoryContainer div {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: black;
+            width: 100%;
+            height: 0; }
+          #mainAbout #sideBar #categoryContainer .selected {
+            flex-grow: 2; }
+      #mainAbout #displaySection {
+        height: 100vh;
+        width: 70vw; }
+        #mainAbout #displaySection h1 {
+          font-family: "Roboto Mono", monospace;
+          font-weight: 700;
+          letter-spacing: 1.6rem;
+          font-size: 4rem;
+          color: black;
+          cursor: pointer;
+          margin: 4rem; } }

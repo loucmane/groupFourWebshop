@@ -1,28 +1,28 @@
 @mixin buttonWhite {
     @include fontBody();
-    border: 1px solid black;
-    background-color: white;
+    border: .1rem solid $black;
+    background-color: $white;
     padding: 1rem;
     border-radius: .5rem;
     cursor: pointer;
     &:hover {
-        background-color: black;
-        color: white;
+        background-color: $black;
+        color: $white;
     }
 }
 
 @mixin buttonBlack {
     @include fontBody();
     border: none;
-    color: white;
-    background-color: black;
+    color: $white;
+    background-color: $black;
     padding: 2rem;
     border-radius: .5rem;
     cursor: pointer;
 }
 
 @mixin buttonReturn {
-    background-color: white;
+    background-color: $white;
     border: none;
     @include fontBread();
     cursor: pointer;
@@ -33,7 +33,7 @@
     background-color: $black;
     color: $white;
     border: none;
-    border-radius: 5px;
+    border-radius: .5rem;
     padding: 2rem;
     margin: 5%;
     cursor: pointer;
