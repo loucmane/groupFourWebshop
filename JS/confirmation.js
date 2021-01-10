@@ -2,7 +2,7 @@ $(function() {
 
     renderOrderSummary();
 
-    $("#continueShopping")
+    $("#shopBtn")
         .on("click", function() {
 
             window.location.href = "../HTML/products.html";
@@ -47,9 +47,9 @@ function renderOrderSummary() {
             .appendTo(orderSummary);
 
         $("<p>")
-        .attr("id", "orderNumber")
-        .html("Order Number: " + orderInfo[i].orderNumber)
-        .appendTo(orderSummary);
+            .attr("id", "orderNumber")
+            .html("Order Number: " + orderInfo[i].orderNumber)
+            .appendTo(orderSummary);
 
         if (calculateTotal() < 5000) {
             $("<p>")
@@ -121,6 +121,6 @@ function renderOrderSummary() {
         .html("(VAT included)")
         .appendTo(orderSummary)
 
-        localStorage.clear();
-        cartNumbers();
-    }
+    localStorage.clear();
+    cartNumbers();
+}
