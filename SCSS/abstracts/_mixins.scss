@@ -5,6 +5,22 @@
     flex-direction: $direction;
 }
 
+@mixin transition($time) {
+    -webkit-transition: ($time);
+    -o-transition: ($time);
+    -ms-transition: ($time);
+    -moz-transition: ($time);
+    transition: ($time);
+}
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
 @mixin fontHeading() {
     font-family: $ff-roboto;
     font-weight: $fw-light;

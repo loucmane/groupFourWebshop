@@ -1,4 +1,4 @@
-#landingpageMain {
+#mainLanding {
     width: 100%;
     text-align: center;
 
@@ -58,7 +58,7 @@
         }
     }
 
-    #newArrivalsContainer {
+    #arrivalsContainer {
 
         h3 {
             @include fontHeading();

@@ -1,6 +1,7 @@
 header {
     @include flexCenter(column);
     width: 100%;
+
     .headerBanner {
         @include flexCenter(row);
         @include fontSubtitle();
@@ -10,10 +11,12 @@ header {
         background-color: black;
         height: 5rem;
     }
+
     h1 {
         @include fontLogotype();
         text-align: center;
         margin: 2rem;
+        
         @media screen and(min-width: 768px) {
             margin-top: 5rem;
         }

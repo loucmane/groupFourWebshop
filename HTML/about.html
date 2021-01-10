@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>/ACCENT</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="../JS/navbar.js"></script>
+    <script src="../JS/main.js"></script>
+    <script src="../JS/about.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar">
+
+            <span class="hamburgerBtn"><i class="fas fa-bars"></i></span>
+
+            <ul class="myUl">
+                <li><a class="menuLink" href="../index.html">Home</a></li>
+                <li><a class="menuLink" href="products.html">Fragrances</a></li>
+                <li><a class="menuLink" href="about.html">About</a></li>
+                <li><a class="menuLink" href="contact.html">Contact</a></li>
+            </ul>
+            
+            <span class="shoppingCartBtn"><i class="fas fa-shopping-cart"></i>
+                <span id="counterContainer"></span>
+            </span>
+        </nav>
+
+    </header>
+
+    <main id="mainAbout">
+        <section id="sideBar">
+            <div id="about" class="selected">
+                <p>ABOUT US</p>
+            </div>
+            <div id="categoryContainer">
+                <div id="founders">
+                    <p>Founders</p>
+                </div>
+                <div id="history">
+                    <p>History</p>
+                </div>
+                <div id="philosophy">
+                    <p>Philosophy</p>
+                </div>
+                <div id="manufacture">
+                    <p>Manufacture</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="displaySection">
+            <h1 class="logotype">/ACCENT</h1>
+            <div id="infoBox"></div>
+            <div id="imgBox"></div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a class="menuLink" href="../index.html">Home</a></li>
+            <li><a class="menuLink" href="products.html">Fragrances</a></li>
+            <li><a class="menuLink" href="about.html">About</a></li>
+            <li><a class="menuLink" href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="socialmediaicons">
+            <span class="icon"><i class="fab fa-facebook-square"></i></span>
+            <span class="icon"><i class="fab fa-instagram"></i></span>
+            <span class="icon"><i class="fab fa-twitter-square"></i></span>
+        </div>
+
+        <div class="companyinfo">
+            <p>info@accent.com</p>
+            <p>+01 (2) 345 67 89</p>
+            <p>© 2020 /ACCENT</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
