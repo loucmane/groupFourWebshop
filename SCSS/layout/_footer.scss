@@ -11,41 +11,50 @@ footer {
         list-style: none;
         margin: 2rem;
         @include fontSubtitle();
+
+        a {
+            text-decoration: none;
+            color: $black;
+        }
     }
 
     .icon {
         margin: 0 1rem 0 1rem;
+        
+        i {
+            cursor: pointer;
+        }
     }
 
-    a {
-        text-decoration: none;
-        color: $black;
-    }
     .socialmediaicons {
         font-size: 4rem;
     }
+
     p {
         margin-top: 1rem;
         @include fontBody();
     }
 
-    @media screen and(min-width: 481px) {
-
+    @media screen and(min-width: 768px) {
         height: 30rem;
 
         ul {
             @include flexCenter(row);
+
             li {
                 margin: 3rem 5rem 3rem 5rem;
                 @include fontTitle();
             }
         }
+
         .icon {
             margin: 3rem;
             font-size: 5rem;
         }
+
         .companyinfo {
             @include flexCenter(row-reverse);
+
             p {
                 @include fontSubtitle();
                 margin: 2rem;
@@ -53,13 +62,3 @@ footer {
         }
     }
 }
-
-//FOOTER mobile
-//1 skapa nödvändig html
-//2 tänk på mobilläge först
-//3 mixins, variabler
-//4 skapa partial för footer i scss
-// 5 display flex på container. 
-//5.5 justify-content, align-items och flex-direction på container.
-//6 absolute positioned to the bottom, bottom: 0?
-//7 place divs where you want them.
