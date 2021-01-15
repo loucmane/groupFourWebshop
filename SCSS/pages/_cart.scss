@@ -98,7 +98,11 @@
     }
 
     .tableSum {
-        @include flexCenter(column);
+       @include flexCenter(column);
+
+        hr {
+            width: 50%;
+        }
 
         #editBtn {
             @include buttonWhite();
@@ -129,22 +133,32 @@
         }
     }
 
-    #errorMsg {
+    .errorMsg {
         @include fontSubtitle();
-        cursor: pointer;
         text-align: center;
         margin: 5rem;
+
+        &:last-of-type {
+            cursor: pointer;
+        }
     }
 
     //MEDIA QUERIES
     @media screen and(min-width:768px) {
+
+        h4 {
+            margin-bottom: 0;
+        }
+
         .tableContainer {
+            border: .1rem solid $black;
+            padding: 4rem;
+            margin: 8rem;
 
             table {
                 @include fontSubtitle();
-                    border: .1rem solid $black;
-                    width: 90%;
-                    margin: auto;    
+                width: 90%;
+                margin: auto;    
                 
                 tr {
 
@@ -169,6 +183,7 @@
                                 border-radius: 50%;
                                 height: 3rem;
                                 width: 3rem;
+                                padding-top: .1rem;
                                 cursor: pointer;
                             }
 
@@ -224,9 +239,22 @@
                     border: none;
                 }
             }
+
+            #checkoutBtn {
+                @include buttonBlack();
+                @include fontSubtitle();
+                color: $white;
+                margin: 2rem 0 2rem 0;
+                padding: 2rem;
+            }
+        
+            #shopBtn {
+                @include buttonWhite();
+                margin: 2rem 0 0 0;
+            }
         }
 
-        #errorMsg {
+        .errorMsg {
             @include fontHeading();
             margin: 20rem;
         }

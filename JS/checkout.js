@@ -7,6 +7,8 @@ function renderInfoSection() {
 
     let contactForm = $("<form>")
         .attr("id", "contactForm")
+        .hide()
+        .fadeIn(1000)
         .appendTo($("#information"))
 
     $("<h2>")
@@ -111,6 +113,8 @@ function renderShippingSection() {
 
     let radioForm = $("<form>")
         .attr("id", "radioForm")
+        .hide()
+        .fadeIn(1000)
         .appendTo(shippingSection)
 
     $("<h2>")
@@ -180,6 +184,8 @@ function renderPaymentSection() {
 
     let infoBox = $("<div>")
         .attr("id", "paymentInfoBox")
+        .hide()
+        .fadeIn(1000)
         .appendTo(paymentSection)
 
     $("<h2>")
@@ -262,7 +268,7 @@ function renderReviewSection() {
     $("<button>")
         .attr("id", "completeBtn")
         .addClass("continueBtn")
-        .html("Complete Order")
+        .html("COMPLETE ORDER")
         .on("click", function() {
             window.setTimeout(completeOrder, 2000)
 
@@ -277,7 +283,6 @@ function renderReviewSection() {
 
     $("<hr>")
         .appendTo(reviewSection)
-
 }
 
 function setOrderInfo() {
@@ -294,7 +299,6 @@ function setOrderInfo() {
     let date = new Date().toUTCString();
     let orderNumber = 1 + Math.floor(Math.random() * 1000000);
 
-
     let order = new CustomerInfo(email, fName, lName, street, postal, city, country, phone, shipping, date, orderNumber);
 
     orderInfo = [];
@@ -305,8 +309,10 @@ function setOrderInfo() {
 function renderOrderInfo() {
     setOrderInfo();
 
-    let orderSummary = $("#checkoutOrderInfo");
-    orderSummary.html("");
+    let orderSummary = $("#checkoutOrderInfo")
+    .html("")
+    .hide()
+    .fadeIn(1000);
 
     for (let i = 0; i < orderInfo.length; i++) {
 
@@ -385,8 +391,10 @@ function renderOrderInfo() {
 
 function renderCartSummary() {
 
-    let cartSummary = $("#checkoutTotal");
-    cartSummary.html("");
+    let cartSummary = $("#checkoutTotal")
+    .html("")
+    .hide()
+    .fadeIn(1000);
 
     $("<h4>")
         .html("Your Products")

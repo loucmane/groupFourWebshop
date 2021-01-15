@@ -62,7 +62,7 @@
         @include flexCenter(column);
         width: 100%;
 
-        form {
+        #radioForm {
             @include flexCenter(column);
             border: .1rem solid $black;
             border-radius: .5rem;
@@ -89,6 +89,10 @@
                     color: red;
                 }
             }
+        }
+
+        .checked {
+            opacity: 0.4;
         }
     }
 
@@ -169,9 +173,16 @@
         margin-top: 3rem;
         @include buttonSlim();
     }
+
     .returnBtn {
         @include buttonReturn();
         margin: 2rem;
+    }
+
+    #completeBtn {
+        @include fontSubtitle();
+        color: white;
+        padding: 3rem;
     }
 
     //MEDIA QUERIES
@@ -229,17 +240,20 @@
     background: rgba( 255, 255, 255, .8) no-repeat;
 
     p {
-        @include fontLogotype();
-        text-align: center;
+        @include fontHeading();
+        margin-left: 3rem;
         z-index: 3000;
     }
+
+    @media screen and(min-width: 768px) {
+        p {
+            @include fontLogotype();
+        }
+    }
+    
 }
 
 body.loading .modal {
     overflow: hidden;
     display: flex;
-}
-
-#radioForm.checked {
-    opacity: 0.4;
 }
