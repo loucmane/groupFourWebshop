@@ -4,7 +4,7 @@ header {
 
     .headerBanner {
         @include flexCenter(row);
-        @include fontSubtitle();
+        @include fontBody();
         text-align: center;
         width: 100vw;
         color: $white;
@@ -19,6 +19,13 @@ header {
     }
 
     @media screen and(min-width: 768px) {
+
+        .headerBanner {
+            @include fontSubtitle();
+            color: $white;
+            letter-spacing: .2rem;
+        }
+
         h1 {
             margin-top: 5rem;
         }

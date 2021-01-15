@@ -1,6 +1,9 @@
 $(function() {
     renderCart();
 
+    $("#mainCart")
+    .hide()
+    .fadeIn(1000)
 });
 
 function renderCart() {
@@ -11,9 +14,11 @@ function renderCart() {
     $(".tableContainer")
     .remove();
 
+    let main = $("#mainCart")
+
     $("<div>")
     .addClass("tableContainer")
-    .appendTo($("main"));
+    .appendTo(main);
 
     $("<table>")
     .appendTo(".tableContainer");
@@ -40,18 +45,18 @@ function renderCart() {
     //CHECK IF SHOPPINGCART IS EMPTY
     if(cart.length === 0){
         $("<h1>")
-        .attr("id", "errorMsg")
+        .addClass("errorMsg")
         .html("Your shopping cart is empty!")
-        .appendTo("main")
+        .appendTo(main)
 
         $("<h1>")
-        .attr("id", "errorMsg")
+        .addClass("errorMsg")
         .html("&#8592" + " <u>Go get some stuff!</u>")
         .on("click", function() {
             
             window.location.href = "../HTML/products.html"
         })
-        .appendTo("main")
+        .appendTo(main)
     
         return
     }
@@ -223,9 +228,6 @@ function renderCart() {
     .addClass("tableSum")
     .appendTo(".tableContainer");
 
-    $("<hr>")
-    .appendTo(summary)
-
     //Hidden Phone button
     $("<button>")
     .attr("id", "editBtn")
@@ -235,9 +237,6 @@ function renderCart() {
         $(".phoneRow").toggle();
     })
     .appendTo(summary);
-
-    $("<hr>")
-    .appendTo(summary)
 
     $("<span>")
     .html("<b>Subtotal:</b> " + calculateTotal() + " SEK")

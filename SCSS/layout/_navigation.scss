@@ -66,10 +66,10 @@
     }
 
     @media screen and(min-width: 768px) {
+        @include fontSubtitle();
         justify-content: space-around;
         height: 8rem;
         padding: 0;
-        @include fontSubtitle();
 
         .hamburgerBtn {
             display: none;
@@ -79,13 +79,23 @@
             display: flex;
             position: relative;
             height: 100%;
-            width: 80%;
+            width: 100%;
             flex-direction: row;
             justify-content: space-around;
+            padding:0 10% 0 10%;
         }
 
         .shoppingCartBtn {
-                margin-right: 2rem;
+            font-size: 3.5rem;
+            margin-right: 2rem;
+            z-index: 1000;
+
+            #counterContainer {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.5rem;
+                padding: 0 0 .1rem .1rem;
+            }
         }
     }
 }

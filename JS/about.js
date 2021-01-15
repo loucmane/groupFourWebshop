@@ -1,6 +1,9 @@
 $(function() {
     renderInfoBox();
     handleClick();
+    $("#mainAbout")
+    .hide()
+    .fadeIn(1000)
 });
 
 function renderInfoBox() {

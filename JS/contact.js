@@ -1,5 +1,9 @@
 $(function() {
     renderHTML();
+
+    $("#mainContact")
+    .hide()
+    .fadeIn(1000)
 });
 
 function renderHTML() {

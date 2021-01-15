@@ -1,3 +1,7 @@
+.lockScreen {
+    overflow: hidden;
+}
+
 #mainProducts {
     @include fontBread();
     @include flexCenter(column);
@@ -19,7 +23,8 @@
             margin-top: 5%;
             
             .productImage {
-                width: 50%;
+                width: 80%;
+                cursor: pointer;
             }
 
             .descDiv {
@@ -52,10 +57,74 @@
         #cartBtnContainer {
             @include flexCenter(column);
             width: 100vw;
+
             #goCartBtn {
                 @include buttonWhite();
                 margin-top: 2rem;
+                padding: 1rem;
             }
+        }
+    }
+
+    .productInfoBox {
+        @include flexCenter(column);
+        position: fixed;
+        top: 20vh;
+        left: 10vw;
+        height: 70vh;
+        width: 80vw;
+        border-radius: .5rem;
+        box-shadow: 0 0 2rem grey;
+        background-color: $white;
+        z-index: 3000;
+        overflow: scroll;
+
+        .infoBoxImage {
+            width: 50%;
+            margin-top: 20rem;
+        }
+
+        .detailsContainer {
+            padding: 2rem;
+
+            h3 {
+                @include fontTitle();
+                margin-bottom: .5rem;
+                text-transform: uppercase;
+            }
+
+            h4 {
+                @include fontSubtitle();
+                margin: 1rem 0 1rem 0;
+            }
+
+            h5 {
+                @include fontSubtitle();
+                margin: 1rem 0 .5rem 0;
+            }
+
+            .addToCartBtn {
+                @include buttonSlim();
+                @include flexCenter(column);
+                height: 1rem;
+                margin: 2rem auto 2rem auto;
+            }
+
+            .backToShopBtn {
+                @include fontSubtitle();
+                text-align: center;
+                margin: 2rem;
+                margin-right: 4rem;
+                cursor: pointer;
+            }
+        }
+
+        .crossMark {
+            position: absolute;
+            top: 0;
+            right: 1.5rem;
+            font-size: 4rem;
+            cursor: pointer;
         }
     }
 
@@ -72,12 +141,12 @@
                 width: 33.3%;
 
                 .productImage {
-                    box-shadow: .2rem .2rem 1rem lightgray;
-                    width: 80%;
+                    box-shadow: 0 0 2rem lightgray;
+                    width: 60%;
                 }
 
                 .descDiv {
-                    width: 80%;
+                    width: 60%;
                     border: none;
                     padding: 0;
 
@@ -89,12 +158,69 @@
 
             #cartBtnContainer {
                 #goCartBtn {
-                    padding: 2rem;
+                    @include fontSubtitle();
+                    padding: 4rem;
                     margin-top: 6rem;
                 }
             }
-
         }
 
+        .productInfoBox {
+            flex-direction: row;
+            top: 10vh;
+            height: 80vh;
+
+            .infoBoxImage {
+                width: 30%;
+                margin: auto 10rem auto 10rem;
+            }
+
+            .detailsContainer {
+                padding: 3rem;
+
+                h3 {
+                    @include fontLogotype();
+                    margin: 1rem 0 1rem 0;
+                    text-transform: uppercase;
+                }
+    
+                h4 {
+                    @include fontTitle();
+                    margin: 1rem 0 1rem 0;
+                }
+
+                h5 {
+                    @include fontSubtitle();
+                    margin: 2rem 0 1rem 0;
+
+                }
+            
+                .addToCartBtn {
+                    @include buttonBlack();
+                    margin: 2rem 0 2rem 0;
+                }
+
+                .backToShopBtn {
+                    @include fontTitle();
+                    margin: 5rem 10rem 0 0;
+                    text-transform: uppercase;
+                }
+            }
+
+            .crossMark {
+                right: 2rem;
+                font-size: 5rem;
+            }
+        }
     }
+
+    .myModal {
+        position: absolute;
+        top: 8rem;
+        z-index: 2000;
+        height: 200rem;
+        width: 100%;
+        background-color: rgba( 255, 255, 255, .6);
+     }
 }
+
